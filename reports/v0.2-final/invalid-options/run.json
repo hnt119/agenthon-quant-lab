@@ -1,0 +1,79 @@
+{
+  "analysis": {
+    "assumptions": {},
+    "checks": [
+      {
+        "details": "maturity_years and volatility must be nonnegative",
+        "name": "input_and_execution_contract",
+        "status": "failed"
+      }
+    ],
+    "results": {},
+    "warnings": []
+  },
+  "check_counts": {
+    "failed": 1,
+    "passed": 0,
+    "unavailable": 0
+  },
+  "code": {
+    "dependencies": {
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.1",
+      "scipy": "1.18.1"
+    },
+    "files_sha256": {
+      "pyproject.toml": "630da8df5bbc121c94018ce0487f58b5f9c90660502c7309a38d668313a79692",
+      "src/agenthon_quant/__init__.py": "ed39253a169489853533eead39dcdb83d9c68fd332c7d8cb6daec5c605f395f0",
+      "src/agenthon_quant/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/agenthon_quant/archive.py": "32b45c112d08312b5fe04decd609151569df977beab8c226efd2f5b23c17dbf5",
+      "src/agenthon_quant/assistance.py": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef",
+      "src/agenthon_quant/cli.py": "6ae91e82ee9cc3b042c8cdff60a988993b42d983576862334ef72d5117a98801",
+      "src/agenthon_quant/onboarding.py": "20911b48b36df47422e5f97863462912cfc4de48318a1bcfdffb289fc15e5a1e",
+      "src/agenthon_quant/options.py": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0",
+      "src/agenthon_quant/records.py": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223",
+      "src/agenthon_quant/trading.py": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    "git_commit": "c9e48bdd25183587a21f0ade2a4b5b58f01c9150",
+    "package_version": "0.2.0",
+    "python": "3.12.7",
+    "runtime_source_dirty": false,
+    "source_fingerprint_sha256": "a0d1712fa4c2a8ba2f659277437978a1418d3abafd0dbacf561f899929ec8804",
+    "source_root": "/private/tmp/quant-release-integration"
+  },
+  "effective_specification_sha256": "e6bd76dc8f8888570fade0e0d85b8aa7b2bfca8ac299a156ff87ea966dfa26a8",
+  "elapsed_seconds": 0.36581545788794756,
+  "error": "maturity_years and volatility must be nonnegative",
+  "input_provenance": [
+    {
+      "bytes": 190,
+      "original_path": "/private/tmp/quant-release-integration/examples/invalid-options.json",
+      "role": "request",
+      "sha256": "d134dd92e6b4a3385117847a0efd7d4fe08ee0756d8ee88e4bad2e05dc9f03c3",
+      "snapshot": "inputs/request.json"
+    }
+  ],
+  "model_usage": {
+    "calls": 0,
+    "cost_usd": 0,
+    "mode": "disabled",
+    "tokens": 0
+  },
+  "random_seed": null,
+  "reproduce_command": "python -m agenthon_quant reproduce reports/v0.2-final/invalid-options --out runs/reproduced-NEW",
+  "schema_version": 1,
+  "specification": {
+    "currency": "USD",
+    "dividend_yield": 0,
+    "maturity_years": 1,
+    "option_type": "both",
+    "rate": 0.05,
+    "spot": 100,
+    "strike": 100,
+    "volatility": -0.2,
+    "workflow": "options"
+  },
+  "started_at_utc": "2026-11-13T17:55:14.261854+00:00",
+  "status": "invalid",
+  "workflow": "options"
+}

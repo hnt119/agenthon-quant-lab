@@ -1,0 +1,74 @@
+{
+  "status": "PASS_SCOPED_PORTABILITY_CORRECTION",
+  "reviewed_utc": "2026-11-13T17:56:04.319079+00:00",
+  "source_commit": "c9e48bdd25183587a21f0ade2a4b5b58f01c9150",
+  "review_scope": [
+    "scripts/export_site.py",
+    "tests/test_public_export.py",
+    "site-export/README.md"
+  ],
+  "changed_files_sha256": {
+    "scripts/export_site.py": "b822738e0b2319a23199f5eaace82922ff094a58a5d957405b0aa0b4eb09f035",
+    "tests/test_public_export.py": "ac99f11fc782c13dbbb674a90e318e4742978bbd75838894cd6b9067be28029a",
+    "site-export/README.md": "0f096748753173337f3a5973d36d2fcc25fc86d84b07ca7555eb80e87daa9e1b"
+  },
+  "focused_tests": {
+    "run": 4,
+    "passed": 4
+  },
+  "independent_probes": {
+    "schema_version_bool": "rejected:ValueError",
+    "numeric_input_bool": "rejected:ValueError",
+    "expected_price_bool": "rejected:ValueError",
+    "output_schema": "rejected:ValueError",
+    "nonfinite_price": "rejected:ValueError",
+    "case_count": "rejected:ValueError",
+    "metadata_seed": "rejected:ValueError",
+    "main_copies_frozen_bytes": true,
+    "main_preserves_source_bytes": true,
+    "site-export/archive.json_unchanged": true,
+    "site-export/pricing-reference.json_unchanged": true,
+    "src/agenthon_quant/options.py_unchanged": true,
+    "src/agenthon_quant/trading.py_unchanged": true
+  },
+  "ci": {
+    "run_id": 43477435670,
+    "job_id": 132064823067,
+    "url": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/43477435670",
+    "independently_read_via_github_connector": true,
+    "source_commit_confirmed_in_job_logs": true,
+    "status": "success",
+    "python": "3.12.16",
+    "tests": 68,
+    "reported_price_differences": [
+      {
+        "case": "bsm-007",
+        "side": "call",
+        "saved": 0.000797909560859,
+        "current": 0.000797909560838,
+        "absolute_difference": 2.1000020299088984e-14
+      },
+      {
+        "case": "bsm-055",
+        "side": "call",
+        "saved": 5.83097571979e-28,
+        "current": 5.8309757198e-28,
+        "absolute_difference": 1.0000562672439063e-39
+      }
+    ]
+  },
+  "properties": [
+    "Archive remains byte-exact",
+    "Metadata, source identity, IDs and inputs compare with strict JSON semantics",
+    "Expected prices reject bool and nonfinite values, and use relative tolerance1e-11/absolute tolerance1e-12",
+    "Checker counts remain exact, including zero failed",
+    "Frozen reference bytes are copied unchanged by --check --site-root",
+    "Options/trading engines and both frozen public exports are unchanged from da1ad13"
+  ],
+  "blockers": [],
+  "limits": [
+    "This review covers the portability correction; prior archive/history review remains separately recorded",
+    "No claim that a specific libm or SciPy function caused the observed platform delta",
+    "Future appended final qualification receipts are not yet covered by this correction receipt"
+  ]
+}

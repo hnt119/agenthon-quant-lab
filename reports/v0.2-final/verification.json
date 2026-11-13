@@ -1,0 +1,150 @@
+{
+  "code": {
+    "dependencies": {
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.1",
+      "scipy": "1.18.1"
+    },
+    "files_sha256": {
+      "pyproject.toml": "630da8df5bbc121c94018ce0487f58b5f9c90660502c7309a38d668313a79692",
+      "src/agenthon_quant/__init__.py": "ed39253a169489853533eead39dcdb83d9c68fd332c7d8cb6daec5c605f395f0",
+      "src/agenthon_quant/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/agenthon_quant/archive.py": "32b45c112d08312b5fe04decd609151569df977beab8c226efd2f5b23c17dbf5",
+      "src/agenthon_quant/assistance.py": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef",
+      "src/agenthon_quant/cli.py": "6ae91e82ee9cc3b042c8cdff60a988993b42d983576862334ef72d5117a98801",
+      "src/agenthon_quant/onboarding.py": "20911b48b36df47422e5f97863462912cfc4de48318a1bcfdffb289fc15e5a1e",
+      "src/agenthon_quant/options.py": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0",
+      "src/agenthon_quant/records.py": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223",
+      "src/agenthon_quant/trading.py": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    "git_commit": "c9e48bdd25183587a21f0ade2a4b5b58f01c9150",
+    "package_version": "0.2.0",
+    "python": "3.12.7",
+    "runtime_source_dirty": false,
+    "source_fingerprint_sha256": "a0d1712fa4c2a8ba2f659277437978a1418d3abafd0dbacf561f899929ec8804",
+    "source_root": "/private/tmp/quant-release-integration"
+  },
+  "deliberate_cash_error_detected": true,
+  "deliberate_price_error_detected": true,
+  "elapsed_seconds": 6.6148950001224875,
+  "exact_analysis_reproduced": true,
+  "explain_invalid_exit": 0,
+  "model_calls": 0,
+  "paid_services_cost_usd": 0,
+  "status": "passed",
+  "test_command": [
+    "/private/tmp/quant-release-integration/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "test_exit": 0,
+  "tests_run": 68,
+  "workflows": [
+    {
+      "case": "options",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/private/tmp/quant-release-integration/.venv/bin/python",
+        "/private/tmp/quant-release-integration/skills/quant-research/scripts/quant.py",
+        "run",
+        "/private/tmp/quant-release-integration/examples/options.json",
+        "--out",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/options"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "3c47bd25b3ddd15e91570d2e9c192aaa12b949947d1f62f8d492f2b2c0ad15c4",
+      "verified": true
+    },
+    {
+      "case": "trading",
+      "check_counts": {
+        "failed": 0,
+        "passed": 24,
+        "unavailable": 1
+      },
+      "command": [
+        "/private/tmp/quant-release-integration/.venv/bin/python",
+        "/private/tmp/quant-release-integration/skills/quant-research/scripts/quant.py",
+        "run",
+        "/private/tmp/quant-release-integration/examples/trading.json",
+        "--out",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/trading"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "0e0ab0aeda5462a4b13bc401814889ca20c929166f3cfbb60a77bc5e4d6cc6a8",
+      "verified": true
+    },
+    {
+      "case": "invalid-options",
+      "check_counts": {
+        "failed": 1,
+        "passed": 0,
+        "unavailable": 0
+      },
+      "command": [
+        "/private/tmp/quant-release-integration/.venv/bin/python",
+        "/private/tmp/quant-release-integration/skills/quant-research/scripts/quant.py",
+        "run",
+        "/private/tmp/quant-release-integration/examples/invalid-options.json",
+        "--out",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/invalid-options"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "run_record_sha256": "e3b8941ae7d88450f13601cebeb2a5952e19894a7caa94acd63a61a3f7282506",
+      "verified": true
+    },
+    {
+      "case": "options-reproduced",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/private/tmp/quant-release-integration/.venv/bin/python",
+        "/private/tmp/quant-release-integration/skills/quant-research/scripts/quant.py",
+        "reproduce",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/options",
+        "--out",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/options-reproduced"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "170c7ea7a45900db8334461b063c4384cb904a431924f12a4eca5ac26244e507",
+      "verified": true
+    },
+    {
+      "case": "options-vol30",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/private/tmp/quant-release-integration/.venv/bin/python",
+        "/private/tmp/quant-release-integration/skills/quant-research/scripts/quant.py",
+        "reproduce",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/options",
+        "--set",
+        "volatility=0.3",
+        "--out",
+        "/private/tmp/quant-release-integration/reports/v0.2-final/options-vol30"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "b245726a107f6e686e4767d759f0e3aac2ad89f48b1545b7031505a2fe037715",
+      "verified": true
+    }
+  ]
+}

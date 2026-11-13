@@ -1,0 +1,12 @@
+{
+  "status": "invalid",
+  "error": "maturity_years and volatility must be nonnegative",
+  "checks": [
+    {
+      "details": "maturity_years and volatility must be nonnegative",
+      "name": "input_and_execution_contract",
+      "status": "failed"
+    }
+  ],
+  "warnings": []
+}
