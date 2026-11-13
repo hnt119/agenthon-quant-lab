@@ -114,18 +114,18 @@ def numerical_reference():
 def check_reference(saved, current):
     """Check a frozen numerical corpus across libm/SciPy builds, without rewriting it."""
     differences = []
-    if saved.keys() != current.keys() or {k: v for k, v in saved.items() if k != "cases"} != {k: v for k, v in current.items() if k != "cases"}:
+    if saved.keys() != current.keys() or encoded({k: v for k, v in saved.items() if k != "cases"}) != encoded({k: v for k, v in current.items() if k != "cases"}):
         raise ValueError("Pricing reference metadata or source identity changed")
     if len(saved["cases"]) != len(current["cases"]):
         raise ValueError("Pricing reference case count changed")
     for before, after in zip(saved["cases"], current["cases"]):
-        if before.keys() != after.keys() or any(before[k] != after[k] for k in before if k not in {"expected", "python_check_counts"}):
+        if before.keys() != after.keys() or any(encoded(before[k]) != encoded(after[k]) for k in before if k not in {"expected", "python_check_counts"}):
             raise ValueError("Pricing reference inputs or case identity changed")
         if before["expected"].keys() != after["expected"].keys():
             raise ValueError("Pricing reference output schema changed")
         for side, value in before["expected"].items():
             actual = after["expected"][side]
-            if not isinstance(value, (int, float)) or not isinstance(actual, (int, float)) or not math.isfinite(value) or not math.isfinite(actual) or not math.isclose(value, actual, rel_tol=1e-11, abs_tol=1e-12):
+            if type(value) not in (int, float) or type(actual) not in (int, float) or not math.isfinite(value) or not math.isfinite(actual) or not math.isclose(value, actual, rel_tol=1e-11, abs_tol=1e-12):
                 raise ValueError(f"Pricing reference value drift: {before['id']} {side}: {value!r} -> {actual!r}")
             if value != actual:
                 differences.append({"case": before["id"], "field": side, "saved": value, "current": actual, "absolute_difference": abs(value-actual)})

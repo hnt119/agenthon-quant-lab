@@ -38,6 +38,16 @@ class PublicExportTests(unittest.TestCase):
     def test_numerical_corpus_allows_only_bounded_rounding_and_preserves_checks(self):
         import copy
         current = export.numerical_reference()
+        for mutation in ("schema_bool", "input_bool", "price_bool"):
+            bad = copy.deepcopy(current)
+            if mutation == "schema_bool":
+                bad["schema_version"] = True
+            elif mutation == "input_bool":
+                bad["cases"][0]["inputs"]["years"] = True
+            else:
+                bad["cases"][1]["expected"]["call"] = False
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                export.check_reference(bad, current)
         saved = copy.deepcopy(current)
         saved["cases"][0]["expected"]["call"] += 1e-12
         self.assertEqual(len(export.check_reference(saved, current)), 1)
