@@ -37,3 +37,28 @@ For a trading cost comparison, use `--set 'fee_bps=10'`. The engine verifies
 snapshot hashes and source fingerprint before applying the change; the derived
 record identifies its parent and changes. The original run stays intact. Exact
 reproduction omits `--set`; compare analysis results, not elapsed times or paths.
+
+## “Find papers relevant to this pricing approach and show what is implemented.”
+
+Run `archive papers "pricing" --json`, substituting the relevant topic. Read each
+matching record's adaptation status and source link. Explain what the current
+engine implements, what only inspired it, and what remains proposed or deferred.
+Use only the relevant linked reference when further reading is necessary. Search
+results are curated metadata, not evidence that every proposal was implemented.
+
+## “Which historical experiments failed or remain incomplete?”
+
+Run `archive experiments --status failed --json` and, when relevant,
+`archive experiments --status incomplete --json`. Preserve the recorded candidate,
+deployment, denominator, evidence category, costs/unknowns and resulting decision.
+Do not combine passes across candidates or relabel provider/administrative failures
+as numerical outcomes. This command reads history without executing an experiment.
+
+## Setup and private handoff
+
+Use `doctor` for local dependency/source/example diagnostics. `example options`
+or `example trading` exercises the bundled synthetic workflow with a new output.
+For a requested private handoff, `bundle <run-dir> --out <new.zip>` verifies saved
+inputs and packages only allowed run files. State that it includes user inputs
+and local paths, is private by default, and performs no upload. A public export
+requires the separate curated publication workflow.
