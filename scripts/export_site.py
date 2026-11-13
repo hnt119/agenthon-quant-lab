@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 import random
 import re
@@ -110,6 +111,32 @@ def numerical_reference():
             "reference_source_sha256": sha((ROOT / "src/agenthon_quant/options.py").read_bytes()), "cases": cases}
 
 
+def check_reference(saved, current):
+    """Check a frozen numerical corpus across libm/SciPy builds, without rewriting it."""
+    differences = []
+    if saved.keys() != current.keys() or {k: v for k, v in saved.items() if k != "cases"} != {k: v for k, v in current.items() if k != "cases"}:
+        raise ValueError("Pricing reference metadata or source identity changed")
+    if len(saved["cases"]) != len(current["cases"]):
+        raise ValueError("Pricing reference case count changed")
+    for before, after in zip(saved["cases"], current["cases"]):
+        if before.keys() != after.keys() or any(before[k] != after[k] for k in before if k not in {"expected", "python_check_counts"}):
+            raise ValueError("Pricing reference inputs or case identity changed")
+        if before["expected"].keys() != after["expected"].keys():
+            raise ValueError("Pricing reference output schema changed")
+        for side, value in before["expected"].items():
+            actual = after["expected"][side]
+            if not isinstance(value, (int, float)) or not isinstance(actual, (int, float)) or not math.isfinite(value) or not math.isfinite(actual) or not math.isclose(value, actual, rel_tol=1e-11, abs_tol=1e-12):
+                raise ValueError(f"Pricing reference value drift: {before['id']} {side}: {value!r} -> {actual!r}")
+            if value != actual:
+                differences.append({"case": before["id"], "field": side, "saved": value, "current": actual, "absolute_difference": abs(value-actual)})
+        a, b = before["python_check_counts"], after["python_check_counts"]
+        if any(set(counts) != {"passed", "failed", "unavailable"} or any(type(v) is not int or v < 0 for v in counts.values()) or counts["failed"] != 0 for counts in (a, b)) or sum(a.values()) != sum(b.values()):
+            raise ValueError("Pricing reference checker failure or schema changed")
+        if a != b:
+            raise ValueError(f"Checker applicability changed for {before['id']}: {a!r} -> {b!r}; requires separate investigation")
+    return differences
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Fail if the checked-in projection has drifted")
@@ -119,8 +146,18 @@ def main():
     directory = ROOT / "site-export"
     if args.check:
         for name, data in outputs.items():
-            if not (directory / name).is_file() or (directory / name).read_bytes() != data:
-                parser.exit(2, f"Projection drift: site-export/{name}; regenerate with scripts/export_site.py\n")
+            if not (directory / name).is_file():
+                parser.exit(2, f"Missing frozen projection: site-export/{name}\n")
+            saved = (directory / name).read_bytes()
+            if saved != data:
+                if name != "pricing-reference.json":
+                    parser.exit(2, f"Projection drift: site-export/{name}; regenerate with scripts/export_site.py\n")
+                try:
+                    differences = check_reference(json.loads(saved), json.loads(data))
+                except (ValueError, KeyError, TypeError) as exc:
+                    parser.exit(2, f"Projection drift: {exc}\n")
+                print(json.dumps({"reference_comparison": "within_explicit_tolerance", "differences": differences}, indent=2))
+            outputs[name] = saved
     else:
         directory.mkdir(exist_ok=True)
         for name, data in outputs.items():

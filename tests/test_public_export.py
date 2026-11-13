@@ -34,3 +34,33 @@ class PublicExportTests(unittest.TestCase):
             (root / "experiments/experiments.json").write_bytes((ROOT / "experiments/experiments.json").read_bytes())
             with self.assertRaisesRegex(ValueError, "unknown experiment"):
                 export.projection(root)
+
+    def test_numerical_corpus_allows_only_bounded_rounding_and_preserves_checks(self):
+        import copy
+        current = export.numerical_reference()
+        saved = copy.deepcopy(current)
+        saved["cases"][0]["expected"]["call"] += 1e-12
+        self.assertEqual(len(export.check_reference(saved, current)), 1)
+        saved["cases"][0]["expected"]["call"] += .001
+        with self.assertRaises(ValueError):
+            export.check_reference(saved, current)
+        for field in ("id", "inputs"):
+            bad = copy.deepcopy(current)
+            bad["cases"][0][field] = "changed"
+            with self.assertRaises(ValueError):
+                export.check_reference(bad, current)
+        bad = copy.deepcopy(current)
+        bad["reference_source_sha256"] = "changed"
+        with self.assertRaises(ValueError):
+            export.check_reference(bad, current)
+        bad = copy.deepcopy(current)
+        bad["cases"][0]["python_check_counts"]["passed"] -= 1
+        bad["cases"][0]["python_check_counts"]["unavailable"] += 1
+        with self.assertRaises(ValueError):
+            export.check_reference(bad, current)
+        bad = copy.deepcopy(current)
+        bad["cases"][0]["python_check_counts"]["failed"] = 1
+        with self.assertRaises(ValueError):
+            export.check_reference(bad, current)
+
+
