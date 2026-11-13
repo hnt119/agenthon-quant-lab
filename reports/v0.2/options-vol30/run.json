@@ -1,0 +1,1568 @@
+{
+  "analysis": {
+    "assumptions": {
+      "currency": "USD",
+      "dividends": "constant continuous annual yield; discrete dividends unsupported",
+      "greek_units": {
+        "delta": "price per one currency-unit increase in spot",
+        "gamma": "delta per one currency-unit increase in spot",
+        "rho": "price per +1.0 decimal annual rate (multiply by 0.01 for one percentage point)",
+        "theta": "calendar theta: -dPrice/dMaturity, per year",
+        "vega": "price per +1.0 decimal annual volatility (multiply by 0.01 for one percentage point)"
+      },
+      "maturity": "explicit year fraction; no calendar/day-count conversion performed",
+      "model": "Black-Scholes-Merton; European vanilla; one unit of underlying",
+      "random_seed": null,
+      "rate_compounding": "continuous",
+      "volatility": "annualized log-return volatility in decimal units"
+    },
+    "checks": [
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "call_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 2.896924880604118,
+        "name": "call_price_bounds",
+        "observed": 13.020281268727338,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 98.01986733067552
+      },
+      {
+        "absolute_error": 8.881784197001252e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 9.491874592455656e-12,
+        "name": "call_payoff_quadrature",
+        "observed": 13.020281268727338,
+        "reference": 13.020281268727347,
+        "status": "passed",
+        "tolerance": 1.960406838488103e-06
+      },
+      {
+        "coarse": 0.5868507601051931,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.5868510496271284,
+        "name": "call_delta_finite_difference",
+        "observed": 0.586851146134764,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00031342552481356423
+      },
+      {
+        "coarse": 0.012633712941578777,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.012633717611265636,
+        "name": "call_gamma_finite_difference",
+        "observed": 0.012633719170005811,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 8.316858805632818e-06
+      },
+      {
+        "coarse": 37.90115747328571,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.901157500854765,
+        "name": "call_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578750427382
+      },
+      {
+        "coarse": 45.66483334151882,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 45.66483334542681,
+        "name": "call_rho_finite_difference",
+        "observed": 45.664833344749056,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.022852416672713403
+      },
+      {
+        "coarse": -6.794713009199427,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -6.794713003372976,
+        "name": "call_theta_finite_difference",
+        "observed": -6.794713001470539,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0034173565016864882
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "put_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 0,
+        "name": "put_price_bounds",
+        "observed": 10.123356388123227,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 95.1229424500714
+      },
+      {
+        "absolute_error": 1.7763568394002505e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 8.949651661501108e-12,
+        "name": "put_payoff_quadrature",
+        "observed": 10.123356388123227,
+        "reference": 10.123356388123225,
+        "status": "passed",
+        "tolerance": 1.960406296265172e-06
+      },
+      {
+        "coarse": -0.3933479132015094,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -0.39334762367950304,
+        "name": "put_delta_finite_difference",
+        "observed": -0.3933475271719913,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00021667381183975153
+      },
+      {
+        "coarse": 0.012633712940157691,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.012633717611265636,
+        "name": "put_gamma_finite_difference",
+        "observed": 0.012633719170005811,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 8.316858805632818e-06
+      },
+      {
+        "coarse": 37.90115747328571,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.901157500854765,
+        "name": "put_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578750427382
+      },
+      {
+        "coarse": -49.45810910932379,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -49.45810910541581,
+        "name": "put_rho_finite_difference",
+        "observed": -49.45810910532236,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.024749054552707903
+      },
+      {
+        "coarse": -3.9989632333714553,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -3.998963227545005,
+        "name": "put_theta_finite_difference",
+        "observed": -3.9989632255804795,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0020194816137725025
+      },
+      {
+        "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+        "name": "put_call_parity",
+        "residual": -7.105427357601002e-15,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08
+      },
+      {
+        "details": "Scenario outputs must match the complete requested volatility list and order",
+        "name": "scenario_roster",
+        "status": "passed"
+      },
+      {
+        "details": "Scenario volatility equals requested decimal volatility",
+        "name": "scenario[0].input",
+        "status": "passed"
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[0].call_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 2.896924880604118,
+        "name": "scenario[0].call_price_bounds",
+        "observed": 2.896924880604118,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 98.01986733067552
+      },
+      {
+        "absolute_error": 0.0,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 0.0,
+        "name": "scenario[0].call_payoff_quadrature",
+        "observed": 2.896924880604118,
+        "reference": 2.896924880604118,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-06
+      },
+      {
+        "details": "Central finite differences are not used at the expiry or zero-volatility boundary; null quantities are explicitly unavailable",
+        "name": "scenario[0].call_greek_finite_differences",
+        "status": "unavailable"
+      },
+      {
+        "details": "Check explicit deterministic derivatives and unavailable boundary quantities",
+        "name": "scenario[0].call_boundary_greeks",
+        "status": "passed"
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[0].put_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 0,
+        "name": "scenario[0].put_price_bounds",
+        "observed": 0.0,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 95.1229424500714
+      },
+      {
+        "absolute_error": 0.0,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 0.0,
+        "name": "scenario[0].put_payoff_quadrature",
+        "observed": 0.0,
+        "reference": 0.0,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-06
+      },
+      {
+        "details": "Central finite differences are not used at the expiry or zero-volatility boundary; null quantities are explicitly unavailable",
+        "name": "scenario[0].put_greek_finite_differences",
+        "status": "unavailable"
+      },
+      {
+        "details": "Check explicit deterministic derivatives and unavailable boundary quantities",
+        "name": "scenario[0].put_boundary_greeks",
+        "status": "passed"
+      },
+      {
+        "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+        "name": "scenario[0].put_call_parity",
+        "residual": 0.0,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08
+      },
+      {
+        "details": "Scenario volatility equals requested decimal volatility",
+        "name": "scenario[1].input",
+        "status": "passed"
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[1].call_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 2.896924880604118,
+        "name": "scenario[1].call_price_bounds",
+        "observed": 5.471348577911421,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 98.01986733067552
+      },
+      {
+        "absolute_error": 4.440892098500626e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 3.693986666721521e-12,
+        "name": "scenario[1].call_payoff_quadrature",
+        "observed": 5.471348577911421,
+        "reference": 5.471348577911425,
+        "status": "passed",
+        "tolerance": 1.9604010406001773e-06
+      },
+      {
+        "coarse": 0.6242178008733035,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.624219869762328,
+        "name": "scenario[1].call_delta_finite_difference",
+        "observed": 0.6242205594034188,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.000332109934881164
+      },
+      {
+        "coarse": 0.03678077837676596,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.03678095135910552,
+        "name": "scenario[1].call_gamma_finite_difference",
+        "observed": 0.03678100902191491,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 2.0390475679552764e-05
+      },
+      {
+        "coarse": 36.781007398403176,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 36.781008615776045,
+        "name": "scenario[1].call_vega_finite_difference",
+        "observed": 36.78100902191491,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018410504307888022
+      },
+      {
+        "coarse": 56.95070733509055,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 56.95070735569629,
+        "name": "scenario[1].call_rho_finite_difference",
+        "observed": 56.95070736243046,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.028495353677848143
+      },
+      {
+        "coarse": -3.438144702911927,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -3.438144700993462,
+        "name": "scenario[1].call_theta_finite_difference",
+        "observed": -3.4381447004104313,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.001739072350496731
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[1].put_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 0,
+        "name": "scenario[1].put_price_bounds",
+        "observed": 2.57442369730731,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 95.1229424500714
+      },
+      {
+        "absolute_error": 5.329070518200751e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 1.6747253411909732e-12,
+        "name": "scenario[1].put_payoff_quadrature",
+        "observed": 2.57442369730731,
+        "reference": 2.5744236973073047,
+        "status": "passed",
+        "tolerance": 1.9603990213388518e-06
+      },
+      {
+        "coarse": -0.35598087243339904,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -0.3559788035443745,
+        "name": "scenario[1].put_delta_finite_difference",
+        "observed": -0.35597811390333645,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00019798940177218725
+      },
+      {
+        "coarse": 0.03678077837392379,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.03678095135626335,
+        "name": "scenario[1].put_gamma_finite_difference",
+        "observed": 0.03678100902191491,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 2.0390475678131676e-05
+      },
+      {
+        "coarse": 36.78100739836765,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 36.78100861598921,
+        "name": "scenario[1].put_vega_finite_difference",
+        "observed": 36.78100902191491,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018410504307994603
+      },
+      {
+        "coarse": -38.172235116107345,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -38.17223509443579,
+        "name": "scenario[1].put_rho_finite_difference",
+        "observed": -38.17223508764095,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.019106117547217895
+      },
+      {
+        "coarse": -0.6423949270129015,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -0.6423949250944361,
+        "name": "scenario[1].put_theta_finite_difference",
+        "observed": -0.6423949245203713,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.00034119746254721804
+      },
+      {
+        "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+        "name": "scenario[1].put_call_parity",
+        "residual": -7.105427357601002e-15,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08
+      },
+      {
+        "details": "Scenario volatility equals requested decimal volatility",
+        "name": "scenario[2].input",
+        "status": "passed"
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[2].call_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 2.896924880604118,
+        "name": "scenario[2].call_price_bounds",
+        "observed": 9.227005508154036,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 98.01986733067552
+      },
+      {
+        "absolute_error": 7.105427357601002e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 6.854784548283699e-12,
+        "name": "scenario[2].call_payoff_quadrature",
+        "observed": 9.227005508154036,
+        "reference": 9.227005508154043,
+        "status": "passed",
+        "tolerance": 1.9604042013980587e-06
+      },
+      {
+        "coarse": 0.5868504354913995,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.5868509684732715,
+        "name": "scenario[2].call_delta_finite_difference",
+        "observed": 0.586851146134764,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00031342548423663575
+      },
+      {
+        "coarse": 0.018950550824570197,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.018950571774212218,
+        "name": "scenario[2].call_gamma_finite_difference",
+        "observed": 0.018950578755008718,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 1.1475285887106109e-05
+      },
+      {
+        "coarse": 37.901157387914,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.90115747946743,
+        "name": "scenario[2].call_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578739733714
+      },
+      {
+        "coarse": 49.45810909902092,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 49.45810910399472,
+        "name": "scenario[2].call_rho_finite_difference",
+        "observed": 49.45810910532236,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.02474905455199736
+      },
+      {
+        "coarse": -5.0893189190048815,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -5.089318915239005,
+        "name": "scenario[2].call_theta_finite_difference",
+        "observed": -5.0893189139983335,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0025646594576195026
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[2].put_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 0,
+        "name": "scenario[2].put_price_bounds",
+        "observed": 6.3300806275499255,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 95.1229424500714
+      },
+      {
+        "absolute_error": 8.881784197001252e-16,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 5.535383647537332e-12,
+        "name": "scenario[2].put_payoff_quadrature",
+        "observed": 6.3300806275499255,
+        "reference": 6.330080627549925,
+        "status": "passed",
+        "tolerance": 1.9604028819971578e-06
+      },
+      {
+        "coarse": -0.39334823781530304,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -0.39334770483336,
+        "name": "scenario[2].put_delta_finite_difference",
+        "observed": -0.3933475271719913,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00021667385241668
+      },
+      {
+        "coarse": 0.018950550821728026,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.018950571768527876,
+        "name": "scenario[2].put_gamma_finite_difference",
+        "observed": 0.018950578755008718,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 1.1475285884263937e-05
+      },
+      {
+        "coarse": 37.90115738787847,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.90115747946743,
+        "name": "scenario[2].put_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578739733714
+      },
+      {
+        "coarse": -45.664833352532234,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -45.66483334613735,
+        "name": "scenario[2].put_rho_finite_difference",
+        "observed": -45.664833344749056,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.022852416673068674
+      },
+      {
+        "coarse": -2.29356914317691,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -2.2935691394110336,
+        "name": "scenario[2].put_theta_finite_difference",
+        "observed": -2.2935691381082735,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0011667845697055168
+      },
+      {
+        "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+        "name": "scenario[2].put_call_parity",
+        "residual": -7.105427357601002e-15,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08
+      },
+      {
+        "details": "Scenario volatility equals requested decimal volatility",
+        "name": "scenario[3].input",
+        "status": "passed"
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[3].call_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 2.896924880604118,
+        "name": "scenario[3].call_price_bounds",
+        "observed": 13.020281268727338,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 98.01986733067552
+      },
+      {
+        "absolute_error": 8.881784197001252e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 9.491874592455656e-12,
+        "name": "scenario[3].call_payoff_quadrature",
+        "observed": 13.020281268727338,
+        "reference": 13.020281268727347,
+        "status": "passed",
+        "tolerance": 1.960406838488103e-06
+      },
+      {
+        "coarse": 0.5868507601051931,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.5868510496271284,
+        "name": "scenario[3].call_delta_finite_difference",
+        "observed": 0.586851146134764,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00031342552481356423
+      },
+      {
+        "coarse": 0.012633712941578777,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.012633717611265636,
+        "name": "scenario[3].call_gamma_finite_difference",
+        "observed": 0.012633719170005811,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 8.316858805632818e-06
+      },
+      {
+        "coarse": 37.90115747328571,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.901157500854765,
+        "name": "scenario[3].call_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578750427382
+      },
+      {
+        "coarse": 45.66483334151882,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 45.66483334542681,
+        "name": "scenario[3].call_rho_finite_difference",
+        "observed": 45.664833344749056,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.022852416672713403
+      },
+      {
+        "coarse": -6.794713009199427,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -6.794713003372976,
+        "name": "scenario[3].call_theta_finite_difference",
+        "observed": -6.794713001470539,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0034173565016864882
+      },
+      {
+        "details": "Finite price and exactly five finite-or-null Greek quantities required",
+        "name": "scenario[3].put_finite_structure",
+        "status": "passed"
+      },
+      {
+        "details": "Discounted European lower and upper bounds",
+        "lower": 0,
+        "name": "scenario[3].put_price_bounds",
+        "observed": 10.123356388123227,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08,
+        "upper": 95.1229424500714
+      },
+      {
+        "absolute_error": 1.7763568394002505e-15,
+        "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+        "integration_error_estimate_plus_tail_bound": 8.949651661501108e-12,
+        "name": "scenario[3].put_payoff_quadrature",
+        "observed": 10.123356388123227,
+        "reference": 10.123356388123225,
+        "status": "passed",
+        "tolerance": 1.960406296265172e-06
+      },
+      {
+        "coarse": -0.3933479132015094,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -0.39334762367950304,
+        "name": "scenario[3].put_delta_finite_difference",
+        "observed": -0.3933475271719913,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 0.00021667381183975153
+      },
+      {
+        "coarse": 0.012633712940157691,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 0.012633717611265636,
+        "name": "scenario[3].put_gamma_finite_difference",
+        "observed": 0.012633719170005811,
+        "status": "passed",
+        "step": 0.1,
+        "step_convergence_passed": true,
+        "tolerance": 8.316858805632818e-06
+      },
+      {
+        "coarse": 37.90115747328571,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": 37.901157500854765,
+        "name": "scenario[3].put_vega_finite_difference",
+        "observed": 37.901157510017434,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.018970578750427382
+      },
+      {
+        "coarse": -49.45810910932379,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -49.45810910541581,
+        "name": "scenario[3].put_rho_finite_difference",
+        "observed": -49.45810910532236,
+        "status": "passed",
+        "step": 1e-05,
+        "step_convergence_passed": true,
+        "tolerance": 0.024749054552707903
+      },
+      {
+        "coarse": -3.9989632333714553,
+        "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+        "fine": -3.998963227545005,
+        "name": "scenario[3].put_theta_finite_difference",
+        "observed": -3.9989632255804795,
+        "status": "passed",
+        "step": 0.0001,
+        "step_convergence_passed": true,
+        "tolerance": 0.0020194816137725025
+      },
+      {
+        "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+        "name": "scenario[3].put_call_parity",
+        "residual": -7.105427357601002e-15,
+        "status": "passed",
+        "tolerance": 1.9603973466135104e-08
+      }
+    ],
+    "results": {
+      "valuations": {
+        "call": {
+          "greeks": {
+            "delta": 0.586851146134764,
+            "gamma": 0.012633719170005811,
+            "rho": 45.664833344749056,
+            "theta": -6.794713001470539,
+            "vega": 37.901157510017434
+          },
+          "price": 13.020281268727338
+        },
+        "put": {
+          "greeks": {
+            "delta": -0.3933475271719913,
+            "gamma": 0.012633719170005811,
+            "rho": -49.45810910532236,
+            "theta": -3.9989632255804795,
+            "vega": 37.901157510017434
+          },
+          "price": 10.123356388123227
+        }
+      },
+      "volatility_scenarios": [
+        {
+          "checks": [
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "call_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 2.896924880604118,
+              "name": "call_price_bounds",
+              "observed": 2.896924880604118,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 98.01986733067552
+            },
+            {
+              "absolute_error": 0.0,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 0.0,
+              "name": "call_payoff_quadrature",
+              "observed": 2.896924880604118,
+              "reference": 2.896924880604118,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-06
+            },
+            {
+              "details": "Central finite differences are not used at the expiry or zero-volatility boundary; null quantities are explicitly unavailable",
+              "name": "call_greek_finite_differences",
+              "status": "unavailable"
+            },
+            {
+              "details": "Check explicit deterministic derivatives and unavailable boundary quantities",
+              "name": "call_boundary_greeks",
+              "status": "passed"
+            },
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "put_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 0,
+              "name": "put_price_bounds",
+              "observed": 0.0,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 95.1229424500714
+            },
+            {
+              "absolute_error": 0.0,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 0.0,
+              "name": "put_payoff_quadrature",
+              "observed": 0.0,
+              "reference": 0.0,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-06
+            },
+            {
+              "details": "Central finite differences are not used at the expiry or zero-volatility boundary; null quantities are explicitly unavailable",
+              "name": "put_greek_finite_differences",
+              "status": "unavailable"
+            },
+            {
+              "details": "Check explicit deterministic derivatives and unavailable boundary quantities",
+              "name": "put_boundary_greeks",
+              "status": "passed"
+            },
+            {
+              "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+              "name": "put_call_parity",
+              "residual": 0.0,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08
+            }
+          ],
+          "valuations": {
+            "call": {
+              "greeks": {
+                "delta": 0.9801986733067553,
+                "gamma": 0.0,
+                "rho": 95.1229424500714,
+                "theta": -2.7957497758900596,
+                "vega": 0.0
+              },
+              "price": 2.896924880604118
+            },
+            "put": {
+              "greeks": {
+                "delta": 0.0,
+                "gamma": 0.0,
+                "rho": 0.0,
+                "theta": 0.0,
+                "vega": 0.0
+              },
+              "price": 0.0
+            }
+          },
+          "volatility": 0.0
+        },
+        {
+          "checks": [
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "call_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 2.896924880604118,
+              "name": "call_price_bounds",
+              "observed": 5.471348577911421,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 98.01986733067552
+            },
+            {
+              "absolute_error": 4.440892098500626e-15,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 3.693986666721521e-12,
+              "name": "call_payoff_quadrature",
+              "observed": 5.471348577911421,
+              "reference": 5.471348577911425,
+              "status": "passed",
+              "tolerance": 1.9604010406001773e-06
+            },
+            {
+              "coarse": 0.6242178008733035,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.624219869762328,
+              "name": "call_delta_finite_difference",
+              "observed": 0.6242205594034188,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.000332109934881164
+            },
+            {
+              "coarse": 0.03678077837676596,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.03678095135910552,
+              "name": "call_gamma_finite_difference",
+              "observed": 0.03678100902191491,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 2.0390475679552764e-05
+            },
+            {
+              "coarse": 36.781007398403176,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 36.781008615776045,
+              "name": "call_vega_finite_difference",
+              "observed": 36.78100902191491,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018410504307888022
+            },
+            {
+              "coarse": 56.95070733509055,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 56.95070735569629,
+              "name": "call_rho_finite_difference",
+              "observed": 56.95070736243046,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.028495353677848143
+            },
+            {
+              "coarse": -3.438144702911927,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -3.438144700993462,
+              "name": "call_theta_finite_difference",
+              "observed": -3.4381447004104313,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.001739072350496731
+            },
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "put_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 0,
+              "name": "put_price_bounds",
+              "observed": 2.57442369730731,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 95.1229424500714
+            },
+            {
+              "absolute_error": 5.329070518200751e-15,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 1.6747253411909732e-12,
+              "name": "put_payoff_quadrature",
+              "observed": 2.57442369730731,
+              "reference": 2.5744236973073047,
+              "status": "passed",
+              "tolerance": 1.9603990213388518e-06
+            },
+            {
+              "coarse": -0.35598087243339904,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -0.3559788035443745,
+              "name": "put_delta_finite_difference",
+              "observed": -0.35597811390333645,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.00019798940177218725
+            },
+            {
+              "coarse": 0.03678077837392379,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.03678095135626335,
+              "name": "put_gamma_finite_difference",
+              "observed": 0.03678100902191491,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 2.0390475678131676e-05
+            },
+            {
+              "coarse": 36.78100739836765,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 36.78100861598921,
+              "name": "put_vega_finite_difference",
+              "observed": 36.78100902191491,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018410504307994603
+            },
+            {
+              "coarse": -38.172235116107345,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -38.17223509443579,
+              "name": "put_rho_finite_difference",
+              "observed": -38.17223508764095,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.019106117547217895
+            },
+            {
+              "coarse": -0.6423949270129015,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -0.6423949250944361,
+              "name": "put_theta_finite_difference",
+              "observed": -0.6423949245203713,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.00034119746254721804
+            },
+            {
+              "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+              "name": "put_call_parity",
+              "residual": -7.105427357601002e-15,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08
+            }
+          ],
+          "valuations": {
+            "call": {
+              "greeks": {
+                "delta": 0.6242205594034188,
+                "gamma": 0.03678100902191491,
+                "rho": 56.95070736243046,
+                "theta": -3.4381447004104313,
+                "vega": 36.78100902191491
+              },
+              "price": 5.471348577911421
+            },
+            "put": {
+              "greeks": {
+                "delta": -0.35597811390333645,
+                "gamma": 0.03678100902191491,
+                "rho": -38.17223508764095,
+                "theta": -0.6423949245203713,
+                "vega": 36.78100902191491
+              },
+              "price": 2.57442369730731
+            }
+          },
+          "volatility": 0.1
+        },
+        {
+          "checks": [
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "call_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 2.896924880604118,
+              "name": "call_price_bounds",
+              "observed": 9.227005508154036,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 98.01986733067552
+            },
+            {
+              "absolute_error": 7.105427357601002e-15,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 6.854784548283699e-12,
+              "name": "call_payoff_quadrature",
+              "observed": 9.227005508154036,
+              "reference": 9.227005508154043,
+              "status": "passed",
+              "tolerance": 1.9604042013980587e-06
+            },
+            {
+              "coarse": 0.5868504354913995,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.5868509684732715,
+              "name": "call_delta_finite_difference",
+              "observed": 0.586851146134764,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.00031342548423663575
+            },
+            {
+              "coarse": 0.018950550824570197,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.018950571774212218,
+              "name": "call_gamma_finite_difference",
+              "observed": 0.018950578755008718,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 1.1475285887106109e-05
+            },
+            {
+              "coarse": 37.901157387914,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 37.90115747946743,
+              "name": "call_vega_finite_difference",
+              "observed": 37.901157510017434,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018970578739733714
+            },
+            {
+              "coarse": 49.45810909902092,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 49.45810910399472,
+              "name": "call_rho_finite_difference",
+              "observed": 49.45810910532236,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.02474905455199736
+            },
+            {
+              "coarse": -5.0893189190048815,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -5.089318915239005,
+              "name": "call_theta_finite_difference",
+              "observed": -5.0893189139983335,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.0025646594576195026
+            },
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "put_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 0,
+              "name": "put_price_bounds",
+              "observed": 6.3300806275499255,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 95.1229424500714
+            },
+            {
+              "absolute_error": 8.881784197001252e-16,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 5.535383647537332e-12,
+              "name": "put_payoff_quadrature",
+              "observed": 6.3300806275499255,
+              "reference": 6.330080627549925,
+              "status": "passed",
+              "tolerance": 1.9604028819971578e-06
+            },
+            {
+              "coarse": -0.39334823781530304,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -0.39334770483336,
+              "name": "put_delta_finite_difference",
+              "observed": -0.3933475271719913,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.00021667385241668
+            },
+            {
+              "coarse": 0.018950550821728026,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.018950571768527876,
+              "name": "put_gamma_finite_difference",
+              "observed": 0.018950578755008718,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 1.1475285884263937e-05
+            },
+            {
+              "coarse": 37.90115738787847,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 37.90115747946743,
+              "name": "put_vega_finite_difference",
+              "observed": 37.901157510017434,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018970578739733714
+            },
+            {
+              "coarse": -45.664833352532234,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -45.66483334613735,
+              "name": "put_rho_finite_difference",
+              "observed": -45.664833344749056,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.022852416673068674
+            },
+            {
+              "coarse": -2.29356914317691,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -2.2935691394110336,
+              "name": "put_theta_finite_difference",
+              "observed": -2.2935691381082735,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.0011667845697055168
+            },
+            {
+              "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+              "name": "put_call_parity",
+              "residual": -7.105427357601002e-15,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08
+            }
+          ],
+          "valuations": {
+            "call": {
+              "greeks": {
+                "delta": 0.586851146134764,
+                "gamma": 0.018950578755008718,
+                "rho": 49.45810910532236,
+                "theta": -5.0893189139983335,
+                "vega": 37.901157510017434
+              },
+              "price": 9.227005508154036
+            },
+            "put": {
+              "greeks": {
+                "delta": -0.3933475271719913,
+                "gamma": 0.018950578755008718,
+                "rho": -45.664833344749056,
+                "theta": -2.2935691381082735,
+                "vega": 37.901157510017434
+              },
+              "price": 6.3300806275499255
+            }
+          },
+          "volatility": 0.2
+        },
+        {
+          "checks": [
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "call_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 2.896924880604118,
+              "name": "call_price_bounds",
+              "observed": 13.020281268727338,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 98.01986733067552
+            },
+            {
+              "absolute_error": 8.881784197001252e-15,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 9.491874592455656e-12,
+              "name": "call_payoff_quadrature",
+              "observed": 13.020281268727338,
+              "reference": 13.020281268727347,
+              "status": "passed",
+              "tolerance": 1.960406838488103e-06
+            },
+            {
+              "coarse": 0.5868507601051931,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.5868510496271284,
+              "name": "call_delta_finite_difference",
+              "observed": 0.586851146134764,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.00031342552481356423
+            },
+            {
+              "coarse": 0.012633712941578777,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.012633717611265636,
+              "name": "call_gamma_finite_difference",
+              "observed": 0.012633719170005811,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 8.316858805632818e-06
+            },
+            {
+              "coarse": 37.90115747328571,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 37.901157500854765,
+              "name": "call_vega_finite_difference",
+              "observed": 37.901157510017434,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018970578750427382
+            },
+            {
+              "coarse": 45.66483334151882,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 45.66483334542681,
+              "name": "call_rho_finite_difference",
+              "observed": 45.664833344749056,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.022852416672713403
+            },
+            {
+              "coarse": -6.794713009199427,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -6.794713003372976,
+              "name": "call_theta_finite_difference",
+              "observed": -6.794713001470539,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.0034173565016864882
+            },
+            {
+              "details": "Finite price and exactly five finite-or-null Greek quantities required",
+              "name": "put_finite_structure",
+              "status": "passed"
+            },
+            {
+              "details": "Discounted European lower and upper bounds",
+              "lower": 0,
+              "name": "put_price_bounds",
+              "observed": 10.123356388123227,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08,
+              "upper": 95.1229424500714
+            },
+            {
+              "absolute_error": 1.7763568394002505e-15,
+              "details": "Independent discounted risk-neutral payoff integration (QUADPACK); deterministic payoff at boundary",
+              "integration_error_estimate_plus_tail_bound": 8.949651661501108e-12,
+              "name": "put_payoff_quadrature",
+              "observed": 10.123356388123227,
+              "reference": 10.123356388123225,
+              "status": "passed",
+              "tolerance": 1.960406296265172e-06
+            },
+            {
+              "coarse": -0.3933479132015094,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -0.39334762367950304,
+              "name": "put_delta_finite_difference",
+              "observed": -0.3933475271719913,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 0.00021667381183975153
+            },
+            {
+              "coarse": 0.012633712940157691,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 0.012633717611265636,
+              "name": "put_gamma_finite_difference",
+              "observed": 0.012633719170005811,
+              "status": "passed",
+              "step": 0.1,
+              "step_convergence_passed": true,
+              "tolerance": 8.316858805632818e-06
+            },
+            {
+              "coarse": 37.90115747328571,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": 37.901157500854765,
+              "name": "put_vega_finite_difference",
+              "observed": 37.901157510017434,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.018970578750427382
+            },
+            {
+              "coarse": -49.45810910932379,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -49.45810910541581,
+              "name": "put_rho_finite_difference",
+              "observed": -49.45810910532236,
+              "status": "passed",
+              "step": 1e-05,
+              "step_convergence_passed": true,
+              "tolerance": 0.024749054552707903
+            },
+            {
+              "coarse": -3.9989632333714553,
+              "details": "Central finite differences at h and h/2 must stabilize and agree with the reported analytic derivative",
+              "fine": -3.998963227545005,
+              "name": "put_theta_finite_difference",
+              "observed": -3.9989632255804795,
+              "status": "passed",
+              "step": 0.0001,
+              "step_convergence_passed": true,
+              "tolerance": 0.0020194816137725025
+            },
+            {
+              "details": "C-P = S exp(-qT)-K exp(-rT); complementary side recomputed when only one side requested",
+              "name": "put_call_parity",
+              "residual": -7.105427357601002e-15,
+              "status": "passed",
+              "tolerance": 1.9603973466135104e-08
+            }
+          ],
+          "valuations": {
+            "call": {
+              "greeks": {
+                "delta": 0.586851146134764,
+                "gamma": 0.012633719170005811,
+                "rho": 45.664833344749056,
+                "theta": -6.794713001470539,
+                "vega": 37.901157510017434
+              },
+              "price": 13.020281268727338
+            },
+            "put": {
+              "greeks": {
+                "delta": -0.3933475271719913,
+                "gamma": 0.012633719170005811,
+                "rho": -49.45810910532236,
+                "theta": -3.9989632255804795,
+                "vega": 37.901157510017434
+              },
+              "price": 10.123356388123227
+            }
+          },
+          "volatility": 0.3
+        }
+      ]
+    },
+    "warnings": [
+      "Model values are conditional on constant volatility, rates and continuous dividend yield; numerical checks do not establish market accuracy.",
+      "Zero-volatility prices use the deterministic discounted payoff. At its kink, non-two-sided derivatives are null; finite-difference Greek checks are unavailable.",
+      "Some validation checks are unavailable; inspect their applicability before interpreting results."
+    ],
+    "workflow": "options"
+  },
+  "check_counts": {
+    "failed": 0,
+    "passed": 82,
+    "unavailable": 2
+  },
+  "code": {
+    "dependencies": {
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.1",
+      "scipy": "1.18.1"
+    },
+    "files_sha256": {
+      "pyproject.toml": "630da8df5bbc121c94018ce0487f58b5f9c90660502c7309a38d668313a79692",
+      "src/agenthon_quant/__init__.py": "ed39253a169489853533eead39dcdb83d9c68fd332c7d8cb6daec5c605f395f0",
+      "src/agenthon_quant/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/agenthon_quant/archive.py": "32b45c112d08312b5fe04decd609151569df977beab8c226efd2f5b23c17dbf5",
+      "src/agenthon_quant/assistance.py": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef",
+      "src/agenthon_quant/cli.py": "6ae91e82ee9cc3b042c8cdff60a988993b42d983576862334ef72d5117a98801",
+      "src/agenthon_quant/onboarding.py": "20911b48b36df47422e5f97863462912cfc4de48318a1bcfdffb289fc15e5a1e",
+      "src/agenthon_quant/options.py": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0",
+      "src/agenthon_quant/records.py": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223",
+      "src/agenthon_quant/trading.py": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    "git_commit": "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+    "package_version": "0.2.0",
+    "python": "3.12.7",
+    "runtime_source_dirty": false,
+    "source_fingerprint_sha256": "a0d1712fa4c2a8ba2f659277437978a1418d3abafd0dbacf561f899929ec8804",
+    "source_root": "/private/tmp/quant-release-integration"
+  },
+  "derived_from": {
+    "changes": {
+      "volatility": 0.3
+    },
+    "run_record_sha256": "940b2b583106d4eaef625054255e22df8b5f58ee5e60b870bcd63af1390bb79e"
+  },
+  "effective_specification_sha256": "e995ac2a0148122aab1b4976e28d081e13480aa3caa14acd81d0075e437a29dc",
+  "elapsed_seconds": 0.4278476252220571,
+  "input_provenance": [
+    {
+      "bytes": 266,
+      "original_path": "/private/var/folders/yj/kb0lxp3n3079tw_kj4r8p_l40000gn/T/quant-assumptions-h1_lwuqi/spec.json",
+      "role": "request",
+      "sha256": "e995ac2a0148122aab1b4976e28d081e13480aa3caa14acd81d0075e437a29dc",
+      "snapshot": "inputs/request.json"
+    }
+  ],
+  "model_usage": {
+    "calls": 0,
+    "cost_usd": 0,
+    "mode": "disabled",
+    "tokens": 0
+  },
+  "random_seed": null,
+  "reproduce_command": "python -m agenthon_quant reproduce reports/v0.2/options-vol30 --out runs/reproduced-NEW",
+  "schema_version": 1,
+  "specification": {
+    "currency": "USD",
+    "dividend_yield": 0.02,
+    "maturity_years": 1.0,
+    "option_type": "both",
+    "rate": 0.05,
+    "spot": 100.0,
+    "strike": 100.0,
+    "volatility": 0.3,
+    "volatility_scenarios": [
+      0.0,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "workflow": "options"
+  },
+  "started_at_utc": "2026-11-13T17:44:21.273325+00:00",
+  "status": "passed",
+  "workflow": "options"
+}

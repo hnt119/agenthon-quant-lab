@@ -1,0 +1,9 @@
+{
+  "status": "invalid",
+  "checks": {
+    "passed": 0,
+    "failed": 1,
+    "unavailable": 0
+  },
+  "report": "/private/tmp/quant-release-integration/reports/v0.2/invalid-options/report.md"
+}

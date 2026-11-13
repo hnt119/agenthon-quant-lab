@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": {
+    "passed": 24,
+    "failed": 0,
+    "unavailable": 1
+  },
+  "report": "/private/tmp/quant-release-integration/reports/v0.2/trading/report.md"
+}

@@ -1,0 +1,12 @@
+{
+  "workflow": "options",
+  "spot": 100.0,
+  "strike": 100.0,
+  "maturity_years": 1.0,
+  "volatility": 0.20,
+  "rate": 0.05,
+  "dividend_yield": 0.02,
+  "currency": "USD",
+  "option_type": "both",
+  "volatility_scenarios": [0.0, 0.10, 0.20, 0.30]
+}

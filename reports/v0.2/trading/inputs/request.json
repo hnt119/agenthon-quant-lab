@@ -1,0 +1,14 @@
+{
+  "workflow": "trading",
+  "data": "data/synthetic_prices.csv",
+  "source": "Authored synthetic demonstration; scripts/generate_synthetic_data.py; Python random.Random seed 20261114; no market observations or exchange holiday calendar",
+  "price_adjustment": "unadjusted",
+  "timestamp_convention": "session_date",
+  "initial_cash": 10000.0,
+  "fee_bps": 5.0,
+  "slippage_bps": 5.0,
+  "lookback": 20,
+  "development_end": "2025-06-18",
+  "holdout_start": "2025-06-19",
+  "synthetic": true
+}

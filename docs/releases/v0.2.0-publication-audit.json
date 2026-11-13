@@ -1,0 +1,1861 @@
+{
+  "audit_utc": "2026-11-13T17:45:04.621355+00:00",
+  "status": "PASS_SCOPED_RESEARCH_EXPORT_NUMERICS_AND_CONTENT",
+  "source_commit": "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+  "website_source_commit": "9b088890f815a4e081dc7e0b033af1f8a75db2f4",
+  "commits_scanned": [
+    "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+    "f94db55078704260127b886b114d484fc6c6638b",
+    "e97cb195dff75a5264638f62d05015bf34c4a934",
+    "198fbe5b383d4195bbb599291dfba671310425d6",
+    "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+    "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+    "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+  ],
+  "unique_blobs": 111,
+  "unique_bytes": 2051288,
+  "credential_findings": [
+    {
+      "paths": [
+        "tests/test_public_export.py"
+      ],
+      "blob": "a409094e2385f9f577d3bf1b3387a09ce8e16611",
+      "pattern": "credential_assignment",
+      "lines": [
+        22
+      ]
+    }
+  ],
+  "binary_blobs": [],
+  "inventory": [
+    {
+      "blob": "0571e0bdc1fa60af4e62a6c5c91863c7d0ebdfdd",
+      "paths": [
+        ".github/ISSUE_TEMPLATE/bug_report.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 394,
+      "sha256": "ebd259e17e107c7c49d749ed5f4883460f3d1b34ec6fab26350f4eb5408d1294"
+    },
+    {
+      "blob": "35e4f04b665098d45e14c5b6febc681ff44ad482",
+      "paths": [
+        ".github/pull_request_template.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 421,
+      "sha256": "2101b698c3829d696119fdb1666c19ea564d66132373cacca9f6319395947116"
+    },
+    {
+      "blob": "d33befebd45c84dcf23fe6685b505bd3684a12b8",
+      "paths": [
+        ".github/workflows/ci.yml"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 678,
+      "sha256": "fcb0a3dda4592ede5b5899ac20f1f7a69a7a7d863a7c863c6fc15120851433a9"
+    },
+    {
+      "blob": "1c61a5e8e6da529df415842735b02e775a38cb9f",
+      "paths": [
+        ".gitignore"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 109,
+      "sha256": "ce1e1c664d7bb9640d67d1817e09b79e6ac4a6762d94b360fcfd7d9631ddf463"
+    },
+    {
+      "blob": "2185f3607284df14e567d512417502a9eb10d71b",
+      "paths": [
+        "AGENTS.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1349,
+      "sha256": "479065cdae377b1964d5ad08bbc01d154991988458313570a0815bc02ac0cada"
+    },
+    {
+      "blob": "694671ba6670e0b000cc26483ded97e13a7d44cb",
+      "paths": [
+        "CONTRIBUTING.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 924,
+      "sha256": "6ce98bf0f536d3c88885e184188bb7c1d417331ca28a0fcf92c16ef35045610b"
+    },
+    {
+      "blob": "89c1a3ba7faa066e5483097cdca559befe39b1f8",
+      "paths": [
+        "LICENSE"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1087,
+      "sha256": "3c199ab967a5723059b431db304c1d1428253e7e27384bea28cb249b276590f5"
+    },
+    {
+      "blob": "84be924399f3b98776fa6b049f647ac5d0fb9ab1",
+      "paths": [
+        "README.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8"
+      ],
+      "mode": "100644",
+      "bytes": 5452,
+      "sha256": "2dc2e58c2340ff0a9668ab2ddfefcc9e9bc4d07d545eef5b3b0c0e9658a911df"
+    },
+    {
+      "blob": "b29d1cbebb653e732b3f72d34b16c6dd90ba1b6c",
+      "paths": [
+        "docs/agenthon-architecture.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 4990,
+      "sha256": "d3409693978c4196a6961a34b4383a31bf6f24bb6f1ed86c6d3a94a773ca9ac5"
+    },
+    {
+      "blob": "a790735583a45311695aaa7e16e1d33ed4de28c2",
+      "paths": [
+        "docs/architecture.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 3297,
+      "sha256": "2f3b95428dd86f2a345b27691ad05b641fca3daf1b739f9fccf1b42f1bd08fcd"
+    },
+    {
+      "blob": "0731de337a5e86074cf7d4507da16d436c124f78",
+      "paths": [
+        "docs/attribution.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8"
+      ],
+      "mode": "100644",
+      "bytes": 2121,
+      "sha256": "17ee78961ad6706474ab3dd11359604a24a6aa94ad15c8bf5dcfca0db3323d3c"
+    },
+    {
+      "blob": "79c8f02e439be700e3ff3d512d4288f42decf00b",
+      "paths": [
+        "docs/current-state.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1590,
+      "sha256": "189072ba4bc3c12b0145e3a60d15f7731b9dd336fd8b1ae7c4ead1a9cfba321f"
+    },
+    {
+      "blob": "ad281c63b885501ddc5d090127f9e0e7f0d12640",
+      "paths": [
+        "docs/development.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2556,
+      "sha256": "31fe163aa03f6784d6520845db4c2cb260d5bd545128ee775f81028356850975"
+    },
+    {
+      "blob": "ee1c7ed7e792577f7c0c089e7798e0f0b1427d95",
+      "paths": [
+        "docs/index.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1415,
+      "sha256": "241ad29b4db92a51533ad612904177ae0f5bb4cfc59181dc0016a721f0649c63"
+    },
+    {
+      "blob": "3c064f579bff77d45fe177e1edfbc5f5b2fc2730",
+      "paths": [
+        "docs/methodology.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2248,
+      "sha256": "1f76d279f2b665f919c37fd015a573a83dae8d92b0be659e9826ef3ea6615ab5"
+    },
+    {
+      "blob": "a3da2105d30cb55b540a4e8d798959919b4d3956",
+      "paths": [
+        "docs/negative-results.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 7584,
+      "sha256": "6ec1a71be18d4a2f04c1f1719e72f46ebbfc107fe06fb39aed6aa17050bd8b5b"
+    },
+    {
+      "blob": "939b8bbcb60d2c6e76579ffe86e068faea10772a",
+      "paths": [
+        "docs/next-milestone.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1026,
+      "sha256": "f7b9b98443596c4f63d8d288adc4cba0581bc0236dd67e26526e7f204262fc50"
+    },
+    {
+      "blob": "e49e8f26de7d0be5ad317513fedcdc2c772a309e",
+      "paths": [
+        "docs/options-conventions.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 6748,
+      "sha256": "1c7697be6e70cf7e37482b99b84474972aa160d5f7b5e226235961261a6a1f28"
+    },
+    {
+      "blob": "07902c0a3179bd5e6606bce9137d6a773e00b4de",
+      "paths": [
+        "docs/plugin-guide.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2141,
+      "sha256": "11989745e948aa2c42f0eea283aefee6e22e24e64d3081195f0ff179b40f453d"
+    },
+    {
+      "blob": "f705bc2897b45ed8e6e7200237a4cbdcc25abc1d",
+      "paths": [
+        "docs/publication.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1579,
+      "sha256": "085381d3cfeffb5407e91eabeac954e4b6069ba0c6384c6e820da345b305d8f9"
+    },
+    {
+      "blob": "f7e6546501ca80e8fba26f2f54496539c71dd6d0",
+      "paths": [
+        "docs/releases/v0.2.0.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1188,
+      "sha256": "05fc9136d494a5b04335512bbcddbea9afdb2fdf0d04352a26f40074e59eb3f4"
+    },
+    {
+      "blob": "34a7a07ba3e2e24abcde6cf9fa2104f9c3c381df",
+      "paths": [
+        "docs/research-notes.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2885,
+      "sha256": "bc86dc50d8267123237bc3b5e216fdc0ff8a838f8cf3ccc07eda3daf9b11e6f1"
+    },
+    {
+      "blob": "1cf4fd707653f63d6a24db68a8739ef23c376202",
+      "paths": [
+        "docs/reuse-map.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 8008,
+      "sha256": "776af4689551d9ac47b6ddfb697d257885f7690f1bbdbd5a0fd3c17ff7857f4f"
+    },
+    {
+      "blob": "53c9a7b0e1d340f5e63ab88f0b39c6dc8e50491f",
+      "paths": [
+        "docs/review-findings.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5091,
+      "sha256": "0d569ad51fce4d3a22b944676171efd6a7d8580a93378400fcf9a3468c819ec2"
+    },
+    {
+      "blob": "610ab1e15e58a2f7886aea46c4a891f0be5c954e",
+      "paths": [
+        "docs/skill-verification.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5767,
+      "sha256": "e33c3b5a1e4e35bfcc7c341110564524e53fce7b819cdc49928bd7142b514868"
+    },
+    {
+      "blob": "c75cd49e5a816b14f0e4ce949641366df94f6aa3",
+      "paths": [
+        "docs/source-audit.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 25871,
+      "sha256": "9feb135d3654d0b872d81462b0c8afcb595283bc60af7995c1ec70e2f56c828e"
+    },
+    {
+      "blob": "687bd7e5544bcc141032396f154809f458a2329f",
+      "paths": [
+        "docs/trading-conventions.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 6487,
+      "sha256": "210133baddbab5794ee3f4489b55008dd928b976700d0d3da5fba6a11667085f"
+    },
+    {
+      "blob": "f5b4ec3f0be3ac20b80963bee2e875b8701068ec",
+      "paths": [
+        "docs/user-guide.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5478,
+      "sha256": "9b308a310384ce4a976a4e6f8bed601aabdd58dae0fe7145876b04ad23eeee35"
+    },
+    {
+      "blob": "0aa83422367b5fd17ca91adc56c142aedb08ea66",
+      "paths": [
+        "docs/verification.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2116,
+      "sha256": "733d89afb25bc290e6936089e761326ef16d35203cffabe424f7971d8e31e760"
+    },
+    {
+      "blob": "e6b98d688e087e73e039c5dc433015696e46489e",
+      "paths": [
+        "examples/data/README.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1051,
+      "sha256": "2fe1d1e91b9abea8056f31cd501a2fd36ee27b828ff02ffec821abbfdaa70c9b"
+    },
+    {
+      "blob": "c68a6d3d2254b00c3cebeb7f471d2c0850ae026d",
+      "paths": [
+        "examples/data/synthetic_prices.csv",
+        "reports/v0.1/trading/inputs/data.csv"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5944,
+      "sha256": "41755e23816c15135a07beecf9a3115b0f37c377c8f1b3aec874f4b075106ab4"
+    },
+    {
+      "blob": "9e09900e31b5f3a9489a250b09f08ca4983d1a8c",
+      "paths": [
+        "examples/invalid-options.json",
+        "reports/v0.1/invalid-options/inputs/request.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 190,
+      "sha256": "d134dd92e6b4a3385117847a0efd7d4fe08ee0756d8ee88e4bad2e05dc9f03c3"
+    },
+    {
+      "blob": "1e39b25cdb0dc786d7e6104125ef3cb905609e2b",
+      "paths": [
+        "examples/options.json",
+        "reports/v0.1/options/inputs/request.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 250,
+      "sha256": "e97cff171171f8672745f2aa51e5a55568d41ce5988c9f3f455965d11a533998"
+    },
+    {
+      "blob": "1603c8202a267beca1253c5add512cd7e8d50096",
+      "paths": [
+        "examples/trading.json",
+        "reports/v0.1/trading/inputs/request.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 493,
+      "sha256": "18cc75dfc0911319566900e5b10168865e301b107589561dd0cefbdc877c7885"
+    },
+    {
+      "blob": "399c8ab9b36d64c9f5a7e7b2456f072a9819080e",
+      "paths": [
+        "experiments/README.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2255,
+      "sha256": "20d3cb91802ab9d0ce451d202d4fe0928052c01dd1157bba9ec1e6174e656442"
+    },
+    {
+      "blob": "ba1adc19583755c13cfff79e2e59d815ec3c2e8f",
+      "paths": [
+        "experiments/experiments.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 67233,
+      "sha256": "537094bc9c881551152daadb14dd37e72e2ee48b658bdba0b0fe6a2d717b59e2"
+    },
+    {
+      "blob": "56c41d019789ca12380b5c3329edcf67bd42ac38",
+      "paths": [
+        "pyproject.toml"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 499,
+      "sha256": "630da8df5bbc121c94018ce0487f58b5f9c90660502c7309a38d668313a79692"
+    },
+    {
+      "blob": "30dde64c45ff05a292c5a0f72ae0ac8961ef152a",
+      "paths": [
+        "release-manifest.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 11909,
+      "sha256": "c924f8c870afec1f6de141736c42abb2c72e31722871eb9e673cf9cead15e766"
+    },
+    {
+      "blob": "805aa57d33c1313441cbc4b7f758265f24e19d21",
+      "paths": [
+        "reports/v0.1/deliberate-failures.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 32529,
+      "sha256": "902659f5f2f6e772bc2df9b6d84bb199fda3e23994d190e05b662e577efb3148"
+    },
+    {
+      "blob": "2df23207acb786589bc2a7f8f673d0dd86409e41",
+      "paths": [
+        "reports/v0.1/explain-invalid.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 280,
+      "sha256": "b6d035d29e6c2d84e5b56628ce74cc277296d1ed48625650e34c43946581f352"
+    },
+    {
+      "blob": "5e2dc8548e83f8c9ece85aaa47aaad93733f6ed7",
+      "paths": [
+        "reports/v0.1/invalid-options.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 193,
+      "sha256": "37135ead214f18caabb36aa948d0570ba8b3bf40db3a3001b4e14858e56fc7a7"
+    },
+    {
+      "blob": "e09e49179bb8a2896401d8cb5c99881f68ac77f9",
+      "paths": [
+        "reports/v0.1/invalid-options/report.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1359,
+      "sha256": "89cd42c22bfd5a7dce564c76c250ec9c57e6401440004b2fd1d85220ed7e3e0b"
+    },
+    {
+      "blob": "44c3d0aa67c497669501f9c2d9b9c8bbca31e75a",
+      "paths": [
+        "reports/v0.1/invalid-options/run.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2765,
+      "sha256": "af1b6d39610daf292c96695065561bc19b37d466d7b7ffb4b036fe5cf84047b1"
+    },
+    {
+      "blob": "a06e8f0bcd7ae179e307aab5bc074e6809d222e9",
+      "paths": [
+        "reports/v0.1/invalid-options/spec.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 190,
+      "sha256": "e6bd76dc8f8888570fade0e0d85b8aa7b2bfca8ac299a156ff87ea966dfa26a8"
+    },
+    {
+      "blob": "b7ecb1913350de1230d601452b96936772152b94",
+      "paths": [
+        "reports/v0.1/options-reproduced.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 196,
+      "sha256": "4ed577018a13ffdb77662cee9d9a826ada445a2880fc513f499bb9e5669f3077"
+    },
+    {
+      "blob": "ed560f2048cc7c87508a6b83d1dc1d2b73a80cb7",
+      "paths": [
+        "reports/v0.1/options-reproduced/inputs/request.json",
+        "reports/v0.1/options-reproduced/spec.json",
+        "reports/v0.1/options/spec.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 266,
+      "sha256": "7b9b6ca4da85948ee574e22039e8e86199917272a24a5a568e64110c8bc4c7fe"
+    },
+    {
+      "blob": "3cc5b72e99dbc464d7f283c1af55818e0d73bde6",
+      "paths": [
+        "reports/v0.1/options-reproduced/report.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 14542,
+      "sha256": "e8292c614f4436ab0317fe8bf008ecfcc72c7b56891a25dd3923b174f071b376"
+    },
+    {
+      "blob": "a1281356a29c55e85ec5f64dc60e9283a4fffbeb",
+      "paths": [
+        "reports/v0.1/options-reproduced/run.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 64053,
+      "sha256": "00745df5d8416889382058d1816c9a7665f6ed9717552f65d14a68c8c975b45c"
+    },
+    {
+      "blob": "3526a47f2ad347cdceb2466a9658f99e5d56b64a",
+      "paths": [
+        "reports/v0.1/options-reproduced/validated-results.json",
+        "reports/v0.1/options/validated-results.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 26820,
+      "sha256": "af50fe2836b398a662637b3c7f5a72aa3a4f2099c0c1cdad0a4ee6f774a91f16"
+    },
+    {
+      "blob": "2b07dfefb50ced6bc32b3ea00336abd19be9545f",
+      "paths": [
+        "reports/v0.1/options-vol30.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 191,
+      "sha256": "f31953204d9472edf0a41d5c919a7bf91da5a6386e01bfa73c568c864654ad3c"
+    },
+    {
+      "blob": "8e0a50170f618c4a34f88b3d6c85897270529738",
+      "paths": [
+        "reports/v0.1/options-vol30/inputs/request.json",
+        "reports/v0.1/options-vol30/spec.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 266,
+      "sha256": "e995ac2a0148122aab1b4976e28d081e13480aa3caa14acd81d0075e437a29dc"
+    },
+    {
+      "blob": "386fc7f8ea1383c434be62f08ebb35551b942a38",
+      "paths": [
+        "reports/v0.1/options-vol30/report.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 14536,
+      "sha256": "c03951458e6040285fb9d373dbe04c06882de26029b0cc008454cc31403a7966"
+    },
+    {
+      "blob": "2f9d0f77d7144efa80e9931dd1018642d38ec712",
+      "paths": [
+        "reports/v0.1/options-vol30/run.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 64247,
+      "sha256": "63986119d0f887f4570a5e6705a14d0b757a10d442d29e6a3508596a7137b426"
+    },
+    {
+      "blob": "b179f3447122bd9cf8e156e12a0f4854df3c59a9",
+      "paths": [
+        "reports/v0.1/options-vol30/validated-results.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 26820,
+      "sha256": "1f127868695a828dc18c5e2da54d322701856901710db5ffcf4735bec6d1c08e"
+    },
+    {
+      "blob": "11ccc5cc00097579eb70028a14c1cdf82698385d",
+      "paths": [
+        "reports/v0.1/options.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 185,
+      "sha256": "7825866bb28cf50877412994ff5f1fc88238087a60af17bc1275833daea02e0d"
+    },
+    {
+      "blob": "f5f79589d700398fdc9aad722104ec264b66845e",
+      "paths": [
+        "reports/v0.1/options/report.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 14531,
+      "sha256": "c5c9f53e207a71240dc6a60f026ea5a20f01994f219c6e74112d4e58031efee1"
+    },
+    {
+      "blob": "db88255669643c0128dcb1f0af47f266c99888d1",
+      "paths": [
+        "reports/v0.1/options/run.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 64033,
+      "sha256": "bf0bc8ef1bd0a4335bd5deb6f4673a2d19a67df7be8bee006de0e0a91d025bff"
+    },
+    {
+      "blob": "fb1d2cecbf54ddba9bd78828ad3592886829f02d",
+      "paths": [
+        "reports/v0.1/tests.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 6748,
+      "sha256": "cc18576fd7fcbfde4f90570a5e1a889454e9ce1b925ad150f732d03bbdd22b95"
+    },
+    {
+      "blob": "536bb090f6104d4860589ee47d6254e595ac3ae2",
+      "paths": [
+        "reports/v0.1/trading.log"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 185,
+      "sha256": "f04f3e0a11a41c059272a16272b29e3065f87d09e90d817fe9f75ccbe347108a"
+    },
+    {
+      "blob": "114cca9b1fcb87cff03a232905163159846a4534",
+      "paths": [
+        "reports/v0.1/trading/report.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 7823,
+      "sha256": "cc22cd1a0ba4dba08d79aec664b6d3055fa091785d648212fc5f8c92cc86109f"
+    },
+    {
+      "blob": "a423cdc9486c7ecaa248e82084b0128b50a143a8",
+      "paths": [
+        "reports/v0.1/trading/run.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 616153,
+      "sha256": "b9738158bcbf87d920f8ca4863fa4d7ed7107ea99d12c00c31c6413b3fc46de6"
+    },
+    {
+      "blob": "faf706d4e2eab941904d5bddb2dccb2802936db1",
+      "paths": [
+        "reports/v0.1/trading/spec.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 483,
+      "sha256": "cf857fce571e84b6b37733e993128610b375f0d0c69829792554c2e5321051e7"
+    },
+    {
+      "blob": "660b051d5d9ee6ffdff853251cacf2a894f36479",
+      "paths": [
+        "reports/v0.1/trading/validated-results.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 533476,
+      "sha256": "6ebf81bc2ce206dcde58ffb094316947566f1c8dd7e2d288cb76090a9b3f43d8"
+    },
+    {
+      "blob": "59e3f926983522407d256c9935b8c45b591eaa86",
+      "paths": [
+        "reports/v0.1/verification.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5191,
+      "sha256": "6e935736087338a209df90a83a6f992c3e6e8b3d0d2bc344e171cfec2ace3d25"
+    },
+    {
+      "blob": "2767dbca89357654dc2a00ecc5776ca70b2fbbe5",
+      "paths": [
+        "requirements-verified.txt"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 175,
+      "sha256": "08faa336f73155cf1256c74285860e3359fabc813661c835a29f97e5908f5e5d"
+    },
+    {
+      "blob": "140812c77fb10dd115015b2ce78fb37022762976",
+      "paths": [
+        "research/README.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1757,
+      "sha256": "78a6ac7e9969f04ae2fc3986ac1f2a4866c65c069d16d15b587fe74b00be70f1"
+    },
+    {
+      "blob": "7d0110842e6ff371b5914fdb6136896c0517e711",
+      "paths": [
+        "research/papers.json"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 22423,
+      "sha256": "369a07152ffe57f058f6b802077907aea2219b8978aa73a8e0b9cee0137e30a8"
+    },
+    {
+      "blob": "940b5fe5b499b56775dbd7aadf791dd879ff56cb",
+      "paths": [
+        "scripts/export_site.py"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 8519,
+      "sha256": "33c7af8ce4afafde8e3a99f104d1290b0c11ac145feb9f0f60f386a65f112dd4"
+    },
+    {
+      "blob": "e923a75dd67e605affe9dc706271a2c5d7a20269",
+      "paths": [
+        "scripts/generate_synthetic_data.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1543,
+      "sha256": "2c03899c71916596f7fd135d334c2b6ef426f0e52cee9151d7f418317911926e"
+    },
+    {
+      "blob": "5cc01013af0dd2c0151f4cc33dee429356e0bda2",
+      "paths": [
+        "scripts/setup.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1296,
+      "sha256": "cc0119dc75567361f2612fc34222c6b181a70b15434b1b225d642fc47e407360"
+    },
+    {
+      "blob": "496ff2415b71bd5742c9d328953d70117eba8673",
+      "paths": [
+        "scripts/verify_release.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5613,
+      "sha256": "929f25f6d419765c4900bb4cc6efc147393c5c9e28befb5913b5b9019f2f387e"
+    },
+    {
+      "blob": "6a549a7ca0e17290b3542f35d893148b71c75558",
+      "paths": [
+        "site-export/README.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 650,
+      "sha256": "c3671ecf6b65caa8b57c3c62e14baa29b2e1803380e7735db468be0f343b7a51"
+    },
+    {
+      "blob": "292aaf77ecddf9b09d2f2475f7e74460a1d70d71",
+      "paths": [
+        "site-export/archive.json"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 84465,
+      "sha256": "5b1822f0b82f43031a88c3c1633ac3387259d84e1b1249e5411c6c3e6994fe4f"
+    },
+    {
+      "blob": "5b91785bf57bee289a7a99d46daa62ab26ac2029",
+      "paths": [
+        "site-export/pricing-reference.json"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 28018,
+      "sha256": "022c8eee173c1ebaf638ec23eb60a611d6265f3037e631b65811452c0fd1e88f"
+    },
+    {
+      "blob": "c4dcc7dfcfe638a826d3af1b575aae39d1bd34b8",
+      "paths": [
+        "skills/quant-research/SKILL.md"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8"
+      ],
+      "mode": "100644",
+      "bytes": 3326,
+      "sha256": "7cac1e6acd3bb845e78d1ad72f45dc3e4d36573709909863e8bef0202deb495b"
+    },
+    {
+      "blob": "b9b2672d49405eba41872fdadbd68a0635472cb5",
+      "paths": [
+        "skills/quant-research/agents/openai.yaml"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 199,
+      "sha256": "7885f654bcf85e6c10772117662220bbec030d57687dd46fd805c811eac99703"
+    },
+    {
+      "blob": "85aabc815aebe5e02bfa78b9002ac2d03b02ae92",
+      "paths": [
+        "skills/quant-research/references/requests.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 3624,
+      "sha256": "dab34d03a1448734e561661d22b67629bf70e63fdac12243843d1818d7d504fc"
+    },
+    {
+      "blob": "077ec4cf97398ca417ef46d76929ebf482eb3abc",
+      "paths": [
+        "skills/quant-research/scripts/quant.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 713,
+      "sha256": "e37051a1b82e753a4402e58bbe5a87380f95fd496374f271cf6f69eee518d22c"
+    },
+    {
+      "blob": "e327293926a4bf1217b55a71091e7accb1c324fc",
+      "paths": [
+        "src/agenthon_quant/__init__.py"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 88,
+      "sha256": "ed39253a169489853533eead39dcdb83d9c68fd332c7d8cb6daec5c605f395f0"
+    },
+    {
+      "blob": "eb53e2f31b2f703ad32ef64b8a41faa3e7d18e08",
+      "paths": [
+        "src/agenthon_quant/__main__.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "blob": "88e9687fe19d450edfb7b2034aaac0fff3c93b10",
+      "paths": [
+        "src/agenthon_quant/archive.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1393,
+      "sha256": "32b45c112d08312b5fe04decd609151569df977beab8c226efd2f5b23c17dbf5"
+    },
+    {
+      "blob": "bec7feabc2d8277f54692e5a682ad25b71dd2eec",
+      "paths": [
+        "src/agenthon_quant/assistance.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 3804,
+      "sha256": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef"
+    },
+    {
+      "blob": "1676666d7896d89b5c72a84cd19364cf6f89f53e",
+      "paths": [
+        "src/agenthon_quant/cli.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5703,
+      "sha256": "6ae91e82ee9cc3b042c8cdff60a988993b42d983576862334ef72d5117a98801"
+    },
+    {
+      "blob": "07da0b368bded6e067f632db65694540f35f7476",
+      "paths": [
+        "src/agenthon_quant/onboarding.py"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 12932,
+      "sha256": "20911b48b36df47422e5f97863462912cfc4de48318a1bcfdffb289fc15e5a1e"
+    },
+    {
+      "blob": "1d43427e94589b52f0731c4785e8245d5bd77872",
+      "paths": [
+        "src/agenthon_quant/options.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 18325,
+      "sha256": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0"
+    },
+    {
+      "blob": "7895b7df03a4e66c62233909c89378562e7d3227",
+      "paths": [
+        "src/agenthon_quant/records.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 15234,
+      "sha256": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223"
+    },
+    {
+      "blob": "573851a9fe3b646ce8ad467d25ef8de9d0179530",
+      "paths": [
+        "src/agenthon_quant/trading.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 25261,
+      "sha256": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    {
+      "blob": "24c93d6d546e6b15286ffd85a471f7498d7b277f",
+      "paths": [
+        "tests/test_assistance.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1864,
+      "sha256": "1df81606e3e05f4b8064f13a73429fec95435eb3d6c9510b28870214565da71c"
+    },
+    {
+      "blob": "859e84f6a602a6e25ed02acc33bf1393adf22f4e",
+      "paths": [
+        "tests/test_onboarding.py"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 12618,
+      "sha256": "c2de48c03a0d5e5f2363d109f41d69e4673ed4d2c25366fdebf61689eddeb960"
+    },
+    {
+      "blob": "698766fe903fc1dd76c2bb01f7d4687263197495",
+      "paths": [
+        "tests/test_options.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 7473,
+      "sha256": "d8fe5d23bd766a4c350855efe8c08d39e46498b4fc16e77d8572f34e699d6731"
+    },
+    {
+      "blob": "a409094e2385f9f577d3bf1b3387a09ce8e16611",
+      "paths": [
+        "tests/test_public_export.py"
+      ],
+      "commits": [
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 1713,
+      "sha256": "17d2c0f4c2dc80159329f12d39667ac7209c2d667fa40af6c1b6eda51af2ac5b"
+    },
+    {
+      "blob": "08cf681f40e26149f404a203f6db82e78c9189e9",
+      "paths": [
+        "tests/test_records.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 4554,
+      "sha256": "dfe96473ccc2ae72d89d173c480e63617d735a32d7fb1f9f429a5a005c65a9fc"
+    },
+    {
+      "blob": "57bea545a0b1bcc8330247b29540ecf75009082e",
+      "paths": [
+        "tests/test_review_regressions.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 4328,
+      "sha256": "0561201ec9aa8cb0d497abb6478089822ae578c7faee773a49ef336ad2b171db"
+    },
+    {
+      "blob": "c1983265e2a6e60c6e0c471436c47665ce9b10e7",
+      "paths": [
+        "tests/test_trading.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "da1ad13f46b6b415d9d9309a0f01e1c8919559a8",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 11280,
+      "sha256": "f98f73447b424ee72052d1a96bc133965b340cf46f4fcb49fdcb5173ae135250"
+    },
+    {
+      "blob": "25ef5c53a8ef6b56c80ce1e9fb06ebd4fd0a7f01",
+      "paths": [
+        "README.md"
+      ],
+      "commits": [
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 5420,
+      "sha256": "622c2434516302f0fe69bb46f7df769772f618b9f8ff5ef5639e6b300bb010b8"
+    },
+    {
+      "blob": "63acb68306215a95647e2926168f7c43fa80145b",
+      "paths": [
+        "docs/attribution.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 2115,
+      "sha256": "847aae4c854f36a30fc5c975ee39bba42c83465b4044f8d5ad27777ab166c808"
+    },
+    {
+      "blob": "0d3180091347f8a1ab6b5005c4ce74ccc5e8161d",
+      "paths": [
+        "skills/quant-research/SKILL.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "e97cb195dff75a5264638f62d05015bf34c4a934",
+        "f94db55078704260127b886b114d484fc6c6638b"
+      ],
+      "mode": "100644",
+      "bytes": 3338,
+      "sha256": "772bce3b75ec0341c07d1922bbaf4ec19bf3b06796e659f0f9edda351180ca49"
+    },
+    {
+      "blob": "f3eeb3f8f7710599deda3e24df896ea9c71e9b47",
+      "paths": [
+        "src/agenthon_quant/onboarding.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "e97cb195dff75a5264638f62d05015bf34c4a934"
+      ],
+      "mode": "100644",
+      "bytes": 12351,
+      "sha256": "078140413fde23dc165c7effaf53ac45ff0a3a55cdb531afbe1e206e2e8274e8"
+    },
+    {
+      "blob": "3df6c5c0b4c06950c9843046ebe34d5e992a1fbf",
+      "paths": [
+        "tests/test_onboarding.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "e97cb195dff75a5264638f62d05015bf34c4a934"
+      ],
+      "mode": "100644",
+      "bytes": 9821,
+      "sha256": "74cb0366cd08ef7f0d1b6b48269922f79dbd9e56ce4c9243ce532fc6c6b47075"
+    },
+    {
+      "blob": "f96fa8df4c4bdffc3dcda96ffa19604b826a7412",
+      "paths": [
+        "README.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 6933,
+      "sha256": "471cf979d2edba65d21221eddf212b8aa01a0f466089d3d86a544fc8758e244c"
+    },
+    {
+      "blob": "a97f38e5b9730ebf5bd72e7d621a7dba4c0dd908",
+      "paths": [
+        "docs/current-state.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca"
+      ],
+      "mode": "100644",
+      "bytes": 2315,
+      "sha256": "b1e6ad96338cfaf955036fffaa1f2f7c22cf126c9b965845997c06173696d232"
+    },
+    {
+      "blob": "a4ce55d0653c85d6b2ffcd64a2b6cd6f018312a5",
+      "paths": [
+        "docs/next-milestone.md"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 1229,
+      "sha256": "1acee67b0f41302bb52ec39180da357f9826a0381d5a249ad3bdf6daae42deda"
+    },
+    {
+      "blob": "be7531396abe6300eaaca787bb952736e8d6b025",
+      "paths": [
+        "pyproject.toml"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 499,
+      "sha256": "05d6fb3e5f3631bc875c68da8f2e100513899b32b4725fb1dd6ac898cdb4929a"
+    },
+    {
+      "blob": "db2d96e7ab4ebc81bc7aa97e817e904c5bf2f1f2",
+      "paths": [
+        "src/agenthon_quant/__init__.py"
+      ],
+      "commits": [
+        "198fbe5b383d4195bbb599291dfba671310425d6",
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 88,
+      "sha256": "c67f9d10cd3cbcf033b97c55849a4d01eeb24dbca0a6bb569a323f39bd2609be"
+    },
+    {
+      "blob": "cebbb10d581d8ddce5e7e2aa8485e5e95833361c",
+      "paths": [
+        "skills/quant-research/SKILL.md"
+      ],
+      "commits": [
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 2911,
+      "sha256": "b489102187238c07af6c2c149d492481fced78a3c8e85001a868f9f13860ab56"
+    },
+    {
+      "blob": "b15e3b9cda8fa99f019becaabc2344d83f1aeb81",
+      "paths": [
+        "skills/quant-research/references/requests.md"
+      ],
+      "commits": [
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 2178,
+      "sha256": "3fc7e03973018d3b710d3545434a8723b647204a1ac4c9c11c94b501bc452137"
+    },
+    {
+      "blob": "ee4d3988001813dc390b433dc592d099feafd4a8",
+      "paths": [
+        "skills/quant-research/scripts/quant.py"
+      ],
+      "commits": [
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 604,
+      "sha256": "833d48c8325cd1daf5432c0d6513e3491dd308e204cc4fa112f289ffde36f40e"
+    },
+    {
+      "blob": "cc3245ef9817a703ba17d70c1f064879d4c1b264",
+      "paths": [
+        "src/agenthon_quant/cli.py"
+      ],
+      "commits": [
+        "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+        "891330093ad376aa0eb86d5ebce88d0a1599cfca",
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 2523,
+      "sha256": "1472a53935fea1bd586323e9facab9d3903fa68673b3a911858abe27e5884fc8"
+    },
+    {
+      "blob": "9fab44f378dace17f485d80e7104012ee18aed8f",
+      "paths": [
+        "docs/current-state.md"
+      ],
+      "commits": [
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 1827,
+      "sha256": "12da479ddac0bfb4512bdf0a4ab5c7062807e1073118e2ff8a42a8bed138e3ce"
+    },
+    {
+      "blob": "b75f24decda250e832e00ffc5c6edd51bb117056",
+      "paths": [
+        "docs/review-findings.md"
+      ],
+      "commits": [
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 4710,
+      "sha256": "3c64d760365972b3ed569daa54fab906fbd79774f2c00d64c118f44ff59af512"
+    },
+    {
+      "blob": "666814563c305a11b78e8625f13fbaac3264a55f",
+      "paths": [
+        "docs/skill-verification.md"
+      ],
+      "commits": [
+        "ab2f62085f3c18ee97c555b8eb1bd6e400228ece"
+      ],
+      "mode": "100644",
+      "bytes": 5002,
+      "sha256": "d2da36c8a285d67f82433f32aaea817f2bbe306075f1a99519c2c41123ce9af5"
+    }
+  ],
+  "exports": {
+    "archive.json": {
+      "sha256": "5b1822f0b82f43031a88c3c1633ac3387259d84e1b1249e5411c6c3e6994fe4f",
+      "website_frozen_copy_matches": true,
+      "private_path_matches": false
+    },
+    "pricing-reference.json": {
+      "sha256": "022c8eee173c1ebaf638ec23eb60a611d6265f3037e631b65811452c0fd1e88f",
+      "website_frozen_copy_matches": true,
+      "private_path_matches": false
+    }
+  },
+  "website_numerical_files": {
+    "src/lib/agenthon-pricing.mjs": {
+      "sha256": "88f1206eab71bcc52c093d9d9016a381c162c43ab73c4bb33e8679f42b2e8c73",
+      "matches_executed_working_file": true
+    },
+    "src/lib/agenthon-reference.test.mjs": {
+      "sha256": "51546a822d5fba2c89a689c998fcc36915938839508c43025db0a0fa84adfe43",
+      "matches_executed_working_file": true
+    },
+    "src/lib/agenthon-pricing.test.mjs": {
+      "sha256": "dee51f794e9aeee03e735e6fa241978c56ec53b093b394a88cab2db0bf91b369",
+      "matches_executed_working_file": true
+    }
+  },
+  "v01_tag_object": "1e8508973bf172222e8ff00b9e6f367bb42ab92c",
+  "v01_tag_target": "49fd400d53ae2e9c9f60ea4e19f1b79d8f70688e",
+  "baseline_is_ancestor": true,
+  "independent_scope": [
+    "Research and historical experiment content",
+    "Public exporter, tests, static artifacts and relevant documentation",
+    "Browser price algorithm and Python reference comparison",
+    "Reachable Git content secret/private-material scan"
+  ],
+  "excluded_from_independent_approval": [
+    "onboarding.py, CLI/archive-search/skill/setup implementation authored by this reviewer; separate reviewer owns approval",
+    "Browser interaction, build, accessibility, deployment and actual remote CI",
+    "Final appended release receipts, not yet available"
+  ],
+  "checks": {
+    "public_export_tests": 3,
+    "public_export_tests_passed": true,
+    "export_check_passed": true,
+    "node_tests": 4,
+    "node_tests_passed": true,
+    "browser_reference_cases": 64,
+    "archive_spot_checks": 13,
+    "archive_spot_checks_passed": true
+  },
+  "blockers_in_independent_scope": [],
+  "followups": [
+    "Record actual remote CI separately; do not imply completed Linux CI before it runs",
+    "Re-audit any appended publication receipts/changed source"
+  ],
+  "credential_findings_disposition": "Single finding is tests/test_public_export.py:22: api_key=\"anything\", an intentionally invalid dummy fixture. No usable credential."
+}

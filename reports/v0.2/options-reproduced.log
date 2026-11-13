@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": {
+    "passed": 82,
+    "failed": 0,
+    "unavailable": 2
+  },
+  "report": "/private/tmp/quant-release-integration/reports/v0.2/options-reproduced/report.md"
+}
