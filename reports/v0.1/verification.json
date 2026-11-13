@@ -1,0 +1,148 @@
+{
+  "code": {
+    "dependencies": {
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.1",
+      "scipy": "1.18.1"
+    },
+    "files_sha256": {
+      "pyproject.toml": "05d6fb3e5f3631bc875c68da8f2e100513899b32b4725fb1dd6ac898cdb4929a",
+      "src/agenthon_quant/__init__.py": "c67f9d10cd3cbcf033b97c55849a4d01eeb24dbca0a6bb569a323f39bd2609be",
+      "src/agenthon_quant/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/agenthon_quant/assistance.py": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef",
+      "src/agenthon_quant/cli.py": "1472a53935fea1bd586323e9facab9d3903fa68673b3a911858abe27e5884fc8",
+      "src/agenthon_quant/options.py": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0",
+      "src/agenthon_quant/records.py": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223",
+      "src/agenthon_quant/trading.py": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    "git_commit": "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+    "package_version": "0.1.0",
+    "python": "3.12.7",
+    "runtime_source_dirty": false,
+    "source_fingerprint_sha256": "f07463aa017f4627188d9d83edc319fdfe221ba0919baf662cf5a0f7c073e397",
+    "source_root": "/Users/hunt/Desktop/agenthon-quant-lab"
+  },
+  "deliberate_cash_error_detected": true,
+  "deliberate_price_error_detected": true,
+  "elapsed_seconds": 8.31016445811838,
+  "exact_analysis_reproduced": true,
+  "explain_invalid_exit": 0,
+  "model_calls": 0,
+  "paid_services_cost_usd": 0,
+  "status": "passed",
+  "test_command": [
+    "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "test_exit": 0,
+  "tests_run": 52,
+  "workflows": [
+    {
+      "case": "options",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+        "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research/scripts/quant.py",
+        "run",
+        "/Users/hunt/Desktop/agenthon-quant-lab/examples/options.json",
+        "--out",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/options"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "bf0bc8ef1bd0a4335bd5deb6f4673a2d19a67df7be8bee006de0e0a91d025bff",
+      "verified": true
+    },
+    {
+      "case": "trading",
+      "check_counts": {
+        "failed": 0,
+        "passed": 24,
+        "unavailable": 1
+      },
+      "command": [
+        "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+        "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research/scripts/quant.py",
+        "run",
+        "/Users/hunt/Desktop/agenthon-quant-lab/examples/trading.json",
+        "--out",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/trading"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "b9738158bcbf87d920f8ca4863fa4d7ed7107ea99d12c00c31c6413b3fc46de6",
+      "verified": true
+    },
+    {
+      "case": "invalid-options",
+      "check_counts": {
+        "failed": 1,
+        "passed": 0,
+        "unavailable": 0
+      },
+      "command": [
+        "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+        "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research/scripts/quant.py",
+        "run",
+        "/Users/hunt/Desktop/agenthon-quant-lab/examples/invalid-options.json",
+        "--out",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/invalid-options"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "run_record_sha256": "af1b6d39610daf292c96695065561bc19b37d466d7b7ffb4b036fe5cf84047b1",
+      "verified": true
+    },
+    {
+      "case": "options-reproduced",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+        "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research/scripts/quant.py",
+        "reproduce",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/options",
+        "--out",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/options-reproduced"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "00745df5d8416889382058d1816c9a7665f6ed9717552f65d14a68c8c975b45c",
+      "verified": true
+    },
+    {
+      "case": "options-vol30",
+      "check_counts": {
+        "failed": 0,
+        "passed": 82,
+        "unavailable": 2
+      },
+      "command": [
+        "/Users/hunt/Desktop/agenthon-quant-lab/.venv/bin/python",
+        "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research/scripts/quant.py",
+        "reproduce",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/options",
+        "--set",
+        "volatility=0.3",
+        "--out",
+        "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/options-vol30"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "run_record_sha256": "63986119d0f887f4570a5e6705a14d0b757a10d442d29e6a3508596a7137b426",
+      "verified": true
+    }
+  ]
+}

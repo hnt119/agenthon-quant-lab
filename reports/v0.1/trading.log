@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": {
+    "passed": 24,
+    "failed": 0,
+    "unavailable": 1
+  },
+  "report": "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/trading/report.md"
+}

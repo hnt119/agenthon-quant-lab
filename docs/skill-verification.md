@@ -66,3 +66,8 @@ again later. The trading report was 357 lines of mostly structured JSON.
 The tester recommended concise valuation/scenario and portfolio/period tables,
 with detailed evidence retained in `run.json`. This is a readability finding,
 not a numerical failure; the original test artifacts remain unchanged.
+
+## Final committed-source exercise
+
+The four helper paths were exercised again by `scripts/verify_release.py` at source commit `ab2f62085f3c18ee97c555b8eb1bd6e400228ece`. See the permanent [qualification record](../reports/v0.1/verification.json) and linked run reports. The bundled release option spec uses a 2% dividend yield and includes a zero-volatility scenario; it is distinct from the zero-dividend realistic request above. Its 82 passed and two unavailable boundary checks are preserved explicitly. Reports now use valuation/scenario and portfolio/period tables; full evidence remains in JSON.
+The skill is installed as a symlink at `/Users/hunt/.codex/skills/quant-research`. Automatic selection in a future Codex chat has not been independently tested.

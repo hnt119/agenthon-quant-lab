@@ -29,3 +29,9 @@ wheel layouts or environments.
 Next action: use the README's commands on a user-owned price file with explicit
 adjustment conventions, or build the small local dashboard described in
 `next-milestone.md` using the same engine and saved-run format.
+
+## Final local freeze
+
+Source commit: `ab2f62085f3c18ee97c555b8eb1bd6e400228ece`. Final qualification: **52 tests passed**; reports and complete hashes are in [release-manifest.json](../release-manifest.json).
+The installed repository is `/Users/hunt/Desktop/agenthon-quant-lab` and the discoverable skill links to its maintained source.
+[Verification details](verification.md) distinguish passed, invalid and unavailable checks. The Git tag `v0.1.0` names the separate evidence commit.

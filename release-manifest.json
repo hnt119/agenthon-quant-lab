@@ -1,0 +1,305 @@
+{
+  "artifacts": {
+    "reports/v0.1/deliberate-failures.json": {
+      "bytes": 32529,
+      "sha256": "902659f5f2f6e772bc2df9b6d84bb199fda3e23994d190e05b662e577efb3148"
+    },
+    "reports/v0.1/explain-invalid.log": {
+      "bytes": 280,
+      "sha256": "b6d035d29e6c2d84e5b56628ce74cc277296d1ed48625650e34c43946581f352"
+    },
+    "reports/v0.1/invalid-options.log": {
+      "bytes": 193,
+      "sha256": "37135ead214f18caabb36aa948d0570ba8b3bf40db3a3001b4e14858e56fc7a7"
+    },
+    "reports/v0.1/invalid-options/inputs/request.json": {
+      "bytes": 190,
+      "sha256": "d134dd92e6b4a3385117847a0efd7d4fe08ee0756d8ee88e4bad2e05dc9f03c3"
+    },
+    "reports/v0.1/invalid-options/report.md": {
+      "bytes": 1359,
+      "sha256": "89cd42c22bfd5a7dce564c76c250ec9c57e6401440004b2fd1d85220ed7e3e0b"
+    },
+    "reports/v0.1/invalid-options/run.json": {
+      "bytes": 2765,
+      "sha256": "af1b6d39610daf292c96695065561bc19b37d466d7b7ffb4b036fe5cf84047b1"
+    },
+    "reports/v0.1/invalid-options/spec.json": {
+      "bytes": 190,
+      "sha256": "e6bd76dc8f8888570fade0e0d85b8aa7b2bfca8ac299a156ff87ea966dfa26a8"
+    },
+    "reports/v0.1/options-reproduced.log": {
+      "bytes": 196,
+      "sha256": "4ed577018a13ffdb77662cee9d9a826ada445a2880fc513f499bb9e5669f3077"
+    },
+    "reports/v0.1/options-reproduced/inputs/request.json": {
+      "bytes": 266,
+      "sha256": "7b9b6ca4da85948ee574e22039e8e86199917272a24a5a568e64110c8bc4c7fe"
+    },
+    "reports/v0.1/options-reproduced/report.md": {
+      "bytes": 14542,
+      "sha256": "e8292c614f4436ab0317fe8bf008ecfcc72c7b56891a25dd3923b174f071b376"
+    },
+    "reports/v0.1/options-reproduced/run.json": {
+      "bytes": 64053,
+      "sha256": "00745df5d8416889382058d1816c9a7665f6ed9717552f65d14a68c8c975b45c"
+    },
+    "reports/v0.1/options-reproduced/spec.json": {
+      "bytes": 266,
+      "sha256": "7b9b6ca4da85948ee574e22039e8e86199917272a24a5a568e64110c8bc4c7fe"
+    },
+    "reports/v0.1/options-reproduced/validated-results.json": {
+      "bytes": 26820,
+      "sha256": "af50fe2836b398a662637b3c7f5a72aa3a4f2099c0c1cdad0a4ee6f774a91f16"
+    },
+    "reports/v0.1/options-vol30.log": {
+      "bytes": 191,
+      "sha256": "f31953204d9472edf0a41d5c919a7bf91da5a6386e01bfa73c568c864654ad3c"
+    },
+    "reports/v0.1/options-vol30/inputs/request.json": {
+      "bytes": 266,
+      "sha256": "e995ac2a0148122aab1b4976e28d081e13480aa3caa14acd81d0075e437a29dc"
+    },
+    "reports/v0.1/options-vol30/report.md": {
+      "bytes": 14536,
+      "sha256": "c03951458e6040285fb9d373dbe04c06882de26029b0cc008454cc31403a7966"
+    },
+    "reports/v0.1/options-vol30/run.json": {
+      "bytes": 64247,
+      "sha256": "63986119d0f887f4570a5e6705a14d0b757a10d442d29e6a3508596a7137b426"
+    },
+    "reports/v0.1/options-vol30/spec.json": {
+      "bytes": 266,
+      "sha256": "e995ac2a0148122aab1b4976e28d081e13480aa3caa14acd81d0075e437a29dc"
+    },
+    "reports/v0.1/options-vol30/validated-results.json": {
+      "bytes": 26820,
+      "sha256": "1f127868695a828dc18c5e2da54d322701856901710db5ffcf4735bec6d1c08e"
+    },
+    "reports/v0.1/options.log": {
+      "bytes": 185,
+      "sha256": "7825866bb28cf50877412994ff5f1fc88238087a60af17bc1275833daea02e0d"
+    },
+    "reports/v0.1/options/inputs/request.json": {
+      "bytes": 250,
+      "sha256": "e97cff171171f8672745f2aa51e5a55568d41ce5988c9f3f455965d11a533998"
+    },
+    "reports/v0.1/options/report.md": {
+      "bytes": 14531,
+      "sha256": "c5c9f53e207a71240dc6a60f026ea5a20f01994f219c6e74112d4e58031efee1"
+    },
+    "reports/v0.1/options/run.json": {
+      "bytes": 64033,
+      "sha256": "bf0bc8ef1bd0a4335bd5deb6f4673a2d19a67df7be8bee006de0e0a91d025bff"
+    },
+    "reports/v0.1/options/spec.json": {
+      "bytes": 266,
+      "sha256": "7b9b6ca4da85948ee574e22039e8e86199917272a24a5a568e64110c8bc4c7fe"
+    },
+    "reports/v0.1/options/validated-results.json": {
+      "bytes": 26820,
+      "sha256": "af50fe2836b398a662637b3c7f5a72aa3a4f2099c0c1cdad0a4ee6f774a91f16"
+    },
+    "reports/v0.1/tests.log": {
+      "bytes": 6748,
+      "sha256": "cc18576fd7fcbfde4f90570a5e1a889454e9ce1b925ad150f732d03bbdd22b95"
+    },
+    "reports/v0.1/trading.log": {
+      "bytes": 185,
+      "sha256": "f04f3e0a11a41c059272a16272b29e3065f87d09e90d817fe9f75ccbe347108a"
+    },
+    "reports/v0.1/trading/inputs/data.csv": {
+      "bytes": 5944,
+      "sha256": "41755e23816c15135a07beecf9a3115b0f37c377c8f1b3aec874f4b075106ab4"
+    },
+    "reports/v0.1/trading/inputs/request.json": {
+      "bytes": 493,
+      "sha256": "18cc75dfc0911319566900e5b10168865e301b107589561dd0cefbdc877c7885"
+    },
+    "reports/v0.1/trading/report.md": {
+      "bytes": 7823,
+      "sha256": "cc22cd1a0ba4dba08d79aec664b6d3055fa091785d648212fc5f8c92cc86109f"
+    },
+    "reports/v0.1/trading/run.json": {
+      "bytes": 616153,
+      "sha256": "b9738158bcbf87d920f8ca4863fa4d7ed7107ea99d12c00c31c6413b3fc46de6"
+    },
+    "reports/v0.1/trading/spec.json": {
+      "bytes": 483,
+      "sha256": "cf857fce571e84b6b37733e993128610b375f0d0c69829792554c2e5321051e7"
+    },
+    "reports/v0.1/trading/validated-results.json": {
+      "bytes": 533476,
+      "sha256": "6ebf81bc2ce206dcde58ffb094316947566f1c8dd7e2d288cb76090a9b3f43d8"
+    },
+    "reports/v0.1/verification.json": {
+      "bytes": 5191,
+      "sha256": "6e935736087338a209df90a83a6f992c3e6e8b3d0d2bc344e171cfec2ace3d25"
+    }
+  },
+  "branch": "codex/v0.1",
+  "competition_submission": false,
+  "container_image_digest": null,
+  "container_image_note": "Not applicable: no new competition image or submission was created.",
+  "date_singapore": "2026-11-14",
+  "limitations": [
+    "Only two deterministic workflows; no dashboard yet",
+    "Synthetic prices establish no empirical trading edge",
+    "Source and price adjustment declarations not independently verified",
+    "Boundary numerical checks may be unavailable; inspect individual records",
+    "Model adapters mock-only; live behavior untested",
+    "No generated-code execution, live orders, deployment or remote publication"
+  ],
+  "original_preservation": {
+    "head_commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+    "root": "/Users/hunt/Desktop/agenthon-track1-agent",
+    "status_identical_before_after": true,
+    "status_sha256": "3a856f7c2d12450b45a7753b6b00d26155deac408643a163c9ccf4084ad870d1",
+    "tracked_diff_identical_before_after": true,
+    "tracked_diff_sha256": "07b1f2972943fad4e9cf351c978b1c486042b01e8bdcefd57bb1143a5c7b8c3c"
+  },
+  "project": "Agenthon Quant Lab",
+  "qualification": {
+    "paid_service_cost_usd": 0,
+    "real_model_calls": 0,
+    "record": "reports/v0.1/verification.json",
+    "sha256": "6e935736087338a209df90a83a6f992c3e6e8b3d0d2bc344e171cfec2ace3d25",
+    "status": "passed",
+    "tests": 52
+  },
+  "release_tag": "v0.1.0",
+  "remote": null,
+  "repository_root": "/Users/hunt/Desktop/agenthon-quant-lab",
+  "runtime_source_fingerprint_sha256": "f07463aa017f4627188d9d83edc319fdfe221ba0919baf662cf5a0f7c073e397",
+  "schema_version": 1,
+  "skill_installation": {
+    "automatic_selection_live_tested": false,
+    "path": "/Users/hunt/.codex/skills/quant-research",
+    "schema_validator": "passed",
+    "target": "/Users/hunt/Desktop/agenthon-quant-lab/skills/quant-research",
+    "type": "symlink"
+  },
+  "source_bytes_match_commit": true,
+  "source_commit": "ab2f62085f3c18ee97c555b8eb1bd6e400228ece",
+  "source_files": {
+    ".gitignore": {
+      "bytes": 109,
+      "sha256": "ce1e1c664d7bb9640d67d1817e09b79e6ac4a6762d94b360fcfd7d9631ddf463"
+    },
+    "AGENTS.md": {
+      "bytes": 1349,
+      "sha256": "479065cdae377b1964d5ad08bbc01d154991988458313570a0815bc02ac0cada"
+    },
+    "LICENSE": {
+      "bytes": 1087,
+      "sha256": "3c199ab967a5723059b431db304c1d1428253e7e27384bea28cb249b276590f5"
+    },
+    "README.md": {
+      "bytes": 6933,
+      "sha256": "471cf979d2edba65d21221eddf212b8aa01a0f466089d3d86a544fc8758e244c"
+    },
+    "examples/data/README.md": {
+      "bytes": 1051,
+      "sha256": "2fe1d1e91b9abea8056f31cd501a2fd36ee27b828ff02ffec821abbfdaa70c9b"
+    },
+    "examples/data/synthetic_prices.csv": {
+      "bytes": 5944,
+      "sha256": "41755e23816c15135a07beecf9a3115b0f37c377c8f1b3aec874f4b075106ab4"
+    },
+    "examples/invalid-options.json": {
+      "bytes": 190,
+      "sha256": "d134dd92e6b4a3385117847a0efd7d4fe08ee0756d8ee88e4bad2e05dc9f03c3"
+    },
+    "examples/options.json": {
+      "bytes": 250,
+      "sha256": "e97cff171171f8672745f2aa51e5a55568d41ce5988c9f3f455965d11a533998"
+    },
+    "examples/trading.json": {
+      "bytes": 493,
+      "sha256": "18cc75dfc0911319566900e5b10168865e301b107589561dd0cefbdc877c7885"
+    },
+    "pyproject.toml": {
+      "bytes": 499,
+      "sha256": "05d6fb3e5f3631bc875c68da8f2e100513899b32b4725fb1dd6ac898cdb4929a"
+    },
+    "requirements-verified.txt": {
+      "bytes": 175,
+      "sha256": "08faa336f73155cf1256c74285860e3359fabc813661c835a29f97e5908f5e5d"
+    },
+    "scripts/generate_synthetic_data.py": {
+      "bytes": 1543,
+      "sha256": "2c03899c71916596f7fd135d334c2b6ef426f0e52cee9151d7f418317911926e"
+    },
+    "scripts/verify_release.py": {
+      "bytes": 5613,
+      "sha256": "929f25f6d419765c4900bb4cc6efc147393c5c9e28befb5913b5b9019f2f387e"
+    },
+    "skills/quant-research/SKILL.md": {
+      "bytes": 2911,
+      "sha256": "b489102187238c07af6c2c149d492481fced78a3c8e85001a868f9f13860ab56"
+    },
+    "skills/quant-research/agents/openai.yaml": {
+      "bytes": 199,
+      "sha256": "7885f654bcf85e6c10772117662220bbec030d57687dd46fd805c811eac99703"
+    },
+    "skills/quant-research/references/requests.md": {
+      "bytes": 2178,
+      "sha256": "3fc7e03973018d3b710d3545434a8723b647204a1ac4c9c11c94b501bc452137"
+    },
+    "skills/quant-research/scripts/quant.py": {
+      "bytes": 604,
+      "sha256": "833d48c8325cd1daf5432c0d6513e3491dd308e204cc4fa112f289ffde36f40e"
+    },
+    "src/agenthon_quant/__init__.py": {
+      "bytes": 88,
+      "sha256": "c67f9d10cd3cbcf033b97c55849a4d01eeb24dbca0a6bb569a323f39bd2609be"
+    },
+    "src/agenthon_quant/__main__.py": {
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    "src/agenthon_quant/assistance.py": {
+      "bytes": 3804,
+      "sha256": "211f10610409e2cb8f2b560e42e7952deb5a7092c2e6ed81f71af3d2583ef0ef"
+    },
+    "src/agenthon_quant/cli.py": {
+      "bytes": 2523,
+      "sha256": "1472a53935fea1bd586323e9facab9d3903fa68673b3a911858abe27e5884fc8"
+    },
+    "src/agenthon_quant/options.py": {
+      "bytes": 18325,
+      "sha256": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0"
+    },
+    "src/agenthon_quant/records.py": {
+      "bytes": 15234,
+      "sha256": "aee6512a5616607a829443113620f9d61b18b13a31e0ba88710c1b9b02b88223"
+    },
+    "src/agenthon_quant/trading.py": {
+      "bytes": 25261,
+      "sha256": "630646a50f1617e039354058b9a837ce1871b34111e70ed0c3bbbf118e52e508"
+    },
+    "tests/test_assistance.py": {
+      "bytes": 1864,
+      "sha256": "1df81606e3e05f4b8064f13a73429fec95435eb3d6c9510b28870214565da71c"
+    },
+    "tests/test_options.py": {
+      "bytes": 7473,
+      "sha256": "d8fe5d23bd766a4c350855efe8c08d39e46498b4fc16e77d8572f34e699d6731"
+    },
+    "tests/test_records.py": {
+      "bytes": 4554,
+      "sha256": "dfe96473ccc2ae72d89d173c480e63617d735a32d7fb1f9f429a5a005c65a9fc"
+    },
+    "tests/test_review_regressions.py": {
+      "bytes": 4328,
+      "sha256": "0561201ec9aa8cb0d497abb6478089822ae578c7faee773a49ef336ad2b171db"
+    },
+    "tests/test_trading.py": {
+      "bytes": 11280,
+      "sha256": "f98f73447b424ee72052d1a96bc133965b340cf46f4fcb49fdcb5173ae135250"
+    }
+  },
+  "source_inventory_scope": "runtime, CLI/skill, qualification scripts, tests, examples, setup and top-level instructions; historical audit docs are not executable source",
+  "source_inventory_sha256": "53d63d4fcd07e80242d504b7d397b717fa42f2a7dd21e5d281f4c11aa4ecf7ca",
+  "version": "0.1.0"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "invalid",
+  "checks": {
+    "passed": 0,
+    "failed": 1,
+    "unavailable": 0
+  },
+  "report": "/Users/hunt/Desktop/agenthon-quant-lab/reports/v0.1/invalid-options/report.md"
+}
