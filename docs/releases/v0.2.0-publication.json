@@ -1,0 +1,29 @@
+{
+  "canonical_website_head_unchanged": "8a7fca964b156fc8f63f06a09626bbc0f78130dc",
+  "is_draft": false,
+  "is_prerelease": false,
+  "original_competition_status_and_diff": "Byte-identical to mission-start snapshots",
+  "published_at_utc": "2026-11-13T17:58:18Z",
+  "qualified_source_commit": "c9e48bdd25183587a21f0ade2a4b5b58f01c9150",
+  "release": "v0.2.0",
+  "release_url": "https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.2.0",
+  "repository": "https://github.com/hnt119/agenthon-quant-lab",
+  "schema_version": 1,
+  "source_ci": {
+    "conclusion": "success",
+    "url": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/43477435670"
+  },
+  "tag_object": "bb2e4e7219e173be3b0ea7f6bdb004d443530a88",
+  "tag_target_ci": {
+    "conclusion": "success",
+    "url": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/43477826662"
+  },
+  "tag_target_commit": "a51d5e978454a55f25242cad4aa019fe120fb46d",
+  "v0_1_tag_object_preserved": "1e8508973bf172222e8ff00b9e6f367bb42ab92c",
+  "verification_method": "GitHub release readback, git ls-remote tag/main refs, peeled local annotated tag, GitHub CI readback. Tags are annotated, not cryptographically signed.",
+  "visibility": "PUBLIC",
+  "website_ci": "https://github.com/hnt119/hnt119.github.io/actions/runs/43476621460",
+  "website_deployed": false,
+  "website_merged": false,
+  "website_pr": "https://github.com/hnt119/hnt119.github.io/pull/55"
+}
