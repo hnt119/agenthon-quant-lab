@@ -1,6 +1,6 @@
 # Attribution and material boundaries
 
-The original participant repository [`agenthon-track1-agent/LICENSE`](../../agenthon-track1-agent/LICENSE) contains the MIT license with copyright “2026 Agenthon Team 166 contributors.” Numerical/API patterns were inspected there; any adapted participant code retains that notice in this repository's license. This observation is of the local license file, not an independent authorship audit of every historical artifact.
+The original participant repository `agenthon-track1-agent/LICENSE` (owner-held historical source) contains the MIT license with copyright “2026 Agenthon Team 166 contributors.” Numerical/API patterns were inspected there; any adapted participant code retains that notice in [this repository's license](../LICENSE). This observation is of the local license file, not an independent authorship audit of every historical artifact.
 
 The official kit at `/Users/hunt/Desktop/track1-coding-public`, revision `81e3e072f8d93ecbddc5915e38710a6cce61313c`, has a root `LICENSE` headed “Attribution-NonCommercial 4.0 International.” Its AGENTS instructions also establish the public/private benchmark firewall. Organizer tasks, data, checkers, answers and canaries are not bundled or relicensed here. Existing source dependencies were inspected to choose ordinary numerical tooling; the benchmark's full sandbox requirements are not copied into the new runtime.
 

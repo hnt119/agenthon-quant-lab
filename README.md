@@ -10,7 +10,7 @@ explains the mechanisms, failures and decisions behind the work.
 ## Start in a minute
 
 Python **3.12+**, macOS or Linux. Windows interpreter paths are documented, but
-this release's installation acceptance is on macOS and Linux CI.
+fresh installation has been checked on macOS; Linux CI status is recorded in the release report.
 
 ```sh
 git clone https://github.com/hnt119/agenthon-quant-lab.git

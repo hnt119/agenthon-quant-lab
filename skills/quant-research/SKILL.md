@@ -8,12 +8,12 @@ description: "Run and explain reproducible European option valuation, volatility
 Use the shared engine in the source checkout containing this skill. Resolve this
 file's real path when installed through a symlink. `scripts/quant.py` locates the
 checkout and `.venv`; it contains no finance calculations. Start with `doctor`.
-If setup is missing, follow [setup and usage](../../../docs/user-guide.md) and
-[skill installation](../../../docs/plugin-guide.md). `scripts/setup.py` installs
+If setup is missing, follow [setup and usage](../../docs/user-guide.md) and
+[skill installation](../../docs/plugin-guide.md). `scripts/setup.py` installs
 free dependencies; skill installation is optional and preserves existing links.
 
-For modeling, read [option conventions](../../../docs/options-conventions.md);
-for strategy evaluation, read [trading conventions](../../../docs/trading-conventions.md).
+For modeling, read [option conventions](../../docs/options-conventions.md);
+for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).
 Use `examples/options.json` or `examples/trading.json` as the schema starting point.
 Ask for missing inputs that materially affect results and expose chosen assumptions.
 Do not guess rate units, dividend treatment or price-adjustment semantics.
