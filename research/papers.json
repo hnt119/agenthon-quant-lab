@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "scope": "Original concise summaries of selected primary literature. Project relevance is an interpretation, not evidence of causal transfer.",
+  "verified_date": "2026-11-14",
+  "year_policy": "Year follows the linked primary source: first arXiv publication unless a conference proceedings page is used. Venue years are separate where verified.",
+  "source_notes": [
+    {
+      "repository": "agenthon-track1-agent",
+      "path": "Agenthon research findings/Agenthon_Track1_Handoff.md",
+      "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+      "sha256": "f2f9939aed4754d69c097c32cd26d2c685566af0a9455bbf2fbaae475d7d4b9b",
+      "visibility": "historical_local",
+      "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed."
+    },
+    {
+      "repository": "agenthon-track1-agent",
+      "path": "Agenthon research findings/agenthon_track1_literature_synthesis.md",
+      "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+      "sha256": "00597afbdd19f828944124ccd0e0d5083b81330897799736d5ef964aae4ab8c4",
+      "visibility": "historical_local",
+      "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed."
+    },
+    {
+      "repository": "agenthon-track1-agent",
+      "path": "Agenthon research findings/Agenthon_FFT_Research_Findings.md",
+      "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+      "sha256": "62ff7ef8db4f03a424fea6cc102d35b0a310d40ac47085d8204dd577e03069e9",
+      "visibility": "historical_local",
+      "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed."
+    }
+  ],
+  "papers": [
+    {
+      "id": "agentless-2024",
+      "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+      "authors": [
+        "Chunqiu Steven Xia",
+        "Yinlin Deng",
+        "Soren Dunn",
+        "Lingming Zhang"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2407.01489",
+      "topics": [
+        "orchestration",
+        "bounded-repair"
+      ],
+      "mechanism": "Separate localization, repair and patch validation into a constrained flow instead of an unrestricted action loop.",
+      "reported_findings": "The authors report competitive SWE-bench Lite repair performance at low inference cost, and identify misleading or underspecified benchmark issues.",
+      "project_relevance": "Motivates a small inspectable pipeline. Quant Lab has deterministic calculation and validation stages; it does not reproduce the paper agent.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "docs/architecture.md",
+        "src/agenthon_quant/records.py"
+      ],
+      "experiment_ids": [
+        "r29-nvidia-full86-20261013"
+      ],
+      "limitations": [
+        "Repository repair benchmarks differ from financial calculations.",
+        "No controlled Agentless ablation was run in this project."
+      ],
+      "decision": "Retain simple stage boundaries; add autonomy only after a measured benefit.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "alphacodium-2024",
+      "title": "Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering",
+      "authors": [
+        "Tal Ridnik",
+        "Dedy Kredo",
+        "Itamar Friedman"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2401.08500",
+      "topics": [
+        "flow-design",
+        "testing",
+        "repair"
+      ],
+      "mechanism": "Use structured problem analysis and repeated code execution against tests in a multi-stage generation flow.",
+      "reported_findings": "The authors report higher CodeContests pass@5 than a direct prompt in the tested GPT-4 configuration.",
+      "project_relevance": "Supports explicit specifications, tests and inspectable failures. The local research engine uses maintained calculations rather than generating candidate code.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "docs/architecture.md",
+        "src/agenthon_quant/options.py",
+        "src/agenthon_quant/trading.py"
+      ],
+      "experiment_ids": [
+        "publication-ownership-20260921"
+      ],
+      "limitations": [
+        "Paper pass@5 is not the competition single-solve metric.",
+        "Generated tests can share mistakes with generated code."
+      ],
+      "decision": "Use independent numerical and accounting checks; defer multi-candidate inference.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "critic-2023",
+      "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+      "authors": [
+        "Zhibin Gou",
+        "Zhihong Shao",
+        "Yeyun Gong",
+        "Yelong Shen",
+        "Yujiu Yang",
+        "Nan Duan",
+        "Weizhu Chen"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.11738",
+      "topics": [
+        "external-feedback",
+        "self-debugging",
+        "verification"
+      ],
+      "mechanism": "Evaluate an initial answer with external tools, then revise it using the resulting evidence.",
+      "reported_findings": "The authors report improvements in question answering, mathematical program synthesis and toxicity reduction, emphasizing the role of external feedback.",
+      "project_relevance": "Provides context for bounded diagnostics and independent verification. Historical TypeError trials test local diagnostic behavior, not CRITIC itself.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "src/agenthon_quant/options.py",
+        "src/agenthon_quant/trading.py",
+        "experiments/experiments.json"
+      ],
+      "experiment_ids": [
+        "typeerror-trial1-20260928",
+        "typeerror-trial2-20260928",
+        "r60-smith-20261020",
+        "r61-smith-20261020"
+      ],
+      "limitations": [
+        "Tool feedback is only useful within its validity scope.",
+        "No causal CRITIC comparison or real-model Quant Lab run exists."
+      ],
+      "decision": "Ground explanations in actual check outcomes; keep hidden grading material out of solver feedback.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "venue_year": 2024,
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "ldb-2024",
+      "title": "Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step by Step",
+      "authors": [
+        "Li Zhong",
+        "Zilong Wang",
+        "Jingbo Shang"
+      ],
+      "year": 2024,
+      "url": "https://aclanthology.org/2024.findings-acl.49/",
+      "topics": [
+        "runtime-tracing",
+        "self-debugging"
+      ],
+      "mechanism": "Inspect intermediate variables at basic-block boundaries and assess execution against the task specification.",
+      "reported_findings": "The authors report improved debugging across HumanEval, MBPP and TransCoder using execution-level information.",
+      "project_relevance": "Suggests semantic checkpoints such as discount factors and cash balances. Existing bounded exception diagnostics are narrower than an LDB tracer.",
+      "adaptation_status": "proposed",
+      "implementation": [
+        "docs/research-notes.md",
+        "experiments/experiments.json"
+      ],
+      "experiment_ids": [
+        "typeerror-trial1-20260928",
+        "typeerror-trial2-20260928"
+      ],
+      "limitations": [
+        "The recorded trials did not retain full runtime state and do not establish LDB effectiveness.",
+        "Tracing untrusted generated code requires verified isolation."
+      ],
+      "decision": "Defer general tracing; expose maintained-engine intermediate quantities when they explain a failed invariant.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "ACL Findings publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "react-2022",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2210.03629",
+      "topics": [
+        "agent-orchestration",
+        "tool-use"
+      ],
+      "mechanism": "Interleave reasoning with actions and observations so plans can change in response to the environment.",
+      "reported_findings": "The authors report benefits on knowledge-intensive question answering and interactive decision tasks compared with reasoning-only or acting-only approaches.",
+      "project_relevance": "An earlier competition release used a bounded ReAct variant. Quant Lab v0.1 intentionally has no autonomous tool loop.",
+      "adaptation_status": "deferred",
+      "implementation": [
+        "experiments/experiments.json",
+        "docs/reuse-map.md"
+      ],
+      "experiment_ids": [
+        "official-react-962738"
+      ],
+      "limitations": [
+        "The historical submission result is not a controlled paper reproduction.",
+        "Its aggregate score does not identify which mechanism helped or failed."
+      ],
+      "decision": "Keep the historical outcome; require a fixed-budget comparison before adding a model-driven loop.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "venue_year": 2023,
+      "historical_adaptation": "Bounded competition variant; not an exact reproduction.",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "reflexion-2023",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": [
+        "Noah Shinn",
+        "Federico Cassano",
+        "Edward Berman",
+        "Ashwin Gopinath",
+        "Karthik Narasimhan",
+        "Shunyu Yao"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2303.11366",
+      "topics": [
+        "reflection",
+        "experience-memory"
+      ],
+      "mechanism": "Store textual reflections on task feedback in episodic memory to guide subsequent trials without updating model weights.",
+      "reported_findings": "The authors report gains across decision-making, coding and reasoning tasks and analyze feedback and memory choices.",
+      "project_relevance": "Suggests retaining verified lessons and failures. This archive is curated evidence, not an implemented Reflexion learning policy.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "docs/negative-results.md",
+        "experiments/experiments.json"
+      ],
+      "experiment_ids": [],
+      "limitations": [
+        "Repeated trials and reflective text can amplify incorrect lessons.",
+        "No project experiment isolates reflective memory."
+      ],
+      "decision": "Store evidence provenance and uncertainty; do not turn an unverified explanation into a universal rule.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "metadata_note": "Authors follow the linked arXiv v4 metadata.",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "repocoder-2023",
+      "title": "RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation",
+      "authors": [
+        "Fengji Zhang",
+        "Bei Chen",
+        "Yue Zhang",
+        "Jacky Keung",
+        "Jin Liu",
+        "Daoguang Zan",
+        "Yi Mao",
+        "Jian-Guang Lou",
+        "Weizhu Chen"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2303.12570",
+      "topics": [
+        "retrieval",
+        "repository-context"
+      ],
+      "mechanism": "Alternate similarity-based repository retrieval with code generation to improve the context used for completion.",
+      "reported_findings": "The authors report improvements over in-file and ordinary retrieval baselines on line, API and function completion tasks in RepoEval.",
+      "project_relevance": "Supports locating relevant contracts and utilities instead of loading every historical archive into a prompt.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "docs/reuse-map.md",
+        "research/papers.json"
+      ],
+      "experiment_ids": [],
+      "limitations": [
+        "An indexed evidence archive is not a trained code-completion system.",
+        "No retrieval ablation is available for Agenthon or Quant Lab."
+      ],
+      "decision": "Keep references small and searchable; defer iterative generation-driven retrieval.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "repograph-2024",
+      "title": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+      "authors": [
+        "Siru Ouyang",
+        "Wenhao Yu",
+        "Kaixin Ma",
+        "Zilin Xiao",
+        "Zhihan Zhang",
+        "Mengzhao Jia",
+        "Jiawei Han",
+        "Hongming Zhang",
+        "Dong Yu"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2410.14684",
+      "topics": [
+        "retrieval",
+        "code-graphs"
+      ],
+      "mechanism": "Provide repository-level structural navigation through a code graph that can augment existing software-engineering agents.",
+      "reported_findings": "The authors report gains when adding the module to several SWE-bench approaches and examine another repository-level completion benchmark.",
+      "project_relevance": "May help a larger library locate dependent conventions and callers. The present package is small enough for explicit file references.",
+      "adaptation_status": "deferred",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "experiment_ids": [],
+      "limitations": [
+        "Index maintenance adds complexity.",
+        "No graph was built or evaluated for this release."
+      ],
+      "decision": "Defer until repository size produces a measured localization problem.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "venue_year": 2025,
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "repoformer-2024",
+      "title": "Repoformer: Selective Retrieval for Repository-Level Code Completion",
+      "authors": [
+        "Di Wu",
+        "Wasi Uddin Ahmad",
+        "Dejiao Zhang",
+        "Murali Krishna Ramanathan",
+        "Xiaofei Ma"
+      ],
+      "year": 2024,
+      "url": "https://proceedings.mlr.press/v235/wu24a.html",
+      "topics": [
+        "retrieval",
+        "cost-control"
+      ],
+      "mechanism": "Train a code model to decide when retrieval is useful and to handle noisy retrieved context.",
+      "reported_findings": "The authors report improved repository-level completion and substantial serving speedups from avoiding unnecessary retrieval in their evaluated settings.",
+      "project_relevance": "Motivates selective reference loading in the research skill. A hand-selected index does not implement the paper trained retrieval policy.",
+      "adaptation_status": "inspiration",
+      "implementation": [
+        "skills/quant-research/SKILL.md",
+        "docs/research-notes.md"
+      ],
+      "experiment_ids": [],
+      "limitations": [
+        "Paper latency results depend on its serving setup.",
+        "No local speedup or learned-policy effectiveness is claimed."
+      ],
+      "decision": "Read only references relevant to the request; defer training a retrieval policy.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "ICML publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "codet-2022",
+      "title": "CodeT: Code Generation with Generated Tests",
+      "authors": [
+        "Bei Chen",
+        "Fengji Zhang",
+        "Anh Nguyen",
+        "Daoguang Zan",
+        "Zeqi Lin",
+        "Jian-Guang Lou",
+        "Weizhu Chen"
+      ],
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2207.10397",
+      "topics": [
+        "test-generation",
+        "candidate-selection"
+      ],
+      "mechanism": "Generate tests and candidate programs, then rank solutions using execution agreement between programs and tests.",
+      "reported_findings": "The authors report better solution selection across several code-generation benchmarks and model sizes.",
+      "project_relevance": "Explains why generated tests may help explore disagreements, but financial assertions still need independently justified assumptions.",
+      "adaptation_status": "deferred",
+      "implementation": [
+        "docs/research-notes.md",
+        "src/agenthon_quant/options.py"
+      ],
+      "experiment_ids": [],
+      "limitations": [
+        "Agreement among generated artifacts is not an independent correctness proof.",
+        "No generated-test candidate selection is implemented or evaluated here."
+      ],
+      "decision": "Retain independent numerical checks; defer best-of selection and additional inference.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "fits-2023",
+      "title": "FITS: Modeling Time Series with 10k Parameters",
+      "authors": [
+        "Zhijian Xu",
+        "Ailing Zeng",
+        "Qiang Xu"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2307.03756",
+      "topics": [
+        "fft",
+        "forecasting",
+        "efficient-models"
+      ],
+      "mechanism": "Model time series with complex-frequency interpolation and a compact learned parameterization.",
+      "reported_findings": "The authors report competitive forecasting and anomaly-detection performance with a small model after reducing selected high-frequency components.",
+      "project_relevance": "Inspires lightweight spectral diagnostics, not a claim that market noise should be discarded or that FFT predicts profitable trades.",
+      "adaptation_status": "deferred",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "experiment_ids": [
+        "proposed-spectral-triage"
+      ],
+      "limitations": [
+        "The trained FITS model differs from a deterministic FFT summary.",
+        "No local forecasting, trading or Agenthon ablation was run."
+      ],
+      "decision": "Do not train or promote a spectral model without a chronological controlled comparison.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "first arXiv publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    },
+    {
+      "id": "fan-2024",
+      "title": "Frequency Adaptive Normalization For Non-stationary Time Series Forecasting",
+      "authors": [
+        "Weiwei Ye",
+        "Songgaojun Deng",
+        "Qiaosha Zou",
+        "Ning Gui"
+      ],
+      "year": 2024,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/37c6d0bc4d2917dcbea693b18504bd87-Abstract-Conference.html",
+      "topics": [
+        "fft",
+        "nonstationarity",
+        "forecasting"
+      ],
+      "mechanism": "Separate changing spectral components and predict their evolution alongside a normalized residual forecasting model.",
+      "reported_findings": "The authors report MSE improvements when applying FAN to four forecasting backbones on eight benchmark datasets.",
+      "project_relevance": "Suggests explicitly examining trend and seasonality assumptions before adding spectral evidence to a financial workflow.",
+      "adaptation_status": "deferred",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "experiment_ids": [
+        "proposed-spectral-triage"
+      ],
+      "limitations": [
+        "Forecasting error on those datasets does not establish financial predictability or trading returns.",
+        "No FAN training or local model comparison was performed."
+      ],
+      "decision": "Keep spectral preprocessing experimental; compare against ordinary statistics before adopting it.",
+      "primary_source_verified_date": "2026-11-14",
+      "relevance_is_inference": true,
+      "paper_reproduction_performed": false,
+      "year_basis": "NeurIPS publication",
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+    }
+  ]
+}
