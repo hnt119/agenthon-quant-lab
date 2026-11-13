@@ -1,0 +1,24 @@
+name: Verify toolkit
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install from source
+        run: python scripts/setup.py
+      - name: Verify dependencies
+        run: .venv/bin/python -m agenthon_quant doctor
+      - name: Check public projection
+        run: .venv/bin/python scripts/export_site.py --check
+      - name: Exercise reproducible workflows
+        run: .venv/bin/python scripts/verify_release.py --out runs/ci-release

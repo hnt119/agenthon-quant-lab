@@ -1,0 +1,1889 @@
+{
+  "experiments": [
+    {
+      "baseline": null,
+      "code_commit": "f375076b9eae6822719b48b6b1fcf35056bcf628",
+      "configuration": {
+        "deployment": "official platform; served model/configuration not established by inspected receipts",
+        "image_manifest": "sha256:a406c826762245ad397d5c1a50e4f9c8d90d54ecb6c14ad63a13145bff42beed",
+        "source_fingerprint": "14fe067561be67e3eeba960c79e438071695ee43d74c429993822324450d9bc7"
+      },
+      "date": "2026-10-08",
+      "decision": "Retain as a historical baseline with its provenance; do not reinterpret as a local public-task score.",
+      "evidence_category": "official_reported",
+      "hypothesis": "Record the reported aggregate outcome and preserve an identity-bound baseline; no controlled causal hypothesis was tested.",
+      "id": "official-credit-964883",
+      "limitations": [
+        "The source says this image was also associated with an earlier submission; score differences alone do not prove a source improvement.",
+        "Historical platform observation did not recheck the worker artifact identity."
+      ],
+      "model": null,
+      "paper_ids": [],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "Human-uploaded competition submission; later user designation and archived platform display were inspected.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "denominator": null,
+        "official_score": 0.1512,
+        "score_provenance": "User report followed by an archived 8 October platform observation; not freshly platform-verified here.",
+        "summary": "Historical designated baseline, subsequently superseded by R29. Per-unit outcomes are not inferred from the aggregate.",
+        "whole_task_passes": null
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/964883-score-baseline-20261008.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "d8762d6c93eaac5351dec43a412be12a7c37ca3c8d103ffd1703ab62e8bb6b40",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/platform-observation-20261008-1539.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "9538b9b47c28009fd19cee118273e79f8c350d3f8d52934a06d0a531998c40c0",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "unknown",
+      "title": "Historical direct-repair submission 964883",
+      "topics": [
+        "official-results",
+        "direct-repair"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "model_calls": null,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": null
+      }
+    },
+    {
+      "baseline": {
+        "comparison": "Historical designation only; not a paired trial.",
+        "experiment_id": "official-credit-964883"
+      },
+      "code_commit": "24827ce99d6bca1874a26b6c6cbf985d1689801e",
+      "configuration": {
+        "deployment": "official platform; House served revision not independently established",
+        "image_manifest": "sha256:6b5caaab19179bb9f1de5fc484b36b89598568c33b3a64c3f7dbb129e5070334",
+        "source_fingerprint": "a379358be946e54f6bea9b905092a6dd8eb1cf0a0ac3957b8d1d9524d42959ec"
+      },
+      "date": "2026-10-20",
+      "decision": "Preserve designated baseline and keep local NVIDIA evidence separate.",
+      "evidence_category": "official_reported",
+      "hypothesis": "Maintain the user-designated official aggregate baseline independently of local evaluations.",
+      "id": "official-r29-983167",
+      "limitations": [
+        "Do not derive hidden per-unit outcomes from 0.2674.",
+        "The designation did not change the release default or authorize new runs."
+      ],
+      "model": null,
+      "paper_ids": [
+        "agentless-2024"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "20 October baseline designation referencing the 13 October receipt and supplied platform evidence.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "denominator": null,
+        "official_score": 0.2674,
+        "score_provenance": "USER_REPORTED_OFFICIAL; prior user-supplied display archived; no fresh independent platform verification.",
+        "summary": "R29 is the designated competition baseline; its NVIDIA result is a separate experiment.",
+        "whole_task_passes": null
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/983167-designated-baseline-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "60f35aed9bd70cd2e9937bba7faad076e2dad7467566bbefc0675bbcc5bd61a6",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/current-baseline.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "ee7a19cfeb076cf5629b99d2c72eddde3cb6adc4a9bea6aefb12fa8617be9599",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "unknown",
+      "title": "Designated R29 submission 983167",
+      "topics": [
+        "official-results",
+        "baseline"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "model_calls": null,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": null
+      }
+    },
+    {
+      "baseline": null,
+      "code_commit": null,
+      "configuration": {
+        "deployment": "official platform; served model unknown",
+        "image_manifest": "sha256:131ed5e9b9597481a0186c8589e5eb8b139c65b7c9b272ac2d2ba14f5059322d",
+        "source_fingerprint": "8c3f1d1fecd5369b516d65c36e7ad3651309552afa2d98232973e9fcc9a80049",
+        "source_root": "experimental/react-release-20261005/candidate"
+      },
+      "date": "2026-10-08",
+      "decision": "Retain the bounded-loop design and negative outcome as history; defer runtime agent loops in Quant Lab.",
+      "evidence_category": "official_reported",
+      "hypothesis": "Record the aggregate result of a bounded ReAct release; the submission is not a controlled ReAct-versus-direct-repair ablation.",
+      "id": "official-react-962738",
+      "limitations": [
+        "Exact Git source commit is not supplied in the inspected receipt; source fingerprint and image are distinct identities.",
+        "Offline counts of 74 affected tests, 315 regression tests and eight command cases are infrastructure evidence, not task success rates."
+      ],
+      "model": null,
+      "paper_ids": [
+        "react-2022"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "User-reported upload on 5 October; initial receipt recorded unknown score; archived 8 October platform display later reported a finished submission.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "denominator": null,
+        "official_score": 0.0698,
+        "score_provenance": "Later archived platform observation; original upload receipt retains score:null. Not freshly verified here.",
+        "summary": "Aggregate negative outcome retained; earlier synthetic qualification did not establish real-model task performance.",
+        "whole_task_passes": null
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/962738.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "9c3f31e8362c63d72a1d9f2b16226cdedb3ff1f5e5565130187f54874cc08eff",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/platform-observation-20261008-1539.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "9538b9b47c28009fd19cee118273e79f8c350d3f8d52934a06d0a531998c40c0",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "unknown",
+      "title": "Historical bounded ReAct submission 962738",
+      "topics": [
+        "official-results",
+        "react",
+        "agent-orchestration"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "model_calls": null,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": null
+      }
+    },
+    {
+      "baseline": {
+        "case": "solver-owned writable mount",
+        "comparison": "Same frozen image, synthetic task and mock response; only output ownership changed."
+      },
+      "code_commit": null,
+      "configuration": {
+        "cpus": 2,
+        "linux_amd64_image_manifest": "sha256:9d7a98519028f3883a564db0a54e67bf17b6bb17b46c11a89b05ea9e7d2d58a5",
+        "memory_gib": 1,
+        "source_fingerprint": "5d49e350d0ed4e698c0f9524298ec9b44867b36a85081ec95be963cb3f2f38d3",
+        "uid": 65534
+      },
+      "date": "2026-09-21",
+      "decision": "Copy validated contents without changing external mount metadata; require a completed run record rather than file existence.",
+      "evidence_category": "synthetic",
+      "hypothesis": "A validated output tree can be copied onto any writable output mount without changing the controller outcome.",
+      "id": "publication-ownership-20260921",
+      "limitations": [
+        "Historical build HEAD was dirty; it is not an exact source snapshot identity.",
+        "This demonstrates a publication bug, not the cause of every official container crash."
+      ],
+      "model": {
+        "name": "scripted mock",
+        "real_inference": false
+      },
+      "paper_ids": [
+        "alphacodium-2024"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "Two non-root network-disabled Docker executions with read-only inputs and a controlled output tmpfs.",
+      "reproduction": {
+        "command": null,
+        "reason": "Exact frozen image, archived ownership harness and original restricted Docker setup are required. New Quant Lab publication failure tests are independently authored regressions.",
+        "scope": "synthetic historical replay only"
+      },
+      "result": {
+        "denominator": 2,
+        "failed": 1,
+        "passed": 1,
+        "summary": "Writable root-owned output failed during metadata copy; solver-owned control succeeded. Both generated the intended synthetic answer."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/OUTPUT_PUBLICATION_FAILURE_HANDOFF.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "741851d7ca785f218bceb710b2b67b0628fbcfdd267837ccc69134825d63d627",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "mixed",
+      "title": "Synthetic output ownership control",
+      "topics": [
+        "publication",
+        "contracts",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": 0,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "mock_requests": 2,
+        "model_calls": 0,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": 1.049
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "publication-fix",
+        "denominator": 3,
+        "observed_passes": 2,
+        "paired": false
+      },
+      "code_commit": null,
+      "configuration": {
+        "linux_amd64_image_manifest": "sha256:bbd983773acb6dba8c28f8835522ae9308d0272474b13c622d2bc4938a5b4ff1",
+        "official_kit_commit": "81e3e072f8d93ecbddc5915e38710a6cce61313c",
+        "ordinary_model_calls_per_unit": 2,
+        "source_fingerprint": "e985729a15ce86a13b64e2c375e5a4ec0e03e39afa64350b48f110cde9be747f"
+      },
+      "date": "2026-09-27",
+      "decision": "Preserve the unexercised-mechanism result; use deterministic recovery fixtures without claiming a live gain.",
+      "evidence_category": "local_live",
+      "hypothesis": "Bounded truncation recovery improves task completion relative to the preceding publication-fix release.",
+      "id": "truncation-pilot-20260927",
+      "limitations": [
+        "Truncation recovery was not used, so this pilot cannot validate its real-model effectiveness.",
+        "The 503 had unknown token usage; known-token sums are not complete totals.",
+        "Exact source commit is unknown because the reported build HEAD was dirty."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only; House equivalence unknown",
+        "name": null
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One NVIDIA-backed solver execution per frozen public task; unchanged official development grading on preserved outputs.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "denominator": 3,
+        "evaluator_errors": 0,
+        "failed": 1,
+        "passed": 2,
+        "summary": "Same 2/3 as the previous pilot, with different responses. Bootstrapping encountered a 503 and then no valid output; numerical checks were not reached for it.",
+        "truncation_recovery_uses": 0
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/TRUNCATION_RECOVERY_PILOT_RESULTS.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "988c45b47c72fcd13d6e36a54ee756c4bf1d551a8fe2edbbed3e23bcffac0dfd",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "mixed",
+      "title": "Truncation recovery pilot with an unexercised mechanism",
+      "topics": [
+        "truncation",
+        "repair",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": 11.213,
+        "input_tokens": null,
+        "known_input_tokens": 46760,
+        "known_output_tokens": 4515,
+        "model_calls": 6,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": 68.517
+      }
+    },
+    {
+      "baseline": null,
+      "code_commit": null,
+      "configuration": {
+        "linux_amd64_image_manifest": "sha256:b9afb107cc18652aaa719905263af1f36f1b0648b8ddf905b1a3eed5ba631615",
+        "max_calls": 2,
+        "max_output_tokens": 4000,
+        "source_fingerprint": "2fa19d4e6eebd510f9d8a1ba7780e0973932145175c3d9fd7e4cc5a088b0fb16",
+        "temperature": 0
+      },
+      "date": "2026-09-28",
+      "decision": "Separate provider errors, program errors and numerical failures. Keep the unsuccessful outcome and preserve bounded diagnostics.",
+      "evidence_category": "local_live",
+      "hypothesis": "Bounded exception diagnostics help repair a generated program within the existing two-call budget.",
+      "id": "typeerror-trial1-20260928",
+      "limitations": [
+        "Generated source and exact offending call were not retained; cause cannot be reconstructed from exception class alone.",
+        "These bounded diagnostic trials did not implement LDB basic-block tracing.",
+        "Billing and exact Git source commit are unknown in the inspected summary.",
+        "The upstream 503 prevents assessing whether the repair response would have worked."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only; served revision unknown",
+        "name": null
+      },
+      "paper_ids": [
+        "critic-2023",
+        "ldb-2024"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "Pinned task/image, two independently counted NVIDIA requests, then separate grading only if outputs exist.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_passed": null,
+        "checks_run": null,
+        "denominator": 1,
+        "failed": 1,
+        "passed": 0,
+        "summary": "First response produced unexpected-keyword TypeError; repair received HTTP503. No outputs, no grader execution."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/TYPE_ERROR_DIAGNOSTIC_LOCAL_RESULT.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "4684664e1fa98536389799e1aa504f1b1e3b967ab55ff720399c0f4a53af4bc0",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "failed",
+      "title": "Bollinger safe-TypeError diagnostic trial 1",
+      "topics": [
+        "self-debugging",
+        "execution-diagnostics",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": 0,
+        "input_tokens": null,
+        "known_input_tokens": 13311,
+        "known_output_tokens": 2867,
+        "model_calls": 2,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": 58.33
+      }
+    },
+    {
+      "baseline": {
+        "comparison": "A separately requested repeat of the same source/image; fresh responses, no paired causal estimate.",
+        "experiment_id": "typeerror-trial1-20260928"
+      },
+      "code_commit": null,
+      "configuration": {
+        "linux_amd64_image_manifest": "sha256:b9afb107cc18652aaa719905263af1f36f1b0648b8ddf905b1a3eed5ba631615",
+        "max_calls": 2,
+        "max_output_tokens": 4000,
+        "source_fingerprint": "2fa19d4e6eebd510f9d8a1ba7780e0973932145175c3d9fd7e4cc5a088b0fb16",
+        "temperature": 0
+      },
+      "date": "2026-09-28",
+      "decision": "Separate provider errors, program errors and numerical failures. Keep the unsuccessful outcome and preserve bounded diagnostics.",
+      "evidence_category": "local_live",
+      "hypothesis": "Bounded exception diagnostics help repair a generated program within the existing two-call budget.",
+      "id": "typeerror-trial2-20260928",
+      "limitations": [
+        "Generated source and exact offending call were not retained; cause cannot be reconstructed from exception class alone.",
+        "These bounded diagnostic trials did not implement LDB basic-block tracing.",
+        "Billing and exact Git source commit are unknown in the inspected summary.",
+        "The second run does not establish general repair reliability or a paper-method improvement."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only; served revision unknown",
+        "name": null
+      },
+      "paper_ids": [
+        "critic-2023",
+        "ldb-2024"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "Pinned task/image, two independently counted NVIDIA requests, then separate grading only if outputs exist.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 13,
+        "checks_passed": 22,
+        "checks_run": 35,
+        "denominator": 1,
+        "failed": 1,
+        "passed": 0,
+        "summary": "Repair produced all five required files, but domain checks failed on trade accounting. Execution success was not numerical success."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/TYPE_ERROR_DIAGNOSTIC_LOCAL_RESULT.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "4684664e1fa98536389799e1aa504f1b1e3b967ab55ff720399c0f4a53af4bc0",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "failed",
+      "title": "Bollinger safe-TypeError diagnostic trial 2",
+      "topics": [
+        "self-debugging",
+        "execution-diagnostics",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": 29452,
+        "model_calls": 2,
+        "note": "Token totals are complete; grading time and reconciled dollar billing are unknown in the inspected summary.",
+        "output_tokens": 5237,
+        "provider_units": null,
+        "solver_seconds": 55.24,
+        "token_usage_complete": true
+      }
+    },
+    {
+      "baseline": {
+        "comparison": "Same associated source identity; different deployment and metric evidence, not an equal-score expectation.",
+        "experiment_id": "official-r29-983167"
+      },
+      "code_commit": "24827ce99d6bca1874a26b6c6cbf985d1689801e",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "afa86da25e1d077fd1813c36cf5d66003046f26e",
+        "image_manifest": "sha256:6b5caaab19179bb9f1de5fc484b36b89598568c33b3a64c3f7dbb129e5070334",
+        "limits": {
+          "aggregate_calls": 258,
+          "aggregate_solver_seconds": 38700,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "1b8a32b3ef20105fa774268489c4ad3c06ec0ce51a15860395266fab999ae1c7",
+        "source_fingerprint": "a379358be946e54f6bea9b905092a6dd8eb1cf0a0ac3957b8d1d9524d42959ec"
+      },
+      "date": "2026-10-13",
+      "decision": "Use as a complete local historical baseline; retain all 64 failed units and distinguish its 22/86 from the official aggregate.",
+      "evidence_category": "local_live",
+      "hypothesis": "Establish complete per-unit evidence for one exact candidate instead of joining passes across versions.",
+      "id": "r29-nvidia-full86-20261013",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "agentless-2024"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 101,
+        "checks_passed": 1066,
+        "checks_run": 1167,
+        "declared_public_roster": 86,
+        "denominator": 86,
+        "evaluator_errors": 0,
+        "failed": 64,
+        "official_score": null,
+        "outside_selected_scope_not_run": 0,
+        "passed": 22,
+        "summary": "Historical full-roster NVIDIA result: 22/86; kept separate from the official-associated aggregate."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r29-full-public-live-evaluation-20261013.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "4c9726368e8c5fddc6577c2b5d72b4831ff031eba7a2cfcc60a6740b1b9c488e",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r29-vs-r24-full-public-comparison-20261013.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "48d15f231aef36123a12df3c2e7996c5087eb99f2e6bf5b2ef0518483f070b85",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "mixed",
+      "title": "R29 complete NVIDIA public roster",
+      "topics": [
+        "baseline",
+        "full-roster",
+        "evaluation"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 219.357742712833,
+        "input_tokens": 888177,
+        "model_calls": 153,
+        "output_tokens": 385519,
+        "provider_units": null,
+        "solver_seconds": 4910.20664345054
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R48",
+        "comparison": "Historical selected row from an incomplete report.",
+        "denominator": 1,
+        "selected_passes": 0
+      },
+      "code_commit": "6562010f8e08b268495cc40c94a114b797dd22dc",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "f34231908e0ecb80eca7cd22ac2ae8eb0e4c7400",
+        "image_manifest": "sha256:1bd411bb39c8fed49c30387f042c8186fcd2815fc9f9fd2b430467dfb9c63558",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "f7a0c0dfd3bb8d4c7d89bd79e6fda9280063ea3b7c29712a67d2f04ee1092f86",
+        "source_fingerprint": "68b840e4c2844c4bd5698c87f42011e85e1155d3423dc3f4f15c16fd674e914d"
+      },
+      "date": "2026-10-19",
+      "decision": "Retain failed output-contract result; make ranking direction explicit.",
+      "evidence_category": "local_live",
+      "hypothesis": "Stable ranking guidance is sufficient for a correct complete momentum caller.",
+      "id": "r55-momentum-20261019",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": null,
+        "checks_passed": null,
+        "checks_run": null,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 1,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 0,
+        "summary": "Selected unit failed before domain checks; no accepted output was published."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r55-momentum-round47-public-live-evaluation-20261019.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "08bcf69489209e9556ea6d6b2d861be16bae119047b7f5378991a5bb80b22473",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r55-vs-r48-momentum-round47-comparison-20261019.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "958236c366fa7b7783d7cb5ff382ee57191ef51eca27a9fc1a15b17cde1e9fbc",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "failed",
+      "title": "R55 momentum stable ranking",
+      "topics": [
+        "momentum",
+        "api-contracts",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 1.7271226670127362,
+        "input_tokens": 8824,
+        "model_calls": 2,
+        "output_tokens": 918,
+        "provider_units": null,
+        "solver_seconds": 19.56919770897366
+      }
+    },
+    {
+      "baseline": {
+        "experiment_id": "r55-momentum-20261019",
+        "paired": false
+      },
+      "code_commit": "77074f69f5ce9bc17ff9999403aafbe79e2bc793",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "a7109dd8cfe1aab852be73370a2b56ea6961499b",
+        "image_manifest": "sha256:18f0c620b14ff25c1a65d435716a06e50ad2c2f7ac11278f0ceffe25f74c60af",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "e4fb60c4e54db368ef38fedf575ef1e92e84da2c77a9d861cef7a0d053da7051",
+        "source_fingerprint": "b14dabf3d54616fcd7671f10ed146964ea4b72e8f13ae44fa93fe2b41c742422"
+      },
+      "date": "2026-10-20",
+      "decision": "Retain one selected pass without claiming a whole-image improvement.",
+      "evidence_category": "local_live",
+      "hypothesis": "Explicit ranking direction resolves ambiguity in the momentum helper caller.",
+      "id": "r56-momentum-20261020",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 0,
+        "checks_passed": 37,
+        "checks_run": 37,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 0,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 1,
+        "summary": "Selected unit passed all executed checks."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r56-momentum-round48-public-live-evaluation-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "793d72ba2355233bd02d5f580dc1b712142c5fcff00fcf70fc7b6f2373253b94",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r56-vs-r55-momentum-round48-comparison-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "f877bdaa95f931a620e40f5c4e9d281e7c248b9118c2b9b64874a946acd96b84",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "passed",
+      "title": "R56 momentum explicit ranking direction",
+      "topics": [
+        "momentum",
+        "api-contracts"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 2.600444999989122,
+        "input_tokens": 4070,
+        "model_calls": 1,
+        "output_tokens": 448,
+        "provider_units": null,
+        "solver_seconds": 10.20898020779714
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R57",
+        "denominator": 1,
+        "selected_passes": 0
+      },
+      "code_commit": "dd31e4a64af0faaeaffa5e890ded0ed0daa05557",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "04cc0588cd56e0972a6dd38e4b134c743571c654",
+        "image_manifest": "sha256:716d80464060e2c28f95d8ae8239231a4367c4d31815556db7fa079dec402359",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "7d19cbea27435618075f399d90b6d6a5a5ba287100156c72cc7a1d7cbadab9be",
+        "source_fingerprint": "9d60c8a85232e73b94d6050fcd24688f427e880acb80db90603b8f32f2c9b66c"
+      },
+      "date": "2026-10-20",
+      "decision": "Retain the schema-stage failure; a helper and partial guidance are not a working pipeline.",
+      "evidence_category": "local_live",
+      "hypothesis": "Clarifying EVT input boundaries is enough to complete the workflow.",
+      "id": "r58-evt-20261020",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": null,
+        "checks_passed": null,
+        "checks_run": null,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 1,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 0,
+        "summary": "Selected unit failed before domain checks; no accepted output was published."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r58-evt-round50-public-live-evaluation-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "250c97c7d62a5c36328bc46288d99f15f5ebe54e90d274b82f28eb544bde8e1c",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r58-vs-r57-evt-round50-comparison-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "08fad2dfef03edd9cd373c365f04f150ebca422f8e57356745909466ac78bf5d",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "failed",
+      "title": "R58 EVT input-boundary guidance",
+      "topics": [
+        "evt",
+        "workflow-contracts",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 1.7711433339864016,
+        "input_tokens": 12209,
+        "model_calls": 2,
+        "output_tokens": 3947,
+        "provider_units": null,
+        "solver_seconds": 80.98652408411726
+      }
+    },
+    {
+      "baseline": {
+        "experiment_id": "r58-evt-20261020",
+        "paired": false
+      },
+      "code_commit": "f982bbc0c56252b676c454ba5076e2815ceb3cde",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "4e2aea1b1e66f8e68676bcb4e19d3373a8d32b10",
+        "image_manifest": "sha256:66398e52a636c50f8b7ad2c79713de38554af8136eeb3ac082514c6a0e4f619d",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "1df07814c6904a43923e829ffae21b5c17d5f99e5533b4ddf94fe9a15d86a98a",
+        "source_fingerprint": "ba8e76c9810405401075dfd7a67299aee4d80bdea30e793196c8f842be3a88b5"
+      },
+      "date": "2026-10-20",
+      "decision": "Keep the selected 55-check pass; defer broader risk workflow reuse until independently specified.",
+      "evidence_category": "local_live",
+      "hypothesis": "A complete callable pipeline resolves the prior EVT workflow failure.",
+      "id": "r59-evt-20261020",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 0,
+        "checks_passed": 55,
+        "checks_run": 55,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 0,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 1,
+        "summary": "Selected unit passed all executed checks."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r59-evt-round51-public-live-evaluation-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "d5224f4b42616520c0fba1d3f1b735663f9251c92ed0003dc64ac3d26b0a0f2b",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r59-vs-r58-evt-round51-comparison-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "dfc39536df3da2f167e00dcc6c7cbad026d4897d66e12c79c46791fbb16667b8",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "passed",
+      "title": "R59 complete EVT pipeline",
+      "topics": [
+        "evt",
+        "workflow-contracts"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 2.6471362500451505,
+        "input_tokens": 5226,
+        "model_calls": 1,
+        "output_tokens": 1943,
+        "provider_units": null,
+        "solver_seconds": 78.26625354215503
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R48",
+        "checks_passed": 22,
+        "checks_run": 33,
+        "comparison": "Historical row; global qualification incomplete."
+      },
+      "code_commit": "3539aed9be36a5e397eb76525157c392f78af7e7",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "10259cb8d21311caf4342208367c2e53204788bb",
+        "image_manifest": "sha256:0db62f1a3e7e3bd2fd7ec182e438a42c5be2aeca082af4a5fd86dbecb04202e5",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "b92164c88380291630e39013c34b205568eefcabcc5e18f5501ef125d2180013",
+        "source_fingerprint": "e86b4616fc1ed2a60a1293ae76a7cc3d029a058e21d7a536b38a9ba95c549006"
+      },
+      "date": "2026-10-20",
+      "decision": "Retain two TypeError failures; improve explicit scalar/caller interfaces.",
+      "evidence_category": "local_live",
+      "hypothesis": "Observed tail-index helper guidance is sufficient to produce a correct caller.",
+      "id": "r60-smith-20261020",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": null,
+        "checks_passed": null,
+        "checks_run": null,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 1,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 0,
+        "summary": "Selected unit failed before domain checks; no accepted output was published."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r60-smith-round52-public-live-evaluation-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "6710205ee8a3bc93b9d7507e1e2a6c2afb7f40231eb4a4ac3e9e531a41b69fb4",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r60-vs-r48-smith-round52-comparison-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "9f20b622fb6e5bd5cf8bc96f8a5d03d9bd97cf75ea7f22c00aa09566b8722986",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "failed",
+      "title": "R60 Smith caller failure",
+      "topics": [
+        "tail-risk",
+        "api-contracts",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 1.7424658751115203,
+        "input_tokens": 6803,
+        "model_calls": 2,
+        "output_tokens": 1578,
+        "provider_units": null,
+        "solver_seconds": 29.69225687487051
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R48",
+        "checks_passed": 22,
+        "checks_run": 33,
+        "comparison": "Published primary comparison uses R48; R60 supplies prior accounting separately."
+      },
+      "code_commit": "d456fbaa92d66839210b7f6ad836d7c4d45a15ad",
+      "configuration": {
+        "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+        "evaluator_commit": "4d631a93f32a41ecfc938ac2fbab79aa10b1d49c",
+        "image_manifest": "sha256:4b17961d47559e9ca3d5556e5eb56b7c692209d734384167c1bb39c8be4ab454",
+        "limits": {
+          "aggregate_calls": 3,
+          "aggregate_solver_seconds": 450,
+          "conditional_max_calls": 3,
+          "max_tokens": 4000,
+          "ordinary_calls": 2,
+          "unit_solver_seconds": 450
+        },
+        "plan_sha256": "f5612afcf5fc9f175bf8233d29c860046e647de7380177b0b5bfd20f81b2acb9",
+        "source_fingerprint": "3b23d2ee2bbcc780c7152d222d466f9691e1f8466a4e06eff64930e5dd12a84d"
+      },
+      "date": "2026-10-20",
+      "decision": "Retain selected 33-check pass and immutable administrative STOP recovery; no cross-candidate score union.",
+      "evidence_category": "local_live",
+      "hypothesis": "Explicit scalar/caller handling enables the Smith workflow.",
+      "id": "r61-smith-20261020",
+      "limitations": [
+        "Historical report was inspected, not rerun.",
+        "NVIDIA access does not establish House deployment equivalence.",
+        "Dollar billing unknown; no causal isolation across fresh model responses.",
+        "Other 85 public units were outside this selected test; their outcomes on this image remain unmeasured."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "enable_thinking": false,
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "served_revision": null,
+        "temperature": 0
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected unit on the frozen image; native validation and unchanged official development grading kept separate. No same-candidate best-of selection.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 0,
+        "checks_passed": 33,
+        "checks_run": 33,
+        "declared_public_roster": 86,
+        "denominator": 1,
+        "evaluator_errors": 0,
+        "failed": 0,
+        "official_score": null,
+        "outside_selected_scope_not_run": 85,
+        "passed": 1,
+        "summary": "Selected unit passed all executed checks."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r61-smith-scalar-round53-public-live-evaluation-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "61d01d0c48fd0b86b5eb99818570a2304837e48702cce8600bdaee004a997cf6",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r61-vs-r48-smith-scalar-round53-comparison-20261020.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "c6e5cc517ab80deb8b9aeafc47cd7abb4387e46e6ec825db40a7fd3ee07327c4",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "passed",
+      "title": "R61 Smith scalar caller",
+      "topics": [
+        "tail-risk",
+        "api-contracts"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 3.596600374672562,
+        "input_tokens": 2874,
+        "model_calls": 1,
+        "output_tokens": 788,
+        "provider_units": null,
+        "solver_seconds": 31.647765083704144
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R71@59f2e6997b52",
+        "comparison": "Historical different candidate; its passes are not imported into R72."
+      },
+      "code_commit": "9a7fb680b2e854f29a9ff513f7f8cff7e72e2c7a",
+      "configuration": {
+        "image_identity": "sha256:50acfd0bc5ce5d1c7c5a013681515f6eea6e37d7238cbf9e5bb55fb208e46326",
+        "image_identity_kind": "as recorded by completion receipt; not relabelled as registry digest",
+        "limits": {
+          "conditional_max_requests": 3,
+          "external_solver_deadline_seconds": 450,
+          "generated_program_timeout_seconds": 120,
+          "max_output_tokens_per_request": 4000,
+          "ordinary_requests": 2,
+          "third_request_condition": "transient_first_request_then_truncated_second_response"
+        },
+        "snapshot_id": "R72@9a7fb680b2e8",
+        "source_fingerprint": "c912423ccc80f272a6b86c82eb4a7adc375236fee9b1cca0d81a5228ee5f86a2"
+      },
+      "date": "2026-10-27",
+      "decision": "Preserve STOP, nonfinite rejection and unknowns; do not merge R71 passes or restart automatically.",
+      "evidence_category": "incomplete",
+      "hypothesis": "Consolidated repairs improve broad candidate coverage while preserving prior behavior.",
+      "id": "r72-full86-stop-20261027",
+      "limitations": [
+        "The exact erroneous copula expression was not retained.",
+        "The timeout cause and full token usage are unknown.",
+        "Offline controls are not evidence of a live fix; 84 not-run units remain in coverage."
+      ],
+      "model": {
+        "deployment": "NVIDIA-only",
+        "name": null,
+        "served_revision": null
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "Frozen86-unit roster; execution stopped after a nonfinite-output rejection and an opening-response timeout. Original STOP and unknown usage remain preserved.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "attempted": 2,
+        "checks_run": null,
+        "denominator": 86,
+        "failed": 2,
+        "full_score": null,
+        "not_run": 84,
+        "passed": 0,
+        "summary": "Copula had two complete responses but nonfinite JSON; Brinson timed out before response headers. No whole-roster result exists."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r72-nvidia35-full86-20261027/completion-evidence.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "4f1f65735765385db9cdcb72120d35f94a644ba7b14cbb91adfd3c2afb6fcc14",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/r72-analysis-repairs-candidate-freeze-20261027.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "c499b69611d8c70b8544ab68ef53d804a08245eecba9564d71dd8d8f7d2275a0",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "incomplete",
+      "title": "R72 incomplete full-roster attempt and STOP",
+      "topics": [
+        "nonfinite-output",
+        "provider-failure",
+        "full-roster",
+        "negative-result"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "known_input_tokens": 7656,
+        "known_output_tokens": 3931,
+        "model_calls": 3,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": 539.6589542091824
+      }
+    },
+    {
+      "baseline": {
+        "candidate": "R29",
+        "denominator": 10,
+        "paired_cloudflare_baseline": false,
+        "same_selected_historical_nvidia_passes": 6,
+        "same_selected_official_associated_passes": 7
+      },
+      "code_commit": "527b2adcce5788bef746d4b5d7fdb8784a9922f6",
+      "configuration": {
+        "local_linux_amd64_manifest_digest": "sha256:0a126e02c9ce9c1b94c9aa501de07db3b36633a332d62382cdcce51cc6f6e712",
+        "oci_image_config_digest": "sha256:daf29715f135020936892aeea2ae5de08c999c768b86ac14edfc090948dc6304",
+        "registry_manifest_digest": null,
+        "source_fingerprint": "28fcf0fd49f668d1546cc8e248d03865e458cdb41a2988cbf4063882db9cf6d5"
+      },
+      "date": "2026-10-28",
+      "decision": "Retain a credible selected experimental result without promotion, publication or a full-roster claim.",
+      "evidence_category": "local_live",
+      "hypothesis": "Compact targeted guidance supports ten preselected workflows under the frozen external-provider budget.",
+      "id": "r84-cloudflare-targeted10-20261028",
+      "limitations": [
+        "Selected tasks are not a representative or complete benchmark.",
+        "No paired Cloudflare R29 control or House equivalence was established.",
+        "Historical prompt-characterization failures remain failures; provider billing was not reconciled."
+      ],
+      "model": {
+        "deployment": "Cloudflare Workers AI experimental",
+        "name": "@cf/nvidia/nemotron-3-120b-a12b",
+        "served_revision": null
+      },
+      "paper_ids": [
+        "critic-2023"
+      ],
+      "paper_relation": "Mechanism context only; these experiments are not reproductions of the cited papers.",
+      "protocol": "One solve per selected task on one frozen candidate; unchanged official development grading on untouched outputs. Eleven total requests, no failure reruns.",
+      "reproduction": {
+        "command": null,
+        "reason": "Live inference was not repeated for this archive. Any new live solve requires fresh authorization and separately frozen source, inputs, model deployment and budgets.",
+        "scope": "historical inspection only"
+      },
+      "result": {
+        "checks_failed": 0,
+        "checks_passed": 476,
+        "checks_skipped": 1,
+        "denominator": 10,
+        "failed": 0,
+        "full_roster_denominator": 86,
+        "full_score": null,
+        "outside_selected_historical_provider_failures": 1,
+        "outside_selected_not_run": 75,
+        "passed": 10,
+        "summary": "Ten selected passes. Full86 and House performance unknown; no other candidates’ passes are counted."
+      },
+      "sources": [
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/cloudflare-r84-targeted10-live-results-20261028.json",
+          "repository": "agenthon-track1-agent",
+          "sha256": "d1d12105b3c5ea4fa6d527c199c9e4a6bc027d7846a9d988e9f8d5a6b8499d99",
+          "visibility": "historical_local"
+        },
+        {
+          "access_note": "Original local archive; not bundled. Public summary is newly authored; availability of the source repository is not assumed.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "docs/submissions/cloudflare-r84-targeted10-live-results-20261028.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "56558d9143facb456a9feba024c990e77e3f8793d9716520085797a8e60b087c",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "passed",
+      "title": "R84 selected ten-unit Cloudflare evaluation",
+      "topics": [
+        "compact-guidance",
+        "selected-evaluation",
+        "provider-comparison"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": null,
+        "grading_seconds": 33.396980833262205,
+        "input_tokens": 40657,
+        "model_calls": 11,
+        "output_tokens": 19164,
+        "provider_units": {
+          "locally_estimated": "4461.343631",
+          "provider_billed": null,
+          "unit": "Cloudflare Neurons"
+        },
+        "solver_seconds": 231.11022704280913
+      }
+    },
+    {
+      "baseline": {
+        "comparison": "Compare C against B for global FFT, then D against C for rolling FFT; retain A without added profiling as context.",
+        "variant": "B: baseline workflow plus ordinary numerical/time-series statistics"
+      },
+      "code_commit": null,
+      "configuration": null,
+      "date": null,
+      "decision": "Defer implementation. Predeclare the comparison and acceptance criteria before any experiment; the current separately billed budget remains zero.",
+      "evidence_category": "not_run",
+      "hypothesis": "Compact global or rolling spectral descriptors add useful task information beyond ordinary time-series statistics at an acceptable cost.",
+      "id": "proposed-spectral-triage",
+      "limitations": [
+        "The source note is undated; no execution timestamp or run ID is invented.",
+        "FITS and FAN are trained forecasting methods; this proposal borrows spectral ideas and is not their reproduction.",
+        "Spectral structure and paper benchmark gains do not establish financial predictability or profitable trading."
+      ],
+      "model": null,
+      "paper_ids": [
+        "fits-2023",
+        "fan-2024"
+      ],
+      "paper_relation": "Proposed adaptation of spectral ideas, not evidence from either paper transferred to this project.",
+      "protocol": "Proposal only: freeze data provenance, timestamp order, sampling units, chronological development/holdout boundaries, task roster, downstream workflow and budgets. Compare A baseline, B ordinary statistics, C global FFT, D rolling FFT; any repair variant is a separate comparison. Keep every failure and do not tune on the final holdout. Optional model calls require new authorization and identical deployment/call/token ceilings across variants.",
+      "reproduction": {
+        "command": null,
+        "reason": "No prior run exists to reproduce. The baseline, data, metrics and authorization must be fixed before execution.",
+        "scope": "proposal only"
+      },
+      "result": {
+        "denominator": null,
+        "observations": null,
+        "score": null,
+        "summary": "NOT_RUN. The historical note proposes an ablation; no implementation, trial or benefit is established by this archive."
+      },
+      "sources": [
+        {
+          "access_note": "Undated historical research proposal; original note is not bundled.",
+          "commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+          "path": "Agenthon research findings/Agenthon_FFT_Research_Findings.md",
+          "repository": "agenthon-track1-agent",
+          "sha256": "62ff7ef8db4f03a424fea6cc102d35b0a310d40ac47085d8204dd577e03069e9",
+          "visibility": "historical_local"
+        }
+      ],
+      "status": "not_run",
+      "title": "Proposed staged spectral-evidence comparison",
+      "topics": [
+        "fft",
+        "ablation",
+        "chronological-validation"
+      ],
+      "usage": {
+        "complete": false,
+        "cost_usd": null,
+        "grading_seconds": null,
+        "input_tokens": null,
+        "model_calls": null,
+        "output_tokens": null,
+        "provider_units": null,
+        "solver_seconds": null
+      }
+    }
+  ],
+  "papers": [
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Chunqiu Steven Xia",
+        "Yinlin Deng",
+        "Soren Dunn",
+        "Lingming Zhang"
+      ],
+      "decision": "Retain simple stage boundaries; add autonomy only after a measured benefit.",
+      "experiment_ids": [
+        "r29-nvidia-full86-20261013"
+      ],
+      "id": "agentless-2024",
+      "implementation": [
+        "docs/architecture.md",
+        "src/agenthon_quant/records.py"
+      ],
+      "limitations": [
+        "Repository repair benchmarks differ from financial calculations.",
+        "No controlled Agentless ablation was run in this project."
+      ],
+      "mechanism": "Separate localization, repair and patch validation into a constrained flow instead of an unrestricted action loop.",
+      "project_relevance": "Motivates a small inspectable pipeline. Quant Lab has deterministic calculation and validation stages; it does not reproduce the paper agent.",
+      "reported_findings": "The authors report competitive SWE-bench Lite repair performance at low inference cost, and identify misleading or underspecified benchmark issues.",
+      "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+      "topics": [
+        "orchestration",
+        "bounded-repair"
+      ],
+      "url": "https://arxiv.org/abs/2407.01489",
+      "year": 2024,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Tal Ridnik",
+        "Dedy Kredo",
+        "Itamar Friedman"
+      ],
+      "decision": "Use independent numerical and accounting checks; defer multi-candidate inference.",
+      "experiment_ids": [
+        "publication-ownership-20260921"
+      ],
+      "id": "alphacodium-2024",
+      "implementation": [
+        "docs/architecture.md",
+        "src/agenthon_quant/options.py",
+        "src/agenthon_quant/trading.py"
+      ],
+      "limitations": [
+        "Paper pass@5 is not the competition single-solve metric.",
+        "Generated tests can share mistakes with generated code."
+      ],
+      "mechanism": "Use structured problem analysis and repeated code execution against tests in a multi-stage generation flow.",
+      "project_relevance": "Supports explicit specifications, tests and inspectable failures. The local research engine uses maintained calculations rather than generating candidate code.",
+      "reported_findings": "The authors report higher CodeContests pass@5 than a direct prompt in the tested GPT-4 configuration.",
+      "title": "Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering",
+      "topics": [
+        "flow-design",
+        "testing",
+        "repair"
+      ],
+      "url": "https://arxiv.org/abs/2401.08500",
+      "year": 2024,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Zhibin Gou",
+        "Zhihong Shao",
+        "Yeyun Gong",
+        "Yelong Shen",
+        "Yujiu Yang",
+        "Nan Duan",
+        "Weizhu Chen"
+      ],
+      "decision": "Ground explanations in actual check outcomes; keep hidden grading material out of solver feedback.",
+      "experiment_ids": [
+        "typeerror-trial1-20260928",
+        "typeerror-trial2-20260928",
+        "r60-smith-20261020",
+        "r61-smith-20261020"
+      ],
+      "id": "critic-2023",
+      "implementation": [
+        "src/agenthon_quant/options.py",
+        "src/agenthon_quant/trading.py",
+        "experiments/experiments.json"
+      ],
+      "limitations": [
+        "Tool feedback is only useful within its validity scope.",
+        "No causal CRITIC comparison or real-model Quant Lab run exists."
+      ],
+      "mechanism": "Evaluate an initial answer with external tools, then revise it using the resulting evidence.",
+      "project_relevance": "Provides context for bounded diagnostics and independent verification. Historical TypeError trials test local diagnostic behavior, not CRITIC itself.",
+      "reported_findings": "The authors report improvements in question answering, mathematical program synthesis and toxicity reduction, emphasizing the role of external feedback.",
+      "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+      "topics": [
+        "external-feedback",
+        "self-debugging",
+        "verification"
+      ],
+      "url": "https://arxiv.org/abs/2305.11738",
+      "venue_year": 2024,
+      "year": 2023,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "proposed",
+      "authors": [
+        "Li Zhong",
+        "Zilong Wang",
+        "Jingbo Shang"
+      ],
+      "decision": "Defer general tracing; expose maintained-engine intermediate quantities when they explain a failed invariant.",
+      "experiment_ids": [
+        "typeerror-trial1-20260928",
+        "typeerror-trial2-20260928"
+      ],
+      "id": "ldb-2024",
+      "implementation": [
+        "docs/research-notes.md",
+        "experiments/experiments.json"
+      ],
+      "limitations": [
+        "The recorded trials did not retain full runtime state and do not establish LDB effectiveness.",
+        "Tracing untrusted generated code requires verified isolation."
+      ],
+      "mechanism": "Inspect intermediate variables at basic-block boundaries and assess execution against the task specification.",
+      "project_relevance": "Suggests semantic checkpoints such as discount factors and cash balances. Existing bounded exception diagnostics are narrower than an LDB tracer.",
+      "reported_findings": "The authors report improved debugging across HumanEval, MBPP and TransCoder using execution-level information.",
+      "title": "Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step by Step",
+      "topics": [
+        "runtime-tracing",
+        "self-debugging"
+      ],
+      "url": "https://aclanthology.org/2024.findings-acl.49/",
+      "year": 2024,
+      "year_basis": "ACL Findings publication"
+    },
+    {
+      "adaptation_status": "deferred",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "decision": "Keep the historical outcome; require a fixed-budget comparison before adding a model-driven loop.",
+      "experiment_ids": [
+        "official-react-962738"
+      ],
+      "id": "react-2022",
+      "implementation": [
+        "experiments/experiments.json",
+        "docs/reuse-map.md"
+      ],
+      "limitations": [
+        "The historical submission result is not a controlled paper reproduction.",
+        "Its aggregate score does not identify which mechanism helped or failed."
+      ],
+      "mechanism": "Interleave reasoning with actions and observations so plans can change in response to the environment.",
+      "project_relevance": "An earlier competition release used a bounded ReAct variant. Quant Lab v0.1 intentionally has no autonomous tool loop.",
+      "reported_findings": "The authors report benefits on knowledge-intensive question answering and interactive decision tasks compared with reasoning-only or acting-only approaches.",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "topics": [
+        "agent-orchestration",
+        "tool-use"
+      ],
+      "url": "https://arxiv.org/abs/2210.03629",
+      "venue_year": 2023,
+      "year": 2022,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Noah Shinn",
+        "Federico Cassano",
+        "Edward Berman",
+        "Ashwin Gopinath",
+        "Karthik Narasimhan",
+        "Shunyu Yao"
+      ],
+      "decision": "Store evidence provenance and uncertainty; do not turn an unverified explanation into a universal rule.",
+      "experiment_ids": [],
+      "id": "reflexion-2023",
+      "implementation": [
+        "docs/negative-results.md",
+        "experiments/experiments.json"
+      ],
+      "limitations": [
+        "Repeated trials and reflective text can amplify incorrect lessons.",
+        "No project experiment isolates reflective memory."
+      ],
+      "mechanism": "Store textual reflections on task feedback in episodic memory to guide subsequent trials without updating model weights.",
+      "project_relevance": "Suggests retaining verified lessons and failures. This archive is curated evidence, not an implemented Reflexion learning policy.",
+      "reported_findings": "The authors report gains across decision-making, coding and reasoning tasks and analyze feedback and memory choices.",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "topics": [
+        "reflection",
+        "experience-memory"
+      ],
+      "url": "https://arxiv.org/abs/2303.11366",
+      "year": 2023,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Fengji Zhang",
+        "Bei Chen",
+        "Yue Zhang",
+        "Jacky Keung",
+        "Jin Liu",
+        "Daoguang Zan",
+        "Yi Mao",
+        "Jian-Guang Lou",
+        "Weizhu Chen"
+      ],
+      "decision": "Keep references small and searchable; defer iterative generation-driven retrieval.",
+      "experiment_ids": [],
+      "id": "repocoder-2023",
+      "implementation": [
+        "docs/reuse-map.md",
+        "research/papers.json"
+      ],
+      "limitations": [
+        "An indexed evidence archive is not a trained code-completion system.",
+        "No retrieval ablation is available for Agenthon or Quant Lab."
+      ],
+      "mechanism": "Alternate similarity-based repository retrieval with code generation to improve the context used for completion.",
+      "project_relevance": "Supports locating relevant contracts and utilities instead of loading every historical archive into a prompt.",
+      "reported_findings": "The authors report improvements over in-file and ordinary retrieval baselines on line, API and function completion tasks in RepoEval.",
+      "title": "RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation",
+      "topics": [
+        "retrieval",
+        "repository-context"
+      ],
+      "url": "https://arxiv.org/abs/2303.12570",
+      "year": 2023,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "deferred",
+      "authors": [
+        "Siru Ouyang",
+        "Wenhao Yu",
+        "Kaixin Ma",
+        "Zilin Xiao",
+        "Zhihan Zhang",
+        "Mengzhao Jia",
+        "Jiawei Han",
+        "Hongming Zhang",
+        "Dong Yu"
+      ],
+      "decision": "Defer until repository size produces a measured localization problem.",
+      "experiment_ids": [],
+      "id": "repograph-2024",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "limitations": [
+        "Index maintenance adds complexity.",
+        "No graph was built or evaluated for this release."
+      ],
+      "mechanism": "Provide repository-level structural navigation through a code graph that can augment existing software-engineering agents.",
+      "project_relevance": "May help a larger library locate dependent conventions and callers. The present package is small enough for explicit file references.",
+      "reported_findings": "The authors report gains when adding the module to several SWE-bench approaches and examine another repository-level completion benchmark.",
+      "title": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+      "topics": [
+        "retrieval",
+        "code-graphs"
+      ],
+      "url": "https://arxiv.org/abs/2410.14684",
+      "venue_year": 2025,
+      "year": 2024,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "inspiration",
+      "authors": [
+        "Di Wu",
+        "Wasi Uddin Ahmad",
+        "Dejiao Zhang",
+        "Murali Krishna Ramanathan",
+        "Xiaofei Ma"
+      ],
+      "decision": "Read only references relevant to the request; defer training a retrieval policy.",
+      "experiment_ids": [],
+      "id": "repoformer-2024",
+      "implementation": [
+        "skills/quant-research/SKILL.md",
+        "docs/research-notes.md"
+      ],
+      "limitations": [
+        "Paper latency results depend on its serving setup.",
+        "No local speedup or learned-policy effectiveness is claimed."
+      ],
+      "mechanism": "Train a code model to decide when retrieval is useful and to handle noisy retrieved context.",
+      "project_relevance": "Motivates selective reference loading in the research skill. A hand-selected index does not implement the paper trained retrieval policy.",
+      "reported_findings": "The authors report improved repository-level completion and substantial serving speedups from avoiding unnecessary retrieval in their evaluated settings.",
+      "title": "Repoformer: Selective Retrieval for Repository-Level Code Completion",
+      "topics": [
+        "retrieval",
+        "cost-control"
+      ],
+      "url": "https://proceedings.mlr.press/v235/wu24a.html",
+      "year": 2024,
+      "year_basis": "ICML publication"
+    },
+    {
+      "adaptation_status": "deferred",
+      "authors": [
+        "Bei Chen",
+        "Fengji Zhang",
+        "Anh Nguyen",
+        "Daoguang Zan",
+        "Zeqi Lin",
+        "Jian-Guang Lou",
+        "Weizhu Chen"
+      ],
+      "decision": "Retain independent numerical checks; defer best-of selection and additional inference.",
+      "experiment_ids": [],
+      "id": "codet-2022",
+      "implementation": [
+        "docs/research-notes.md",
+        "src/agenthon_quant/options.py"
+      ],
+      "limitations": [
+        "Agreement among generated artifacts is not an independent correctness proof.",
+        "No generated-test candidate selection is implemented or evaluated here."
+      ],
+      "mechanism": "Generate tests and candidate programs, then rank solutions using execution agreement between programs and tests.",
+      "project_relevance": "Explains why generated tests may help explore disagreements, but financial assertions still need independently justified assumptions.",
+      "reported_findings": "The authors report better solution selection across several code-generation benchmarks and model sizes.",
+      "title": "CodeT: Code Generation with Generated Tests",
+      "topics": [
+        "test-generation",
+        "candidate-selection"
+      ],
+      "url": "https://arxiv.org/abs/2207.10397",
+      "year": 2022,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "deferred",
+      "authors": [
+        "Zhijian Xu",
+        "Ailing Zeng",
+        "Qiang Xu"
+      ],
+      "decision": "Do not train or promote a spectral model without a chronological controlled comparison.",
+      "experiment_ids": [
+        "proposed-spectral-triage"
+      ],
+      "id": "fits-2023",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "limitations": [
+        "The trained FITS model differs from a deterministic FFT summary.",
+        "No local forecasting, trading or Agenthon ablation was run."
+      ],
+      "mechanism": "Model time series with complex-frequency interpolation and a compact learned parameterization.",
+      "project_relevance": "Inspires lightweight spectral diagnostics, not a claim that market noise should be discarded or that FFT predicts profitable trades.",
+      "reported_findings": "The authors report competitive forecasting and anomaly-detection performance with a small model after reducing selected high-frequency components.",
+      "title": "FITS: Modeling Time Series with 10k Parameters",
+      "topics": [
+        "fft",
+        "forecasting",
+        "efficient-models"
+      ],
+      "url": "https://arxiv.org/abs/2307.03756",
+      "year": 2023,
+      "year_basis": "first arXiv publication"
+    },
+    {
+      "adaptation_status": "deferred",
+      "authors": [
+        "Weiwei Ye",
+        "Songgaojun Deng",
+        "Qiaosha Zou",
+        "Ning Gui"
+      ],
+      "decision": "Keep spectral preprocessing experimental; compare against ordinary statistics before adopting it.",
+      "experiment_ids": [
+        "proposed-spectral-triage"
+      ],
+      "id": "fan-2024",
+      "implementation": [
+        "docs/research-notes.md"
+      ],
+      "limitations": [
+        "Forecasting error on those datasets does not establish financial predictability or trading returns.",
+        "No FAN training or local model comparison was performed."
+      ],
+      "mechanism": "Separate changing spectral components and predict their evolution alongside a normalized residual forecasting model.",
+      "project_relevance": "Suggests explicitly examining trend and seasonality assumptions before adding spectral evidence to a financial workflow.",
+      "reported_findings": "The authors report MSE improvements when applying FAN to four forecasting backbones on eight benchmark datasets.",
+      "title": "Frequency Adaptive Normalization For Non-stationary Time Series Forecasting",
+      "topics": [
+        "fft",
+        "nonstationarity",
+        "forecasting"
+      ],
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/37c6d0bc4d2917dcbea693b18504bd87-Abstract-Conference.html",
+      "year": 2024,
+      "year_basis": "NeurIPS publication"
+    }
+  ],
+  "provenance": {
+    "canonical_files_sha256": {
+      "experiments/experiments.json": "537094bc9c881551152daadb14dd37e72e2ee48b658bdba0b0fe6a2d717b59e2",
+      "research/papers.json": "369a07152ffe57f058f6b802077907aea2219b8978aa73a8e0b9cee0137e30a8"
+    },
+    "generator": "scripts/export_site.py",
+    "repository": "https://github.com/hnt119/agenthon-quant-lab",
+    "scope": "Original summaries and identity metadata only; no original captures, graders, answers or PDFs"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,1225 @@
+{
+  "browser_method": "Abramowitz–Stegun 26.2.17 normal CDF; compare absolute error <= 7.5e-8*(spot+discounted strike) plus floating-point allowance",
+  "cases": [
+    {
+      "expected": {
+        "call": 10.4505835722,
+        "put": 5.57352602226
+      },
+      "id": "bsm-000",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 0.0,
+        "put": -0.0
+      },
+      "id": "bsm-001",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 9,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 0.0,
+        "put": 20.0
+      },
+      "id": "bsm-002",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 80,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 9,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 20.0,
+        "put": 0.0
+      },
+      "id": "bsm-003",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 120,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 9,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 4.87705754993,
+        "put": 0.0
+      },
+      "id": "bsm-004",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 9,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 0.0,
+        "put": 2.02013400268
+      },
+      "id": "bsm-005",
+      "inputs": {
+        "rate": -0.02,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 9,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 7.96556745541,
+        "put": 7.96556745541
+      },
+      "id": "bsm-006",
+      "inputs": {
+        "rate": 0,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 0.000797909560859,
+        "put": 0.000797859560841
+      },
+      "id": "bsm-007",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 1e-08
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 3.37791731129e-116,
+        "put": 94.1229424501
+      },
+      "id": "bsm-008",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 1,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 3.37791731129e-114,
+        "put": 9412.29424501
+      },
+      "id": "bsm-009",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 100.0,
+        "strike": 10000,
+        "volatility": 0.2,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 9999.04877058,
+        "put": -0.0
+      },
+      "id": "bsm-010",
+      "inputs": {
+        "rate": 0.05,
+        "spot": 10000,
+        "strike": 1,
+        "volatility": 0.2,
+        "years": 1.0
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 100.0,
+        "put": 326901737.247
+      },
+      "id": "bsm-011",
+      "inputs": {
+        "rate": -0.5,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 5,
+        "years": 30
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 15,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 6.89133796662e-39,
+        "put": 326901637.247
+      },
+      "id": "bsm-012",
+      "inputs": {
+        "rate": -0.5,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 0.2,
+        "years": 30
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 100.0,
+        "put": 3.05902320502e-05
+      },
+      "id": "bsm-013",
+      "inputs": {
+        "rate": 0.5,
+        "spot": 100.0,
+        "strike": 100.0,
+        "volatility": 5,
+        "years": 30
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 15,
+        "unavailable": 2
+      }
+    },
+    {
+      "expected": {
+        "call": 3.66240478668e-08,
+        "put": 180.402599819
+      },
+      "id": "bsm-014",
+      "inputs": {
+        "rate": 0.051075681693067115,
+        "spot": 41.396345928644386,
+        "strike": 281.23292585914106,
+        "volatility": 0.13767307968599662,
+        "years": 4.648237951523861
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 2.65218956678e-53,
+        "put": 309.670172906
+      },
+      "id": "bsm-015",
+      "inputs": {
+        "rate": 0.14425225368155353,
+        "spot": 22.0335202993162,
+        "strike": 393.7986164827398,
+        "volatility": 0.1622645850200443,
+        "years": 1.1895659756293964
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 154.148772963,
+        "put": 73.9093842812
+      },
+      "id": "bsm-016",
+      "inputs": {
+        "rate": 0.05801870730363237,
+        "spot": 425.91682230035224,
+        "strike": 417.922006553007,
+        "volatility": 0.40310002609414713,
+        "years": 3.271164927663181
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 41.759980831,
+        "put": 13.4069470473
+      },
+      "id": "bsm-017",
+      "inputs": {
+        "rate": 0.13753521967331778,
+        "spot": 142.8501938876421,
+        "strike": 127.0475039108863,
+        "volatility": 0.5697580657819543,
+        "years": 0.7562502405481318
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 200.205213911,
+        "put": 127.902989802
+      },
+      "id": "bsm-018",
+      "inputs": {
+        "rate": 0.028930970984760204,
+        "spot": 443.60706709340866,
+        "strike": 424.0198617575982,
+        "volatility": 0.4860708846758701,
+        "years": 4.588746556675063
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 277.267983756,
+        "put": 117.904228671
+      },
+      "id": "bsm-019",
+      "inputs": {
+        "rate": 0.14674132848337196,
+        "spot": 390.26613609919167,
+        "strike": 369.5511327773387,
+        "volatility": 0.9710776871989872,
+        "years": 3.204919099367307
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 133.80332851,
+        "put": 35.677874271
+      },
+      "id": "bsm-020",
+      "inputs": {
+        "rate": 0.033969209543722845,
+        "spot": 185.04671896544372,
+        "strike": 96.94291959789446,
+        "volatility": 0.8903494232409631,
+        "years": 3.212310302737245
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 34.7298560261,
+        "put": 3.34049020509
+      },
+      "id": "bsm-021",
+      "inputs": {
+        "rate": -0.02742911821078884,
+        "spot": 79.13142531283181,
+        "strike": 46.314999003377835,
+        "volatility": 0.5311834145847697,
+        "years": 1.1063752875162634
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 372.611179837,
+        "put": 82.7099879267
+      },
+      "id": "bsm-022",
+      "inputs": {
+        "rate": -0.02197713431947981,
+        "spot": 482.16485771061934,
+        "strike": 173.6852982125985,
+        "volatility": 0.808727091128762,
+        "years": 4.624017725191329
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 93.3735746311,
+        "put": 0.182910203258
+      },
+      "id": "bsm-023",
+      "inputs": {
+        "rate": 0.11317372642205152,
+        "spot": 148.00336730727233,
+        "strike": 83.08332930641402,
+        "volatility": 0.23350606522058892,
+        "years": 3.6750764810398344
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 1.47366354895,
+        "put": 167.323825246
+      },
+      "id": "bsm-024",
+      "inputs": {
+        "rate": 0.02133498250049659,
+        "spot": 39.80469847970329,
+        "strike": 217.06271770534278,
+        "volatility": 0.6080191358017195,
+        "years": 2.5304452826016033
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 300.518367576,
+        "put": 18.6071547505
+      },
+      "id": "bsm-025",
+      "inputs": {
+        "rate": 0.10255382263990097,
+        "spot": 426.1152085944857,
+        "strike": 172.97350087298196,
+        "volatility": 0.7872500567979217,
+        "years": 1.7737951600689859
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 131.319126456,
+        "put": 175.816136353
+      },
+      "id": "bsm-026",
+      "inputs": {
+        "rate": -0.019123380897125997,
+        "spot": 479.06189010072006,
+        "strike": 499.3897329915978,
+        "volatility": 0.4978938954538023,
+        "years": 2.4714624062671953
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 2.73267378987,
+        "put": 187.419876745
+      },
+      "id": "bsm-027",
+      "inputs": {
+        "rate": 0.09955504364618027,
+        "spot": 70.43941559808607,
+        "strike": 350.13988383901966,
+        "volatility": 0.4657026872820914,
+        "years": 3.1798768388527705
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 163.694685182,
+        "put": 19.1385663492
+      },
+      "id": "bsm-028",
+      "inputs": {
+        "rate": 0.07151083881616944,
+        "spot": 385.51279086393686,
+        "strike": 264.03120980768426,
+        "volatility": 0.4999787330646692,
+        "years": 1.2788296629848863
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 140.013530485,
+        "put": 158.782990923
+      },
+      "id": "bsm-029",
+      "inputs": {
+        "rate": 0.11493471685624966,
+        "spot": 303.0790562962291,
+        "strike": 471.24608252827073,
+        "volatility": 0.702489215579363,
+        "years": 3.317530562512099
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 299.575843395,
+        "put": 57.8146662648
+      },
+      "id": "bsm-030",
+      "inputs": {
+        "rate": 0.08536698343514314,
+        "spot": 357.97072483688277,
+        "strike": 169.73937156476217,
+        "volatility": 0.9630216085201645,
+        "years": 4.438122676439013
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 0.00225877948816,
+        "put": 330.25456971
+      },
+      "id": "bsm-031",
+      "inputs": {
+        "rate": 0.1131334399439529,
+        "spot": 85.63460896615264,
+        "strike": 481.45252708474226,
+        "volatility": 0.3777522223479756,
+        "years": 1.2939961563067433
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 373.007167191,
+        "put": 0.00180763164101
+      },
+      "id": "bsm-032",
+      "inputs": {
+        "rate": 0.12483665075291416,
+        "spot": 385.2527070329405,
+        "strike": 15.78406604887978,
+        "volatility": 0.6613201236312004,
+        "years": 2.032188231359118
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 160.935855327,
+        "put": 0.26847233275
+      },
+      "id": "bsm-033",
+      "inputs": {
+        "rate": 0.12354564092532745,
+        "spot": 222.0401594583941,
+        "strike": 71.0563504140946,
+        "volatility": 0.523557490214754,
+        "years": 1.1858522259196587
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 203.880685597,
+        "put": 7.20143067678
+      },
+      "id": "bsm-034",
+      "inputs": {
+        "rate": 0.09023503643373708,
+        "spot": 372.73409130220574,
+        "strike": 258.8511819450616,
+        "volatility": 0.28662138426029704,
+        "years": 4.271708726983677
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 58.7972610379,
+        "put": 0.492025754998
+      },
+      "id": "bsm-035",
+      "inputs": {
+        "rate": 0.14826263624703545,
+        "spot": 370.9991063822791,
+        "strike": 382.9209215564415,
+        "volatility": 0.08221089918016002,
+        "years": 1.3665198294412164
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 419.684209127,
+        "put": 0.313699198387
+      },
+      "id": "bsm-036",
+      "inputs": {
+        "rate": 0.03875614005819117,
+        "spot": 441.7303363794017,
+        "strike": 24.009273230568972,
+        "volatility": 0.9278230513345177,
+        "years": 1.8364639401011844
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 5.66011655158,
+        "put": 393.72407517
+      },
+      "id": "bsm-037",
+      "inputs": {
+        "rate": 0.0031403154721076215,
+        "spot": 38.19746801373695,
+        "strike": 432.0740117091303,
+        "volatility": 0.8090459612981864,
+        "years": 4.312962027184263
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 7.00122131188,
+        "put": 156.261536105
+      },
+      "id": "bsm-038",
+      "inputs": {
+        "rate": 0.07586698007758695,
+        "spot": 60.23135837241158,
+        "strike": 248.84408711610044,
+        "volatility": 0.7241905312209843,
+        "years": 2.269004930301437
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 229.560983564,
+        "put": 5.04914564959e-05
+      },
+      "id": "bsm-039",
+      "inputs": {
+        "rate": 0.009114293683817998,
+        "spot": 282.50664072548636,
+        "strike": 53.43097151946114,
+        "volatility": 0.3799875604883842,
+        "years": 1.001017144678585
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 4.20373489194,
+        "put": 98.0865122727
+      },
+      "id": "bsm-040",
+      "inputs": {
+        "rate": 0.08199549914492978,
+        "spot": 32.17510495453756,
+        "strike": 158.43905624873014,
+        "volatility": 0.7123832298908949,
+        "years": 2.788309523299259
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 103.11571381,
+        "put": 3.5572701666
+      },
+      "id": "bsm-041",
+      "inputs": {
+        "rate": -0.014708823893975632,
+        "spot": 260.4894811819407,
+        "strike": 152.13523022944062,
+        "volatility": 0.19163538880932085,
+        "years": 3.8212529754202875
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 5.01984844734e-87,
+        "put": 297.308366804
+      },
+      "id": "bsm-042",
+      "inputs": {
+        "rate": -0.04390172565734585,
+        "spot": 136.20507251932435,
+        "strike": 364.6237419202863,
+        "volatility": 0.02956747674922877,
+        "years": 3.941913836094333
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 41.8320729437,
+        "put": 58.594010909
+      },
+      "id": "bsm-043",
+      "inputs": {
+        "rate": 0.03666450311125746,
+        "spot": 133.0823702384745,
+        "strike": 157.00154659795214,
+        "volatility": 0.8098863019827541,
+        "years": 1.2725890857052793
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 9.11886256235e-09,
+        "put": 61.0077831411
+      },
+      "id": "bsm-044",
+      "inputs": {
+        "rate": 0.12928540389849474,
+        "spot": 28.552935403634955,
+        "strike": 92.87823516804906,
+        "volatility": 0.3770875955123117,
+        "years": 0.28133509473102053
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 55.0591987329,
+        "put": 20.0778190121
+      },
+      "id": "bsm-045",
+      "inputs": {
+        "rate": 0.06508133355445844,
+        "spot": 144.56760716984363,
+        "strike": 134.36513981881095,
+        "volatility": 0.39852959739701505,
+        "years": 3.132223977413116
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 119.918110931,
+        "put": 8.26599641296
+      },
+      "id": "bsm-046",
+      "inputs": {
+        "rate": 0.05440509302603365,
+        "spot": 192.82129489760163,
+        "strike": 88.20955115631187,
+        "volatility": 0.6928493180674228,
+        "years": 1.528894063743597
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 237.302870932,
+        "put": 10.1450610659
+      },
+      "id": "bsm-047",
+      "inputs": {
+        "rate": 0.12826881477091068,
+        "spot": 392.5222066047834,
+        "strike": 238.75094013546345,
+        "volatility": 0.42936841259870995,
+        "years": 2.863279074016712
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 132.028525487,
+        "put": 2.64873576239
+      },
+      "id": "bsm-048",
+      "inputs": {
+        "rate": 0.1139266486107945,
+        "spot": 213.5303413887946,
+        "strike": 94.58493419357804,
+        "volatility": 0.6298630907387307,
+        "years": 1.0260174459575586
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 234.70882822,
+        "put": 35.0419325833
+      },
+      "id": "bsm-049",
+      "inputs": {
+        "rate": 0.07280237383481902,
+        "spot": 374.46896231284376,
+        "strike": 225.2323041448817,
+        "volatility": 0.5710022684380633,
+        "years": 3.4817277631481347
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 76.2624926095,
+        "put": 66.1513357575
+      },
+      "id": "bsm-050",
+      "inputs": {
+        "rate": 0.0178926634774719,
+        "spot": 228.78820421249435,
+        "strike": 239.03629888042693,
+        "volatility": 0.3671594992736972,
+        "years": 4.9751925887199615
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 316.859371424,
+        "put": 5.4436784104e-74
+      },
+      "id": "bsm-051",
+      "inputs": {
+        "rate": 0.05638950662184232,
+        "spot": 373.5943149020576,
+        "strike": 58.79789871190712,
+        "volatility": 0.13049257250414134,
+        "years": 0.633376885586625
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 194.788560536,
+        "put": 2.36049300665e-05
+      },
+      "id": "bsm-052",
+      "inputs": {
+        "rate": 0.027315037052386137,
+        "spot": 319.12424172282215,
+        "strike": 138.2530783812626,
+        "volatility": 0.10537002463894318,
+        "years": 3.8843331070335005
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 226.492747816,
+        "put": 0.29044901264
+      },
+      "id": "bsm-053",
+      "inputs": {
+        "rate": 0.002521364861214438,
+        "spot": 236.1934294861188,
+        "strike": 10.10441028143158,
+        "volatility": 0.6844960852425409,
+        "years": 4.471475948649871
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 0.0314461588899,
+        "put": 94.1868029876
+      },
+      "id": "bsm-054",
+      "inputs": {
+        "rate": 0.14183814816566415,
+        "spot": 43.234516646144556,
+        "strike": 181.07159480091502,
+        "volatility": 0.3042330831658244,
+        "years": 1.946372199555677
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 5.83097571979e-28,
+        "put": 165.771473127
+      },
+      "id": "bsm-055",
+      "inputs": {
+        "rate": -0.013847167411279608,
+        "spot": 310.65057816693604,
+        "strike": 461.4200338440542,
+        "volatility": 0.025746989290340076,
+        "years": 2.3106068068609686
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 73.0483861366,
+        "put": 8.85831080437e-09
+      },
+      "id": "bsm-056",
+      "inputs": {
+        "rate": 0.001866392263276631,
+        "spot": 121.8411919380344,
+        "strike": 49.142725328267176,
+        "volatility": 0.08130337547176594,
+        "years": 3.82874817330556
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 99.6213049784,
+        "put": 204.676850591
+      },
+      "id": "bsm-057",
+      "inputs": {
+        "rate": -0.03327519565936772,
+        "spot": 384.3065678280636,
+        "strike": 422.4087897835016,
+        "volatility": 0.41351120961093046,
+        "years": 4.4215875962074955
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 9.31234920925,
+        "put": 219.96686143
+      },
+      "id": "bsm-058",
+      "inputs": {
+        "rate": 0.05207193717425192,
+        "spot": 164.81058943753047,
+        "strike": 441.08215959031065,
+        "volatility": 0.39148086558164835,
+        "years": 3.0931369409587393
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 89.5352256277,
+        "put": 14.9041856238
+      },
+      "id": "bsm-059",
+      "inputs": {
+        "rate": -0.03271745377960529,
+        "spot": 148.1504814774166,
+        "strike": 70.56337162112305,
+        "volatility": 0.9244148989279007,
+        "years": 1.254336204132658
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 85.5945523215,
+        "put": 225.792795919
+      },
+      "id": "bsm-060",
+      "inputs": {
+        "rate": 0.04152541824518989,
+        "spot": 228.8756692275246,
+        "strike": 401.0645498245972,
+        "volatility": 0.9407136581290222,
+        "years": 2.001796977706669
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 82.3776484963,
+        "put": 165.743410502
+      },
+      "id": "bsm-061",
+      "inputs": {
+        "rate": -0.0019128698339770517,
+        "spot": 300.75377908528003,
+        "strike": 381.6191323488777,
+        "volatility": 0.49203992054627127,
+        "years": 3.414102439350726
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 321.755563289,
+        "put": 271.980330813
+      },
+      "id": "bsm-062",
+      "inputs": {
+        "rate": 0.020295638740955302,
+        "spot": 488.50831567677005,
+        "strike": 481.2894761530496,
+        "volatility": 0.8562839070457268,
+        "years": 4.5614574913790475
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    },
+    {
+      "expected": {
+        "call": 56.0011644691,
+        "put": 68.015680311
+      },
+      "id": "bsm-063",
+      "inputs": {
+        "rate": 0.03859777709834093,
+        "spot": 99.60096848127424,
+        "strike": 130.42724708847345,
+        "volatility": 0.8133282813221224,
+        "years": 4.035356455786438
+      },
+      "python_check_counts": {
+        "failed": 0,
+        "passed": 17,
+        "unavailable": 0
+      }
+    }
+  ],
+  "reference": "agenthon_quant.options analytic Black–Scholes–Merton with zero continuous dividend yield; checker applicability is recorded per case",
+  "reference_source_sha256": "42086aaa940089de2d86cf157083911a6a6b4a0477974ba035a3af6b6e1c7ae0",
+  "schema_version": 1,
+  "seed": 20261114
+}

@@ -1,134 +1,110 @@
 # Agenthon Quant Lab
 
-A small financial modeling and trading research engine built from lessons in
-Agenthon 2026 Track 1. It turns explicit assumptions into deterministic
-calculations, independent checks and reproducible reports. It works offline
-without an LLM, credentials or a market-data subscription.
+**Financial calculations you can inspect, check and reproduce.**
 
-**v0.1 supports two complete workflows:**
+A Python toolkit and Codex skill grown from Agenthon 2026 Track 1. Start with an
+explicit specification; get deterministic calculations, independent checks,
+frozen inputs and a readable report. A curated research and experiment archive
+explains the mechanisms, failures and decisions behind the work.
 
-- European vanilla option prices, delta/gamma/vega/rho/theta, and volatility
-  scenarios. Checks include discounted bounds, put–call parity, independent
-  payoff integration and finite-difference sensitivity convergence.
-- A predetermined long-only moving-average strategy versus buy-and-hold on
-  user CSV or Parquet data. Signals use completed closes and trade at the next
-  observed open. Reports include gross/net returns, drawdown, exposure, turnover,
-  costs, chronological periods and full cash/position/P&L ledgers.
+## Start in a minute
 
-## Setup and examples
-
-Python 3.12 or newer is required. From this repository:
+Python **3.12+**, macOS or Linux. Windows interpreter paths are documented, but
+this release's installation acceptance is on macOS and Linux CI.
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-verified.txt
-.venv/bin/python -m pip install -e . --no-deps
-.venv/bin/python -m agenthon_quant run examples/options.json --out runs/options
-.venv/bin/python -m agenthon_quant run examples/trading.json --out runs/trading
+git clone https://github.com/hnt119/agenthon-quant-lab.git
+cd agenthon-quant-lab
+python3 scripts/setup.py --install-skill
+.venv/bin/python -m agenthon_quant doctor
+.venv/bin/python -m agenthon_quant example options --out runs/first-option
 ```
 
-The first installation downloads free dependencies; calculations need no network.
-`requirements-verified.txt` pins the environment exercised for this release.
-For a compatible unpinned installation instead, use `pip install -e '.[parquet]'`.
-PyArrow is optional if only CSV is used. Existing output directories are refused;
-choose a new name for each experiment. Data paths are relative to the spec file.
+Open `runs/first-option/report.md`. No API key, paid data or model endpoint is
+needed. Setup installs free dependencies into `.venv`; calculations then work
+offline. Omit `--install-skill` for CLI-only use. Existing skill destinations and
+run directories are preserved. See the [setup guide](docs/user-guide.md).
 
-Each run writes `run.json`, `report.md`, the effective `spec.json`, and hashed
-input snapshots. Successful runs additionally write `validated-results.json`.
-Failed runs keep diagnostics and return exit code 2. Passed, failed and unavailable
-checks are reported separately; a passed run may include unavailable checks.
+## What works today
+
+| Workflow | Outputs | Independent checks |
+|---|---|---|
+| European options | Call/put prices, five Greeks, volatility scenarios | Discounted bounds, parity, payoff quadrature, finite-difference convergence |
+| Single-asset SMA strategy | Gross/net returns, drawdown, exposure, turnover, costs, cash/trade/P&L ledgers, buy-and-hold | Hand-reconciled fixture, accounting identities, next-session timing, future-data invariance |
+| Research and experiments | Search 12 papers and 17 evidence records by topic, date, mechanism or outcome | Canonical sources, source hashes, explicit unknowns and evidence categories |
+
+For the [verified option example](reports/v0.1/options/report.md), spot and strike
+are 100, maturity one year, volatility 20%, continuous rate 5% and dividend yield
+2%: **call 9.2270055; put 6.3300806** per unit of underlying. Boundary quantities
+and unavailable checks are reported explicitly.
+
+The [synthetic strategy example](reports/v0.1/trading/report.md) returns **−9.0143%**
+after 5 bps fees and 5 bps slippage, versus **−5.0435%** for buy-and-hold. The losing
+result is preserved. Synthetic prices demonstrate mechanics, not a market edge.
+
+## One engine, several ways in
+
+```mermaid
+flowchart LR
+    CLI[CLI] --> E[Shared Python engine]
+    Skill[quant-research skill] --> E
+    E --> I[Specification + frozen inputs]
+    I --> C[Deterministic calculations]
+    C --> V[Independent checks]
+    V --> R[Run record + report]
+    A[Canonical research + experiment JSON] --> S[Sanitized static export]
+    S --> W[Portfolio showcase]
+```
+
+The portfolio's browser calculator is a small, explicitly bounded static
+implementation checked against **64 Python reference cases**. It does not host
+Python, Docker, model inference or trading. The showcase is a separately reviewed
+portfolio change; publication status is in the [release report](docs/releases/v0.2.0.md).
+
+## Follow the evidence
+
+[Start here](docs/index.md) → [Use the skill](docs/plugin-guide.md) →
+[Financial models](docs/options-conventions.md) → [Research](research/README.md) →
+[Experiments](experiments/README.md) → [Architecture](docs/agenthon-architecture.md) →
+[Lessons learned](docs/negative-results.md)
 
 ```sh
-.venv/bin/python -m agenthon_quant reproduce runs/options --out runs/options-copy
-.venv/bin/python -m agenthon_quant reproduce runs/options --out runs/options-vol30 --set 'volatility=0.3'
-.venv/bin/python -m agenthon_quant verify-inputs runs/options
-.venv/bin/python -m agenthon_quant run examples/invalid-options.json --out runs/invalid
-.venv/bin/python -m agenthon_quant explain runs/invalid
+.venv/bin/python -m agenthon_quant example trading --out runs/first-strategy
+.venv/bin/python -m agenthon_quant archive papers verification
+.venv/bin/python -m agenthon_quant archive experiments self-debugging --status failed
+.venv/bin/python -m agenthon_quant reproduce runs/first-option --out runs/repeated
+.venv/bin/python -m agenthon_quant bundle runs/first-option --out runs/first-option.zip
 ```
 
-The invalid example intentionally fails with negative volatility. Exact
-reproduction verifies input hashes and the engine source fingerprint first;
-changed assumptions are recorded as a derived experiment. Use a source checkout
-and the recorded dependency versions to reproduce this release. Git commits,
-source fingerprints and input hashes are distinct identities.
+Bundles include input snapshots and local provenance and are **private by
+default**. The website uses a separate allowlisted export. Historical live
+experiments are inspectable summaries, not permission to rerun paid inference.
 
-## Read the saved results
+## Reproducibility and limits
 
-- [Option valuation and scenarios](reports/v0.1/options/report.md)
-- [Strategy and buy-and-hold comparison](reports/v0.1/trading/report.md)
-- [Deliberate input failure](reports/v0.1/invalid-options/report.md)
-- [Changed volatility assumption](reports/v0.1/options-vol30/report.md)
-- [Release verification](reports/v0.1/verification.json) and
-  [deliberate corruption checks](reports/v0.1/deliberate-failures.json)
+Every run records source commit/fingerprint, input hashes, assumptions, package
+versions, timing and passed/failed/unavailable checks. Failed runs retain their
+evidence. Exact reproduction requires the matching source version; the original
+`v0.1.0` tag and its reports remain immutable. See [methodology](docs/methodology.md)
+and [verification](docs/releases/v0.2.0.md).
 
-The bundled prices are **synthetic**, generated with a recorded seed and no
-market observations. The SMA20 example loses money and underperforms buy-and-hold
-after costs. That unsuccessful result is preserved; no parameter tuning was done.
-It demonstrates research mechanics, not an empirical trading edge.
+Options assume European exercise and constant continuous dividend yield. Trading
+is long-only simulation with fractional shares; dividends, tax, liquidity,
+market impact and cash interest are excluded. Source/price adjustments are user
+declarations. Checks do not establish predictive accuracy or profitability.
+Model assistance is mock-only. FFT, forecasting, training, broad strategy search
+and live execution remain deferred; see the [roadmap](docs/next-milestone.md).
 
-## Use the Codex skill
-
-The maintained skill is [skills/quant-research](skills/quant-research/SKILL.md).
-It translates supported requests into explicit specs, runs this engine and reads
-its checks. It does not contain a second calculation implementation.
-
-For discovery in another local Codex setup, link this folder into your skills
-directory (preserve an existing skill with the same name):
-
-```sh
-ln -s "$PWD/skills/quant-research" "$HOME/.codex/skills/quant-research"
-```
-
-Example requests: “Price these options and show how value changes with
-volatility,” “Compare this strategy with buy-and-hold after costs,” “Explain why
-this analysis failed validation,” and “Reproduce this saved experiment with a
-different assumption.” All four are exercised through the skill's CLI helper.
-See [skill verification](docs/skill-verification.md).
-
-## Verification and maintenance
+## Develop and contribute
 
 ```sh
 .venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/export_site.py --check
 .venv/bin/python scripts/verify_release.py --out runs/verification-NEW
 ```
 
-The release verifier runs the suite, both workflows, failure explanation, exact
-reproduction, an assumption change, and deliberate price/cash corruptions.
-Independent tests include tiny hand-calculated trades, future-data invariance,
-CSV/Parquet equivalence, option boundaries, publication failure, input tampering
-and zero-budget mock assistance. No official competition evaluation runs.
-
-| Location | Purpose |
-|---|---|
-| `src/agenthon_quant/` | Calculation, verification, run records and CLI |
-| `examples/` | Explicit specifications and redistributable synthetic data |
-| `tests/` | Independent numerical/accounting and contract regressions |
-| `skills/quant-research/` | Thin reusable skill, references and command helper |
-| `reports/v0.1/` | Frozen first-release outputs and verification evidence |
-| `docs/` | Conventions, architecture, source audit, lessons and handoff |
-
-## Scope and relationship to Agenthon
-
-The original `agenthon-track1-agent` repository remains the competition archive.
-This is a separate repository with selected MIT numerical patterns and new
-fixtures, not a cleaned copy of every candidate or a new competition submission.
-The [reuse map](docs/reuse-map.md), [source inventory](docs/source-audit.json),
-[negative results](docs/negative-results.md) and [attribution](docs/attribution.md)
-explain what was carried forward and why. Historical official scores, local
-model runs, synthetic infrastructure tests and proposals remain distinct.
-
-Option values assume constant parameters and continuous dividend yield; discrete
-dividends and American exercise are unsupported. Trading is single-asset,
-fractional-share, long-only simulation: no dividends, tax, liquidity, market
-impact, cash interest or live orders. Data provenance/adjustments are declared
-by the caller and cannot be independently established from a file alone.
-Numerical/accounting checks do not establish predictive accuracy or profitability.
-
-Model assistance is mock-only with a zero default budget; real-model behavior
-is untested. There is no generated-code executor, live data client or broker
-connection. A full dashboard is a subsequent milestone. Read the
-[architecture decision](docs/architecture.md),
-[options conventions](docs/options-conventions.md),
-[trading conventions](docs/trading-conventions.md),
-[dashboard milestone](docs/next-milestone.md), and
-[current handoff](docs/current-state.md).
+Read the [developer guide](docs/development.md), [contribution guide](CONTRIBUTING.md)
+and [attribution](docs/attribution.md). The MIT notice preserves Agenthon Team 166
+contributor attribution. Organizer-only material, reference answers, raw private
+captures and paper PDFs are excluded. No official ranking or organizer endorsement
+is claimed.
