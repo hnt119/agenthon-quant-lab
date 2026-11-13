@@ -1,0 +1,630 @@
+{
+  "schema": "agenthon-quant-lab-source-audit-v1",
+  "audit_date_singapore": "2026-11-14",
+  "audit_mode": "read-only source and historical receipt inspection; no evaluation reruns",
+  "original_repository": {
+    "root": "/Users/hunt/Desktop/agenthon-track1-agent",
+    "remote": "git@github.com:hnt119/agenthon-track1-progress.git",
+    "head_commit": "a8aa309a413f3f7fe276bad4f3e05d5d9dd62a54",
+    "branch": "codex/r72-failed-unit-repairs",
+    "tracked_path_count": 8587,
+    "local_branch_count": 137,
+    "dirty_base_is_not_exact_snapshot_identity": true,
+    "initial_status_sha256": "3a856f7c2d12450b45a7753b6b00d26155deac408643a163c9ccf4084ad870d1",
+    "initial_status_record_count": 474,
+    "tracked_modified": [
+      "experimental/final-full86-ordered-20261013/evaluation/check_budget.py",
+      "experimental/final-full86-ordered-20261013/evaluation/test_check_budget.py"
+    ],
+    "untracked_path_count": 472,
+    "other_worktree": {
+      "root": "/Users/hunt/.codex/worktrees/final-dual-model-20261027/agenthon-track1-agent",
+      "head_commit": "c8b204a7983b31fa15f328840ff9d92928d74e27",
+      "branch": "codex/openrouter-free-experimental-20261028",
+      "inspected": false
+    }
+  },
+  "official_kit": {
+    "root": "/Users/hunt/Desktop/track1-coding-public",
+    "head_commit": "81e3e072f8d93ecbddc5915e38710a6cce61313c",
+    "remote": "https://github.com/Agenthon-2026/track1-coding-public.git",
+    "observed_root_license": "CC BY-NC 4.0",
+    "inspected_files": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "7d8d72acc89f4e58a90e74de0cd463f3b5c211c65cacf9f26c598aeaa6d22c10",
+        "bytes": 5369
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+        "bytes": 19347
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "338064a802a61dded516e39042ff0b69c9e4d5cdd31fef2f6d6742e726188875",
+        "bytes": 2052
+      },
+      {
+        "path": "docker/requirements-sandbox.txt",
+        "sha256": "3007f8c37129b3e2e201b896d9a02dff949a03fa029ce6e5927ce802a482dd04",
+        "bytes": 1473
+      }
+    ],
+    "task_data_checks_answers_copied": false
+  },
+  "inventory": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 8295,
+      "sha256": "9703cdf6abf48339fd23742b3e4c8c1945df9d70c9138f65d8eaac28cce4f933",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1087,
+      "sha256": "3c199ab967a5723059b431db304c1d1428253e7e27384bea28cb249b276590f5",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 3023,
+      "sha256": "fca134293b6e0bf9d4c13399f0f1cfead679d0b781695edd81e1f904190ee451",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 683,
+      "sha256": "2d8b7cbb5447bb2a9c95d1c9e2aee86660075d2ae8fabbe677bc00403edb1506",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "agent.py",
+      "bytes": 49800,
+      "sha256": "a4c7668c2df8a4c644d107aa806372b4287b4d6506b2947ad0a859048dc7eaa5",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "agent/model_client.py",
+      "bytes": 9093,
+      "sha256": "b8f2c926294ed0b468987f913adbc42b1e8b739ff169edf7e7715e46b2e80b43",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "agent/code_runner.py",
+      "bytes": 3146,
+      "sha256": "551141b3a70f42a5834b265582584ed5dd9428704627202b3b9abf39e70bdf59",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "agent/task_reader.py",
+      "bytes": 5103,
+      "sha256": "60c4a2e7ee4703c048ef888692ff6304b6802c7c875fe86cb3009354e930e149",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "agent/validator.py",
+      "bytes": 52529,
+      "sha256": "a8ef3769238533930ff0918a1d13446f0e87efaaa076043682e2f6a7bc9bd6e2",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "dev/test_publication.py",
+      "bytes": 6943,
+      "sha256": "135d68f7b2be33f60b18244fbd22d8e74025159d387f055ce22495ad9dcb597a",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "experimental/cloudflare_workbench/candidate/agent/quant/pricing.py",
+      "bytes": 34989,
+      "sha256": "5570196d46b9ced2f24fcb8ca01a90e7688277b34aa66cc61640fa6312e74d18",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "experimental/cloudflare_workbench/candidate/agent/quant/formation.py",
+      "bytes": 4311,
+      "sha256": "5d6099ea4b2b3eb74e7eebdebc4a0a69a50689562972fe9e876823880fda9143",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "experimental/cloudflare_workbench/candidate/agent/quant/ledger.py",
+      "bytes": 5461,
+      "sha256": "c13c6ba7406f83dcbc08d3094e9ef3ece7c7526b675d14a7e4f73e13e90fe9c5",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "experimental/five-unit-round21-20261013/candidate/agent/quant/pricing.py",
+      "bytes": 33586,
+      "sha256": "eafd562b8ff2fd5a2c1defcef9c756b19276fc1ef4b51ef4c763dbc0dfbe9bb8",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "Agenthon research findings/Agenthon_Track1_Handoff.md",
+      "bytes": 20940,
+      "sha256": "f2f9939aed4754d69c097c32cd26d2c685566af0a9455bbf2fbaae475d7d4b9b",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "Agenthon research findings/agenthon_track1_literature_synthesis.md",
+      "bytes": 29572,
+      "sha256": "00597afbdd19f828944124ccd0e0d5083b81330897799736d5ef964aae4ab8c4",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "Agenthon research findings/Agenthon_FFT_Research_Findings.md",
+      "bytes": 20935,
+      "sha256": "62ff7ef8db4f03a424fea6cc102d35b0a310d40ac47085d8204dd577e03069e9",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/OUTPUT_PUBLICATION_FAILURE_HANDOFF.md",
+      "bytes": 6690,
+      "sha256": "741851d7ca785f218bceb710b2b67b0628fbcfdd267837ccc69134825d63d627",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/TRUNCATION_RECOVERY_PILOT_RESULTS.md",
+      "bytes": 5216,
+      "sha256": "988c45b47c72fcd13d6e36a54ee756c4bf1d551a8fe2edbbed3e23bcffac0dfd",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/TYPE_ERROR_DIAGNOSTIC_LOCAL_RESULT.md",
+      "bytes": 4546,
+      "sha256": "4684664e1fa98536389799e1aa504f1b1e3b967ab55ff720399c0f4a53af4bc0",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/TRADE_ACCOUNTING_GATE_LOCAL_RESULT.md",
+      "bytes": 1872,
+      "sha256": "400911be81047650e51527c3c60dc86bd61809199705287d7efe18974b7854fa",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/current-baseline.json",
+      "bytes": 1144,
+      "sha256": "ee7a19cfeb076cf5629b99d2c72eddde3cb6adc4a9bea6aefb12fa8617be9599",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/final-r29-freeze-20261023.json",
+      "bytes": 43091,
+      "sha256": "aa385ff4f0550283d094e968b1584be5f0af00166c8cad0b4f1accaaa70c9a5b",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r72-analysis-repairs-candidate-freeze-20261027.json",
+      "bytes": 9775,
+      "sha256": "c499b69611d8c70b8544ab68ef53d804a08245eecba9564d71dd8d8f7d2275a0",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r72-nvidia35-full86-20261027/completion-evidence.json",
+      "bytes": 4103,
+      "sha256": "4f1f65735765385db9cdcb72120d35f94a644ba7b14cbb91adfd3c2afb6fcc14",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/cloudflare-r84-targeted10-live-results-20261028.json",
+      "bytes": 33080,
+      "sha256": "d1d12105b3c5ea4fa6d527c199c9e4a6bc027d7846a9d988e9f8d5a6b8499d99",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/cloudflare-r84-targeted10-live-results-20261028.md",
+      "bytes": 3808,
+      "sha256": "56558d9143facb456a9feba024c990e77e3f8793d9716520085797a8e60b087c",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r55-vs-r48-momentum-round47-comparison-20261019.json",
+      "bytes": 14991,
+      "sha256": "958236c366fa7b7783d7cb5ff382ee57191ef51eca27a9fc1a15b17cde1e9fbc",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r56-vs-r55-momentum-round48-comparison-20261020.json",
+      "bytes": 15943,
+      "sha256": "f877bdaa95f931a620e40f5c4e9d281e7c248b9118c2b9b64874a946acd96b84",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r59-vs-r58-evt-round51-comparison-20261020.json",
+      "bytes": 16001,
+      "sha256": "dfc39536df3da2f167e00dcc6c7cbad026d4897d66e12c79c46791fbb16667b8",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r61-vs-r48-smith-scalar-round53-comparison-20261020.json",
+      "bytes": 18443,
+      "sha256": "c6e5cc517ab80deb8b9aeafc47cd7abb4387e46e6ec825db40a7fd3ee07327c4",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r55-momentum-round47-public-live-evaluation-20261019.json",
+      "bytes": 62471,
+      "sha256": "08bcf69489209e9556ea6d6b2d861be16bae119047b7f5378991a5bb80b22473",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r56-momentum-round48-public-live-evaluation-20261020.json",
+      "bytes": 63908,
+      "sha256": "793d72ba2355233bd02d5f580dc1b712142c5fcff00fcf70fc7b6f2373253b94",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r58-evt-round50-public-live-evaluation-20261020.json",
+      "bytes": 70851,
+      "sha256": "250c97c7d62a5c36328bc46288d99f15f5ebe54e90d274b82f28eb544bde8e1c",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r59-evt-round51-public-live-evaluation-20261020.json",
+      "bytes": 71896,
+      "sha256": "d5224f4b42616520c0fba1d3f1b735663f9251c92ed0003dc64ac3d26b0a0f2b",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r60-smith-round52-public-live-evaluation-20261020.json",
+      "bytes": 93001,
+      "sha256": "6710205ee8a3bc93b9d7507e1e2a6c2afb7f40231eb4a4ac3e9e531a41b69fb4",
+      "matches_audited_HEAD_blob": true
+    },
+    {
+      "path": "docs/submissions/r61-smith-scalar-round53-public-live-evaluation-20261020.json",
+      "bytes": 104429,
+      "sha256": "61d01d0c48fd0b86b5eb99818570a2304837e48702cce8600bdaee004a997cf6",
+      "matches_audited_HEAD_blob": true
+    }
+  ],
+  "historical_selected_records": [
+    {
+      "record": "docs/submissions/r55-momentum-round47-public-live-evaluation-20261019.json",
+      "candidate": "R55",
+      "source_commit": "6562010f8e08b268495cc40c94a114b797dd22dc",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "f34231908e0ecb80eca7cd22ac2ae8eb0e4c7400",
+      "plan_sha256": "f7a0c0dfd3bb8d4c7d89bd79e6fda9280063ea3b7c29712a67d2f04ee1092f86",
+      "linux_amd64_image_manifest_digest": "sha256:1bd411bb39c8fed49c30387f042c8186fcd2815fc9f9fd2b430467dfb9c63558",
+      "oci_image_config_digest": "sha256:37faac2ac8961b038f02e2149005241477c8cba7a5f4b539a70daed92a351669",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 0,
+      "selected_whole_task_failures": 1,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 1.7271226670127362,
+        "input_tokens": 8824,
+        "known_grading_seconds": 1.7271226670127362,
+        "known_grading_seconds_math_fsum": 1.7271226670127362,
+        "known_input_tokens": 8824,
+        "known_model_calls": 2,
+        "known_output_tokens": 918,
+        "known_solver_seconds": 19.56919770897366,
+        "model_calls": 2,
+        "output_tokens": 918,
+        "solver_seconds": 19.56919770897366,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    },
+    {
+      "record": "docs/submissions/r56-momentum-round48-public-live-evaluation-20261020.json",
+      "candidate": "R56",
+      "source_commit": "77074f69f5ce9bc17ff9999403aafbe79e2bc793",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "a7109dd8cfe1aab852be73370a2b56ea6961499b",
+      "plan_sha256": "e4fb60c4e54db368ef38fedf575ef1e92e84da2c77a9d861cef7a0d053da7051",
+      "linux_amd64_image_manifest_digest": "sha256:18f0c620b14ff25c1a65d435716a06e50ad2c2f7ac11278f0ceffe25f74c60af",
+      "oci_image_config_digest": "sha256:2dde05296e6fb03dedb86edcb351a12ba06731699276eff7848d00471458aeb6",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 1,
+      "selected_whole_task_failures": 0,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 2.600444999989122,
+        "input_tokens": 4070,
+        "known_grading_seconds": 2.600444999989122,
+        "known_grading_seconds_math_fsum": 2.600444999989122,
+        "known_input_tokens": 4070,
+        "known_model_calls": 1,
+        "known_output_tokens": 448,
+        "known_solver_seconds": 10.20898020779714,
+        "model_calls": 1,
+        "output_tokens": 448,
+        "solver_seconds": 10.20898020779714,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    },
+    {
+      "record": "docs/submissions/r58-evt-round50-public-live-evaluation-20261020.json",
+      "candidate": "R58",
+      "source_commit": "dd31e4a64af0faaeaffa5e890ded0ed0daa05557",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "04cc0588cd56e0972a6dd38e4b134c743571c654",
+      "plan_sha256": "7d19cbea27435618075f399d90b6d6a5a5ba287100156c72cc7a1d7cbadab9be",
+      "linux_amd64_image_manifest_digest": "sha256:716d80464060e2c28f95d8ae8239231a4367c4d31815556db7fa079dec402359",
+      "oci_image_config_digest": "sha256:366d4c8b3d573685aa55f700ee3e225c96e72558520d4b38e639ca7e2037c31a",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 0,
+      "selected_whole_task_failures": 1,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 1.7711433339864016,
+        "input_tokens": 12209,
+        "known_grading_seconds": 1.7711433339864016,
+        "known_grading_seconds_math_fsum": 1.7711433339864016,
+        "known_input_tokens": 12209,
+        "known_model_calls": 2,
+        "known_output_tokens": 3947,
+        "known_solver_seconds": 80.98652408411726,
+        "model_calls": 2,
+        "output_tokens": 3947,
+        "solver_seconds": 80.98652408411726,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    },
+    {
+      "record": "docs/submissions/r59-evt-round51-public-live-evaluation-20261020.json",
+      "candidate": "R59",
+      "source_commit": "f982bbc0c56252b676c454ba5076e2815ceb3cde",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "4e2aea1b1e66f8e68676bcb4e19d3373a8d32b10",
+      "plan_sha256": "1df07814c6904a43923e829ffae21b5c17d5f99e5533b4ddf94fe9a15d86a98a",
+      "linux_amd64_image_manifest_digest": "sha256:66398e52a636c50f8b7ad2c79713de38554af8136eeb3ac082514c6a0e4f619d",
+      "oci_image_config_digest": "sha256:b5ec38ee3ed9f887d7f1956045a2f62bfff9017d36d4422d8470b4a0ced8d0f7",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 1,
+      "selected_whole_task_failures": 0,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 2.6471362500451505,
+        "input_tokens": 5226,
+        "known_grading_seconds": 2.6471362500451505,
+        "known_grading_seconds_math_fsum": 2.6471362500451505,
+        "known_input_tokens": 5226,
+        "known_model_calls": 1,
+        "known_output_tokens": 1943,
+        "known_solver_seconds": 78.26625354215503,
+        "model_calls": 1,
+        "output_tokens": 1943,
+        "solver_seconds": 78.26625354215503,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    },
+    {
+      "record": "docs/submissions/r60-smith-round52-public-live-evaluation-20261020.json",
+      "candidate": "R60",
+      "source_commit": "3539aed9be36a5e397eb76525157c392f78af7e7",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "10259cb8d21311caf4342208367c2e53204788bb",
+      "plan_sha256": "b92164c88380291630e39013c34b205568eefcabcc5e18f5501ef125d2180013",
+      "linux_amd64_image_manifest_digest": "sha256:0db62f1a3e7e3bd2fd7ec182e438a42c5be2aeca082af4a5fd86dbecb04202e5",
+      "oci_image_config_digest": "sha256:9c8d61c63d6d60b1664e3425287c73262e29fd86edbb10c97eb49ab8cc616e44",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 0,
+      "selected_whole_task_failures": 1,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 1.7424658751115203,
+        "input_tokens": 6803,
+        "known_grading_seconds": 1.7424658751115203,
+        "known_grading_seconds_math_fsum": 1.7424658751115203,
+        "known_input_tokens": 6803,
+        "known_model_calls": 2,
+        "known_output_tokens": 1578,
+        "known_solver_seconds": 29.69225687487051,
+        "model_calls": 2,
+        "output_tokens": 1578,
+        "solver_seconds": 29.69225687487051,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    },
+    {
+      "record": "docs/submissions/r61-smith-scalar-round53-public-live-evaluation-20261020.json",
+      "candidate": "R61",
+      "source_commit": "d456fbaa92d66839210b7f6ad836d7c4d45a15ad",
+      "source_root": "experimental/candidate-workbench/candidate",
+      "deployment": "NVIDIA-only; House deployment equivalence unknown.",
+      "model": {
+        "enable_thinking": false,
+        "endpoint": "https://integrate.api.nvidia.com",
+        "max_tokens": 4000,
+        "name": "nvidia/nemotron-3-super-120b-a12b",
+        "temperature": 0
+      },
+      "model_served_revision": null,
+      "configuration_sha256": "14e7c4e314500b57792c9eabf5e1925c3f7c13d803172a8b6e74ee8da93e8023",
+      "evaluator_commit": "4d631a93f32a41ecfc938ac2fbab79aa10b1d49c",
+      "plan_sha256": "f5612afcf5fc9f175bf8233d29c860046e647de7380177b0b5bfd20f81b2acb9",
+      "linux_amd64_image_manifest_digest": "sha256:4b17961d47559e9ca3d5556e5eb56b7c692209d734384167c1bb39c8be4ab454",
+      "oci_image_config_digest": "sha256:da3d486c589090d851f881da861abd6d9b888fcf9e85d8a410b221f160fe72c6",
+      "limits": {
+        "aggregate_calls": 3,
+        "aggregate_solver_seconds": 450,
+        "conditional_max_calls": 3,
+        "max_tokens": 4000,
+        "ordinary_calls": 2,
+        "unit_solver_seconds": 450
+      },
+      "selected_denominator": 1,
+      "selected_whole_task_passes": 1,
+      "selected_whole_task_failures": 0,
+      "not_run": 85,
+      "usage": {
+        "grading_seconds": 3.596600374672562,
+        "input_tokens": 2874,
+        "known_grading_seconds": 3.596600374672562,
+        "known_grading_seconds_math_fsum": 3.596600374672562,
+        "known_input_tokens": 2874,
+        "known_model_calls": 1,
+        "known_output_tokens": 788,
+        "known_solver_seconds": 31.647765083704144,
+        "model_calls": 1,
+        "output_tokens": 788,
+        "solver_seconds": 31.647765083704144,
+        "units_with_unknown_grading_seconds": 0,
+        "units_with_unknown_input_tokens": 0,
+        "units_with_unknown_model_calls": 0,
+        "units_with_unknown_output_tokens": 0,
+        "units_with_unknown_solver_seconds": 0
+      },
+      "cost_usd": null,
+      "cost_usd_unknown_reason": "Historical receipts contain calls/tokens/time but not reconciled dollar billing."
+    }
+  ],
+  "historical_scores": {
+    "current_designated_baseline": {
+      "candidate": "R29",
+      "submission_id": 983167,
+      "source_commit": "24827ce99d6bca1874a26b6c6cbf985d1689801e",
+      "score": 0.2674,
+      "evidence": "USER_REPORTED_OFFICIAL",
+      "platform_independently_verified_in_this_audit": false
+    },
+    "README_conflict": "README still identifies 964883 as performance baseline; later current-baseline.json controls.",
+    "cross_candidate_score_aggregation_performed": false
+  },
+  "known_path_limitations": [
+    {
+      "recorded_source_root": "experimental/final_optimization/candidate",
+      "source_commit": "527b2adcce5788bef746d4b5d7fdb8784a9922f6",
+      "exists_in_inspected_working_tree": false,
+      "interpretation": "Use the exact Git commit and historical evidence, not a nonexistent working-tree directory."
+    }
+  ],
+  "exclusions": [
+    "credentials",
+    "team claims and proofs",
+    "submission ZIPs",
+    "raw private captures",
+    "grader/reference material",
+    "canary mappings",
+    "generated competition answers",
+    "bulk historical outputs"
+  ],
+  "scope_limitations": [
+    "Selective source audit, not an exhaustive authorship or security audit.",
+    "Historical test and performance reports were inspected, not rerun or independently reconstructed.",
+    "No fresh official platform score, ranking, House equivalence or provider billing verified.",
+    "No model calls, upload, push, deployment or competition release promotion performed."
+  ]
+}
