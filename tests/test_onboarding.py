@@ -58,15 +58,20 @@ class OnboardingTests(unittest.TestCase):
             self.assertIs(kwargs["shell"], False)
             self.assertTrue(kwargs["check"])
             self.assertEqual(kwargs["cwd"], checkout)
-            if command[1:3] == ["-m", "venv"]:
-                environment = Path(command[3])
+            self.assertEqual(kwargs["env"].get("PIP_CONFIG_FILE"), os.devnull)
+            self.assertFalse(set(kwargs["env"]) & {"PIP_TARGET", "PIP_PREFIX", "PIP_ROOT", "PIP_USER"})
+            if "venv" in command:
+                environment = Path(command[-1])
                 (environment / "bin").mkdir(parents=True)
                 (environment / "pyvenv.cfg").write_text("home=test\n")
                 (environment / "bin/python").write_text("test placeholder")
         result = setup_environment(checkout, runner=run)
         self.assertEqual(result["commands_completed"], 3)
         self.assertEqual(commands[1][0], str(checkout / ".venv/bin/python"))
-        self.assertEqual(commands[1][2:5], ["pip", "install", "-r"])
+        self.assertEqual(commands[1][1:4], ["-I", "-m", "pip"])
+        self.assertIn("--isolated", commands[1])
+        self.assertIn("--require-virtualenv", commands[1])
+        self.assertEqual(commands[1][-3:-1], ["install", "-r"])
         self.assertEqual(commands[2][-1], "--no-deps")
         commands.clear()
         setup_environment(checkout, runner=run)
@@ -191,3 +196,37 @@ class OnboardingTests(unittest.TestCase):
             result = doctor(ROOT, skills_dir=self.root / "skills")
         self.assertEqual(result["status"], "needs_setup")
         self.assertTrue(any(c["status"] == "failed" and "import failed" in c["details"] for c in result["checks"]))
+
+    def test_real_local_wheel_install_ignores_pip_redirects_and_config(self):
+        # No network: the only dependency is a tiny authored wheel. Stop before
+        # editable installation so no build dependency can be downloaded.
+        checkout, _ = self.make_skill()
+        (checkout / "pyproject.toml").write_text("[project]\nname='audit-checkout'\nversion='0.0.1'\n")
+        wheel = self.root / "audit_marker-0.0.1-py3-none-any.whl"
+        with zipfile.ZipFile(wheel, "w") as archive:
+            archive.writestr("audit_marker/__init__.py", "VALUE = 'local regression fixture'\n")
+            archive.writestr("audit_marker-0.0.1.dist-info/METADATA", "Metadata-Version: 2.1\nName: audit-marker\nVersion: 0.0.1\n")
+            archive.writestr("audit_marker-0.0.1.dist-info/WHEEL", "Wheel-Version: 1.0\nGenerator: authored-test\nRoot-Is-Purelib: true\nTag: py3-none-any\n")
+            archive.writestr("audit_marker-0.0.1.dist-info/RECORD", "")
+        (checkout / "requirements-verified.txt").write_text(str(wheel) + "\n")
+        outside = {name: self.root / name.lower() for name in ("PIP_TARGET", "PIP_PREFIX", "PIP_ROOT")}
+        config = self.root / "pip-redirect.conf"
+        config.write_text(f"[global]\ntarget = {self.root / 'config-target'}\n")
+        completed = []
+        def local_only(command, **kwargs):
+            if "-e" in command:
+                raise subprocess.CalledProcessError(91, command)  # intentional offline boundary
+            actual = list(command)
+            if "pip" in actual:
+                actual.insert(actual.index("install") + 1, "--no-index")
+            process = subprocess.run(actual, capture_output=True, text=True, **kwargs)
+            completed.append(actual)
+            return process
+        inherited = {name: str(path) for name, path in outside.items()}
+        inherited.update({"PIP_USER": "1", "PIP_CONFIG_FILE": str(config), "PIP_NO_INDEX": "1"})
+        with patch.dict(os.environ, inherited), self.assertRaisesRegex(ValueError, "Setup stopped at pip install"):
+            setup_environment(checkout, runner=local_only)
+        self.assertEqual(len(completed), 2)  # venv creation and successful local dependency install
+        self.assertTrue(list((checkout / ".venv").rglob("audit_marker/__init__.py")))
+        for path in [*outside.values(), self.root / "config-target"]:
+            self.assertFalse(path.exists(), f"Installation escaped the checkout environment: {path}")

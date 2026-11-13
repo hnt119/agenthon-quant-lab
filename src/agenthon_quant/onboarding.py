@@ -54,18 +54,25 @@ def setup_environment(root: Path, *, with_skill: bool = False, skills_dir: Path 
     if environment.exists() and (not environment.is_dir() or not (environment / "pyvenv.cfg").is_file() or not python.is_file()):
         raise ValueError("Existing .venv is not a complete virtual environment and was preserved")
     invoke = runner or subprocess.run
+    # Pip's --isolated ignores user configuration and PIP_* option variables,
+    # while PIP_CONFIG_FILE=os.devnull also disables global/site config files.
+    # Strip inherited redirects before spawning pip or its build subprocesses.
+    # Python -I likewise ignores PYTHONPATH/PYTHONHOME and user site packages.
+    child_env = {key: value for key, value in os.environ.items() if not key.upper().startswith("PIP_")}
+    child_env["PIP_CONFIG_FILE"] = os.devnull
+    pip = [str(python), "-I", "-m", "pip", "--isolated", "--require-virtualenv", "--disable-pip-version-check"]
     commands = []
     if not environment.exists():
-        commands.append([sys.executable, "-m", "venv", str(environment)])
+        commands.append([sys.executable, "-I", "-m", "venv", str(environment)])
     commands.extend([
-        [str(python), "-m", "pip", "install", "-r", str(root / "requirements-verified.txt")],
-        [str(python), "-m", "pip", "install", "-e", str(root), "--no-deps"],
+        [*pip, "install", "-r", str(root / "requirements-verified.txt")],
+        [*pip, "install", "-e", str(root), "--no-deps"],
     ])
     for command in commands:
         try:
-            invoke(command, cwd=root, check=True, shell=False)
+            invoke(command, cwd=root, check=True, shell=False, env=child_env)
         except (OSError, subprocess.CalledProcessError) as exc:
-            raise ValueError(f"Setup stopped at {command[2] if len(command) > 2 else command[0]}. No system-Python fallback was attempted. Fix the reported installation error and rerun setup.") from exc
+            raise ValueError(f"Setup stopped at {'pip install' if 'pip' in command else 'virtual environment creation'}. No system-Python fallback was attempted. Fix the reported installation error and rerun setup.") from exc
     result = {"status": "ready", "python": str(python), "dependencies": "requirements-verified.txt", "commands_completed": len(commands)}
     if with_skill:
         result["skill"] = install_skill(root, skills_dir)
