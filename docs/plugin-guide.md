@@ -31,9 +31,11 @@ Useful requests include:
 4. “Reproduce this saved experiment with a different assumption.”
 5. “Find the papers relevant to this pricing approach and show what is implemented.”
 6. “Which historical experiments failed or remain incomplete, and what did we learn?”
+7. “Inspect this daily CSV and compare a five-close SMA, cash and buy-and-hold through my train, validation and test dates. Show the equity and drawdown.”
 
-The first four use run/example/explain/reproduce; the last two query curated local
-archives. The skill should ask for material missing inputs, distinguish failed
+The first four use run/example/explain/reproduce. Requests five and six query curated local archives. Request seven uses `inspect-data` with a historical specification, evaluates the fixed portfolios and links the report, CSV and SVG. [Historical example](historical-workflow.md)
+
+The skill should ask for material missing inputs, distinguish failed
 from unavailable checks, and link actual artifacts. The [user guide](user-guide.md)
 explains setup, inputs, source-version reproduction and private ZIP bundles.
 

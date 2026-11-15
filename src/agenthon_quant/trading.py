@@ -109,6 +109,26 @@ def load_prices(path: Path) -> list[dict[str, Any]]:
     return cleaned
 
 
+def portfolio_parameters(spec: dict[str, Any], observations: int) -> dict[str, Any]:
+    """Validate the shared position size, cost, warmup and synthetic-data assumptions."""
+    config = dict(spec)
+    config["initial_cash"] = _number(spec.get("initial_cash", 10000.0), "initial_cash", positive=True)
+    for name in ("fee_bps", "slippage_bps"):
+        config[name] = _number(spec.get(name, 0.0), name)
+        if config[name] >= 10000:
+            raise ValueError(f"{name} must be below 10000 basis points")
+    lookback = spec.get("lookback", 20)
+    if isinstance(lookback, bool) or not isinstance(lookback, int) or not 2 <= lookback <= 10000:
+        raise ValueError("lookback must be an integer from 2 to 10000, chosen before evaluation")
+    if observations < lookback + 2:
+        raise ValueError("Price data needs at least lookback + 2 observations")
+    config["lookback"] = lookback
+    if not isinstance(spec.get("synthetic", False), bool):
+        raise ValueError("synthetic must be a boolean")
+    config["synthetic"] = spec.get("synthetic", False)
+    return config
+
+
 def validate_spec(spec: dict[str, Any], rows: list[dict[str, Any]]) -> dict[str, Any]:
     if not isinstance(spec, dict):
         raise ValueError("Trading specification must be an object")
@@ -125,21 +145,8 @@ def validate_spec(spec: dict[str, Any], rows: list[dict[str, Any]]) -> dict[str,
         raise ValueError("price_adjustment must be 'unadjusted' or 'split_adjusted'; dividend total-return series are unsupported")
     if spec.get("timestamp_convention") != "session_date":
         raise ValueError("timestamp_convention must be 'session_date'; intraday/timezone timestamps are unsupported")
-    config = dict(spec)
-    config["initial_cash"] = _number(spec.get("initial_cash", 10000.0), "initial_cash", positive=True)
-    for name in ("fee_bps", "slippage_bps"):
-        config[name] = _number(spec.get(name, 0.0), name)
-        if config[name] >= 10000:
-            raise ValueError(f"{name} must be below 10000 basis points")
-    lookback = spec.get("lookback", 20)
-    if isinstance(lookback, bool) or not isinstance(lookback, int) or not 2 <= lookback <= 10000:
-        raise ValueError("lookback must be an integer from 2 to 10000, chosen before evaluation")
-    if len(rows) < lookback + 2:
-        raise ValueError("Price data needs at least lookback + 2 observations")
-    config["lookback"] = lookback
-    if not isinstance(spec.get("synthetic", False), bool):
-        raise ValueError("synthetic must be a boolean")
-    config["synthetic"] = spec.get("synthetic", False)
+    config = portfolio_parameters(spec, len(rows))
+    lookback = config["lookback"]
     development_end = _date(spec.get("development_end"), "development_end")
     holdout_start = _date(spec.get("holdout_start"), "holdout_start")
     dates = [row["date"] for row in rows]
@@ -177,8 +184,9 @@ def _roundoff(*values: float) -> float:
     return ROUNDING_ULPS * math.ulp(scale)
 
 
-def _simulate(rows: list[dict[str, Any]], targets: list[int], initial_cash: float,
-              fee_bps: float, slippage_bps: float) -> list[dict[str, Any]]:
+def simulate_ledger(rows: list[dict[str, Any]], targets: list[int], initial_cash: float,
+                    fee_bps: float, slippage_bps: float) -> list[dict[str, Any]]:
+    """Execute prior-close targets at the next observed open and mark at each close."""
     fee_rate, slip_rate = fee_bps / 10000, slippage_bps / 10000
     cash, shares, previous_equity = initial_cash, 0.0, initial_cash
     ledger = []
@@ -266,7 +274,9 @@ def verify_ledger(ledger: list[dict[str, Any]], rows: list[dict[str, Any]], init
             quantity, fill = entry["trade_quantity"], entry["fill_price"]
             if entry["date"] != quote["date"] or not _near(entry["open"], opening) or not _near(entry["close"], closing):
                 failures["ledger_shape_and_quotes"].append(location)
-            if strategy == "buy_and_hold":
+            if strategy == "cash":
+                expected_close_target = 0
+            elif strategy == "buy_and_hold":
                 expected_close_target = int(index >= lookback - 1)
             elif strategy == "sma":
                 history = [x["close"] for x in rows[max(0, index + 1 - lookback):index + 1]]
@@ -339,7 +349,8 @@ def verify_ledger(ledger: list[dict[str, Any]], rows: list[dict[str, Any]], init
     } for name, errors in failures.items()]
 
 
-def _metrics(ledger: list[dict[str, Any]], starting_equity: float) -> dict[str, Any]:
+def period_metrics(ledger: list[dict[str, Any]], starting_equity: float) -> dict[str, Any]:
+    """Summarize a nonempty sequence of sessions using its opening equity."""
     peak, max_drawdown = starting_equity, 0.0
     for row in ledger:
         peak = max(peak, row["equity"])
@@ -368,17 +379,17 @@ def _metrics(ledger: list[dict[str, Any]], starting_equity: float) -> dict[str, 
 def _account(rows: list[dict[str, Any]], targets: list[int], config: dict[str, Any],
              fee_bps: float, slippage_bps: float) -> dict[str, Any]:
     try:
-        ledger = _simulate(rows, targets, config["initial_cash"], fee_bps, slippage_bps)
+        ledger = simulate_ledger(rows, targets, config["initial_cash"], fee_bps, slippage_bps)
     except ArithmeticError as exc:
         raise ValueError("Trading arithmetic exceeded the supported numeric range; rescale input prices and cash") from exc
     split = next(i for i, row in enumerate(rows) if row["date"] == config["holdout_start"])
     return {
-        "metrics": _metrics(ledger, config["initial_cash"]),
+        "metrics": period_metrics(ledger, config["initial_cash"]),
         "periods": {
             "development": {"start": rows[0]["date"], "end": config["development_end"],
-                            **_metrics(ledger[:split], config["initial_cash"])},
+                            **period_metrics(ledger[:split], config["initial_cash"])},
             "holdout": {"start": config["holdout_start"], "end": rows[-1]["date"],
-                        **_metrics(ledger[split:], ledger[split - 1]["equity"])},
+                        **period_metrics(ledger[split:], ledger[split - 1]["equity"])},
         },
         "ledger": ledger,
         "trades": [{"date": row["date"], "signal_date": row["signal_date"],

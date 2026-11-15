@@ -7,6 +7,8 @@ explicit specification; get deterministic calculations, independent checks,
 frozen inputs and a readable report. A curated research and experiment archive
 explains the mechanisms, failures and decisions behind the work.
 
+**Review candidate v0.3.0rc1** adds daily historical portfolio comparisons. The example uses 91 Bitstamp BTC/USD observations from Q2 2025, adapted from minute bars under CC BY 4.0. Inspect the input, then compare the strategy, buy-and-hold and cash through training, validation and test periods. [Worked guide](docs/historical-workflow.md) · [Saved report](reports/historical-q2/report.md) · [Data attribution](examples/data/bitstamp/README.md)
+
 ## Start in a minute
 
 Python **3.12+**, macOS or Linux. Windows interpreter paths are documented, but
@@ -30,6 +32,7 @@ run directories are preserved. See the [setup guide](docs/user-guide.md).
 | Workflow | Outputs | Independent checks |
 |---|---|---|
 | European options | Call/put prices, five Greeks, volatility scenarios | Discounted bounds, parity, payoff quadrature, finite-difference convergence |
+| Historical daily portfolios (v0.3 review) | Gross/net period tables, equity and drawdown CSV/SVG, frozen inputs | Strict session dates and mappings, continuous cash and holdings, independent benchmark paths |
 | Single-asset SMA strategy | Gross/net returns, drawdown, exposure, turnover, costs, cash/trade/P&L ledgers, buy-and-hold | Hand-reconciled fixture, accounting identities, next-session timing, future-data invariance |
 | Research and experiments | Search 12 papers and 17 evidence records by topic, date, mechanism or outcome | Canonical sources, source hashes, explicit unknowns and evidence categories |
 
@@ -60,6 +63,15 @@ The portfolio's browser calculator is a small, explicitly bounded static
 implementation checked against **64 Python reference cases**. It does not host
 Python, Docker, model inference or trading. The showcase is a separately reviewed
 portfolio change; publication status is in the [release report](docs/releases/v0.2.0.md).
+
+On the v0.3 review checkout, inspect the fixture and run the historical example from the repository root.
+
+```sh
+.venv/bin/python -m agenthon_quant inspect-data examples/historical.json
+.venv/bin/python -m agenthon_quant example historical --out runs/btc-q2
+```
+
+In the saved example, the five-session moving average returned **+7.58%** after costs over the quarter and **−2.28%** in the held-out June period. Buy and hold returned **+28.14%** and **+2.42%** respectively. Read `runs/btc-q2/report.md` for the assumptions, period boundaries and costs. The CSV and SVG beside it show the daily paths. [Use your own prices or reproduce the example](docs/historical-workflow.md)
 
 ## Follow the evidence
 

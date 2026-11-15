@@ -1,0 +1,24 @@
+{
+  "columns": {
+    "close": "LastTradeClose",
+    "date": "SessionUTC",
+    "open": "FirstTradeOpen"
+  },
+  "data": "inputs/data.csv",
+  "fee_bps": 10,
+  "initial_cash": 10000,
+  "lookback": 5,
+  "price_adjustment": "unadjusted",
+  "slippage_bps": 5,
+  "source": "Bitstamp BTC/USD minute data, github.com/ff137/bitstamp-btcusd-minute-data. USD per BTC. Q2 2025 UTC sessions, first open and last close of positive-volume minute bars. Adapted under CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ from revision d7156d68d85714e188a1e152818281e97c89fbe5.",
+  "strategies": [
+    "sma",
+    "buy_and_hold",
+    "cash"
+  ],
+  "synthetic": false,
+  "timestamp_convention": "session_date",
+  "train_end": "2025-04-30",
+  "validation_end": "2025-05-31",
+  "workflow": "historical"
+}

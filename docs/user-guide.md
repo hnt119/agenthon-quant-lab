@@ -28,6 +28,10 @@ checkout's interpreter. The `--out` path is relative to your current directory.
 Choose a fresh directory every time. On Windows the virtualenv interpreter is
 `.venv\Scripts\python.exe`; examples above show macOS/Linux paths.
 
+## Run a historical portfolio comparison
+
+The v0.3.0rc1 [historical guide](historical-workflow.md) walks through inspecting a local price file, choosing eligible periods, evaluating the portfolios, reading the CSV/SVG paths and reproducing the saved result. Use `examples/historical.json` for the Bitstamp sample and `examples/trading.json` for the original two-period synthetic example. [Fixture attribution and transformation](../examples/data/bitstamp/README.md)
+
 ## Supply assumptions and read results
 
 Copy `examples/options.json` or `examples/trading.json` to a new specification.
@@ -46,8 +50,7 @@ periods. Do not choose parameters after inspecting the final holdout.
 Open `report.md` for prices or portfolio/period tables, then inspect failed and
 unavailable checks. `run.json` retains assumptions, provenance, complete results,
 versions and timing. A passed run can have unavailable checks: it does not prove
-input-source accuracy, predictive accuracy or trading profitability. The bundled
-trading data is synthetic and its losing result is retained.
+input-source accuracy, predictive accuracy or trading profitability. The original `example trading` data is synthetic and its losing result is retained. `example historical` uses licensed BTC/USD observations.
 
 ## Reproduce or change one assumption
 
@@ -61,7 +64,7 @@ Exact reproduction requires the saved source fingerprint. An old run may correct
 refuse the newer toolkit source. Use a **separate checkout** at the run record's
 `code.git_commit` with its recorded dependency versions; preserve your current
 checkout and the original run. For frozen v0.1 records, the immutable `v0.1.0` tag
-contains the original engine. There is no fingerprint bypass. Changed assumptions
+contains the original engine. For v0.2 runs, use the published `v0.2.0` tag or the exact commit recorded in `run.json`. There is no fingerprint bypass. Changed assumptions
 are recorded as a derived experiment, not an exact reproduction. Wheel layout or
 arbitrary environment portability is not promised.
 

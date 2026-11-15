@@ -36,6 +36,8 @@ def main():
     cases = [
         ("options", ["run", str(ROOT / "examples/options.json")], 0),
         ("trading", ["run", str(ROOT / "examples/trading.json")], 0),
+        ("historical", ["example", "historical"], 0),
+        ("historical-reproduced", ["reproduce", str(out / "historical")], 0),
         ("invalid-options", ["run", str(ROOT / "examples/invalid-options.json")], 2),
         ("options-reproduced", ["reproduce", str(out / "options")], 0),
         ("options-vol30", ["reproduce", str(out / "options"), "--set", "volatility=0.3"], 0),
@@ -59,7 +61,10 @@ def main():
     option_record = verify_saved(out / "options")
     repeated = verify_saved(out / "options-reproduced")
     same = option_record["analysis"] == repeated["analysis"]
-    successful &= same
+    historical_record = verify_saved(out / "historical")
+    repeated_history = verify_saved(out / "historical-reproduced")
+    same_history = historical_record["analysis"] == repeated_history["analysis"]
+    successful &= same and same_history
     spec = strict_json((ROOT / "examples/options.json").read_bytes())
     tampered = copy.deepcopy(options(spec)["results"])
     for side in ("call", "put"):
@@ -84,7 +89,7 @@ def main():
     record = {"status": "passed" if successful else "failed", "code": code_identity(), "test_command": test_command,
               "test_exit": tests.returncode, "tests_run": int(count.group(1)) if count else None,
               "workflows": commands, "explain_invalid_exit": explanation.returncode,
-              "exact_analysis_reproduced": same, "deliberate_price_error_detected": offset_detected,
+              "exact_analysis_reproduced": same, "exact_historical_analysis_reproduced": same_history, "deliberate_price_error_detected": offset_detected,
               "deliberate_cash_error_detected": cash_detected, "model_calls": 0, "paid_services_cost_usd": 0,
               "elapsed_seconds": time.monotonic() - started}
     write_json(out / "verification.json", record)

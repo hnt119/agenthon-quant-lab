@@ -115,7 +115,7 @@ def doctor(root: Path | None = None, *, skills_dir: Path | None = None) -> dict:
     source_ok = (root / "pyproject.toml").is_file() and (root / "src/agenthon_quant").is_dir()
     checks.append({"name": "source_checkout", "status": "passed" if source_ok else "failed", "required": True,
                    "details": str(root) if source_ok else "Use a source checkout for bundled examples, archive and reproduction"})
-    for name in ("examples/options.json", "examples/trading.json", "examples/data/synthetic_prices.csv"):
+    for name in ("examples/options.json", "examples/trading.json", "examples/historical.json", "examples/data/bitstamp/btcusd-2025-q2.csv", "examples/data/synthetic_prices.csv"):
         path = root / name
         checks.append({"name": name, "status": "passed" if path.is_file() else "failed", "required": True,
                        "details": f"sha256:{digest(path.read_bytes())}" if path.is_file() else "Bundled file missing"})
@@ -126,12 +126,12 @@ def doctor(root: Path | None = None, *, skills_dir: Path | None = None) -> dict:
                    "details": "Linked to this checkout" if linked else "Optional. Install with scripts/setup.py --install-skill; existing destinations are preserved"})
     return {"status": "ready" if all(c["status"] == "passed" for c in checks if c["required"]) else "needs_setup",
             "checks": checks, "versions": versions, "code": code_identity(),
-            "next_step": "Use example options/trading, or run python3 scripts/setup.py if required dependencies are missing. No model or broker connection is checked."}
+            "next_step": "Use example options, trading or historical, or run python3 scripts/setup.py if required dependencies are missing. No model or broker connection is checked."}
 
 
 def example_path(kind: str, root: Path | None = None) -> Path:
-    if kind not in {"options", "trading"}:
-        raise ValueError("Supported examples are options and trading")
+    if kind not in {"options", "trading", "historical"}:
+        raise ValueError("Supported examples are options, trading and historical")
     path = (root or repository_root()) / "examples" / f"{kind}.json"
     if not path.is_file():
         raise ValueError("Bundled example missing; use a complete source checkout")
@@ -180,6 +180,13 @@ def bundle_run(run_dir: Path, out: Path) -> dict:
     if record != initial:
         raise ValueError("Run record changed during bundle verification; retry with stable files")
     names = {"run.json", "spec.json", "report.md", *snapshots}
+    artifacts = {}
+    if record.get("workflow") == "historical" and record["status"] == "passed":
+        from .historical_report import CURVE_FILES
+        artifacts = record.get("output_artifacts_sha256")
+        if not isinstance(artifacts, dict) or set(artifacts) != {"report.md", *CURVE_FILES}:
+            raise ValueError("Historical run has an incomplete report or curve inventory")
+        names.update(artifacts)
     if record["status"] == "passed":
         names.add("validated-results.json")
     elif (root / "validated-results.json").exists():
@@ -194,6 +201,8 @@ def bundle_run(run_dir: Path, out: Path) -> dict:
         if name == "run.json" and data != raw:
             raise ValueError("Run record changed during bundling")
         expected = snapshots.get(name) if name in snapshots else record.get("effective_specification_sha256") if name == "spec.json" else None
+        if name in artifacts and digest(data) != artifacts[name]:
+            raise ValueError(f"Bundle content hash mismatch: {name}")
         if expected is not None and digest(data) != expected:
             raise ValueError(f"Bundle content hash mismatch: {name}")
         if name == "validated-results.json" and strict_json(data) != record["analysis"]["results"]:
