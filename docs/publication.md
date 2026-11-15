@@ -1,7 +1,8 @@
 # Public content and historical provenance
 
-This repository contains maintained code, original synthetic fixtures, new
-summaries, source identities and inspectable example results. It does not contain
+This repository contains maintained code, original synthetic fixtures, research
+summaries, source identities and inspectable example results. The v0.3 candidate
+also includes an attributed, CC BY 4.0 daily BTC/USD example. [Data notice](../examples/data/bitstamp/README.md) It does not contain
 organizer-only data/checkers, hidden references, canaries, private captures,
 credentials, team claim proofs, submission ZIPs or copyrighted paper PDFs.
 

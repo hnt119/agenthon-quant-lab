@@ -112,7 +112,12 @@ class MarketDataTests(unittest.TestCase):
         spec = {**self.spec, 'columns': self.columns, 'timestamp_convention':'offset_timestamp', 'session_timezone':'America/New_York'}
         parquet = self.path.with_suffix('.parquet')
         pq.write_table(pa.table({'Closing':[Decimal('2.45')]*2, 'Session':pa.array(dates, type=pa.timestamp('ns', tz='UTC')), 'Opening':[1, 1]}), parquet)
-        self.assertEqual(read_market_data(self.path, spec), read_market_data(parquet, spec))
+        csv_rows, csv_quality = read_market_data(self.path, spec)
+        parquet_rows, parquet_quality = read_market_data(parquet, spec)
+        self.assertEqual(csv_rows, parquet_rows)
+        for field in ("input_sha256", "input_bytes"):
+            self.assertNotEqual(csv_quality.pop(field), parquet_quality.pop(field))
+        self.assertEqual(csv_quality, parquet_quality)
         pq.write_table(pa.table({'date':[date(2025, 5, 12)], 'open':['2.45'], 'close':[3]}), parquet)
         self.assertEqual(read_market_data(parquet, self.spec)[0], [{'date':'2025-05-12', 'open':2.45, 'close':3.0}])
 

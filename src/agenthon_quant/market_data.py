@@ -5,6 +5,7 @@ import csv
 from datetime import date, datetime
 from decimal import Decimal
 from io import BytesIO, TextIOWrapper
+import hashlib
 import math
 from pathlib import Path
 import re
@@ -222,7 +223,7 @@ def read_market_data(data_path, spec):
         previous = session
     if not rows:
         raise ValueError("Price input contains no observations")
-    quality = {"source": source, "price_adjustment": adjustment, "timestamp_convention": convention,
+    quality = {"source": source, "input_bytes": len(data), "input_sha256": hashlib.sha256(data).hexdigest(), "price_adjustment": adjustment, "timestamp_convention": convention,
                "session_timezone": zone.key if zone else None, "columns": columns,
                "first_date": rows[0]["date"], "last_date": rows[-1]["date"], "observation_count": len(rows),
                "calendar_gaps": gaps,

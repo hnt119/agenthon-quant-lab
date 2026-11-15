@@ -102,9 +102,12 @@ def _summary(value: Any) -> Any:
     return value
 
 
-def _results_markdown(workflow: str, result: dict) -> list[str]:
+def _results_markdown(workflow: str, result: dict, assumptions: dict) -> list[str]:
     def number(value):
         return "unavailable" if value is None else f"{value:.8g}"
+    if workflow == "historical" and "strategies" in result:
+        from .historical_report import markdown
+        return markdown(result, assumptions)
     if workflow == "options" and "valuations" in result:
         lines = ["Prices are per unit of underlying; derivative units are specified below.", "",
                  "| Option | Price | Delta | Gamma | Vega | Rho | Theta/year |",
@@ -142,10 +145,15 @@ def render_report(record: dict) -> str:
     lines = [f"# Agenthon Quant Lab — {record.get('workflow', 'invalid request')}", "",
              f"**Status: {record['status']}** · v{__version__} · {record['started_at_utc']}", "",
              "This is an offline calculation/simulation. Numerical checks do not establish predictive accuracy or trading profitability.", "",
-             "## Results", "", *_results_markdown(record.get("workflow"), outcome.get("results", {})), "",
+             "## Results", "", *_results_markdown(record.get("workflow"), outcome.get("results", {}), outcome.get("assumptions", {})), "",
              "## Specification", "", "```json", json.dumps(record.get("specification", {}), indent=2, allow_nan=False), "```", "",
              "## Assumptions", "", "```json", json.dumps(outcome.get("assumptions", {}), indent=2, allow_nan=False), "```", "",
              "## Verification", "", "| Check | Status | Evidence |", "|---|---|---|"]
+    if record.get("workflow") == "historical" and record["status"] == "passed":
+        # Show curves next to the results, before the machine-readable specification.
+        index = lines.index("## Specification")
+        lines[index:index] = ["![After-cost equity and drawdown](equity-drawdown.svg)", "",
+                              "[Download daily gross and net curves (CSV)](equity-drawdown.csv)", ""]
     for check in checks:
         detail = str(check.get("details", check.get("message", ""))).replace("|", "\\|").replace("\n", " ")
         lines.append(f"| {check['name']} | {check['status']} | {detail} |")
@@ -190,11 +198,14 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
         record["specification"] = spec
         record["workflow"] = spec.get("workflow")
         effective = dict(spec)
-        if spec.get("workflow") == "trading":
+        if spec.get("workflow") in ("trading", "historical"):
             if not isinstance(spec.get("data"), str) or not spec["data"]:
-                raise ValueError("Trading specification needs a data path")
+                raise ValueError("Price-based workflows need a data path")
             source = (spec_path.parent / spec["data"]).resolve()
-            if source.suffix.lower() not in {".csv", ".parquet"}:
+            if spec["workflow"] == "historical" and not source.is_file():
+                raise ValueError("Historical data must be an existing regular file")
+            extensions = {".csv", ".parquet", ".pq"} if spec["workflow"] == "historical" else {".csv", ".parquet"}
+            if source.suffix.lower() not in extensions:
                 raise ValueError("Data must be CSV or Parquet")
             data = bounded_read(source, MAX_DATA_BYTES)
             snapshot = inputs / ("data" + source.suffix.lower())
@@ -210,8 +221,11 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
         elif spec.get("workflow") == "trading":
             from .trading import run
             analysis = run(spec, snapshot)
+        elif spec.get("workflow") == "historical":
+            from .historical import run
+            analysis = run(effective, snapshot)
         else:
-            raise ValueError("Supported workflows are options and trading")
+            raise ValueError("Supported workflows are options, trading and historical")
         record["analysis"] = analysis
         checks = analysis.get("checks", [])
         if not checks or any(c.get("status") not in {"passed", "failed", "unavailable"} for c in checks):
@@ -235,7 +249,14 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
     try:
         if record["status"] == "passed":
             write_json(out / "validated-results.json", record["analysis"]["results"])
-        (out / "report.md").write_text(render_report(record))
+        (out / "report.md").write_text(render_report(record), encoding="utf-8")
+        if record["workflow"] == "historical" and record["status"] == "passed":
+            from .historical_report import curve_csv, curve_svg
+            results = record["analysis"]["results"]
+            files = {"equity-drawdown.csv": curve_csv(results), "equity-drawdown.svg": curve_svg(results)}
+            for name, content in files.items():
+                (out / name).write_bytes(content.encode("utf-8"))
+            record["output_artifacts_sha256"] = {name: digest((out / name).read_bytes()) for name in (*files, "report.md")}
         # The completed run record is the commit marker, written last.
         write_json(out / "run.json", record)
     except OSError as error:
@@ -244,6 +265,11 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
         record["analysis"]["checks"].append({"name": "artifact_publication", "status": "failed", "details": str(error)})
         record["check_counts"]["failed"] += 1
         (out / "validated-results.json").unlink(missing_ok=True)
+        if record["workflow"] == "historical":
+            from .historical_report import CURVE_FILES
+            record.pop("output_artifacts_sha256", None)
+            for name in CURVE_FILES:
+                (out / name).unlink(missing_ok=True)
         (out / "report.md").write_text(render_report(record))
         write_json(out / "run.json", record)
     return record
@@ -275,7 +301,7 @@ def reproduce(run_dir: Path, out: Path, overrides: dict | None = None) -> dict:
         return execute(original, out)
     spec = strict_json(original.read_bytes())
     spec.update(overrides)
-    if spec.get("workflow") == "trading":
+    if spec.get("workflow") in ("trading", "historical"):
         spec["data"] = str((original.parent / spec["data"]).resolve())
     with tempfile.TemporaryDirectory(prefix="quant-assumptions-") as temporary:
         temporary_spec = Path(temporary) / "spec.json"

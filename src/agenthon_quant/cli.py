@@ -25,8 +25,10 @@ def main(argv=None) -> int:
     diagnostics = sub.add_parser("doctor", help="Check local setup without model or data-provider calls")
     diagnostics.add_argument("--json", action="store_true", help="Machine-readable diagnostics")
     example = sub.add_parser("example", help="Run a bundled example from any working directory")
-    example.add_argument("workflow", choices=("options", "trading"))
+    example.add_argument("workflow", choices=("options", "trading", "historical"))
     example.add_argument("--out", type=Path, required=True)
+    inspect = sub.add_parser("inspect-data", help="Inspect daily prices and quality using a local JSON input specification")
+    inspect.add_argument("spec", type=Path)
     archive = sub.add_parser("archive", help="Search curated papers or historical experiment metadata")
     archive.add_argument("category", choices=("papers", "experiments"))
     archive.add_argument("query", nargs="?", default="")
@@ -37,6 +39,21 @@ def main(argv=None) -> int:
     bundle.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "inspect-data":
+            from .historical import SPEC_KEYS
+            from .market_data import read_market_data
+            from .records import bounded_read, MAX_SPEC_BYTES
+            spec = strict_json(bounded_read(args.spec, MAX_SPEC_BYTES))
+            if not isinstance(spec, dict) or not isinstance(spec.get("data"), str) or not spec["data"].strip():
+                raise ValueError("Specify a local data path in a JSON object")
+            unsupported = set(spec) - SPEC_KEYS
+            if unsupported:
+                raise ValueError(f"Unknown specification fields: {', '.join(sorted(unsupported))}")
+            if spec.get("workflow", "historical") != "historical":
+                raise ValueError("inspect-data accepts a historical or data-only specification")
+            _, quality = read_market_data(args.spec.resolve().parent / spec["data"], spec)
+            print(json.dumps(quality, indent=2, ensure_ascii=False))
+            return 0
         if args.command == "doctor":
             from .onboarding import doctor
             result = doctor()

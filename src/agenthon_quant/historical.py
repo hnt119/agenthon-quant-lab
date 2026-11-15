@@ -148,7 +148,7 @@ def evaluate(spec: dict, rows: list[dict], quality: dict) -> dict[str, Any]:
         warnings.insert(0, "Synthetic session prices demonstrate portfolio mechanics.")
     return {
         "workflow": "historical", "results": {"quality": quality, "dates": dates, "strategies": portfolios},
-        "checks": checks, "warnings": warnings, "assumptions": {
+        "checks": checks, "warnings": warnings + quality.get("limitations", []), "assumptions": {
             **config,
             "signal": "Long when the completed close exceeds its trailing simple mean. Flat during warmup and on equality.",
             "execution": "Apply the prior close target at the next observed open. Mark remaining shares at the final close.",
