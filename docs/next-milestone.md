@@ -1,6 +1,6 @@
 # Next milestone
 
-The public toolkit and static research showcase are the current delivery. Next, obtain owner review of the website PR before merge or Pages deployment.
+Review the v0.3.0rc1 historical workflow and its fixed Q2 2025 comparison. The published v0.2.0 release remains available for reproducing its saved runs. [Candidate workflow](historical-workflow.md) · [Published release](releases/v0.2.0.md)
 
 Prioritized follow-up work:
 

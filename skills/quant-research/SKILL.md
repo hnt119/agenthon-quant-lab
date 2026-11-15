@@ -1,6 +1,6 @@
 ---
 name: quant-research
-description: "Run and explain reproducible European option valuation, volatility scenarios, and long-only moving-average comparisons with Agenthon Quant Lab; inspect relevant curated papers and historical experiments. Use for supported modeling, backtests, saved-run reproduction, validation failures and this project's research lessons; not live trading or broad strategy search."
+description: "Price European options, inspect local daily CSV or Parquet prices, compare historical SMA, buy-and-hold and cash portfolios, reproduce saved runs, and explain relevant research and validation failures with Agenthon Quant Lab."
 ---
 
 # Quant Research
@@ -14,12 +14,12 @@ free dependencies; skill installation is optional and preserves existing links.
 
 For modeling, read [option conventions](../../docs/options-conventions.md);
 for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).
-Use `examples/options.json` or `examples/trading.json` as the schema starting point.
+Use `examples/options.json` or `examples/trading.json` as the schema starting point. For daily market data and train/validation/test portfolios, use `examples/historical.json` and [the historical guide](../../docs/historical-workflow.md). Run `inspect-data <absolute-spec>` first and report timing, mapped fields, provenance and material calendar gaps.
 Ask for missing inputs that materially affect results and expose chosen assumptions.
 Do not guess rate units, dividend treatment or price-adjustment semantics.
 
 Invoke `python3 <skill>/scripts/quant.py run <absolute-spec> --out <new-directory>`.
-For a bundled demonstration, use `example options|trading --out <new-directory>`.
+For a bundled demonstration, use `example options|trading|historical --out <new-directory>`. Historical runs also save `equity-drawdown.csv` and `equity-drawdown.svg`; link these with the report when the user asks how equity or drawdown changed. Include the data attribution when showing the Bitstamp sample.
 Read `run.json` and `report.md`, including failed and unavailable checks. Link the
 actual report and state conventions, results, periods and limitations. A nonzero
 exit can still produce a useful failure report; preserve it before correcting inputs.

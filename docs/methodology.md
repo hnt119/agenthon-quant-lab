@@ -33,7 +33,9 @@ see the two convention guides for exact definitions. The browser demo is a small
 zero-dividend price calculator checked against 64 Python references within its
 declared approximation error. It is not a second full finance engine.
 
-Examples are authored synthetic fixtures. We preserve negative outcomes and never
+The original trading example uses an authored synthetic fixture. The v0.3 historical example uses a licensed single-venue BTC/USD sample, fixed periods and a common warmup for the SMA and holding benchmark. [Data provenance](../examples/data/bitstamp/README.md)
+
+We preserve negative outcomes and never
 tune the strategy on the final held-out period. Validating arithmetic does not
 validate data provenance, model assumptions, a predictive edge or execution in a
 real market. A future research claim needs representative licensed data, a fixed

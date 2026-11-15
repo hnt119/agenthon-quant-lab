@@ -22,6 +22,12 @@ evaluation. Report both gross and net metrics and both chronological periods.
 Use the full cash/position/trade ledger if a result is surprising. Never imply
 that synthetic bundled data establishes an edge.
 
+## “Inspect these daily prices and compare an SMA with buy-and-hold and cash.”
+
+Start from `examples/historical.json`. Set the local path, provenance, adjustment basis and three distinct source-column mappings. For offset timestamps, use the supplied session timezone. Run `inspect-data <spec>` and identify the first/last session, observation count and calendar gaps. Use the user's fixed lookback, fee, slippage and period boundaries. If they request the bundled demonstration, use `example historical --out <new-dir>`. Otherwise use `run <spec> --out <new-dir>`.
+
+Read the train, validation and test rows in `report.md`. Compare net return, drawdown, turnover and costs with the holding benchmark and cash. Explain the common warmup, next-open execution and carried positions. Link `equity-drawdown.csv` and `equity-drawdown.svg` for the paths. Cite the [dataset notice](../../../examples/data/bitstamp/README.md) for the bundled BTC/USD example. For a different cost assumption, reproduce into a fresh output directory with `--set 'fee_bps=20'`.
+
 ## “Explain why this analysis failed validation.”
 
 Run `explain /absolute/run`, read the failed check and request snapshot, and
@@ -57,7 +63,7 @@ as numerical outcomes. This command reads history without executing an experimen
 ## Setup and private handoff
 
 Use `doctor` for local dependency/source/example diagnostics. `example options`
-or `example trading` exercises the bundled synthetic workflow with a new output.
+or `example trading` exercises the original example. `example historical` exercises the real BTC/USD fixture with a new output.
 For a requested private handoff, `bundle <run-dir> --out <new.zip>` verifies saved
 inputs and packages only allowed run files. State that it includes user inputs
 and local paths, is private by default, and performs no upload. A public export

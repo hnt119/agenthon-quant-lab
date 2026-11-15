@@ -5,6 +5,8 @@ order placement, model inference, data download, parameter search, or training.
 The default strategy is long-only SMA20; an explicitly supplied `lookback`
 changes the experiment and must be chosen before inspecting the holdout.
 
+The original `trading` workflow uses development and holdout periods. For the v0.3 `historical` workflow, use its three-period specification, dataset inspection and path exports. Both use the signal timing and cash accounting below. [Historical workflow](historical-workflow.md)
+
 ## Specification and input
 
 Use `examples/trading.json` as the complete specification. Unknown fields are

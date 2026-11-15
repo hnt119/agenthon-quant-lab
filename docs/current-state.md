@@ -1,6 +1,10 @@
-# Current state — v0.2.0 published
+# Current state
 
-Updated 14 November 2026 (Asia/Singapore). This standalone toolkit preserves the v0.1.0 implementation and historical reports. It is not an Agenthon submission candidate.
+The **v0.3.0rc1 review candidate** adds local CSV/Parquet inspection, three chronological evaluation periods, gross/net SMA, buy-and-hold and cash portfolios, and equity/drawdown exports. It includes a 91-session BTC/USD dataset with pinned provenance and CC BY 4.0 attribution. [Historical guide](historical-workflow.md) · [Example report](../reports/historical-q2/report.md)
+
+## Published v0.2.0
+
+The standalone v0.2.0 toolkit preserves the v0.1.0 implementation and historical reports.
 
 Implemented: deterministic option pricing/Greeks/scenarios and SMA-versus-buy-and-hold research, strict input conventions, numerical/accounting checks, saved-run reproduction, setup and dependency diagnostics, bundled examples, private result bundles and searchable research/experiment archives.
 
