@@ -22,3 +22,7 @@ jobs:
         run: .venv/bin/python scripts/export_site.py --check
       - name: Exercise reproducible workflows
         run: .venv/bin/python scripts/verify_release.py --out runs/ci-release
+      - name: Independently check the saved and freshly calculated BTC/USD example
+        run: |
+          .venv/bin/python scripts/check_bitstamp_example.py --fixture examples/data/bitstamp/btcusd-2025-q2.csv --run reports/historical-q2/run.json
+          .venv/bin/python scripts/check_bitstamp_example.py --fixture examples/data/bitstamp/btcusd-2025-q2.csv --run runs/ci-release/historical/run.json

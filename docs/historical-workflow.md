@@ -4,9 +4,11 @@ The v0.3.0rc1 review candidate compares a fixed moving-average strategy with buy
 
 ## Run the example
 
-Use a source checkout of the candidate and run these commands from its root. `inspect-data` reads the specification and reports the data-quality summary. Check the mapped columns, date range, row count and calendar gaps before interpreting the strategy.
+The review branch contains the calendar-quarter example, its saved report and the independent reference script. Use the commands below from a fresh clone. If you already have the candidate checkout, start at the setup command. `inspect-data` reads the specification and reports the data-quality summary. Check the mapped columns, date range, row count and calendar gaps before interpreting the strategy.
 
 ```sh
+git clone --branch codex/v03-historical-workflow https://github.com/hnt119/agenthon-quant-lab.git
+cd agenthon-quant-lab
 python3 scripts/setup.py
 .venv/bin/python -m agenthon_quant inspect-data examples/historical.json
 .venv/bin/python -m agenthon_quant example historical --out runs/btc-q2
@@ -15,6 +17,14 @@ python3 scripts/setup.py
 Open `runs/btc-q2/report.md` for the period tables and validation status. Open `equity-drawdown.svg` in that directory to see the equity and drawdown paths, or use `equity-drawdown.csv` for the underlying observations. `run.json` captures the assumptions, input identities, portfolio results and checks. Both fees and slippage are assumptions. The example starts with USD 10,000, uses a five-close SMA, charges 10 basis points per side in fees and applies five basis points per side of adverse slippage. [Example specification](../examples/historical.json)
 
 April is the training period, May is validation, and June is the held-out test. Here “train” names the initial chronological period. The strategy and its parameters are fixed before evaluation. Trades use the next observed open after the signal close. Buy-and-hold enters after the same warmup and cash earns zero. Positions and cash carry across period boundaries. Daily drawdown tracks the full running peak, while each period's maximum drawdown starts from that period's opening equity. Read gross and net results alongside the benchmark and keep losing periods visible.
+
+## Independently verify the example
+
+A second implementation uses Python's standard library and 50-digit decimal arithmetic. It checks the fixture identity, all three portfolios, every daily equity and drawdown, and the full-period and split-period metrics. Run it against your freshly generated example or replace the run path with `reports/historical-q2/run.json` to inspect the saved result. The reference has a fixed scope of one dataset and configuration. [Reference implementation](../scripts/check_bitstamp_example.py) · [Saved comparisons](../reports/historical-q2/decimal-review.json)
+
+```sh
+python3 scripts/check_bitstamp_example.py --fixture examples/data/bitstamp/btcusd-2025-q2.csv --run runs/btc-q2/run.json
+```
 
 ## Use your own daily CSV or Parquet
 

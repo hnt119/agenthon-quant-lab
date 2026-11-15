@@ -71,7 +71,7 @@ On the v0.3 review checkout, inspect the fixture and run the historical example 
 .venv/bin/python -m agenthon_quant example historical --out runs/btc-q2
 ```
 
-Read `runs/btc-q2/report.md`. The CSV and SVG beside the report show the equity and drawdown paths. [Use your own prices or reproduce the example](docs/historical-workflow.md)
+In the saved example, the five-session moving average returned **+7.58%** after costs over the quarter and **−2.28%** in the held-out June period. Buy and hold returned **+28.14%** and **+2.42%** respectively. Read `runs/btc-q2/report.md` for the assumptions, period boundaries and costs. The CSV and SVG beside it show the daily paths. [Use your own prices or reproduce the example](docs/historical-workflow.md)
 
 ## Follow the evidence
 

@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "fixture": "examples/data/bitstamp/btcusd-2025-q2.csv",
+  "fixture_sha256": "371a9692925068a85aa6541fc64675891db48d46d27fa318d558043652ec707e",
+  "run": "reports/historical-q2/run.json",
+  "portfolio_count": 3,
+  "treatment_count": 2,
+  "periods": [
+    "full",
+    "train",
+    "validation",
+    "test"
+  ],
+  "metric_fields": [
+    "starting_equity",
+    "ending_equity",
+    "ending_cash",
+    "ending_shares",
+    "observations",
+    "pnl",
+    "total_return",
+    "max_drawdown",
+    "mean_close_exposure",
+    "sessions_in_market_fraction",
+    "trade_events",
+    "fees",
+    "slippage_cost",
+    "transaction_cost",
+    "turnover",
+    "quoted_traded_notional"
+  ],
+  "metric_comparisons": 384,
+  "path_fields": [
+    "equity",
+    "drawdown"
+  ],
+  "daily_path_values": 1092,
+  "relative_tolerance": "1E-12",
+  "absolute_tolerance": "1E-10",
+  "control_count": 7,
+  "controls": [
+    "delayed_entry_exit",
+    "gross_hand_payoff",
+    "net_hand_payoff",
+    "strict_equality_flat",
+    "single_benchmark_entry",
+    "flat_cash_benchmark",
+    "unexecuted_final_signal"
+  ]
+}
