@@ -1465,6 +1465,102 @@
       },
       "paper_relation": "Proposed adaptation of spectral ideas, not evidence from either paper transferred to this project.",
       "run_id": null
+    },
+    {
+      "id": "btc-financial-research-v1",
+      "title": "Does short-term BTC momentum pay for trading?",
+      "date": "2026-11-21",
+      "evidence_category": "retrospective_market",
+      "status": "inconclusive",
+      "topics": [
+        "BTC/USD",
+        "momentum",
+        "spectral entropy",
+        "FFT",
+        "spot accounting",
+        "predictive information",
+        "passive exposure",
+        "transaction costs"
+      ],
+      "paper_ids": [
+        "fits-2023",
+        "fan-2024"
+      ],
+      "hypothesis": "Positive completed-close momentum predicts higher executable returns and improves net Sharpe versus a training-calibrated passive mix.",
+      "baseline": "Annual BTC/cash weight estimated from earlier eligible momentum signals. Full buy-and-hold and cash also recorded.",
+      "code_commit": "4c28e350f1b64eb100b0f5b487ac5a4da07930f2",
+      "protocol": "2017–2019 initial fit then five expanding annual folds spanning 2020–2024.",
+      "model": null,
+      "configuration": {
+        "protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+        "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+        "fees_bps": 50,
+        "slippage_bps": 10,
+        "delay_minutes": 5
+      },
+      "result": {
+        "denominator": 1827,
+        "observations": 1827,
+        "score": null,
+        "predictive_intervals": 1822,
+        "sharpe_difference": -0.34137249867898867,
+        "predictive_difference": 0.0020703568157163033,
+        "interval95": {
+          "predictive_difference": [
+            -0.0009609629060221594,
+            0.0049541587453449136
+          ],
+          "sharpe_delta": [
+            -0.9804425392457271,
+            0.26498464046310766
+          ]
+        },
+        "summary": "Positive predictive spread with an interval crossing zero. Net momentum Sharpe trailed passive BTC/cash in four of five years. The entropy gate lowered net cumulative return."
+      },
+      "usage": {
+        "model_calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0,
+        "complete": true
+      },
+      "limitations": [
+        "Retrospective design informed by the previously examined pilot.",
+        "Single venue, delayed bar proxy, illustrative costs, five clustered calendar folds."
+      ],
+      "sources": [
+        {
+          "repository": "agenthon-quant-lab",
+          "path": "experiments/btc-financial-v1/protocol.json",
+          "commit": "e56c000e8bfa6e9ebe2854998e10af3dbe10522b",
+          "sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+          "visibility": "tracked",
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0."
+        },
+        {
+          "repository": "agenthon-quant-lab",
+          "path": "reports/btc-financial-v1/metrics.json",
+          "commit": "dd9b6ce7d21a47441a5a0028fd4136b70797778d",
+          "sha256": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+          "visibility": "tracked",
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0."
+        },
+        {
+          "repository": "agenthon-quant-lab",
+          "path": "reports/btc-financial-v1/verification.json",
+          "commit": "dd9b6ce7d21a47441a5a0028fd4136b70797778d",
+          "sha256": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35",
+          "visibility": "tracked",
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0."
+        }
+      ],
+      "decision": "inconclusive",
+      "reproduction": {
+        "scope": "offline admitted snapshot",
+        "command": "quant-lab btc-study",
+        "reason": "Regenerates financial evidence and plots."
+      },
+      "paper_relation": "FITS and FAN motivate research on frequency representations. This fixed entropy gate is a distinct diagnostic. Neither paper model was reproduced."
     }
   ]
 }

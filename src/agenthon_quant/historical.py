@@ -13,7 +13,7 @@ STRATEGIES = ("sma", "buy_and_hold", "cash")
 SPEC_KEYS = {
     "workflow", "data", "source", "synthetic", "price_adjustment",
     "timestamp_convention", "session_timezone", "columns", "initial_cash",
-    "fee_bps", "slippage_bps", "lookback", "train_end", "validation_end", "strategies",
+    "fee_bps", "slippage_bps", "lookback", "train_end", "validation_end", "strategies", "spectral_diagnostic",
 }
 
 
@@ -25,6 +25,8 @@ def _parameters(spec: dict, dates: list[str]) -> tuple[dict, dict[str, tuple[int
         raise ValueError(f"Unsupported historical specification fields: {', '.join(sorted(unsupported))}")
     if not isinstance(spec.get("data"), str) or not spec["data"].strip():
         raise ValueError("data must identify the input file")
+    if not isinstance(spec.get("spectral_diagnostic", False), bool):
+        raise ValueError("spectral_diagnostic must be a JSON boolean")
     config = trading.portfolio_parameters(spec, len(dates))
     strategies = config.get("strategies", list(STRATEGIES))
     if (not isinstance(strategies, list) or not strategies
@@ -167,4 +169,8 @@ def run(spec: dict, data_path: Path) -> dict[str, Any]:
     from .market_data import read_market_data
 
     rows, quality = read_market_data(data_path, spec)
-    return evaluate(spec, rows, quality)
+    analysis = evaluate(spec, rows, quality)
+    if spec.get("spectral_diagnostic"):
+        from .spectral import historical_profiles
+        analysis["spectral_diagnostic"] = historical_profiles(rows, quality)
+    return analysis

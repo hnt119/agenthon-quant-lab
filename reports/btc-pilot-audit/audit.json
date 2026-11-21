@@ -1,0 +1,63 @@
+{
+  "availability": "UTC bar chronology verified. Original feed latency and executable depth unavailable.",
+  "executions_checked_including_gross_and_net": 116,
+  "hold_fills": [
+    {
+      "date": "2026-01-01",
+      "fee": 49.75124378109454,
+      "fill_price": 87583.49599999998,
+      "signal_date": "2025-12-31",
+      "slippage_cost": 9.940308447771137,
+      "trade_quantity": 0.11360871865880882
+    }
+  ],
+  "identity": {
+    "baseline_commit": "b2399db3281e7d9113261646dab4ad0cb27f26ae",
+    "frozen_files_checked": 51,
+    "historical_first_attempt_failures": [
+      "buy_and_hold.gross.period_accounting",
+      "buy_and_hold.net.period_accounting",
+      "momentum20.gross.period_accounting",
+      "momentum20.net.period_accounting",
+      "momentum20_fft.gross.period_accounting",
+      "momentum20_fft.net.period_accounting"
+    ],
+    "qualified_2c_checks": 54
+  },
+  "ledger_rows": 4384,
+  "new_numerical_discrepancies": [],
+  "period_books": 32,
+  "plots": {
+    "daily_table_rows": 273,
+    "original_figures": 4,
+    "period_table_rows": 8,
+    "published_markdown_rows": 4,
+    "svg_series_points": 3276
+  },
+  "published_evaluation_gap_pp": -8.367216887682915,
+  "source_review": {
+    "daily_sha256": "4dd1ea1e8ad96689bff3a37fd07a923260249aaaef4170da178db7edc9276f34",
+    "delayed_open_latest_minute": 6,
+    "delayed_opens_sha256": "0783d35b496bc2a11035abd8cf3edc44279c4de40aa2a4df875b2fef1a9c315d",
+    "early_final_minutes": [
+      [
+        "2026-05-12",
+        1438
+      ]
+    ],
+    "minute_rows": 789120,
+    "sessions": 548,
+    "status": "passed",
+    "upstream_sha256": "1d920d9cd8c2e03c8d17a2b686017dd544f1c175cd11a330d817d30b3258c6e3",
+    "zero_volume": 3268
+  },
+  "spectral": {
+    "closes": 548,
+    "eligible_training_closes": 211,
+    "first_member": "2025-06-04",
+    "last_member": "2025-12-31",
+    "max_abs_entropy_error": 9.325873406851315e-15,
+    "median": 0.894126951683846,
+    "warmup": 64
+  }
+}

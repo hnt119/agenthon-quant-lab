@@ -1,4 +1,4 @@
 interface:
   display_name: "Quant Research"
-  short_description: "Reproducible options and strategy research"
-  default_prompt: "Use $quant-research to run and verify an offline financial analysis."
+  short_description: "Reproduce BTC research and price European options"
+  default_prompt: "Use $quant-research to reproduce the frozen BTC momentum study, open the report, and explain how it compared with passive BTC/cash after costs."

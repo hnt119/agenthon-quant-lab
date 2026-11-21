@@ -1,40 +1,32 @@
 # Agenthon Quant Lab
 
-**Financial calculations you can inspect, check and reproduce.**
+Reproduce a financial study on your own computer, inspect its assumptions and see how the numbers were checked. The toolkit grew out of Agenthon 2026 Track 1, where independently checking a financial calculation mattered as much as producing an answer.
 
-A Python toolkit and Codex skill grown from Agenthon 2026 Track 1. Start with an
-explicit specification; get deterministic calculations, independent checks,
-frozen inputs and a readable report. A curated research and experiment archive
-explains the mechanisms, failures and decisions behind the work.
+**Did buying BTC after a price rise pay for trading?** Across 2020–2024, a simulated $10,000 momentum account ended at **$39,414** after costs. A simpler BTC/cash account ended at **$70,715**. The momentum signal preceded somewhat higher daily returns, but the uncertainty interval includes zero. The frozen research conclusion was **inconclusive**. [Read the illustrated example](examples/btc-study/README.md) · [See the checked results](reports/btc-financial-v1/README.md)
 
-**Review candidate v0.3.0rc1** adds daily historical portfolio comparisons. The example uses 91 Bitstamp BTC/USD observations from Q2 2025, adapted from minute bars under CC BY 4.0. Inspect the input, then compare the strategy, buy-and-hold and cash through training, validation and test periods. [Worked guide](docs/historical-workflow.md) · [Saved report](reports/historical-q2/report.md) · [Data attribution](examples/data/bitstamp/README.md)
+## Try it
 
-## Start in a minute
-
-Python **3.12+**, macOS or Linux. Windows interpreter paths are documented, but
-fresh installation has been checked on macOS; Linux CI status is recorded in the release report.
+Install [v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) from source with Git and Python 3.12. From the parent directory for your new checkout, run
 
 ```sh
-git clone https://github.com/hnt119/agenthon-quant-lab.git
+git clone --branch v0.3.0 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
 cd agenthon-quant-lab
-python3 scripts/setup.py --install-skill
-.venv/bin/python -m agenthon_quant doctor
-.venv/bin/python -m agenthon_quant example options --out runs/first-option
+python3.12 scripts/setup.py --install-skill
+.venv/bin/quant-lab btc-study
 ```
 
-Open `runs/first-option/report.md`. No API key, paid data or model endpoint is
-needed. Setup installs free dependencies into `.venv`; calculations then work
-offline. Omit `--install-skill` for CLI-only use. Existing skill destinations and
-run directories are preserved. See the [setup guide](docs/user-guide.md).
+Or ask Codex: **“Use $quant-research to reproduce the frozen BTC momentum study, open the report, and explain how it compared with passive BTC/cash after costs.”**
+
+Open the printed report or dashboard. The command uses the bundled data, creates a fresh output folder, and compares the results with the frozen evidence. It works offline after setup. Options pricing and local daily-data comparisons are also available. [Skill guide](docs/plugin-guide.md) · [Research scope and release review](docs/releases/v0.3.0-review.md)
 
 ## What works today
 
 | Workflow | Outputs | Independent checks |
 |---|---|---|
 | European options | Call/put prices, five Greeks, volatility scenarios | Discounted bounds, parity, payoff quadrature, finite-difference convergence |
-| Historical daily portfolios (v0.3 review) | Gross/net period tables, equity and drawdown CSV/SVG, frozen inputs | Strict session dates and mappings, continuous cash and holdings, independent benchmark paths |
+| Historical daily portfolios (v0.3) | Gross/net period tables, equity and drawdown CSV/SVG, frozen inputs | Strict session dates and mappings, continuous cash and holdings, independent benchmark paths |
 | Single-asset SMA strategy | Gross/net returns, drawdown, exposure, turnover, costs, cash/trade/P&L ledgers, buy-and-hold | Hand-reconciled fixture, accounting identities, next-session timing, future-data invariance |
-| Research and experiments | Search 12 papers and 17 evidence records by topic, date, mechanism or outcome | Canonical sources, source hashes, explicit unknowns and evidence categories |
+| Research and experiments | Search 12 papers and 18 evidence records by topic, date, mechanism or outcome | Canonical sources, source hashes, explicit unknowns and evidence categories |
 
 For the [verified option example](reports/v0.1/options/report.md), spot and strike
 are 100, maturity one year, volatility 20%, continuous rate 5% and dividend yield
@@ -61,10 +53,9 @@ flowchart LR
 
 The portfolio's browser calculator is a small, explicitly bounded static
 implementation checked against **64 Python reference cases**. It does not host
-Python, Docker, model inference or trading. The showcase is a separately reviewed
-portfolio change; publication status is in the [release report](docs/releases/v0.2.0.md).
+Python, Docker, model inference or trading. The [live portfolio article](https://hnt119.github.io/projects/quant-finance-agents/) displays the verified BTC results.
 
-On the v0.3 review checkout, inspect the fixture and run the historical example from the repository root.
+On the v0.3 checkout, inspect the fixture and run the historical example from the repository root.
 
 ```sh
 .venv/bin/python -m agenthon_quant inspect-data examples/historical.json
@@ -104,8 +95,7 @@ Options assume European exercise and constant continuous dividend yield. Trading
 is long-only simulation with fractional shares; dividends, tax, liquidity,
 market impact and cash interest are excluded. Source/price adjustments are user
 declarations. Checks do not establish predictive accuracy or profitability.
-Model assistance is mock-only. FFT, forecasting, training, broad strategy search
-and live execution remain deferred; see the [roadmap](docs/next-milestone.md).
+The BTC study uses a trailing FFT entropy diagnostic. The toolkit runs deterministic calculations locally. See the [implemented architecture and research boundaries](docs/financial-workbench.md).
 
 ## Develop and contribute
 

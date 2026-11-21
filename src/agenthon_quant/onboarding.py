@@ -126,7 +126,7 @@ def doctor(root: Path | None = None, *, skills_dir: Path | None = None) -> dict:
                    "details": "Linked to this checkout" if linked else "Optional. Install with scripts/setup.py --install-skill; existing destinations are preserved"})
     return {"status": "ready" if all(c["status"] == "passed" for c in checks if c["required"]) else "needs_setup",
             "checks": checks, "versions": versions, "code": code_identity(),
-            "next_step": "Use example options, trading or historical, or run python3 scripts/setup.py if required dependencies are missing. No model or broker connection is checked."}
+            "next_step": "Use btc-study for the frozen BTC comparison or example options, trading or historical. Run python3 scripts/setup.py if required dependencies are missing. No model or broker connection is checked."}
 
 
 def example_path(kind: str, root: Path | None = None) -> Path:
@@ -184,7 +184,10 @@ def bundle_run(run_dir: Path, out: Path) -> dict:
     if record.get("workflow") == "historical" and record["status"] == "passed":
         from .historical_report import CURVE_FILES
         artifacts = record.get("output_artifacts_sha256")
-        if not isinstance(artifacts, dict) or set(artifacts) != {"report.md", *CURVE_FILES}:
+        expected_names = {"report.md", *CURVE_FILES}
+        if record["specification"].get("spectral_diagnostic") is True:
+            expected_names.add("spectral.json")
+        if not isinstance(artifacts, dict) or set(artifacts) != expected_names:
             raise ValueError("Historical run has an incomplete report or curve inventory")
         names.update(artifacts)
     if record["status"] == "passed":

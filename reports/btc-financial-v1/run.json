@@ -1,0 +1,38 @@
+{
+  "checkout_commit": "4c28e350f1b64eb100b0f5b487ac5a4da07930f2",
+  "code_files_sha256": {
+    "src/agenthon_btc/pilot.py": "1753abe67fbd36c2710981018ae9bfbb1f48ae7b3f8bd95b2c7cf0be010cf6fa",
+    "src/agenthon_btc/run.py": "7b072a4b7b75b2c78b99128d6fa092a22ea27dc48f9a988177e7ea8591198331",
+    "src/agenthon_btc/verify.py": "b59182bbc3c5ccc6fe5b58492a5d33af718c46501381ae20a598b8382b31c13d",
+    "src/agenthon_financial/analysis.py": "6d1eba7e359e930ebb8d4e61843d2365fc6b646db90f42ddb2a8d19a2b03ab90",
+    "src/agenthon_financial/run.py": "288d9f2c5c793b7f400e67e35668546957582a3e8fd1ac250e88b9ad4222ba06",
+    "src/agenthon_financial/study.py": "d652d6ce7624a0842bc122082b2f7555d1e9069f8dcb56f99c901f132b8185cd",
+    "src/agenthon_financial/verify.py": "8c6887e077ea5832291cfcb82e40ab7e3db9afe5d60fd2af66062b5a2837b2a2",
+    "src/agenthon_quant/records.py": "dd8c9a2767f2f77ffa3f236425b734b13e652160ec2d5f1f68523487466f65a7",
+    "src/agenthon_quant/spectral.py": "a782e2332e0447e7583da4b51ff504830187ff611ff6faf740dd4bc310a4aa4d",
+    "src/agenthon_quant/trading.py": "993490fa3632d913af07e85b16008dee55fa2656d78ad9bf2f6a6bdbcde9657b"
+  },
+  "ended_utc": "2026-11-21T02:57:46.681921+00:00",
+  "evidence": "retrospective",
+  "input_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "model_calls": 0,
+  "numpy": "2.5.4",
+  "output_artifacts_sha256": {
+    "features.jsonl": "6f4717bb3929c37b1818286fe53dc91a58627b85394dcd6c1109d96c2f732ee4",
+    "fit.json": "b131e06f68689dd61c1344ac14758b1ead26ed2422187f10056c59a999ba7c6a",
+    "ledger.jsonl.gz": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
+    "metrics.json": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+    "predictions.json": "fda450cb27e96e1e3e2bf0f3c2af9c87f8e8eb094cf932af876dcac310639065",
+    "verification.json": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35"
+  },
+  "paid_usd": 0,
+  "prospective_observations": 0,
+  "protocol_commit": "e56c000e8bfa6e9ebe2854998e10af3dbe10522b",
+  "protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+  "python": "3.12.7",
+  "scipy": "1.18.1",
+  "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
+  "started_utc": "2026-11-21T02:57:43.804622+00:00",
+  "status": "passed",
+  "workflow": "btc-financial-research-v1"
+}

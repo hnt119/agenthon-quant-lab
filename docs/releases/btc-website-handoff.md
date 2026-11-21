@@ -1,0 +1,19 @@
+# Portfolio handoff for the financial workbench
+
+Historical handoff for portfolio PR #61. Toolkit commit `104d369c9ef2557371e0feda356e81c21d0835a7` supplied the verified display data and beginner workflow. For new installations use the [v0.3.0 source release](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0). v0.2.0 was the last published release at handoff. The local 52-commit research branch was used for provenance only. Its sealed workstream is outside this publication branch.
+
+**Public display inputs.** Copy [btc-study.json](../../site-export/btc-study.json) verbatim (SHA-256 `bde520adbd57e126b7b7f91967fa3c354eb25785b414358b88674129fe42f433`). For the existing secondary archive, [archive.json](../../site-export/archive.json) and [pricing-reference.json](../../site-export/pricing-reference.json) are approved projections. Preserve their version identities. The JSON holds source hashes, scenarios and verification status plus dated UTC month-end equity and drawdown for the two main portfolios. The full-sample maximum drawdown comes from daily closing marks. Render cash Sharpe as undefined. Copy attribution and link to CC BY-SA 4.0 with the chart. The site needs no raw minutes, detailed ledger, private cases or Python runtime.
+
+**Question and conclusion.** Across five retrospective years of Bitstamp spot BTC/USD, did buying only after a positive 20-session change improve results over a passive mix of BTC and cash? Starting at $10,000, momentum finished at $39,414 after costs and the annually rebalanced passive account at $70,715. The estimate for momentum’s net Sharpe advantage was −0.341, 95% interval −0.980 to +0.265. The predictive return spread was +20.7 bp, interval −9.6 to +49.5 bp. The result was inconclusive. Prospective performance is unmeasured. The base fill is the first trade-bearing minute open at or after 00:05 UTC following a completed close. Illustrative one-way costs are 0.50% fees and 0.10% adverse slippage. The earlier six-month pilot used a separate protocol.
+
+**User journey.** From a checkout of that commit run `python3.12 scripts/setup.py --install-skill`. Then ask Codex “Use $quant-research to reproduce the frozen BTC momentum study, open the report, and explain how it compared with passive BTC/cash after costs.” The command-line equivalent is `.venv/bin/quant-lab btc-study`. It locates bundled inputs, writes to a new directory, prints the report/dashboard paths and checks the financial output against the original receipt. Options, the SMA simulation, historical daily portfolios and archive search remain available. General strategy generation, live trading and futures replication are outside the supported product.
+
+**Canonical public links at the qualified version**
+
+- [Readable saved example](https://github.com/hnt119/agenthon-quant-lab/blob/104d369c9ef2557371e0feda356e81c21d0835a7/examples/btc-study/README.md)
+- [Full report and evidence](https://github.com/hnt119/agenthon-quant-lab/blob/104d369c9ef2557371e0feda356e81c21d0835a7/reports/btc-financial-v1/README.md)
+- [Installation and skill guide](https://github.com/hnt119/agenthon-quant-lab/blob/104d369c9ef2557371e0feda356e81c21d0835a7/docs/plugin-guide.md)
+- [Study protocol, source and reproduction](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/experiments/btc-financial-v1)
+- [Paper archive](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/research) · [Experiment archive](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/experiments) · [Agenthon mechanisms](https://github.com/hnt119/agenthon-quant-lab/blob/104d369c9ef2557371e0feda356e81c21d0835a7/docs/financial-workbench.md)
+
+The portfolio incorporated this handoff in [website PR #61](https://github.com/hnt119/hnt119.github.io/pull/61). The links above preserve its original presentation revision.

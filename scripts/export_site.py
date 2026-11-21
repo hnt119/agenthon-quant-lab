@@ -16,11 +16,11 @@ sys.path.insert(0, str(ROOT / "src"))
 from agenthon_quant.options import run as price_options
 
 PAPER_FIELDS = {"id", "title", "authors", "year", "year_basis", "venue_year", "url", "topics", "mechanism",
-                "reported_findings", "project_relevance", "adaptation_status", "implementation", "experiment_ids", "limitations", "decision"}
+                "financial_workbench", "reported_findings", "project_relevance", "adaptation_status", "implementation", "experiment_ids", "limitations", "decision"}
 EXPERIMENT_FIELDS = {"id", "title", "date", "evidence_category", "status", "topics", "paper_ids", "hypothesis", "baseline",
                      "code_commit", "protocol", "model", "configuration", "result", "usage", "limitations", "sources", "decision", "reproduction", "paper_relation"}
-CATEGORIES = {"official_reported", "local_live", "synthetic", "incomplete", "not_run"}
-STATUSES = {"passed", "failed", "mixed", "incomplete", "not_run", "unknown"}
+CATEGORIES = {"retrospective_market", "official_reported", "local_live", "synthetic", "incomplete", "not_run"}
+STATUSES = {"inconclusive", "passed", "failed", "mixed", "incomplete", "not_run", "unknown"}
 
 
 def encoded(value):

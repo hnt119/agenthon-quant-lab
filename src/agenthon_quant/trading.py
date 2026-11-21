@@ -184,6 +184,31 @@ def _roundoff(*values: float) -> float:
     return ROUNDING_ULPS * math.ulp(scale)
 
 
+def opening_fill(cash: float, shares: float, target: int, opening: float,
+                 fee_rate: float, slip_rate: float) -> tuple[float, float, float, float | None, float, float]:
+    """Apply an all-in or flat target at the open using spendable cash only."""
+    before_cash = cash
+    quantity, fill, fee = 0.0, None, 0.0
+    if target == 1 and shares == 0:
+        fill = opening * (1 + slip_rate)
+        quantity = cash / (fill * (1 + fee_rate))
+        fee = quantity * fill * fee_rate
+        shares = quantity
+        cash -= quantity * fill + fee
+        # Algebraically an all-cash buy has zero residual. Clamp only a few
+        # representable rounding units at the original operation scale.
+        if abs(cash) <= _roundoff(before_cash, quantity * fill, fee):
+            cash = 0.0
+    elif target == 0 and shares > 0:
+        fill = opening * (1 - slip_rate)
+        quantity = -shares
+        fee = abs(quantity) * fill * fee_rate
+        cash += abs(quantity) * fill - fee
+        shares = 0.0
+    slippage_cost = 0.0 if fill is None else abs(quantity) * abs(fill - opening)
+    return cash, shares, quantity, fill, fee, slippage_cost
+
+
 def simulate_ledger(rows: list[dict[str, Any]], targets: list[int], initial_cash: float,
                     fee_bps: float, slippage_bps: float) -> list[dict[str, Any]]:
     """Execute prior-close targets at the next observed open and mark at each close."""
@@ -195,24 +220,8 @@ def simulate_ledger(rows: list[dict[str, Any]], targets: list[int], initial_cash
         target = targets[index - 1] if index else 0
         before_cash, before_shares = cash, shares
         pre_trade_equity = cash + shares * opening
-        quantity, fill, fee = 0.0, None, 0.0
-        if target == 1 and shares == 0:
-            fill = opening * (1 + slip_rate)
-            quantity = cash / (fill * (1 + fee_rate))
-            fee = quantity * fill * fee_rate
-            shares = quantity
-            cash -= quantity * fill + fee
-            # Algebraically an all-cash buy has zero residual. Clamp only a few
-            # representable rounding units at the original operation scale.
-            if abs(cash) <= _roundoff(before_cash, quantity * fill, fee):
-                cash = 0.0
-        elif target == 0 and shares > 0:
-            fill = opening * (1 - slip_rate)
-            quantity = -shares
-            fee = abs(quantity) * fill * fee_rate
-            cash += abs(quantity) * fill - fee
-            shares = 0.0
-        slippage_cost = 0.0 if fill is None else abs(quantity) * abs(fill - opening)
+        cash, shares, quantity, fill, fee, slippage_cost = opening_fill(
+            cash, shares, target, opening, fee_rate, slip_rate)
         equity = cash + shares * closing
         previous_close = rows[index - 1]["close"] if index else opening
         entry = {

@@ -1,6 +1,6 @@
 ---
 name: quant-research
-description: "Price European options, inspect local daily CSV or Parquet prices, compare historical SMA, buy-and-hold and cash portfolios, reproduce saved runs, and explain relevant research and validation failures with Agenthon Quant Lab."
+description: "Reproduce and explain the frozen Bitstamp BTC momentum study against passive BTC/cash, price European options, inspect local daily CSV or Parquet prices, compare historical SMA, buy-and-hold and cash portfolios, reproduce saved runs, and explain relevant research and validation failures with Agenthon Quant Lab."
 ---
 
 # Quant Research
@@ -11,6 +11,19 @@ checkout and `.venv`; it contains no finance calculations. Start with `doctor`.
 If setup is missing, follow [setup and usage](../../docs/user-guide.md) and
 [skill installation](../../docs/plugin-guide.md). `scripts/setup.py` installs
 free dependencies; skill installation is optional and preserves existing links.
+
+For the frozen BTC momentum study, run `python3 <skill>/scripts/quant.py --version`
+and then `python3 <skill>/scripts/quant.py btc-study` from the user's working directory.
+This workflow is included in v0.3.0. Use the helper at the
+resolved installed skill path. If the command is unavailable, identify the linked
+checkout and direct the user to the [setup guide](../../docs/plugin-guide.md).
+The admitted Bitstamp data are bundled. Each run creates a fresh folder and checks
+the reconstructed artifacts against the original study. On success read the printed
+report and reproduction receipt, open the local dashboard if requested, and link
+both. Report any failure, unavailable check, or numerically equivalent artifact as
+recorded. Explain the dollar outcome versus passive BTC/cash, the assumed fee and
+slippage, and the uncertain predictive result. This command takes no asset, date,
+or strategy overrides. A different question needs a separately named experiment.
 
 For modeling, read [option conventions](../../docs/options-conventions.md);
 for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).

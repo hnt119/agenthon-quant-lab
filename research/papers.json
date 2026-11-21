@@ -149,7 +149,8 @@
       "paper_reproduction_performed": false,
       "year_basis": "first arXiv publication",
       "venue_year": 2024,
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Adapted in controlled financial repair. BTC ledgers undergo independent checking without model revisions."
     },
     {
       "id": "ldb-2024",
@@ -186,7 +187,8 @@
       "relevance_is_inference": true,
       "paper_reproduction_performed": false,
       "year_basis": "ACL Findings publication",
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Basic-block model debugging remains a proposal outside this financial release."
     },
     {
       "id": "react-2022",
@@ -228,7 +230,8 @@
       "year_basis": "first arXiv publication",
       "venue_year": 2023,
       "historical_adaptation": "Bounded competition variant; not an exact reproduction.",
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Implemented in agent inspection. The deterministic BTC run records dated decisions without model calls."
     },
     {
       "id": "reflexion-2023",
@@ -266,7 +269,8 @@
       "paper_reproduction_performed": false,
       "year_basis": "first arXiv publication",
       "metadata_note": "Authors follow the linked arXiv v4 metadata.",
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Inspiration for preserving unsuccessful attempts. No persistent model memory in the BTC workbench."
     },
     {
       "id": "repocoder-2023",
@@ -445,7 +449,8 @@
         "docs/research-notes.md"
       ],
       "experiment_ids": [
-        "proposed-spectral-triage"
+        "proposed-spectral-triage",
+        "btc-financial-research-v1"
       ],
       "limitations": [
         "The trained FITS model differs from a deterministic FFT summary.",
@@ -456,7 +461,8 @@
       "relevance_is_inference": true,
       "paper_reproduction_performed": false,
       "year_basis": "first arXiv publication",
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Paper architecture deferred. The separate trailing entropy diagnostic was evaluated on BTC. No complex interpolation model was trained."
     },
     {
       "id": "fan-2024",
@@ -482,7 +488,8 @@
         "docs/research-notes.md"
       ],
       "experiment_ids": [
-        "proposed-spectral-triage"
+        "proposed-spectral-triage",
+        "btc-financial-research-v1"
       ],
       "limitations": [
         "Forecasting error on those datasets does not establish financial predictability or trading returns.",
@@ -493,7 +500,8 @@
       "relevance_is_inference": true,
       "paper_reproduction_performed": false,
       "year_basis": "NeurIPS publication",
-      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results."
+      "verification_scope": "Primary metadata and abstract verified; no claim of reproducing the paper results.",
+      "financial_workbench": "Paper architecture deferred. BTC evaluates a fixed entropy gate and uses no learned normalization or forecasting backbone."
     }
   ]
 }

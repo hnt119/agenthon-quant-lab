@@ -1,0 +1,426 @@
+[
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "buy_and_hold.gross.period_accounting",
+    "status": "failed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.ledger_shape_and_quotes",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.signal_and_execution_timing",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.cash_shares_equity_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.fee_slippage_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.pnl_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.long_only_cash_constraints",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "details": "Compared 548 marked equities to the independent buy_and_hold path",
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.benchmark_reference_path",
+    "status": "passed"
+  },
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "buy_and_hold.net.period_accounting",
+    "status": "failed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.ledger_shape_and_quotes",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.signal_and_execution_timing",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.cash_shares_equity_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.fee_slippage_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.pnl_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.long_only_cash_constraints",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "details": "Compared 548 marked equities to the independent buy_and_hold path",
+    "failure_count": 0,
+    "name": "buy_and_hold.net.benchmark_reference_path",
+    "status": "passed"
+  },
+  {
+    "details": "Period opening equities, P&L, returns, counts and costs reconcile to the continuous book.",
+    "name": "cash.gross.period_accounting",
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.ledger_shape_and_quotes",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.signal_and_execution_timing",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.cash_shares_equity_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.fee_slippage_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.pnl_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.gross.long_only_cash_constraints",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "details": "Compared 548 marked equities to the independent cash path",
+    "failure_count": 0,
+    "name": "cash.gross.benchmark_reference_path",
+    "status": "passed"
+  },
+  {
+    "details": "Period opening equities, P&L, returns, counts and costs reconcile to the continuous book.",
+    "name": "cash.net.period_accounting",
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.ledger_shape_and_quotes",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.signal_and_execution_timing",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.cash_shares_equity_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.fee_slippage_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.pnl_reconciliation",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "absolute_tolerance": 1e-07,
+    "cash_and_pnl_roundoff_ulps": 8,
+    "details": "All observations reconciled",
+    "failure_count": 0,
+    "name": "cash.net.long_only_cash_constraints",
+    "relative_tolerance": 1e-10,
+    "status": "passed"
+  },
+  {
+    "details": "Compared 548 marked equities to the independent cash path",
+    "failure_count": 0,
+    "name": "cash.net.benchmark_reference_path",
+    "status": "passed"
+  },
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "momentum20.gross.period_accounting",
+    "status": "failed"
+  },
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "momentum20.net.period_accounting",
+    "status": "failed"
+  },
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "momentum20_fft.gross.period_accounting",
+    "status": "failed"
+  },
+  {
+    "details": [
+      "evaluation",
+      "train"
+    ],
+    "name": "momentum20_fft.net.period_accounting",
+    "status": "failed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "training_membership_and_threshold",
+    "observations": 211,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "independent_momentum_direct_dft_and_targets",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "buy_and_hold.gross.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "buy_and_hold.net.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "buy_and_hold.net.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "cash.gross.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "cash.gross.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "cash.net.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "cash.net.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20.gross.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20.gross.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20.net.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20.net.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20_fft.gross.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20_fft.gross.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20_fft.net.decimal_next_open_journal",
+    "observations": 548,
+    "status": "passed"
+  },
+  {
+    "examples": [],
+    "failure_count": 0,
+    "name": "momentum20_fft.net.independent_periods",
+    "observations": 4,
+    "status": "passed"
+  }
+]

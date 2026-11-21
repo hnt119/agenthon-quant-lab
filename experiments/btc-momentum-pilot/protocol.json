@@ -1,0 +1,49 @@
+{
+  "arms": [
+    "buy_and_hold",
+    "cash",
+    "momentum20",
+    "momentum20_fft"
+  ],
+  "data": "inputs/data.csv",
+  "data_sha256": "4dd1ea1e8ad96689bff3a37fd07a923260249aaaef4170da178db7edc9276f34",
+  "endpoint": "Difference in evaluation-period net cumulative returns, FFT minus plain momentum in percentage points. Positive means improved. Report both against cash and buy-and-hold. A strategy survives specified costs in this sample iff its net evaluation return is strictly positive; distinguish a gross loss from costs reversing a gain.",
+  "engine_baseline": "b7d289e7865e8632c05201d479194c97338682cd",
+  "entropy_method": "causal-return-spectrum-v1",
+  "entropy_returns": 64,
+  "fit": "Ordinary median of all finite ok entropy observations in training, regardless of momentum. Even median averages central pair. No-variation and warmup excluded. Empty fit invalidates the run. Fit once at the final training close.",
+  "frictions": {
+    "gross_fee_bps": 0,
+    "gross_slippage_bps": 0,
+    "interpretation": "Illustrative taker-style cost scenario, not a verified account fee schedule. Fractional, liquid spot fills and instantaneous close-to-next-open decision availability are assumptions.",
+    "net_adverse_slippage_bps_each_fill": 10,
+    "net_fee_bps_each_fill": 50
+  },
+  "gate": "Momentum target AND available entropy <= frozen training median (inclusive). Missing entropy flat. No validation refit or selection.",
+  "id": "btc-momentum20-entropy64-pilot-1",
+  "initial_cash": 10000,
+  "market": "Bitstamp spot BTC/USD",
+  "metrics": "For validation and retrospective evaluation report gross/net returns, USD fees and slippage, fill count, turnover and max drawdown reset to each period opening equity. Full-path daily equity and running drawdown include carried positions. Trade costs are debited once. No hypothesis test, parameter sweep, leverage, interest, taxes or liquidity-impact model.",
+  "momentum": "Close[t] / Close[t-20] - 1. Target 1 only if strictly positive; ties and missing history flat.",
+  "momentum_sessions": 20,
+  "partitions": {
+    "evaluation": [
+      "2026-04-01",
+      "2026-09-30"
+    ],
+    "train": [
+      "2025-04-01",
+      "2025-12-31"
+    ],
+    "validation": [
+      "2026-01-01",
+      "2026-03-31"
+    ]
+  },
+  "sample": "Historical retrospective single venue, one predetermined comparison. Q2 2025 was previously examined and is used only in calibration.",
+  "source_manifest_sha256": "990ea0c2318443644c1aa84d73dda0547029aded0c5fb4dd081ef71bc82a2d01",
+  "timing": "All arms start flat with equal capital. First close decision at the last training close, first eligible execution at the following UTC session open. Apply close targets to the next session only. Buy-and-hold enters once, cash earns zero. No position resets between validation and evaluation; mark at the last close without liquidation.",
+  "unit": "USD per BTC",
+  "verification": "Independent direct DFT on trailing completed returns; fit membership, signals and thresholds; independent balances, next-open execution and costs; compare each period against the shared historical accounting checks and cash/hold references. A technical failure is recorded before repair. No tuning after result inspection.",
+  "workflow": "btc_research_pilot"
+}

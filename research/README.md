@@ -1,5 +1,8 @@
 # Research archive
 
+[Start with the five-year BTC research example](../examples/btc-study/README.md).
+
+
 [`papers.json`](papers.json) is the canonical selected reading list: twelve primary-source records with original short summaries, relevance, limitations and decisions. Titles, authors and dates were checked against linked arXiv or proceedings metadata on 14 November 2026. Summaries use the primary abstracts; this is not a new systematic literature review or a reproduction of the papers.
 
 | Topic | Records |

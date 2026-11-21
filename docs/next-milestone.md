@@ -1,3 +1,5 @@
+> Historical planning document for the v0.3.0rc1 workflow. For v0.3.0, see the [v0.3.0 review](releases/v0.3.0-review.md) and [beginner BTC example](../examples/btc-study/README.md).
+
 # Next milestone
 
 Review the v0.3.0rc1 historical workflow and its fixed Q2 2025 comparison. The published v0.2.0 release remains available for reproducing its saved runs. [Candidate workflow](historical-workflow.md) · [Published release](releases/v0.2.0.md)
