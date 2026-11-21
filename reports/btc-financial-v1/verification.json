@@ -1,0 +1,13 @@
+{
+  "fit_members": 1031,
+  "portfolio_sessions": 36540,
+  "portfolios": 20,
+  "predictive_labels": {
+    "30": 1822,
+    "5": 1822
+  },
+  "scope": "Direct DFT, fit membership, prior-close targets, independent annual weights, delayed quotes, cash and units, net/gross fills, compounding, risk, exposures and paired label membership. Conditional bootstrap reproducibility is checked by offline regeneration.",
+  "sessions": 2922,
+  "status": "passed",
+  "verified_period_summaries": 120
+}

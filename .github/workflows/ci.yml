@@ -20,6 +20,10 @@ jobs:
         run: .venv/bin/python -m agenthon_quant doctor
       - name: Check public projection
         run: .venv/bin/python scripts/export_site.py --check
+      - name: Reproduce the frozen BTC study and check the public example
+        run: |
+          .venv/bin/quant-lab btc-study --out runs/btc-study-ci
+          .venv/bin/python scripts/btc_public_example.py --check
       - name: Exercise reproducible workflows
         run: .venv/bin/python scripts/verify_release.py --out runs/ci-release
       - name: Independently check the saved and freshly calculated BTC/USD example

@@ -1,0 +1,42 @@
+{
+  "alternative": {
+    "dataset": "Zielak (mczielinski), Bitcoin Historical Data, Kaggle",
+    "evidence": "https://github.com/ff137/bitstamp-btcusd-minute-data/blob/d7156d68d85714e188a1e152818281e97c89fbe5/data/original/source-manifest.json",
+    "terms": "CC BY-SA 4.0; attribution, indication of changes and share-alike on shared adaptations. Publisher identifies bulk through 2025-01-07 00:00 UTC as derived from v706; used no bulk or Kaggle rows. The update file from 00:01 UTC is separately licensed.",
+    "upstream_version_reviewed": 706,
+    "url": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data"
+  },
+  "attribution": "Bitstamp BTC/USD minute data, github.com/ff137/bitstamp-btcusd-minute-data",
+  "availability": "Retrospective fixed vintage. Source does not record original arrival latency, trade-level spread or depth.",
+  "changes": "Filtered one pinned API-collected CSV to six complete quarters; aggregated positive-volume minute candles to unadjusted UTC daily opens and closes and renamed the columns. Price-containing snapshots and dashboard are attributed adaptations under CC BY 4.0.",
+  "git_blob": "9d45b6be5eecae94b3e2a02f6d4a8c19c0349a26",
+  "instrument": "Bitstamp spot BTC/USD",
+  "license": "CC BY 4.0",
+  "license_evidence": "https://github.com/ff137/bitstamp-btcusd-minute-data/blob/d7156d68d85714e188a1e152818281e97c89fbe5/DATA_LICENSE",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "minute_semantics": "Epoch seconds label interval [t,t+60s). Upstream can pad missing bars flat at zero volume. Positive volume is the trade proxy; a complete timestamp grid cannot establish exchange uptime or feed completeness.",
+  "price_unit": "USD per BTC",
+  "quality": {
+    "checked_minutes": 789120,
+    "daily_sha256": "4dd1ea1e8ad96689bff3a37fd07a923260249aaaef4170da178db7edc9276f34",
+    "duplicate_minute_labels": 0,
+    "expected_minutes": 789120,
+    "first_session": "2025-04-01",
+    "last_session": "2026-09-30",
+    "max_close_advance_minutes": 1,
+    "max_open_delay_minutes": 0,
+    "missing_minute_labels": 0,
+    "q2_overlap_sha256": "371a9692925068a85aa6541fc64675891db48d46d27fa318d558043652ec707e",
+    "sessions": 548,
+    "sessions_close_before_last_minute": 1,
+    "sessions_open_after_first_minute": 0,
+    "zero_volume_minutes_excluded": 3268
+  },
+  "repository": "https://github.com/ff137/bitstamp-btcusd-minute-data",
+  "revision": "d7156d68d85714e188a1e152818281e97c89fbe5",
+  "selection": "First complete calendar quarter after the January handover through the last complete quarter in the pinned update. Same cached file as the Q2 example; no minute archive fetched.",
+  "upstream": "data/updates/btcusd_bitstamp_1min_latest.csv",
+  "upstream_bytes": 54445372,
+  "upstream_sha256": "1d920d9cd8c2e03c8d17a2b686017dd544f1c175cd11a330d817d30b3258c6e3",
+  "use": "Publisher permits use, adaptation and sharing with attribution, license link and indication of changes. The software MIT license covers code only."
+}

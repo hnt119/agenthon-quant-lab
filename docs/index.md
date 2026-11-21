@@ -1,5 +1,8 @@
 # Start here
 
+[Start with the five-year BTC research example](../examples/btc-study/README.md).
+
+
 Use the financial toolkit without reading competition history first:
 
 1. [Run the historical BTC/USD workflow](historical-workflow.md) to inspect data, compare portfolios and export or reproduce a result.

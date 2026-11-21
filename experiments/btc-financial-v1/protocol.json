@@ -1,0 +1,74 @@
+{
+  "arms": [
+    "cash",
+    "buy_and_hold",
+    "momentum20",
+    "momentum20_fft",
+    "passive_mix"
+  ],
+  "cash_rate": 0,
+  "cost_basis": "Fixed illustrative taker-style charges inherited from pilot; no claim about historical account fee schedules.",
+  "decision": "Candidate for prospective paper observation only if both pooled base endpoints have lower 95% bounds >0, momentum net return >0, primary difference positive in >=3 of 5 folds and under both double-cost and later-fill sensitivities. Unsupported if both point estimates <=0 or either upper bound <=0. Otherwise inconclusive. Insufficient states/variance implies inconclusive.",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "entropy_method": "causal-return-spectrum-v1",
+  "entropy_returns": 64,
+  "evaluation_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "execution": "All accounts initially USD only. Use signal at completed prior UTC session. First positive-volume minute OPEN at or after 00:05; stress 00:30. Always strictly after cutoff. Continuous cash and fractional spot units across folds. Mark at last trade close; no terminal liquidation, leverage, shorts, tax or interest.",
+  "exposure_status": "All five annual folds retrospective; declared with knowledge of the separate 2025-26 pilot. 2025-26 is exposed and excluded. No prospective outcomes.",
+  "fft": "Same <= median pilot rule. Fit once to valid 64-return entropies in initial 2017-2019 training; fixed through 2024. Never use the later pilot threshold on earlier data.",
+  "frozen_utc": "2026-11-21T02:51:30.550282+00:00",
+  "future_observation": "Manual log only. Require hash-bound input history, completed UTC session and as-of time. Any entry whose intended first eligible execution has passed is retrospective; new observation must be recorded after study freeze and before its execution. No performance until separately observed outcomes.",
+  "hypothesis": "Positive 20-session BTC momentum predicts higher subsequent executable returns and improves net risk-adjusted performance versus a training-calibrated passive BTC/cash allocation.",
+  "id": "btc-financial-research-v1",
+  "initial_cash": 10000,
+  "metrics": "By calendar fold and pooled: compounded return and 365-day geometric annualization; daily sample SD annualized; drawdown from previous fold-end equity (pooled from initial); average close BTC weight, sum of one-way quoted notional/pretrade equity, nonzero fills, fees and adverse slippage in USD.",
+  "momentum": "Last positive-volume close[t]/close[t-20]-1. Strictly positive is long, else flat; 21 completed closes required. Cutoff is the following 00:00 UTC session boundary.",
+  "momentum_sessions": 20,
+  "passive": "At the first delayed fill of each evaluation year target the fraction of valid close signals strictly positive in the expanding training dates through preceding Dec 31. Exact BTC share of post-cost equity at reallocation; drift without trading to next annual fold.",
+  "prediction": "Mean simple BTC return from one delayed executable quote to the following delayed quote, positive minus non-positive prior-close state. Each label must start and end in the same evaluated calendar year. Drop last entry per year; no target labels used in fitting.",
+  "primary": "Pooled base net daily close-to-close Sharpe(momentum20) minus Sharpe(passive_mix); Sharpe = sqrt(365)*arithmetic mean/sample SD, zero cash rate; constant series undefined.",
+  "scenario_units": [
+    "minimum_delay_minutes",
+    "fee_bps_on_filled_notional",
+    "adverse_slippage_bps"
+  ],
+  "scenarios": {
+    "base": [
+      5,
+      50,
+      10
+    ],
+    "double_cost": [
+      5,
+      100,
+      20
+    ],
+    "gross": [
+      5,
+      0,
+      0
+    ],
+    "later_fill": [
+      30,
+      50,
+      10
+    ]
+  },
+  "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
+  "uncertainty": {
+    "block_sessions": 20,
+    "draws": 4000,
+    "method": "Circular contiguous block bootstrap within each annual fold, truncate final block to original length; paired draw indices for both strategies or both state/label columns. Percentile 2.5 and 97.5%. No refit or selection; conditional on observed folds.",
+    "seed": 20261121
+  }
+}

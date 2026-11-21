@@ -1,5 +1,8 @@
 # Experiment archive
 
+[Start with the five-year BTC research example](../examples/btc-study/README.md).
+
+
 [`experiments.json`](experiments.json) is the canonical curated evidence ledger. It contains seventeen historical observations or proposals, preserving failures and unknowns rather than constructing a combined score.
 
 - `official_reported`: user reports or archived platform observations, with chronology and artifact-association limits. No score was freshly checked on the platform for this archive. `status: unknown` means whole-task success is not inferred from the aggregate.

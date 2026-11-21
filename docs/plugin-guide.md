@@ -23,6 +23,23 @@ The skill resolves its real path, uses the checkout's `.venv`, and keeps all
 calculations in `src/agenthon_quant`. Keep the checkout at its linked location,
 or deliberately update the link yourself when moving it.
 
+## Reproduce the BTC study
+
+Use the checkout containing the reviewed `v0.3.0` candidate. From its root run `python3.12 scripts/setup.py --install-skill`. In Codex ask:
+
+> Use $quant-research to reproduce the frozen BTC momentum study, open the report, and explain how it compared with passive BTC/cash after costs.
+
+From the same checkout you can run `.venv/bin/quant-lab btc-study` directly. From any folder on macOS or Linux the installed helper accepts the same command:
+
+```sh
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" --version
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" btc-study
+```
+
+Expect version 0.3.0 and a new folder under your current directory’s `runs/`. Open the printed `report.md` or `dashboard.html`. The dashboard opens in a browser directly from disk. The final `reproduction.json` lists each original result that was checked. The admitted data come with the checkout. An incomplete checkout should be restored at the same reviewed Git revision. No market-data account or JSON specification is needed.
+
+This reproduces one fixed Bitstamp study. Use `--out <fresh-folder>` for an explicit destination. The separate options, SMA and local daily-data workflows retain their own specifications. [Read the saved example](../examples/btc-study/README.md) · [Frozen data, license and protocol](../experiments/btc-financial-v1/README.md)
+
 Useful requests include:
 
 1. “Price these options and show how value changes with volatility.”

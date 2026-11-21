@@ -1457,6 +1457,102 @@
         "provider_units": null,
         "solver_seconds": null
       }
+    },
+    {
+      "baseline": "Annual BTC/cash weight estimated from earlier eligible momentum signals. Full buy-and-hold and cash also recorded.",
+      "code_commit": "4c28e350f1b64eb100b0f5b487ac5a4da07930f2",
+      "configuration": {
+        "delay_minutes": 5,
+        "fees_bps": 50,
+        "protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+        "slippage_bps": 10,
+        "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315"
+      },
+      "date": "2026-11-21",
+      "decision": "inconclusive",
+      "evidence_category": "retrospective_market",
+      "hypothesis": "Positive completed-close momentum predicts higher executable returns and improves net Sharpe versus a training-calibrated passive mix.",
+      "id": "btc-financial-research-v1",
+      "limitations": [
+        "Retrospective design informed by the previously examined pilot.",
+        "Single venue, delayed bar proxy, illustrative costs, five clustered calendar folds."
+      ],
+      "model": null,
+      "paper_ids": [
+        "fits-2023",
+        "fan-2024"
+      ],
+      "paper_relation": "FITS and FAN motivate research on frequency representations. This fixed entropy gate is a distinct diagnostic. Neither paper model was reproduced.",
+      "protocol": "2017–2019 initial fit then five expanding annual folds spanning 2020–2024.",
+      "reproduction": {
+        "command": "quant-lab btc-study",
+        "reason": "Regenerates financial evidence and plots.",
+        "scope": "offline admitted snapshot"
+      },
+      "result": {
+        "denominator": 1827,
+        "interval95": {
+          "predictive_difference": [
+            -0.0009609629060221594,
+            0.0049541587453449136
+          ],
+          "sharpe_delta": [
+            -0.9804425392457271,
+            0.26498464046310766
+          ]
+        },
+        "observations": 1827,
+        "predictive_difference": 0.0020703568157163033,
+        "predictive_intervals": 1822,
+        "score": null,
+        "sharpe_difference": -0.34137249867898867,
+        "summary": "Positive predictive spread with an interval crossing zero. Net momentum Sharpe trailed passive BTC/cash in four of five years. The entropy gate lowered net cumulative return."
+      },
+      "sources": [
+        {
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0.",
+          "commit": "e56c000e8bfa6e9ebe2854998e10af3dbe10522b",
+          "path": "experiments/btc-financial-v1/protocol.json",
+          "repository": "agenthon-quant-lab",
+          "sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+          "visibility": "tracked"
+        },
+        {
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0.",
+          "commit": "dd9b6ce7d21a47441a5a0028fd4136b70797778d",
+          "path": "reports/btc-financial-v1/metrics.json",
+          "repository": "agenthon-quant-lab",
+          "sha256": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+          "visibility": "tracked"
+        },
+        {
+          "access_note": "Review branch. Derived Bitstamp financial measurements use CC BY-SA 4.0.",
+          "commit": "dd9b6ce7d21a47441a5a0028fd4136b70797778d",
+          "path": "reports/btc-financial-v1/verification.json",
+          "repository": "agenthon-quant-lab",
+          "sha256": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35",
+          "visibility": "tracked"
+        }
+      ],
+      "status": "inconclusive",
+      "title": "Does short-term BTC momentum pay for trading?",
+      "topics": [
+        "BTC/USD",
+        "momentum",
+        "spectral entropy",
+        "FFT",
+        "spot accounting",
+        "predictive information",
+        "passive exposure",
+        "transaction costs"
+      ],
+      "usage": {
+        "complete": true,
+        "cost_usd": 0,
+        "input_tokens": 0,
+        "model_calls": 0,
+        "output_tokens": 0
+      }
     }
   ],
   "papers": [
@@ -1545,6 +1641,7 @@
         "r60-smith-20261020",
         "r61-smith-20261020"
       ],
+      "financial_workbench": "Adapted in controlled financial repair. BTC ledgers undergo independent checking without model revisions.",
       "id": "critic-2023",
       "implementation": [
         "src/agenthon_quant/options.py",
@@ -1581,6 +1678,7 @@
         "typeerror-trial1-20260928",
         "typeerror-trial2-20260928"
       ],
+      "financial_workbench": "Basic-block model debugging remains a proposal outside this financial release.",
       "id": "ldb-2024",
       "implementation": [
         "docs/research-notes.md",
@@ -1617,6 +1715,7 @@
       "experiment_ids": [
         "official-react-962738"
       ],
+      "financial_workbench": "Implemented in agent inspection. The deterministic BTC run records dated decisions without model calls.",
       "id": "react-2022",
       "implementation": [
         "experiments/experiments.json",
@@ -1651,6 +1750,7 @@
       ],
       "decision": "Store evidence provenance and uncertainty; do not turn an unverified explanation into a universal rule.",
       "experiment_ids": [],
+      "financial_workbench": "Inspiration for preserving unsuccessful attempts. No persistent model memory in the BTC workbench.",
       "id": "reflexion-2023",
       "implementation": [
         "docs/negative-results.md",
@@ -1819,8 +1919,10 @@
       ],
       "decision": "Do not train or promote a spectral model without a chronological controlled comparison.",
       "experiment_ids": [
-        "proposed-spectral-triage"
+        "proposed-spectral-triage",
+        "btc-financial-research-v1"
       ],
+      "financial_workbench": "Paper architecture deferred. The separate trailing entropy diagnostic was evaluated on BTC. No complex interpolation model was trained.",
       "id": "fits-2023",
       "implementation": [
         "docs/research-notes.md"
@@ -1852,8 +1954,10 @@
       ],
       "decision": "Keep spectral preprocessing experimental; compare against ordinary statistics before adopting it.",
       "experiment_ids": [
-        "proposed-spectral-triage"
+        "proposed-spectral-triage",
+        "btc-financial-research-v1"
       ],
+      "financial_workbench": "Paper architecture deferred. BTC evaluates a fixed entropy gate and uses no learned normalization or forecasting backbone.",
       "id": "fan-2024",
       "implementation": [
         "docs/research-notes.md"
@@ -1878,8 +1982,8 @@
   ],
   "provenance": {
     "canonical_files_sha256": {
-      "experiments/experiments.json": "537094bc9c881551152daadb14dd37e72e2ee48b658bdba0b0fe6a2d717b59e2",
-      "research/papers.json": "369a07152ffe57f058f6b802077907aea2219b8978aa73a8e0b9cee0137e30a8"
+      "experiments/experiments.json": "a87f674057f2891a1526937352e496b822853445e0ab54ed8f4d234c89aa5f29",
+      "research/papers.json": "2801d938017eb71bbec5cd4756f6231650cfdd591d01ced635af8c13ebe50663"
     },
     "generator": "scripts/export_site.py",
     "repository": "https://github.com/hnt119/agenthon-quant-lab",

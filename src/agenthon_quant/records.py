@@ -150,10 +150,12 @@ def render_report(record: dict) -> str:
              "## Assumptions", "", "```json", json.dumps(outcome.get("assumptions", {}), indent=2, allow_nan=False), "```", "",
              "## Verification", "", "| Check | Status | Evidence |", "|---|---|---|"]
     if record.get("workflow") == "historical" and record["status"] == "passed":
-        # Show curves next to the results, before the machine-readable specification.
+        links = ["![After-cost equity and drawdown](equity-drawdown.svg)", "",
+                 "[Download daily gross and net curves (CSV)](equity-drawdown.csv)", ""]
+        if record["specification"].get("spectral_diagnostic") is True:
+            links.extend(["[Descriptive 64-return spectra by observation date](spectral.json)", ""])
         index = lines.index("## Specification")
-        lines[index:index] = ["![After-cost equity and drawdown](equity-drawdown.svg)", "",
-                              "[Download daily gross and net curves (CSV)](equity-drawdown.csv)", ""]
+        lines[index:index] = links
     for check in checks:
         detail = str(check.get("details", check.get("message", ""))).replace("|", "\\|").replace("\n", " ")
         lines.append(f"| {check['name']} | {check['status']} | {detail} |")
@@ -226,6 +228,7 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
             analysis = run(effective, snapshot)
         else:
             raise ValueError("Supported workflows are options, trading and historical")
+        spectral = analysis.pop("spectral_diagnostic", None)
         record["analysis"] = analysis
         checks = analysis.get("checks", [])
         if not checks or any(c.get("status") not in {"passed", "failed", "unavailable"} for c in checks):
@@ -256,7 +259,13 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
             files = {"equity-drawdown.csv": curve_csv(results), "equity-drawdown.svg": curve_svg(results)}
             for name, content in files.items():
                 (out / name).write_bytes(content.encode("utf-8"))
-            record["output_artifacts_sha256"] = {name: digest((out / name).read_bytes()) for name in (*files, "report.md")}
+            artifact_names = [*files, "report.md"]
+            if spectral is not None:
+                spectral["source_fingerprint_sha256"] = record["code"]["source_fingerprint_sha256"]
+                spectral["effective_specification_sha256"] = record["effective_specification_sha256"]
+                write_json(out / "spectral.json", spectral)
+                artifact_names.append("spectral.json")
+            record["output_artifacts_sha256"] = {name: digest((out / name).read_bytes()) for name in artifact_names}
         # The completed run record is the commit marker, written last.
         write_json(out / "run.json", record)
     except OSError as error:
@@ -268,7 +277,7 @@ def execute(spec_path: Path, out: Path, *, derived_from: dict | None = None) -> 
         if record["workflow"] == "historical":
             from .historical_report import CURVE_FILES
             record.pop("output_artifacts_sha256", None)
-            for name in CURVE_FILES:
+            for name in (*CURVE_FILES, "spectral.json"):
                 (out / name).unlink(missing_ok=True)
         (out / "report.md").write_text(render_report(record))
         write_json(out / "run.json", record)

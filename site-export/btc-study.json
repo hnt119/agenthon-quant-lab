@@ -1,0 +1,758 @@
+{
+  "attribution": "Zielak (mczielinski), Bitcoin Historical Data, Kaggle v706, normalized by ff137. Adapted to UTC sessions, simulated portfolios and sampled month-end marks.",
+  "base_scenario": [
+    5,
+    50,
+    10
+  ],
+  "decision": "inconclusive",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "end": "2024-12-31",
+  "initial_usd": 10000,
+  "inputs_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "interval95": {
+    "predictive_difference": [
+      -0.0009609629060221594,
+      0.0049541587453449136
+    ],
+    "sharpe_delta": [
+      -0.9804425392457271,
+      0.26498464046310766
+    ]
+  },
+  "ledger_sha256": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "metrics_sha256": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+  "month_ends": [
+    {
+      "date": "2020-01-31",
+      "momentum20": {
+        "drawdown": 0.018121052631578927,
+        "equity": 12644.443768517931
+      },
+      "passive_mix": {
+        "drawdown": 0.011319356583668339,
+        "equity": 11648.87067607406
+      }
+    },
+    {
+      "date": "2020-02-29",
+      "momentum20": {
+        "drawdown": 0.10442163973218932,
+        "equity": 12582.033798739107
+      },
+      "passive_mix": {
+        "drawdown": 0.11425103851839857,
+        "equity": 11029.01268421676
+      }
+    },
+    {
+      "date": "2020-03-31",
+      "momentum20": {
+        "drawdown": 0.10442163973218932,
+        "equity": 12582.033798739107
+      },
+      "passive_mix": {
+        "drawdown": 0.2453196208539965,
+        "equity": 9396.99602944855
+      }
+    },
+    {
+      "date": "2020-04-30",
+      "momentum20": {
+        "drawdown": 0.018543124709908154,
+        "equity": 14559.860585820279
+      },
+      "passive_mix": {
+        "drawdown": 0.1080553632934016,
+        "equity": 11106.158900148504
+      }
+    },
+    {
+      "date": "2020-05-31",
+      "momentum20": {
+        "drawdown": 0.15540547919711312,
+        "equity": 14253.764175245291
+      },
+      "passive_mix": {
+        "drawdown": 0.057106853838758465,
+        "equity": 11740.550563535026
+      }
+    },
+    {
+      "date": "2020-06-30",
+      "momentum20": {
+        "drawdown": 0.2046366493329842,
+        "equity": 13422.91638745594
+      },
+      "passive_mix": {
+        "drawdown": 0.07659541932104241,
+        "equity": 11497.886281386993
+      }
+    },
+    {
+      "date": "2020-07-31",
+      "momentum20": {
+        "drawdown": 0.053175679803325826,
+        "equity": 15979.041117435818
+      },
+      "passive_mix": {
+        "drawdown": 0.0,
+        "equity": 13220.68415309517
+      }
+    },
+    {
+      "date": "2020-08-31",
+      "momentum20": {
+        "drawdown": 0.10940225458065289,
+        "equity": 15410.847766261542
+      },
+      "passive_mix": {
+        "drawdown": 0.03572975284065394,
+        "equity": 13451.75093722655
+      }
+    },
+    {
+      "date": "2020-09-30",
+      "momentum20": {
+        "drawdown": 0.09939517607126513,
+        "equity": 15584.009627816207
+      },
+      "passive_mix": {
+        "drawdown": 0.08442124573074761,
+        "equity": 12772.495472227181
+      }
+    },
+    {
+      "date": "2020-10-31",
+      "momentum20": {
+        "drawdown": 0.0,
+        "equity": 18082.585549557847
+      },
+      "passive_mix": {
+        "drawdown": 0.0,
+        "equity": 15125.974117842938
+      }
+    },
+    {
+      "date": "2020-11-30",
+      "momentum20": {
+        "drawdown": 0.0,
+        "equity": 25783.751325813402
+      },
+      "passive_mix": {
+        "drawdown": 0.0,
+        "equity": 19684.488082757096
+      }
+    },
+    {
+      "date": "2020-12-31",
+      "momentum20": {
+        "drawdown": 0.0,
+        "equity": 36265.445522627095
+      },
+      "passive_mix": {
+        "drawdown": 0.0,
+        "equity": 26883.61367190504
+      }
+    },
+    {
+      "date": "2021-01-31",
+      "momentum20": {
+        "drawdown": 0.23300644780249202,
+        "equity": 39015.538327137365
+      },
+      "passive_mix": {
+        "drawdown": 0.12415485348568867,
+        "equity": 29126.9184389452
+      }
+    },
+    {
+      "date": "2021-02-28",
+      "momentum20": {
+        "drawdown": 0.21310366791313928,
+        "equity": 47344.66084067124
+      },
+      "passive_mix": {
+        "drawdown": 0.15820973141450811,
+        "equity": 35765.18800714903
+      }
+    },
+    {
+      "date": "2021-03-31",
+      "momentum20": {
+        "drawdown": 0.08495108653409555,
+        "equity": 55055.130763890564
+      },
+      "passive_mix": {
+        "drawdown": 0.02937378928460499,
+        "equity": 43194.61315663192
+      }
+    },
+    {
+      "date": "2021-04-30",
+      "momentum20": {
+        "drawdown": 0.1783595387147523,
+        "equity": 49435.08742677524
+      },
+      "passive_mix": {
+        "drawdown": 0.06932126232182123,
+        "equity": 42641.966261553964
+      }
+    },
+    {
+      "date": "2021-05-31",
+      "momentum20": {
+        "drawdown": 0.37602663594479335,
+        "equity": 37542.18451681066
+      },
+      "passive_mix": {
+        "drawdown": 0.31400075560456064,
+        "equity": 31431.20762373865
+      }
+    },
+    {
+      "date": "2021-06-30",
+      "momentum20": {
+        "drawdown": 0.36998030000519977,
+        "equity": 37905.97033295451
+      },
+      "passive_mix": {
+        "drawdown": 0.3415915091299456,
+        "equity": 30167.050688236435
+      }
+    },
+    {
+      "date": "2021-07-31",
+      "momentum20": {
+        "drawdown": 0.32078987359251865,
+        "equity": 40865.57753933212
+      },
+      "passive_mix": {
+        "drawdown": 0.26432307809419475,
+        "equity": 33707.34627673309
+      }
+    },
+    {
+      "date": "2021-08-31",
+      "momentum20": {
+        "drawdown": 0.22803582804434297,
+        "equity": 46446.2476339969
+      },
+      "passive_mix": {
+        "drawdown": 0.19647763813521135,
+        "equity": 36815.89796552396
+      }
+    },
+    {
+      "date": "2021-09-30",
+      "momentum20": {
+        "drawdown": 0.3403746455157569,
+        "equity": 39687.233777214715
+      },
+      "passive_mix": {
+        "drawdown": 0.23625191894449282,
+        "equity": 34993.51450312941
+      }
+    },
+    {
+      "date": "2021-10-31",
+      "momentum20": {
+        "drawdown": 0.1650525273446849,
+        "equity": 50235.721404122654
+      },
+      "passive_mix": {
+        "drawdown": 0.05388580329083015,
+        "equity": 44608.37225566856
+      }
+    },
+    {
+      "date": "2021-11-30",
+      "momentum20": {
+        "drawdown": 0.1888741482322861,
+        "equity": 48802.46200817717
+      },
+      "passive_mix": {
+        "drawdown": 0.12095999213839659,
+        "equity": 42202.4262391262
+      }
+    },
+    {
+      "date": "2021-12-31",
+      "momentum20": {
+        "drawdown": 0.2708653539030249,
+        "equity": 43869.35244074008
+      },
+      "passive_mix": {
+        "drawdown": 0.2439183322812336,
+        "equity": 36299.236129512385
+      }
+    },
+    {
+      "date": "2022-01-31",
+      "momentum20": {
+        "drawdown": 0.29554274793924606,
+        "equity": 42384.60431899191
+      },
+      "passive_mix": {
+        "drawdown": 0.3180477216436214,
+        "equity": 32740.308141322137
+      }
+    },
+    {
+      "date": "2022-02-28",
+      "momentum20": {
+        "drawdown": 0.3941066251279989,
+        "equity": 36454.37800281691
+      },
+      "passive_mix": {
+        "drawdown": 0.2732678834392759,
+        "equity": 34890.17367863273
+      }
+    },
+    {
+      "date": "2022-03-31",
+      "momentum20": {
+        "drawdown": 0.4625691789034895,
+        "equity": 32335.23770870632
+      },
+      "passive_mix": {
+        "drawdown": 0.2509280269247788,
+        "equity": 35962.702958658585
+      }
+    },
+    {
+      "date": "2022-04-30",
+      "momentum20": {
+        "drawdown": 0.5342364750455099,
+        "equity": 28023.279842269905
+      },
+      "passive_mix": {
+        "drawdown": 0.32618881557685164,
+        "equity": 32349.456856795572
+      }
+    },
+    {
+      "date": "2022-05-31",
+      "momentum20": {
+        "drawdown": 0.5373195327408757,
+        "equity": 27837.783589476076
+      },
+      "passive_mix": {
+        "drawdown": 0.3823376381480298,
+        "equity": 29653.770060083807
+      }
+    },
+    {
+      "date": "2022-06-30",
+      "momentum20": {
+        "drawdown": 0.5911739292782952,
+        "equity": 24597.562438512963
+      },
+      "passive_mix": {
+        "drawdown": 0.49543580699674816,
+        "equity": 24223.963582641038
+      }
+    },
+    {
+      "date": "2022-07-31",
+      "momentum20": {
+        "drawdown": 0.5716988469782631,
+        "equity": 25769.306579058026
+      },
+      "passive_mix": {
+        "drawdown": 0.46297499585359836,
+        "equity": 25782.396618315415
+      }
+    },
+    {
+      "date": "2022-08-31",
+      "momentum20": {
+        "drawdown": 0.5941915407275935,
+        "equity": 24416.003845861927
+      },
+      "passive_mix": {
+        "drawdown": 0.49415452958583717,
+        "equity": 24285.477296399495
+      }
+    },
+    {
+      "date": "2022-09-30",
+      "momentum20": {
+        "drawdown": 0.6459995356448758,
+        "equity": 21298.9071608526
+      },
+      "passive_mix": {
+        "drawdown": 0.5002117205374261,
+        "equity": 23994.673519478587
+      }
+    },
+    {
+      "date": "2022-10-31",
+      "momentum20": {
+        "drawdown": 0.6796918385508732,
+        "equity": 19271.765097812033
+      },
+      "passive_mix": {
+        "drawdown": 0.4899603547786643,
+        "equity": 24486.838271270597
+      }
+    },
+    {
+      "date": "2022-11-30",
+      "momentum20": {
+        "drawdown": 0.7028605585316887,
+        "equity": 17877.788350334828
+      },
+      "passive_mix": {
+        "drawdown": 0.5217558303100339,
+        "equity": 22960.347782953904
+      }
+    },
+    {
+      "date": "2022-12-31",
+      "momentum20": {
+        "drawdown": 0.7119290927966385,
+        "equity": 17332.16796606207
+      },
+      "passive_mix": {
+        "drawdown": 0.5278894526931888,
+        "equity": 22665.874557743773
+      }
+    },
+    {
+      "date": "2023-01-31",
+      "momentum20": {
+        "drawdown": 0.6063455941133918,
+        "equity": 23684.739113868593
+      },
+      "passive_mix": {
+        "drawdown": 0.42459228693457196,
+        "equity": 27625.138049338075
+      }
+    },
+    {
+      "date": "2023-02-28",
+      "momentum20": {
+        "drawdown": 0.6547128853348219,
+        "equity": 20774.656927327396
+      },
+      "passive_mix": {
+        "drawdown": 0.42445059343060065,
+        "equity": 27631.940708598668
+      }
+    },
+    {
+      "date": "2023-03-31",
+      "momentum20": {
+        "drawdown": 0.6226006510065933,
+        "equity": 22706.73207002652
+      },
+      "passive_mix": {
+        "drawdown": 0.3403791144076336,
+        "equity": 31668.185203217414
+      }
+    },
+    {
+      "date": "2023-04-30",
+      "momentum20": {
+        "drawdown": 0.626828338764637,
+        "equity": 22452.3676323197
+      },
+      "passive_mix": {
+        "drawdown": 0.32842962890605454,
+        "equity": 32241.876134194124
+      }
+    },
+    {
+      "date": "2023-05-31",
+      "momentum20": {
+        "drawdown": 0.6426079334703463,
+        "equity": 21502.96740120693
+      },
+      "passive_mix": {
+        "drawdown": 0.36016897379562407,
+        "equity": 30718.080459821205
+      }
+    },
+    {
+      "date": "2023-06-30",
+      "momentum20": {
+        "drawdown": 0.6215197331338825,
+        "equity": 22771.766926580487
+      },
+      "passive_mix": {
+        "drawdown": 0.309001875139324,
+        "equity": 33174.59630392437
+      }
+    },
+    {
+      "date": "2023-07-31",
+      "momentum20": {
+        "drawdown": 0.6256778662335427,
+        "equity": 22521.58733708909
+      },
+      "passive_mix": {
+        "drawdown": 0.3284926037967084,
+        "equity": 32238.852730078306
+      }
+    },
+    {
+      "date": "2023-08-31",
+      "momentum20": {
+        "drawdown": 0.6312926815826525,
+        "equity": 22183.764529246528
+      },
+      "passive_mix": {
+        "drawdown": 0.38043114486351903,
+        "equity": 29745.30018555635
+      }
+    },
+    {
+      "date": "2023-09-30",
+      "momentum20": {
+        "drawdown": 0.6410036805286838,
+        "equity": 21599.489405858076
+      },
+      "passive_mix": {
+        "drawdown": 0.3641521356294838,
+        "equity": 30526.850149495633
+      }
+    },
+    {
+      "date": "2023-10-31",
+      "momentum20": {
+        "drawdown": 0.5385607272418864,
+        "equity": 27763.1054771359
+      },
+      "passive_mix": {
+        "drawdown": 0.24300418973402838,
+        "equity": 36343.123817302985
+      }
+    },
+    {
+      "date": "2023-11-30",
+      "momentum20": {
+        "drawdown": 0.4978498044152423,
+        "equity": 30212.53211078991
+      },
+      "passive_mix": {
+        "drawdown": 0.19485988582911562,
+        "equity": 38654.51626384683
+      }
+    },
+    {
+      "date": "2023-12-31",
+      "momentum20": {
+        "drawdown": 0.440750023955525,
+        "equity": 33648.01608715148
+      },
+      "passive_mix": {
+        "drawdown": 0.12339912865959357,
+        "equity": 42085.32408427277
+      }
+    },
+    {
+      "date": "2024-01-31",
+      "momentum20": {
+        "drawdown": 0.48918151642196805,
+        "equity": 30734.071147606173
+      },
+      "passive_mix": {
+        "drawdown": 0.12043787500505143,
+        "equity": 42227.49291369291
+      }
+    },
+    {
+      "date": "2024-02-29",
+      "momentum20": {
+        "drawdown": 0.2948409909333306,
+        "equity": 42426.826459422424
+      },
+      "passive_mix": {
+        "drawdown": 0.014177915241674666,
+        "equity": 52655.01775589114
+      }
+    },
+    {
+      "date": "2024-03-31",
+      "momentum20": {
+        "drawdown": 0.29704707958983356,
+        "equity": 42294.09421126263
+      },
+      "passive_mix": {
+        "drawdown": 0.017337430584704494,
+        "equity": 58329.81544994128
+      }
+    },
+    {
+      "date": "2024-04-30",
+      "momentum20": {
+        "drawdown": 0.37748492583686355,
+        "equity": 37454.44457251032
+      },
+      "passive_mix": {
+        "drawdown": 0.11793418876491046,
+        "equity": 52358.49780526367
+      }
+    },
+    {
+      "date": "2024-05-31",
+      "momentum20": {
+        "drawdown": 0.4061520579017559,
+        "equity": 35729.64857392223
+      },
+      "passive_mix": {
+        "drawdown": 0.05329654587149946,
+        "equity": 56195.32022878926
+      }
+    },
+    {
+      "date": "2024-06-30",
+      "momentum20": {
+        "drawdown": 0.4100928314445923,
+        "equity": 35492.54671027435
+      },
+      "passive_mix": {
+        "drawdown": 0.09863260482420477,
+        "equity": 53504.219504852605
+      }
+    },
+    {
+      "date": "2024-07-31",
+      "momentum20": {
+        "drawdown": 0.37756584304153173,
+        "equity": 37449.57608163678
+      },
+      "passive_mix": {
+        "drawdown": 0.08035086974142247,
+        "equity": 54589.40405006014
+      }
+    },
+    {
+      "date": "2024-08-31",
+      "momentum20": {
+        "drawdown": 0.4711985308680047,
+        "equity": 31816.041309669537
+      },
+      "passive_mix": {
+        "drawdown": 0.13365685865790256,
+        "equity": 51425.2166752169
+      }
+    },
+    {
+      "date": "2024-09-30",
+      "momentum20": {
+        "drawdown": 0.4928225340476553,
+        "equity": 30515.004496036065
+      },
+      "passive_mix": {
+        "drawdown": 0.09272125866623881,
+        "equity": 53855.11078858191
+      }
+    },
+    {
+      "date": "2024-10-31",
+      "momentum20": {
+        "drawdown": 0.49062508712569763,
+        "equity": 30647.21680278244
+      },
+      "passive_mix": {
+        "drawdown": 0.027290399994442383,
+        "equity": 57739.017665515275
+      }
+    },
+    {
+      "date": "2024-11-30",
+      "momentum20": {
+        "drawdown": 0.3005278869372414,
+        "equity": 42084.6668234418
+      },
+      "passive_mix": {
+        "drawdown": 0.01951588987450925,
+        "equity": 72430.4881871524
+      }
+    },
+    {
+      "date": "2024-12-31",
+      "momentum20": {
+        "drawdown": 0.34490876584202634,
+        "equity": 39414.43241786828
+      },
+      "passive_mix": {
+        "drawdown": 0.09215333378180679,
+        "equity": 70715.26881301239
+      }
+    }
+  ],
+  "portfolios": {
+    "buy_and_hold": {
+      "ending_equity": 129704.93244779816,
+      "max_drawdown": 0.7666336091416391,
+      "mean_close_exposure": 1.0,
+      "sharpe": 1.1184533715266445,
+      "total_return": 11.970493244779815,
+      "trade_events": 1,
+      "transaction_cost": 59.69155222886504
+    },
+    "cash": {
+      "ending_equity": 10000.0,
+      "max_drawdown": 0.0,
+      "mean_close_exposure": 0.0,
+      "sharpe": null,
+      "total_return": 0.0,
+      "trade_events": 0,
+      "transaction_cost": 0.0
+    },
+    "momentum20": {
+      "ending_equity": 39414.43241786828,
+      "max_drawdown": 0.7181938489014073,
+      "mean_close_exposure": 0.5769020251778872,
+      "sharpe": 0.8249773906614245,
+      "total_return": 2.941443241786828,
+      "trade_events": 188,
+      "transaction_cost": 33621.179446033224
+    },
+    "momentum20_fft": {
+      "ending_equity": 14182.836495143549,
+      "max_drawdown": 0.7027686825883968,
+      "mean_close_exposure": 0.3426382047071702,
+      "sharpe": 0.3727626510466829,
+      "total_return": 0.4182836495143549,
+      "trade_events": 150,
+      "transaction_cost": 16222.324167932315
+    },
+    "passive_mix": {
+      "ending_equity": 70715.26881301239,
+      "max_drawdown": 0.5351695465498305,
+      "mean_close_exposure": 0.6251766024591209,
+      "sharpe": 1.1663498893404132,
+      "total_return": 6.071526881301239,
+      "trade_events": 5,
+      "transaction_cost": 176.71252788808835
+    }
+  },
+  "predictive": {
+    "difference": 0.0020703568157163033,
+    "nonpositive_mean": 0.0008332347286831061,
+    "nonpositive_n": 770,
+    "positive_mean": 0.0029035915443994093,
+    "positive_n": 1052
+  },
+  "prospective_observations": 0,
+  "protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+  "sampling": "Last UTC close each month. Drawdown at that close uses the daily running peak. The maximum drawdown in the table uses all daily closes.",
+  "scenario_units": [
+    "minimum_delay_minutes",
+    "fee_bps_on_filled_notional",
+    "adverse_slippage_bps"
+  ],
+  "sharpe_delta": -0.34137249867898867,
+  "start": "2020-01-01",
+  "study": "btc-financial-research-v1",
+  "verification": "passed"
+}
