@@ -21,9 +21,10 @@ def outputs():
     folder=ROOT/"examples/btc-study"
     prefix="../../reports/btc-financial-v1/"
     intro=paragraphs(spec,result)
-    report = ["# Did buying BTC after a rise earn enough to cover trading costs?",intro[0],intro[1],intro[2],intro[3],
+    report = ["# Did buying BTC after a rise earn enough to cover trading costs?",intro[0],intro[1],
               f"[View equity curves]({prefix}equity.svg) · [Read the financial report]({prefix}README.md) · "
               "[Download the offline dashboard](dashboard.html) · [Reproduce this study](../../docs/plugin-guide.md)",
+              intro[2],intro[3],
               f"![After-cost equity from the five calendar years. The passive BTC/cash line ends above the momentum line.]({prefix}equity.svg)",
               "The secondary rule required positive momentum and a concentrated pattern in the last 64 returns. "
               f"It finished at ${result['portfolios']['base']['momentum20_fft']['pooled']['ending_equity']:,.0f}. "

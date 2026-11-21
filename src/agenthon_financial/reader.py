@@ -12,25 +12,27 @@ def paragraphs(spec, result):
     low, high = result["interval95"]["predictive_difference"]
     sl, sh = result["interval95"]["sharpe_delta"]
     return [
-        f"On Bitstamp from {first} through {last}, did buying BTC when its last daily close was higher than "
-        "20 sessions earlier pay for the trading it required? We used the preceding 2017–2019 history for the initial fit.",
+        f"Bitstamp BTC/USD, {first}–{last}. Momentum meant buying when BTC closed higher than 20 days earlier.",
         f"Starting with ${spec['initial_cash']:,}, momentum finished at ${plain['ending_equity']:,.0f} after costs. "
-        f"Passive BTC/cash finished at ${mix['ending_equity']:,.0f}. The passive account set its BTC share once each year "
-        "from earlier signals and held the rest in cash. Each fill paid a 0.50% fee and assumed a 0.10% worse price.",
-        f"Momentum made {plain['trade_events']} trades against the passive account’s {mix['trade_events']}. "
+        f"The passive BTC/cash account finished at ${mix['ending_equity']:,.0f}. It set its BTC share yearly from past signals. "
+        f"The evidence is {result['decision']}. Future performance is unmeasured.",
+        f"Momentum made {plain['trade_events']} trades against the passive account’s {mix['trade_events']}. Each fill paid a 0.50% fee and assumed a 0.10% worse price. "
         f"Its deepest fall from a previous closing high (drawdown) was {plain['max_drawdown']:.2%}, versus "
         f"{mix['max_drawdown']:.2%}. Its Sharpe ratio, which measures average return relative to variability, "
         f"was {plain['sharpe']:.3f} versus {mix['sharpe']:.3f}.",
         f"The price signal and the investment answer different questions. The next day’s BTC return averaged "
         f"{pred*100:.3f} percentage points more after a positive signal. The 95% interval spans "
         f"{low*100:+.3f} to {high*100:+.3f} points. The interval for the net Sharpe difference spans "
-        f"{sl:+.3f} to {sh:+.3f}. The passive account did better here. Both intervals include zero, "
-        f"so the study’s decision is {result['decision']}. Future performance is unmeasured.",
+        f"{sl:+.3f} to {sh:+.3f}. Both intervals include zero. The passive account’s advantage in this sample leaves the ranking in future periods uncertain.",
     ]
 
 
 def overview_html(spec, result):
-    return "\n".join(f"<p>{escape(p)}</p>" for p in paragraphs(spec, result))
+    intro=paragraphs(spec,result)
+    links=('<p><a href="#portfolio">Compare the accounts</a> · <a href="#evidence">Inspect the run</a>. '
+           'Repeat locally with <code>quant-lab btc-study</code>.</p>')
+    return "\n".join([*(f"<p>{escape(p)}</p>" for p in intro[:2]), links,
+                      *(f"<p>{escape(p)}</p>" for p in intro[2:])])
 
 
 def projection(verified):
@@ -64,9 +66,10 @@ def projection(verified):
 
 def write_report(out, verified):
     _,spec,_,_,_,result,_ = verified
-    body = ["# Does BTC momentum pay for trading?", *paragraphs(spec,result),
+    body = ["# Does BTC momentum pay for trading?", *paragraphs(spec,result)[:2],
             "[Explore the charts and daily decisions](dashboard.html) · [All tables](tables.csv) · "
             "[Calculation receipt](verification.json) · [Reproduction comparison](reproduction.json)",
+            *paragraphs(spec,result)[2:],
             "From the installed toolkit, run `quant-lab btc-study` to repeat this exact comparison in a new folder.",
             "Prices are trade-bearing candle proxies on one exchange. Spreads, actual execution and capacity are unknown.",
             "Derived from Zielak (mczielinski), *Bitcoin Historical Data*, Kaggle v706, normalized by ff137. "

@@ -55,8 +55,6 @@ def panel(verified):
     active=[features[e["signal_session"]] for e in plain]
     out=['<section class="btc-pilot"><h1>Does BTC momentum pay for trading?</h1>',
          overview_html(spec,result),
-         '<p><a href="#portfolio">Compare the accounts</a> · <a href="#evidence">Inspect assumptions and the run receipt</a>. '
-         'Reproduce locally with <code>quant-lab btc-study</code>.</p>',
          '<h2 id="portfolio">Portfolio comparison</h2>']
     def row(a,m):
         sr=m["sharpe"]
