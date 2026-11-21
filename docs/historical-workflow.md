@@ -1,6 +1,6 @@
 # Inspect and compare daily market prices
 
-The v0.3.0rc1 review candidate compares a fixed moving-average strategy with buy-and-hold and cash. The bundled example uses 91 UTC dates of Bitstamp BTC/USD observations from April through June 2025. Read the resulting portfolio comparison or inspect how the minute bars were adapted into daily opens and closes. [Example report](../reports/historical-q2/report.md) · [Data source, license and extraction](../examples/data/bitstamp/README.md)
+The historical workflow compares a fixed moving-average strategy with buy-and-hold and cash. The bundled example uses 91 UTC dates of Bitstamp BTC/USD observations from April through June 2025. Read the resulting portfolio comparison or inspect how the minute bars were adapted into daily opens and closes. [Example report](../reports/historical-q2/report.md) · [Data source, license and extraction](../examples/data/bitstamp/README.md)
 
 ## Run the example
 

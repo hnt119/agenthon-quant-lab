@@ -30,7 +30,7 @@ Choose a fresh directory every time. On Windows the virtualenv interpreter is
 
 ## Run a historical portfolio comparison
 
-The v0.3.0rc1 [historical guide](historical-workflow.md) walks through inspecting a local price file, choosing eligible periods, evaluating the portfolios, reading the CSV/SVG paths and reproducing the saved result. Use `examples/historical.json` for the Bitstamp sample and `examples/trading.json` for the original two-period synthetic example. [Fixture attribution and transformation](../examples/data/bitstamp/README.md)
+The [historical guide](historical-workflow.md) walks through inspecting a local price file, choosing eligible periods, evaluating the portfolios, reading the CSV/SVG paths and reproducing the saved result. Use `examples/historical.json` for the Bitstamp sample and `examples/trading.json` for the original two-period synthetic example. [Fixture attribution and transformation](../examples/data/bitstamp/README.md)
 
 ## Supply assumptions and read results
 
