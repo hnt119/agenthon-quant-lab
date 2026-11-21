@@ -1,8 +1,7 @@
 # Public content and historical provenance
 
 This repository contains maintained code, original synthetic fixtures, research
-summaries, source identities and inspectable example results. The v0.3 candidate
-also includes an attributed, CC BY 4.0 daily BTC/USD example. [Data notice](../examples/data/bitstamp/README.md) It does not contain
+summaries, source identities and inspectable example results. v0.3.0 includes two separately attributed BTC data products. The Q2 2025 example uses CC BY 4.0. The 2017–2024 study extract and derived results use CC BY-SA 4.0. [Q2 data notice](../examples/data/bitstamp/README.md) · [Study attribution and changes](../experiments/btc-financial-v1/README.md#attribution-and-redistribution) It does not contain
 organizer-only data/checkers, hidden references, canaries, private captures,
 credentials, team claim proofs, submission ZIPs or copyrighted paper PDFs.
 

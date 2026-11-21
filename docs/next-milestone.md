@@ -1,4 +1,4 @@
-> Historical planning document for the v0.3.0rc1 workflow. For the current publication candidate, see the [v0.3.0 review](releases/v0.3.0-review.md) and [beginner BTC example](../examples/btc-study/README.md).
+> Historical planning document for the v0.3.0rc1 workflow. For v0.3.0, see the [v0.3.0 review](releases/v0.3.0-review.md) and [beginner BTC example](../examples/btc-study/README.md).
 
 # Next milestone
 

@@ -1,6 +1,6 @@
 # Portfolio handoff for the financial workbench
 
-Use toolkit commit `104d369c9ef2557371e0feda356e81c21d0835a7`. It prepares v0.3.0 and contains the verified data and beginner workflow. v0.2.0 was the last published release at handoff. The local 52-commit research branch was used for provenance only. Its sealed workstream is outside this publication branch.
+Historical handoff for portfolio PR #61. Toolkit commit `104d369c9ef2557371e0feda356e81c21d0835a7` supplied the verified display data and beginner workflow. For new installations use the [v0.3.0 source release](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0). v0.2.0 was the last published release at handoff. The local 52-commit research branch was used for provenance only. Its sealed workstream is outside this publication branch.
 
 **Public display inputs.** Copy [btc-study.json](../../site-export/btc-study.json) verbatim (SHA-256 `bde520adbd57e126b7b7f91967fa3c354eb25785b414358b88674129fe42f433`). For the existing secondary archive, [archive.json](../../site-export/archive.json) and [pricing-reference.json](../../site-export/pricing-reference.json) are approved projections. Preserve their version identities. The JSON holds source hashes, scenarios and verification status plus dated UTC month-end equity and drawdown for the two main portfolios. The full-sample maximum drawdown comes from daily closing marks. Render cash Sharpe as undefined. Copy attribution and link to CC BY-SA 4.0 with the chart. The site needs no raw minutes, detailed ledger, private cases or Python runtime.
 
@@ -16,4 +16,4 @@ Use toolkit commit `104d369c9ef2557371e0feda356e81c21d0835a7`. It prepares v0.3.
 - [Study protocol, source and reproduction](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/experiments/btc-financial-v1)
 - [Paper archive](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/research) · [Experiment archive](https://github.com/hnt119/agenthon-quant-lab/tree/104d369c9ef2557371e0feda356e81c21d0835a7/experiments) · [Agenthon mechanisms](https://github.com/hnt119/agenthon-quant-lab/blob/104d369c9ef2557371e0feda356e81c21d0835a7/docs/financial-workbench.md)
 
-Keep portfolio changes in the existing project article, with the public toolkit version available first. Recheck the exact public URLs before website approval. The website PR and toolkit PR are review artifacts. A release and deployment require the owner's decision.
+The portfolio incorporated this handoff in [website PR #61](https://github.com/hnt119/hnt119.github.io/pull/61). The links above preserve its original presentation revision.

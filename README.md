@@ -6,10 +6,10 @@ Reproduce a financial study on your own computer, inspect its assumptions and se
 
 ## Try it
 
-This branch prepares **v0.3.0**. The previous published release was v0.2.0. Use the candidate branch for this workflow until release. From a new installation location:
+Install [v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) from source with Git and Python 3.12. From the parent directory for your new checkout, run
 
 ```sh
-git clone --branch codex/btc-workbench-v03 https://github.com/hnt119/agenthon-quant-lab.git
+git clone --branch v0.3.0 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
 cd agenthon-quant-lab
 python3.12 scripts/setup.py --install-skill
 .venv/bin/quant-lab btc-study
@@ -53,8 +53,7 @@ flowchart LR
 
 The portfolio's browser calculator is a small, explicitly bounded static
 implementation checked against **64 Python reference cases**. It does not host
-Python, Docker, model inference or trading. The showcase is a separately reviewed
-portfolio change; publication status is in the [release report](docs/releases/v0.2.0.md).
+Python, Docker, model inference or trading. The [live portfolio article](https://hnt119.github.io/projects/quant-finance-agents/) displays the verified BTC results.
 
 On the v0.3 checkout, inspect the fixture and run the historical example from the repository root.
 

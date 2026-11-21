@@ -1,6 +1,8 @@
 # Current state
 
-The **v0.3.0rc1 review candidate** adds local CSV/Parquet inspection, three chronological evaluation periods, gross/net SMA, buy-and-hold and cash portfolios, and equity/drawdown exports. It includes a 91-session BTC/USD dataset with pinned provenance and CC BY 4.0 attribution. [Historical guide](historical-workflow.md) · [Example report](../reports/historical-q2/report.md)
+[v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) is a local Python toolkit and Codex skill. Its `btc-study` command reproduces the frozen five-year Bitstamp comparison, checks the results and writes a report and dashboard. [Install the release](plugin-guide.md) · [Read the saved example](../examples/btc-study/README.md) · [Review the evidence](releases/v0.3.0-review.md)
+
+The separate historical workflow supports local CSV/Parquet inspection, three chronological evaluation periods, gross/net SMA, buy-and-hold and cash portfolios, and equity/drawdown exports. It includes a 91-session BTC/USD dataset with pinned provenance and CC BY 4.0 attribution. [Historical guide](historical-workflow.md) · [Example report](../reports/historical-q2/report.md)
 
 ## Published v0.2.0
 

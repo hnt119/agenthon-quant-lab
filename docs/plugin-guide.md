@@ -25,7 +25,16 @@ or deliberately update the link yourself when moving it.
 
 ## Reproduce the BTC study
 
-Use the checkout containing the reviewed `v0.3.0` candidate. From its root run `python3.12 scripts/setup.py --install-skill`. In Codex ask:
+Install the [v0.3.0 source release](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) with Git and Python 3.12. For a new installation, run
+
+```sh
+git clone --branch v0.3.0 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
+cd agenthon-quant-lab
+python3.12 scripts/setup.py --install-skill
+.venv/bin/quant-lab btc-study
+```
+
+If your skill already points to this release checkout, you can ask Codex directly:
 
 > Use $quant-research to reproduce the frozen BTC momentum study, open the report, and explain how it compared with passive BTC/cash after costs.
 
