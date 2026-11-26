@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "id": "btc-weekly-cadence-v1",
+  "frozen_utc": "2026-11-26T10:56:10.279552+00:00",
+  "question": "Does a single Sunday-close weekly decision schedule improve historical net performance relative to the original daily rule and passive BTC/cash?",
+  "hypothesis": "Trading less frequently will reduce turnover and improve pooled net Sharpe relative to the daily rule. A net-Sharpe advantage over passive BTC/cash is the primary economic test.",
+  "evidence": "Exploratory retrospective on previously examined Bitstamp BTC/USD spot history. No prospective outcomes.",
+  "source_study": "btc-financial-research-v1",
+  "source_protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+  "source_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+  "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "evaluation": [
+    "2020-01-01",
+    "2024-12-31"
+  ],
+  "evaluation_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "initial_cash": 10000,
+  "arms": [
+    "weekly20",
+    "momentum20",
+    "passive_mix",
+    "buy_and_hold",
+    "cash"
+  ],
+  "scenarios": {
+    "gross": [
+      5,
+      0,
+      0
+    ],
+    "base": [
+      5,
+      50,
+      10
+    ],
+    "double_cost": [
+      5,
+      100,
+      20
+    ]
+  },
+  "scenario_units": [
+    "minimum_delay_minutes",
+    "fee_bps_on_filled_notional",
+    "adverse_slippage_bps"
+  ],
+  "momentum": "Last positive-volume close[t]/close[t-20]-1. Strictly positive is long, else flat; 21 completed closes required. Cutoff is the following 00:00 UTC session boundary.",
+  "weekly": "Start in cash. Decide only at completion of each Sunday UTC session. At Monday 00:00 UTC the Sunday close and the close 20 sessions earlier are known. A positive ratio return targets all BTC; equality or negative targets cash. First eligible execution 2020-01-06, at the first trade-bearing minute open on Monday at or after 00:05 UTC. Before this Monday remain cash. Carry holdings until the next scheduled opportunity; no same-day reversals, emergency exits or weekday selection. Require the full admitted contiguous daily history and a valid momentum observation at each decision.",
+  "accounting": "All accounts initially USD only. Use signal at completed prior UTC session. First positive-volume minute OPEN at or after 00:05. Always strictly after cutoff. Continuous cash and fractional spot units across folds. Mark at last trade close; no terminal liquidation, leverage, shorts, tax or interest.",
+  "passive": "At the first delayed fill of each evaluation year target the fraction of valid close signals strictly positive in the expanding training dates through preceding Dec 31. Exact BTC share of post-cost equity at reallocation; drift without trading to next annual fold.",
+  "metrics": "By calendar fold and pooled: compounded return and 365-day geometric annualization; daily sample SD annualized; drawdown from previous fold-end equity (pooled from initial); average close BTC weight, sum of one-way quoted notional/pretrade equity, nonzero fills, fees and adverse slippage in USD.",
+  "primary": "Pooled base-cost Sharpe(weekly20) minus Sharpe(passive_mix).",
+  "incremental": "Pooled base-cost Sharpe(weekly20) minus Sharpe(momentum20).",
+  "uncertainty": {
+    "block_sessions": 20,
+    "draws": 4000,
+    "method": "Circular contiguous block bootstrap within each annual fold, truncate final block to original length; paired draw indices for both strategies or both state/label columns. Percentile 2.5 and 97.5%. No refit or selection; conditional on observed folds.",
+    "seed": 20261121,
+    "scope": "Use the parent paired within-year circular block bootstrap for each base comparison on aligned daily financial returns. Same random draws across contrasts; each percentile interval is marginal. Hold fitted allocations and observed strategy paths fixed. Do not infer a new holdout or a prospective result."
+  },
+  "attribution": "Show gross and base outcomes and both Sharpe contrasts at all three costs. Compare weekly/daily differences at zero and base friction descriptively. Count base days weekly-long/daily-cash, daily-long/weekly-cash, both long, and both cash. Examine turnover, fills, average close BTC exposure, and fee/slippage dollars. Cost savings, cash exposure, timing and subsequent compounding interact; no causal dollar decomposition.",
+  "interpretation": "Report sign and interval for each declared Sharpe comparison separately. An interval spanning zero is inconclusive. An interval entirely positive or negative provides directional descriptive evidence under the stated assumptions. Report gross-vs-net and all annual folds even if the hypothesis fails. No tuning, new market data or subsequent study.",
+  "outputs": "Per scenario: 5 books, pooled plus five calendar years. Annual returns start at preceding closing equity and reinvest continuously. Base scheduled opportunities and dated records, monetary balances, signed quantities, equity, fees and execution timestamps are available for independent replay. Include pooled base intervals, timing-state counts, a report, a figure and a public aggregate exhibit."
+}
