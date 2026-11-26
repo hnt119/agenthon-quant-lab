@@ -1,6 +1,6 @@
 ---
 name: quant-research
-description: "Reproduce and explain the frozen Bitstamp BTC momentum study against passive BTC/cash, price European options, inspect local daily CSV or Parquet prices, compare historical SMA, buy-and-hold and cash portfolios, reproduce saved runs, and explain relevant research and validation failures with Agenthon Quant Lab."
+description: "Reproduce the frozen Bitstamp BTC momentum, cost break-even and weekly decision studies, price European options, inspect local daily CSV or Parquet prices, compare historical SMA, buy-and-hold and cash portfolios, reproduce saved runs, and explain relevant research and validation failures with Agenthon Quant Lab."
 ---
 
 # Quant Research
@@ -14,7 +14,7 @@ free dependencies; skill installation is optional and preserves existing links.
 
 For the frozen BTC momentum study, run `python3 <skill>/scripts/quant.py --version`
 and then `python3 <skill>/scripts/quant.py btc-study` from the user's working directory.
-The published v0.3.1 CLI also runs the study independently. For a skill invocation use the helper at the
+The installed v0.4.0 CLI supports all three BTC studies independently. For a skill invocation use the helper at the
 resolved installed skill path. If the command is unavailable, identify the linked
 checkout and direct the user to the [setup guide](../../docs/plugin-guide.md).
 The admitted Bitstamp data are bundled. Each run creates a fresh folder and checks
@@ -25,9 +25,9 @@ recorded. Explain the dollar outcome versus passive BTC/cash, the assumed fee an
 slippage, and the uncertain predictive result. This command takes no asset, date,
 or strategy overrides. A different question needs a separately named experiment.
 
-For the descriptive transaction-cost study, use the linked `0.4.0.dev1` cost-study build or the `0.4.0.dev2` weekly-study build and run `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>`. Read the printed report and verification receipt. Give the fee and slippage together for each crossing, distinguish net Sharpe from terminal wealth, and identify the period and comparator. [Development study guide](../../experiments/btc-cost-break-even-v1/README.md)
+On the v0.4.0 skill checkout, use `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>` for the cost study. Read the printed report and verification receipt. Give both fee and adverse slippage for each crossing, distinguish net Sharpe from terminal wealth, and identify the comparator and historical period. [Cost findings](../../reports/btc-cost-break-even-v1/README.md)
 
-On a checkout of the weekly development build (0.4.0.dev2), use `python3 <skill>/scripts/quant.py btc-weekly-cadence --out <new-directory>`. Explain both base-cost paired comparisons and the timing/exposure evidence. [Reproduction and scope](../../experiments/btc-weekly-cadence-v1/README.md)
+Use `python3 <skill>/scripts/quant.py btc-weekly-cadence --out <new-directory>` for the weekly study. Explain turnover and the changed position days alongside the paired base-cost Sharpe comparisons with passive BTC/cash and daily momentum. Both intervals include zero. The same retrospective data and minute-candle fill proxies apply to all three runs. [Weekly findings](../../reports/btc-weekly-cadence-v1/README.md) · [Installation and outputs](../../docs/user-guide.md)
 
 For modeling, read [option conventions](../../docs/options-conventions.md);
 for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).

@@ -9,8 +9,9 @@ Copy checked bytes from this directory into the portfolio’s `public/agenthon-q
 | `programme.json` | [Six-study catalogue](../research/programme.json) supplies questions, execution states and evidence. Proposed studies have no measured outcome. |
 | `btc-study.json` | The independent financial replay admits the [frozen BTC run](../reports/btc-financial-v1/run.json). The BTC exporter selects zero-, base- and double-cost summaries and actual UTC month-end paths for each portfolio. Daily maximum drawdowns include closes between chart points. |
 | `btc-cost-break-even.json` | A hash-checked copy of the [public cost exhibit](../reports/btc-cost-break-even-v1/public.json) supplies the 41-point curve and four comparison records. The [four-panel figure](../reports/btc-cost-break-even-v1/crossings.svg) uses those same records. |
+| `btc-weekly-cadence.json` | The [weekly report and figure](../reports/btc-weekly-cadence-v1/README.md) use the same five portfolios’ pooled and annual results, base-cost paired intervals and observed position-day counts. |
 
-`btc-weekly-cadence.json` carries all five portfolios’ pooled and annual results, the two base-cost paired intervals and observed position-day counts. The [weekly report and figure](../reports/btc-weekly-cadence-v1/README.md) use the same checked financial records. The catalogue now lists four completed comparisons across three retrospective runs.
+The programme lists four completed comparisons across three retrospective runs. Historical exhibit metadata identifies the build that produced each saved record. Public installation instructions follow the [current release guide](../docs/user-guide.md).
 
 Run the following from the toolkit checkout with its development environment active.
 

@@ -1,3 +1,3 @@
 """Agenthon Quant Lab's shared deterministic research engine."""
 
-__version__ = "0.4.0.dev2"
+__version__ = "0.4.0"
