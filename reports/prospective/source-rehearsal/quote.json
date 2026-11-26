@@ -1,0 +1,25 @@
+{
+  "classification": "source qualification rehearsal outside the scheduled window",
+  "prospective_decisions": 0,
+  "persisted_inputs_sha256": "b939de35bf76e7ba41fe2934c6b6202d71de7a425187c8ce62a3c5e54a525d6d",
+  "attribution": "Coin Metrics Community Data, CC BY-NC 4.0. UTC labels aligned and parsed by Agenthon Quant Lab.",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "quote": {
+    "source": "Coin Metrics Community API v4, BTC/USD reference rates",
+    "received_at": "2026-11-26T15:00:44.417910Z",
+    "captures": [
+      {
+        "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=ReferenceRateUSD&frequency=1m&start_time=2026-11-26T15%3A00%3A00Z&end_time=2026-11-26T15%3A00%3A00Z&page_size=2",
+        "raw_sha256": "d3ccfc3b2295fef6991e7bbdff4ee80aa249b368a3bcd8a5c9281c9c291930d8",
+        "received_at": "2026-11-26T15:00:44.417910Z",
+        "bytes": 95
+      }
+    ],
+    "observations": [
+      {
+        "event_time": "2026-11-26T15:00:00Z",
+        "price": 60656.2
+      }
+    ]
+  }
+}

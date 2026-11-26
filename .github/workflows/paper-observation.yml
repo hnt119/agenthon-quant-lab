@@ -1,0 +1,150 @@
+name: Registered BTC paper observation
+
+on:
+  workflow_run:
+    workflows: [Registered BTC paper clock]
+    branches: [main]
+    types: [completed]
+
+permissions: {}
+
+concurrency:
+  group: registered-weekly-allocation-observation
+  cancel-in-progress: false
+
+jobs:
+  record:
+    # This webhook carries repository visibility before runner allocation; missing metadata skips.
+    if: >-
+      github.repository == 'hnt119/agenthon-quant-lab' &&
+      github.ref == 'refs/heads/main' && github.run_attempt == 1 &&
+      github.event.repository.full_name == github.repository &&
+      github.event.repository.visibility == 'public' &&
+      toJSON(github.event.repository.private) == 'false' &&
+      github.event.workflow_run.path == '.github/workflows/paper-clock.yml' &&
+      github.event.workflow_run.repository.full_name == github.repository &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.run_attempt == 1 &&
+      contains(fromJSON('["success","skipped"]'), github.event.workflow_run.conclusion) &&
+      github.event.workflow_run.event == 'schedule' &&
+      vars.PAPER_REGISTRATION_SHA != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    permissions:
+      contents: write
+    outputs:
+      closed: ${{ steps.record.outputs.closed }}
+    env:
+      REGISTRATION_SHA: ${{ vars.PAPER_REGISTRATION_SHA }}
+      PYTHONDONTWRITEBYTECODE: '1'
+      GIT_TERMINAL_PROMPT: '0'
+    steps:
+      - name: Check public infrastructure and registration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$REGISTRATION_SHA" =~ ^[a-f0-9]{40}$ ]]
+          test "$(gh api "repos/$GITHUB_REPOSITORY" --jq .visibility)" = public
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ vars.PAPER_REGISTRATION_SHA }}
+          path: frozen
+          persist-credentials: false
+      - name: Check that the scheduled workflow still matches the registered runner
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOCK_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          gh api -H 'Accept: application/vnd.github.raw+json' \
+            "repos/$GITHUB_REPOSITORY/contents/.github/workflows/paper-clock.yml?ref=$CLOCK_SHA" \
+            | cmp - frozen/.github/workflows/paper-clock.yml
+          gh api -H 'Accept: application/vnd.github.raw+json' \
+            "repos/$GITHUB_REPOSITORY/contents/.github/workflows/paper-observation.yml?ref=$GITHUB_SHA" \
+            | cmp - frozen/.github/workflows/paper-observation.yml
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+          cache: ''
+      - name: Load the release's pinned numerical dependencies
+        run: |
+          python -m pip --disable-pip-version-check install --retries 0 --timeout 15 --no-cache-dir \
+            --only-binary=:all: --no-deps 'numpy==2.5.4' 'scipy==1.18.1'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: observations/weekly-allocation-v1
+          path: record
+      - id: record
+        name: Validate, observe once, and fast-forward the public record
+        env:
+          PYTHONPATH: ${{ github.workspace }}/frozen/src:${{ github.workspace }}/frozen
+        run: python frozen/observations/run_job.py
+
+  close:
+    needs: record
+    if: >-
+      needs.record.outputs.closed == 'true' && github.event.repository.visibility == 'public' &&
+      toJSON(github.event.repository.private) == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      actions: write
+    steps:
+      - name: Disable the completed study schedule
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --method PUT "repos/$GITHUB_REPOSITORY/actions/workflows/paper-clock.yml/disable"
+          gh api --method PUT "repos/$GITHUB_REPOSITORY/actions/workflows/paper-observation.yml/disable"
+
+  rehearsal:
+    if: >-
+      github.repository == 'hnt119/agenthon-quant-lab' &&
+      github.ref == 'refs/heads/main' && github.run_attempt == 1 &&
+      github.event.repository.full_name == github.repository &&
+      github.event.repository.visibility == 'public' &&
+      toJSON(github.event.repository.private) == 'false' &&
+      github.event.workflow_run.path == '.github/workflows/paper-clock.yml' &&
+      github.event.workflow_run.repository.full_name == github.repository &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.run_attempt == 1 &&
+      contains(fromJSON('["success","skipped"]'), github.event.workflow_run.conclusion) &&
+      github.event.workflow_run.event == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Confirm the public clock completed without a runner
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOCK_RUN: ${{ github.event.workflow_run.id }}
+        run: |
+          set -euo pipefail
+          test "$(gh api "repos/$GITHUB_REPOSITORY" --jq .visibility)" = public
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$CLOCK_RUN/jobs" | jq -e \
+            '.total_count == 1 and .jobs[0].conclusion == "skipped" and ((.jobs[0].runner_id // 0) == 0)'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+          cache: ''
+      - name: Exercise actual wrapper identity and the synthetic recorder
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+          PYTHONPATH: src
+          PAPER_HOSTED_REHEARSAL: '1'
+        run: |
+          set -euo pipefail
+          python -m pip --disable-pip-version-check install --retries 0 --timeout 15 --no-cache-dir \
+            --only-binary=:all: --no-deps 'numpy==2.5.4' 'scipy==1.18.1'
+          python -m unittest discover -s tests -p 'test_observation*.py' -v
+          python -m unittest discover -s tests -p 'test_paper_recorder.py' -v

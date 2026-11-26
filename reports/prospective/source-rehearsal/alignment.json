@@ -1,0 +1,32 @@
+{
+  "classification": "read-only field-convention rehearsal",
+  "prospective_decisions": 0,
+  "attribution": "Coin Metrics Community Data, CC BY-NC 4.0. Agenthon Quant Lab shifted PriceUSD labels to midnight fixing times and checked the seven exact decimal strings.",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "captures": [
+    {
+      "metric": "PriceUSD",
+      "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2026-11-19&end_time=2026-11-25&page_size=8",
+      "raw_sha256": "4ceac03331d8c6f70860624f2772c2648e86398a8a0067091b9de343ab6967fe",
+      "received_at": "2026-11-26T15:01:23.438681+00:00",
+      "bytes": 612
+    },
+    {
+      "metric": "ReferenceRateUSD",
+      "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=ReferenceRateUSD&frequency=1d&start_time=2026-11-20&end_time=2026-11-26&page_size=8",
+      "raw_sha256": "a5e239d8d81b4e3695f50f09d9954577bb0f4453f724662ba24975f4568127dd",
+      "received_at": "2026-11-26T15:01:24.306771+00:00",
+      "bytes": 668
+    }
+  ],
+  "matched_utc_fixings": [
+    "2026-11-20T00:00:00+00:00",
+    "2026-11-21T00:00:00+00:00",
+    "2026-11-22T00:00:00+00:00",
+    "2026-11-23T00:00:00+00:00",
+    "2026-11-24T00:00:00+00:00",
+    "2026-11-25T00:00:00+00:00",
+    "2026-11-26T00:00:00+00:00"
+  ],
+  "exact_price_strings_equal": true
+}
