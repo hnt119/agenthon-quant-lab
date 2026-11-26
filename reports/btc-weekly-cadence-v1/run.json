@@ -1,0 +1,53 @@
+{
+  "artifacts_sha256": {
+    "README.md": "f1abdc33ae7fb699155d971450ac10f9381e3712cf7f4de7a1481e485bf9d112",
+    "comparisons.json": "cc645d91fe458000c242c89c80a37c921615154b48077e8a5be2225211c606c5",
+    "ledger.jsonl.gz": "50376abadd4b94bb4207a530ea96a36a7ea6bb923095e6208241fc5854fb43ab",
+    "metrics.json": "601239e99a8ff36607c9d0995b65740dd0f3d6f866eed586e40d19dffc644b5a",
+    "protocol.json": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+    "public.json": "53fea182631ee02b81e2ace76e74618c07f954ec8161bc386176595eeeb9c468",
+    "verification.json": "4b4b88b97fbef2245e727b36e80e342a2099bb00b734796ecd876ca433a06eb4",
+    "weekly-cadence.svg": "d53eeb1ef049d420a849db5c83b208070c2a28d061b3b83e4a50669d6d6a1a13"
+  },
+  "checkout_commit": "92be1e16799594f7a7c07ef4d51196c9cac863ef",
+  "code_files_sha256": {
+    "src/agenthon_btc/pilot.py": "1753abe67fbd36c2710981018ae9bfbb1f48ae7b3f8bd95b2c7cf0be010cf6fa",
+    "src/agenthon_btc/run.py": "7b072a4b7b75b2c78b99128d6fa092a22ea27dc48f9a988177e7ea8591198331",
+    "src/agenthon_btc/verify.py": "b59182bbc3c5ccc6fe5b58492a5d33af718c46501381ae20a598b8382b31c13d",
+    "src/agenthon_financial/analysis.py": "6d1eba7e359e930ebb8d4e61843d2365fc6b646db90f42ddb2a8d19a2b03ab90",
+    "src/agenthon_financial/compatibility.py": "5b673e53471dbf50121dc393d2a948ac4066bd2b8d162f901b97be2b4e77b8aa",
+    "src/agenthon_financial/cost_books.py": "1a9bce912cf25d51a6a01c781375a25837c0bc66afea6038fd4756aa117341cf",
+    "src/agenthon_financial/cost_verify.py": "20fd6f92d8117414d691510bbcfbecc9c9f4c63bc54529e19cfeaec310ba8723",
+    "src/agenthon_financial/reproduce.py": "e4fff560b04a2b5bfb0fe25fe40e9c7f20435d4b2d30c88e62945297d3c80ca5",
+    "src/agenthon_financial/run.py": "567e7637a311dd58ac62e71582865498c59afa7904c206a25dc0348386a2bee1",
+    "src/agenthon_financial/study.py": "6e304a15b6029759a397ad25826dd915e67ea9fe4418d4a5567bcae40013f65e",
+    "src/agenthon_financial/verify.py": "8c6887e077ea5832291cfcb82e40ab7e3db9afe5d60fd2af66062b5a2837b2a2",
+    "src/agenthon_financial/weekly_books.py": "297998257c0d6f098c117f517dfb3f78da034607e1e10368ca4285d821ecb086",
+    "src/agenthon_financial/weekly_report.py": "44d619d4c0971bfe778ded928c2ab65c6ec539c57378c37a24a1945d68992a58",
+    "src/agenthon_financial/weekly_run.py": "c0019579ab34cbe7079864064ea0e6e6a6edb49a50d7732f611296f5b9fe19c8",
+    "src/agenthon_financial/weekly_verify.py": "9a28878905054d0658554f1875956d6d34f639b1b13c456390ffeda8b9a3399b",
+    "src/agenthon_quant/__init__.py": "247a47106407f698b31b946ec1851b4c67b58181a90c75a4ff9a0b3a5eba6a63",
+    "src/agenthon_quant/cli.py": "f6197be6735d511e7574e2abd51086f707fcbb758425ac291d9d16db6ff9e894",
+    "src/agenthon_quant/records.py": "17dc6864700bc43f8ae505306df50c1b2edd190d46db6fabe72aceb90f755498",
+    "src/agenthon_quant/resources.py": "f5efb9ee6410f21466a338e331398b52886cc51faf182523a448a7f3fd13a718",
+    "src/agenthon_quant/spectral.py": "a782e2332e0447e7583da4b51ff504830187ff611ff6faf740dd4bc310a4aa4d",
+    "src/agenthon_quant/trading.py": "993490fa3632d913af07e85b16008dee55fa2656d78ad9bf2f6a6bdbcde9657b"
+  },
+  "ended_utc": "2026-11-26T10:59:29.290260+00:00",
+  "evidence": "exploratory retrospective",
+  "model_calls": 0,
+  "paid_usd": 0,
+  "prospective_observations": 0,
+  "provenance": {
+    "protocol_commit": "997f4f7d7f0ea2932a3f9caa3d8233c3983ccfc4",
+    "protocol_sha256": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+    "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+    "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
+    "source_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317"
+  },
+  "python": "3.12.7",
+  "software_version": "0.4.0.dev2",
+  "started_utc": "2026-11-26T10:59:24.916202+00:00",
+  "status": "passed",
+  "study_id": "btc-weekly-cadence-v1"
+}

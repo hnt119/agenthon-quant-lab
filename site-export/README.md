@@ -10,6 +10,8 @@ Copy checked bytes from this directory into the portfolio’s `public/agenthon-q
 | `btc-study.json` | The independent financial replay admits the [frozen BTC run](../reports/btc-financial-v1/run.json). The BTC exporter selects zero-, base- and double-cost summaries and actual UTC month-end paths for each portfolio. Daily maximum drawdowns include closes between chart points. |
 | `btc-cost-break-even.json` | A hash-checked copy of the [public cost exhibit](../reports/btc-cost-break-even-v1/public.json) supplies the 41-point curve and four comparison records. The [four-panel figure](../reports/btc-cost-break-even-v1/crossings.svg) uses those same records. |
 
+`btc-weekly-cadence.json` carries all five portfolios’ pooled and annual results, the two base-cost paired intervals and observed position-day counts. The [weekly report and figure](../reports/btc-weekly-cadence-v1/README.md) use the same checked financial records. The catalogue now lists four completed comparisons across three retrospective runs.
+
 Run the following from the toolkit checkout with its development environment active.
 
 ```sh
@@ -18,7 +20,7 @@ python scripts/btc_public_example.py --check && \
   cp site-export/btc-study.json /path/to/portfolio/public/agenthon-quant-lab/btc-study.json
 ```
 
-The first command checks and copies the archive, pricing corpus, programme and cost exhibit. The second checks the BTC example and projection against the saved record before copying. Keep BTC attribution and CC BY-SA 4.0 with derived portfolio data and displays. The separate Q2 2025 spot example uses CC BY 4.0. [Data notices](../DATA-NOTICES.md)
+The first command checks and copies the archive, pricing corpus, programme and both financial follow-up exhibits. The second checks the BTC example and projection against the saved record before copying. Keep BTC attribution and CC BY-SA 4.0 with derived portfolio data and displays. The separate Q2 2025 spot example uses CC BY 4.0. [Data notices](../DATA-NOTICES.md)
 
 The archive excludes raw evidence and local paths. It retains historical source
 identities and availability limitations. The pricing corpus has 64 scoped cases;

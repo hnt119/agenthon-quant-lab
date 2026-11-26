@@ -25,7 +25,9 @@ recorded. Explain the dollar outcome versus passive BTC/cash, the assumed fee an
 slippage, and the uncertain predictive result. This command takes no asset, date,
 or strategy overrides. A different question needs a separately named experiment.
 
-For the descriptive transaction-cost study, use a checkout with version `0.4.0.dev1` and run `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>`. Read the printed report and verification receipt. Give the fee and slippage together for each crossing, distinguish net Sharpe from terminal wealth, and identify the period and comparator. [Development study guide](../../experiments/btc-cost-break-even-v1/README.md)
+For the descriptive transaction-cost study, use the linked `0.4.0.dev1` cost-study build or the `0.4.0.dev2` weekly-study build and run `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>`. Read the printed report and verification receipt. Give the fee and slippage together for each crossing, distinguish net Sharpe from terminal wealth, and identify the period and comparator. [Development study guide](../../experiments/btc-cost-break-even-v1/README.md)
+
+On a checkout of the weekly development build (0.4.0.dev2), use `python3 <skill>/scripts/quant.py btc-weekly-cadence --out <new-directory>`. Explain both base-cost paired comparisons and the timing/exposure evidence. [Reproduction and scope](../../experiments/btc-weekly-cadence-v1/README.md)
 
 For modeling, read [option conventions](../../docs/options-conventions.md);
 for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).

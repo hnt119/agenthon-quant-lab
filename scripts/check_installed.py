@@ -90,6 +90,27 @@ def check(out, exact):
     print(f"Installed BTC cost study: {grades}; {stats['settings_checked']} simulated cost settings.")
 
 
+    from agenthon_financial.reproduce import decoded
+    from agenthon_financial.weekly_run import ARTIFACTS
+    run("btc-weekly-cadence", "--out", "weekly")
+    weekly = out / "weekly"
+    archived = reference.parent / "btc-weekly-cadence-v1"
+    receipt = json.loads((weekly / "run.json").read_bytes())
+    assert receipt["status"] == "passed" and receipt["checkout_commit"] is None
+    assert receipt["software_version"] == dist.version
+    assert set(receipt["artifacts_sha256"]) == set(ARTIFACTS)
+    for name, expected_hash in receipt["artifacts_sha256"].items():
+        assert hashlib.sha256((weekly / name).read_bytes()).hexdigest() == expected_hash
+    grades = {}
+    for name in ("ledger.jsonl.gz", "metrics.json", "comparisons.json", "public.json"):
+        if (weekly / name).read_bytes() == (archived / name).read_bytes():
+            grades[name] = "byte-identical"
+        else:
+            assert not exact and compare(decoded(weekly / name), decoded(archived / name)), name
+            grades[name] = "numerically equivalent"
+    print(f"Installed weekly cadence study on {sys.version.split()[0]}: {grades}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("out", type=Path)
