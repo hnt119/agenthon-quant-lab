@@ -1,0 +1,11 @@
+{
+  "study": "weekly-allocation-forward-v1",
+  "revision": "ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca",
+  "protocol_sha256": "74b804cd31cb399928afe9b1ee9bf237d0f8ae81037a4cf85a30faabf2b600ed",
+  "registered_at": "2026-11-26T15:13:45Z",
+  "protocol": "https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/observations/protocol.json",
+  "qualification": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/45846754572",
+  "protocol_guide": "https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/observations/README.md",
+  "source_qualification": "https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/research/prospective/source.md",
+  "scope": "prospective registration; no decision recorded at genesis"
+}

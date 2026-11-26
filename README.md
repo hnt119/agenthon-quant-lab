@@ -1,0 +1,11 @@
+# Registered weekly allocation observation
+
+Registered at 2026-11-26T15:13:45Z. The study follows 52 weekly decision slots from 30 November 2026 through the week ending 28 November 2027. Both hypothetical accounts start at $10,000. One restores a 50% target after positive momentum each Monday. The other holds a fixed $5,000 reserve. The comparison measures the difference in maximum drawdown from all 364 daily closing valuations.
+
+[Current status, completed and missed cycles, and latest receipt](status.json) · [Registration](registration.json) · [Frozen protocol](https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/observations/protocol.json) · [Dates, evidence and independent readback](https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/observations/README.md) · [Hosted rehearsal](https://github.com/hnt119/agenthon-quant-lab/actions/runs/45846754572)
+
+The first eligible signal cutoff is Monday 30 November 2026 at 00:00 UTC (08:00 Singapore). The preselected reference fixing is 00:45 UTC (08:45 Singapore). The final Sunday close is 29 November 2027 at 00:00 UTC (08:00 Singapore). The fixed analysis cutoff is 1 December 2027 at 03:00 UTC (11:00 Singapore). A missing fixing leaves the existing paper position in place. A missing required daily mark withholds the primary endpoint. Every event uses its actual recording time. Interim results are descriptive.
+
+The record branch appends individually hashed event files as observations occur. The as-of status projection is regenerated from the full journal. Changes, outages and missed cycles remain visible. Each accepted fill points to a public commit that already contained the decision before the later fixing. Registration, initial warmup and rehearsals count as zero prospective cycles.
+
+Coin Metrics Community Data under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Agenthon Quant Lab aligned fixing dates and calculated hypothetical account values. These are multi-market reference fixings. The retrospective studies used Bitstamp price proxies. [Source conventions and terms](https://github.com/hnt119/agenthon-quant-lab/blob/ae6a9b70c496b6dfe3f928c3596d3ed7b2f3b7ca/research/prospective/source.md)
