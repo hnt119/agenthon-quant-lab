@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agenthon-quant-lab"
 version = "0.5.0.dev1"
-description = "Reproduce three studies of Bitcoin momentum, trading costs and weekly decisions with independently checked portfolio accounting"
+description = "Reproduce independently checked Bitcoin studies of momentum, trading costs, decision timing and weekly portfolio allocation"
 readme = "PYPI.md"
 requires-python = ">=3.12"
 license = "MIT AND CC-BY-4.0 AND CC-BY-SA-4.0"

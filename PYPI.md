@@ -38,3 +38,7 @@ quant-lab --help
 CSV works with the base package. For Parquet input use `python -m pip install 'agenthon-quant-lab[parquet]==0.4.0'`. The optional Codex skill installs from its own tagged checkout. [Skill guide](https://github.com/hnt119/agenthon-quant-lab/blob/v0.4.0/docs/plugin-guide.md)
 
 Software carries the Team 166 MIT notice. The 2017–2024 BTC study extract and financial derivatives use CC BY-SA 4.0. The separate Q2 2025 example uses CC BY 4.0. [Data sources, credits and licenses](https://github.com/hnt119/agenthon-quant-lab/blob/v0.4.0/DATA-NOTICES.md)
+
+## Development build
+
+The 0.5.0.dev1 source build adds `quant-lab btc-weekly-allocation --out runs/allocation`. A Monday 50% target reduced the worst historical drawdown and ended with less wealth than a half-funded weekly strategy. The public v0.4.0 release retains its three original study commands. [Checked development report](https://github.com/hnt119/agenthon-quant-lab/blob/bfaeada64e257c62943474065c3ae23b70bda23f/reports/btc-weekly-allocation-v1/README.md)

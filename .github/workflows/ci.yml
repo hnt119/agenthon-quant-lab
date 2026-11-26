@@ -32,3 +32,5 @@ jobs:
           .venv/bin/python scripts/check_bitstamp_example.py --fixture examples/data/bitstamp/btcusd-2025-q2.csv --run runs/ci-release/historical/run.json
       - name: Audit the weekly study's paired intervals and continuous portfolio balances
         run: .venv/bin/python scripts/check_weekly_study.py reports/btc-weekly-cadence-v1
+      - name: Trace weekly allocation exhibits to the historical ledgers
+        run: .venv/bin/python scripts/check_allocation_exhibit.py reports/btc-weekly-allocation-v1
