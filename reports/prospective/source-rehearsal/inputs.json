@@ -1,0 +1,133 @@
+{
+  "classification": "source qualification rehearsal outside the scheduled window",
+  "prospective_decisions": 0,
+  "attribution": "Coin Metrics Community Data, CC BY-NC 4.0. UTC labels aligned and parsed by Agenthon Quant Lab.",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "capture_start": "2026-11-26T14:59:32.323880+00:00",
+  "decision_inputs": {
+    "source": "Coin Metrics Community API v4, BTC/USD reference rates",
+    "received_at": "2026-11-26T14:59:33.039142Z",
+    "captures": [
+      {
+        "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=PriceUSD&frequency=1d&start_time=2026-11-05T00%3A00%3A00Z&end_time=2026-11-24T00%3A00%3A00Z&page_size=21",
+        "raw_sha256": "aa1a28d56189a6877927e47cf42be46b5663b7aa0dc74219325a43fd6361bbf9",
+        "received_at": "2026-11-26T14:59:32.647828Z",
+        "bytes": 1728
+      },
+      {
+        "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=ReferenceRateUSD&frequency=1d&start_time=2026-11-26T00%3A00%3A00Z&end_time=2026-11-26T00%3A00%3A00Z&page_size=2",
+        "raw_sha256": "75465ac1f5b39de3cdd9de9fe4ea41f14442bdebb6c4b667f5cd38e5517979ea",
+        "received_at": "2026-11-26T14:59:33.039142Z",
+        "bytes": 104
+      }
+    ],
+    "observations": [
+      {
+        "event_time": "2026-11-06T00:00:00Z",
+        "price": 75803.1273068206
+      },
+      {
+        "event_time": "2026-11-07T00:00:00Z",
+        "price": 75826.5258667446
+      },
+      {
+        "event_time": "2026-11-08T00:00:00Z",
+        "price": 75724.4061539509
+      },
+      {
+        "event_time": "2026-11-09T00:00:00Z",
+        "price": 74967.2590324372
+      },
+      {
+        "event_time": "2026-11-10T00:00:00Z",
+        "price": 75161.1324418469
+      },
+      {
+        "event_time": "2026-11-11T00:00:00Z",
+        "price": 73661.004978235
+      },
+      {
+        "event_time": "2026-11-12T00:00:00Z",
+        "price": 73805.5216852425
+      },
+      {
+        "event_time": "2026-11-13T00:00:00Z",
+        "price": 71280.4157896201
+      },
+      {
+        "event_time": "2026-11-14T00:00:00Z",
+        "price": 68096.3125055991
+      },
+      {
+        "event_time": "2026-11-15T00:00:00Z",
+        "price": 63820.7313198889
+      },
+      {
+        "event_time": "2026-11-16T00:00:00Z",
+        "price": 65189.110705488
+      },
+      {
+        "event_time": "2026-11-17T00:00:00Z",
+        "price": 64942.5103492928
+      },
+      {
+        "event_time": "2026-11-18T00:00:00Z",
+        "price": 64908.1763721888
+      },
+      {
+        "event_time": "2026-11-19T00:00:00Z",
+        "price": 62896.9341901052
+      },
+      {
+        "event_time": "2026-11-20T00:00:00Z",
+        "price": 61881.1587162069
+      },
+      {
+        "event_time": "2026-11-21T00:00:00Z",
+        "price": 58851.0193890006
+      },
+      {
+        "event_time": "2026-11-22T00:00:00Z",
+        "price": 60122.6111387551
+      },
+      {
+        "event_time": "2026-11-23T00:00:00Z",
+        "price": 61103.7072912858
+      },
+      {
+        "event_time": "2026-11-24T00:00:00Z",
+        "price": 61253.2168786616
+      },
+      {
+        "event_time": "2026-11-25T00:00:00Z",
+        "price": 59790.6555823933
+      },
+      {
+        "event_time": "2026-11-26T00:00:00Z",
+        "price": 60267.6252996026
+      }
+    ]
+  },
+  "prior_mark_recovered": {
+    "source": "Coin Metrics Community API v4, BTC/USD reference rates",
+    "received_at": "2026-11-26T14:59:33.362248Z",
+    "captures": [
+      {
+        "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=ReferenceRateUSD&frequency=1d&start_time=2026-11-25T00%3A00%3A00Z&end_time=2026-11-25T00%3A00%3A00Z&page_size=2",
+        "raw_sha256": "2ced79beda715714372a08ad9585a3560616d77dabb9b249130e7baf0e2920c8",
+        "received_at": "2026-11-26T14:59:33.362248Z",
+        "bytes": 104
+      }
+    ],
+    "observations": [
+      {
+        "event_time": "2026-11-25T00:00:00Z",
+        "price": 59790.6555823933
+      }
+    ]
+  },
+  "decision_time": "2026-11-26T14:59:33.362436+00:00",
+  "rehearsal_signal_positive": false,
+  "preselected_quote_event": "2026-11-26T15:00:00+00:00",
+  "market_order": false
+}

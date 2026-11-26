@@ -1,0 +1,20 @@
+# Weekly allocation on newly observed BTC/USD prices
+
+Does restoring a 50% BTC target on positive-signal Mondays reduce the largest daily-close drawdown compared with putting half of the initial capital into the weekly strategy and leaving the other half in cash? These are two separate hypothetical $10,000 accounts. The first can drift between Mondays. The second keeps exactly $5,000 inactive. Fees and slippage make its first positive-cost BTC weight slightly lower than 50%. The historical study found both a smaller drawdown and lower terminal wealth for the target. This register tests the same question on new prices. [Historical evidence](../reports/btc-weekly-allocation-v1/README.md) · [Machine-readable protocol](protocol.json) · [Public register and as-of status](https://github.com/hnt119/agenthon-quant-lab/tree/observations/weekly-allocation-v1)
+
+| Boundary | UTC | Singapore (UTC+08) |
+|---|---|---|
+| Registration deadline, before the full first Sunday | 29 Nov 2026 00:00 | 29 Nov 2026 08:00 |
+| First eligible Monday signal cutoff | 30 Nov 2026 00:00 | 30 Nov 2026 08:00 |
+| First preselected paper fixing | 30 Nov 2026 00:45 | 30 Nov 2026 08:45 |
+| Last scheduled Monday fixing (cycle 52) | 22 Nov 2027 00:45 | 22 Nov 2027 08:45 |
+| Last Sunday valuation (28 Nov session ends) | 29 Nov 2027 00:00 | 29 Nov 2027 08:00 |
+| Fixed analysis cutoff | 1 Dec 2027 03:00 | 1 Dec 2027 11:00 |
+
+The register carries the actual UTC registration timestamp, immutable implementation revision and hash of the protocol bytes. A decision uses the most recent completed Sunday close and the close 20 sessions earlier. Equality and negative momentum both specify cash. It enters the append-only record before a separate job can witness the decision and read the later fixing. The independent accounting verifier checks each adjustment, reserve and cash flow. A skipped or late execution carries the previous position, even when the signal changed. Initial warmup and rehearsals contribute zero decisions. The original manual historical-snapshot logger remains available for its separate purpose. [Capture conventions and data license](../research/prospective/source.md) · [Limits, scheduling and restart](scheduler.md)
+
+The primary endpoint is the control drawdown minus target drawdown in percentage points, using all 364 daily closing valuations including idle cash. Both high-water marks start at $10,000. A positive difference favors the target on drawdown. Ending wealth, fees, slippage and initial fill weights show what taking that risk cost. This protocol uses one illustrative cost case (50 basis points fee and 10 basis points adverse slippage per fill). The published history uses Bitstamp minute candles. Here the paper price uses a multi-market Coin Metrics BTC/USD reference fixing subject to availability and publication delay. Neither records an actual order, spread or fill.
+
+A market-data outage, a suspended schedule or missing prices can leave the result incomplete. An eligible delayed valuation preserves its real receipt time. Missing valuations stay missing. Later differences between an earlier reference mark and a signal input are retained with their source receipts. Differences across fields or frequencies do not on their own establish a provider correction. The primary endpoint is withheld if any required close remains missing. Interim records are descriptive. Even a complete year without a meaningful decline can leave the risk question unresolved. [Source rehearsal](../reports/prospective/source-rehearsal/) · [Status and immutable events](https://github.com/hnt119/agenthon-quant-lab/tree/observations/weekly-allocation-v1)
+
+The study uses noncommercial Coin Metrics Community Data under CC BY-NC 4.0. Agenthon Quant Lab aligns provider dates, records signals and calculates hypothetical account values. Preserve attribution and the data license when reusing the register. [Provider attribution and terms](../research/prospective/source.md) · [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)

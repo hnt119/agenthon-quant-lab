@@ -13,3 +13,5 @@ The curated public archive contains **12 papers and 18 experiment records**. Eac
 ## Earlier releases
 
 The original v0.1.0 release recorded 52 passing tests. The v0.2.0 release recorded 68 and an archive of 17 experimental records at that milestone. v0.3.0 introduced the source-based BTC workbench. [v0.3.1](releases/v0.3.1-pypi.md) added the installed-distribution workflow for that original study. Use each revision’s dated record when reproducing its results. [v0.1 manifest](../release-manifest.json) · [v0.2 release report](releases/v0.2.0.md) · [v0.3.0 qualification](releases/v0.3.0-review.md)
+
+The prospective weekly allocation register follows two separate $10,000 paper accounts on new BTC/USD reference fixings. Its public status records completed and missed cycles, if any, with an as-of timestamp. [Observation protocol and dates](../observations/README.md) · [Public observation record](https://github.com/hnt119/agenthon-quant-lab/tree/observations/weekly-allocation-v1)

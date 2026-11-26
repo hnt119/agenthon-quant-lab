@@ -1,0 +1,35 @@
+{
+  "study": "weekly-allocation-forward-v1",
+  "start": "2026-11-30",
+  "end": "2027-11-28",
+  "closeout": "2027-12-01T03:00:00Z",
+  "registration_deadline": "2026-11-29T00:00:00Z",
+  "weeks": 52,
+  "initial_capital_usd": 10000,
+  "sizing_reserve_usd": 5000,
+  "positive_target": 0.5,
+  "signal": "Strictly positive close[t]/close[t-20]-1, using exactly 21 consecutive UTC sessions through Sunday; equality means cash.",
+  "accounts": "Independent hypothetical accounts; start cash, whole-study carry. Restore target on positive Mondays, drift otherwise. Comparison sleeve invests its entire spendable cash when positive, inactive reserve never transferred. Zero cash interest. Existing post-cost target equation at unadjusted reference rate.",
+  "costs": {
+    "fee_bps": 50,
+    "adverse_slippage_bps": 10,
+    "secondary_scenarios": [],
+    "interpretation": "Illustrative proportional frictions per actual paper adjustment."
+  },
+  "source": "Coin Metrics Community BTC USD Reference Rates and PriceUSD. Multi-market USD fixing, including warmup from daily PriceUSD; differs from retrospective Bitstamp trade-bearing minute proxy. No actual execution.",
+  "decision_window_utc": "Monday 00:00 inclusive to 00:35 exclusive, after receipt of all completed closes. Nominal scheduled start 00:07. Durable public decision required.",
+  "fill_window_utc": "Monday 00:45:00 UTC reference fixing; state must have been witnessed on origin before this instant; accept a receipt no more than five minutes later. Late/missing decision or fixing preserves accounts.",
+  "valuation": "Daily UTC closing reference rate at next midnight. Attempt first available daily marks job, nominal 03:17. Receipt after 6 hours is labelled recovered; maximum 48 hours after fixing. Missing remains unknown.",
+  "corrections": "Retain first accepted values; compare subsequent signal inputs with previously accepted daily marks. Append observed revisions, never substitute them in prior records. No retrospective fill.",
+  "primary": "Sizing-control minus target maximum drawdown in percentage points, peak initialized at total starting wealth, using every daily close through the last Sunday. Missing even one required mark withholds the endpoint.",
+  "secondary": "Ending wealth, cumulative fees/slippage and fill counts; initial post-cost BTC weights. Descriptive during collection, uninformative decline possible. No fitted parameters or interim rule changes.",
+  "limits": {
+    "requests_per_job": 3,
+    "retries": 0,
+    "max_state_bytes": 5000000,
+    "wall_minutes": 13
+  },
+  "suspension": "Stop new observations on registration or journal integrity failure, unavailable permitted public source, change of source/license or loss of free public standard runner. Preserve original evidence and number of missed slots. No substitute source or extension. An owner can disable for integrity, licensing or budget; document reason and mark incomplete.",
+  "analysis": "Fixed closeout at 2027-12-01T03:00:00Z, after final close and bounded recovery window; first scheduled reconciliation on or after this instant closes the ledger. End date does not move.",
+  "timezone": "UTC. Asia/Singapore = UTC+08 throughout."
+}
