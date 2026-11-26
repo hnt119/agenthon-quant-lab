@@ -84,6 +84,49 @@ def projection(root: Path = ROOT):
     return result
 
 
+PROGRAMME_FIELDS = {
+    "id", "title", "question", "execution_state", "finding", "evidence_type", "experiment_id",
+    "dataset", "evaluation_period", "comparators", "protocol_url", "implementation_url",
+    "result_url", "source_receipt_url", "dependencies", "next_action",
+}
+STUDY_EVIDENCE = ("experiment_id", "dataset", "evaluation_period", "protocol_url",
+                  "implementation_url", "result_url", "source_receipt_url", "finding")
+
+
+def programme_projection(root: Path = ROOT):
+    path = "research/programme.json"
+    raw = (root / path).read_bytes()
+    catalogue = json.loads(raw)
+    if set(catalogue) != {"schema_version", "studies"} or catalogue["schema_version"] != 1:
+        raise ValueError("Unknown programme schema")
+    studies = catalogue["studies"]
+    ids = {study["id"] for study in studies}
+    if len(ids) != len(studies) or any(not re.fullmatch(r"[a-z][a-z0-9-]*", id_) for id_ in ids):
+        raise ValueError("Invalid or duplicate programme ID")
+    for study in studies:
+        if set(study) != PROGRAMME_FIELDS:
+            raise ValueError("Unexpected programme fields")
+        if not set(study["dependencies"]) <= ids - {study["id"]}:
+            raise ValueError("Invalid programme dependency")
+        if study["execution_state"] == "proposed":
+            if study["evidence_type"] != "none" or any(study[k] is not None for k in STUDY_EVIDENCE):
+                raise ValueError("Proposed studies cannot carry measured outcomes")
+        elif study["execution_state"] == "completed":
+            if study["evidence_type"] != "retrospective" or not all(study[k] for k in STUDY_EVIDENCE):
+                raise ValueError("Completed studies need identifiable evidence")
+            for key in ("protocol_url", "result_url", "implementation_url", "source_receipt_url"):
+                url = study[key]
+                match = re.fullmatch(r"https://github\.com/hnt119/agenthon-quant-lab/blob/[0-9a-f]{40}/([a-zA-Z0-9_./-]+)", url)
+                if not match or ".." in Path(match[1]).parts or not (root / match[1]).is_file():
+                    raise ValueError(f"Invalid programme evidence link: {key}")
+        else:
+            raise ValueError("Unknown programme execution state")
+    public_value(catalogue)
+    return {**catalogue, "provenance": {"generator": "scripts/export_site.py",
+            "canonical_files_sha256": {path: sha(raw)},
+            "scope": "Editorial study descriptions. Completed entries identify their shared frozen experiment."}}
+
+
 def numerical_reference():
     cases = []
     base = {"spot": 100.0, "strike": 100.0, "years": 1.0, "rate": 0.05, "volatility": 0.2}
@@ -142,7 +185,8 @@ def main():
     parser.add_argument("--check", action="store_true", help="Fail if the checked-in projection has drifted")
     parser.add_argument("--site-root", type=Path, help="Copy the checked projection into an existing portfolio checkout")
     args = parser.parse_args()
-    outputs = {"archive.json": encoded(projection()), "pricing-reference.json": encoded(numerical_reference())}
+    outputs = {"archive.json": encoded(projection()), "programme.json": encoded(programme_projection()),
+               "pricing-reference.json": encoded(numerical_reference())}
     directory = ROOT / "site-export"
     if args.check:
         for name, data in outputs.items():

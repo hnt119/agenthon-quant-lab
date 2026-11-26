@@ -18,6 +18,34 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(any(e["status"] == "not_run" for e in a["experiments"]))
         self.assertTrue(any(e["status"] == "incomplete" for e in a["experiments"]))
 
+
+    def test_programme_traces_both_completed_studies_to_one_frozen_run(self):
+        view = export.programme_projection()
+        studies = view["studies"]
+        self.assertEqual(len(studies), 6)
+        completed = [s for s in studies if s["execution_state"] == "completed"]
+        self.assertEqual(len(completed), 2)
+        self.assertEqual(len({s["source_receipt_url"] for s in completed}), 1)
+        protocol = json.loads((ROOT / "experiments/btc-financial-v1/protocol.json").read_bytes())
+        years = protocol["evaluation_years"]
+        for study in completed:
+            self.assertEqual(study["experiment_id"], protocol["id"])
+            self.assertEqual(study["evaluation_period"], [f"{min(years)}-01-01", f"{max(years)}-12-31"])
+        self.assertEqual(view["provenance"]["canonical_files_sha256"]["research/programme.json"],
+                         export.sha((ROOT / "research/programme.json").read_bytes()))
+
+    def test_proposed_study_cannot_publish_a_finding_or_unknown_dependency(self):
+        catalogue = json.loads((ROOT / "research/programme.json").read_bytes())
+        proposed = next(s for s in catalogue["studies"] if s["execution_state"] == "proposed")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "research").mkdir()
+            for field, value in [("finding", "Profitable"), ("dependencies", ["unknown"]), ("private_key", "x")]:
+                mutated = {**proposed, "dependencies": [], field: value}
+                (root / "research/programme.json").write_text(json.dumps({"schema_version": 1, "studies": [mutated]}))
+                with self.subTest(field=field), self.assertRaises(ValueError):
+                    export.programme_projection(root)
+
     def test_private_payload_and_local_paths_rejected(self):
         for value in ({"api_key": "anything"}, {"path": "/Users/example/private.csv"}, {"x": "http://localhost:3000"}):
             with self.assertRaises(ValueError):

@@ -1,22 +1,12 @@
 # Start here
 
-[Start with the five-year BTC research example](../examples/btc-study/README.md).
+1. [Install the published toolkit](user-guide.md) and run the frozen BTC study from a writable folder.
+2. [Read the study report](../reports/btc-financial-v1/README.md), check the [protocol](../experiments/btc-financial-v1/protocol.json) and explore the [six-study programme](../research/programme.json).
+3. [Use the optional Codex skill](plugin-guide.md) from its own source checkout.
+4. Explore [European options](options-conventions.md), [portfolio accounting](trading-conventions.md) or the separate [Q2 2025 historical example](historical-workflow.md).
+5. Follow the [research](../research/README.md) and [experiment](../experiments/README.md) records into [Agenthon engineering decisions](agenthon-architecture.md) and [lessons from failed runs](negative-results.md).
 
-
-Use the financial toolkit without reading competition history first:
-
-1. [Run the historical BTC/USD workflow](historical-workflow.md) to inspect data, compare portfolios and export or reproduce a result.
-2. [Install and run an example](user-guide.md): source checkout, diagnostics, inputs and result bundles.
-3. [Use the Codex skill](plugin-guide.md): supported requests and discovery.
-4. [Options](options-conventions.md) or [trading](trading-conventions.md): units, conventions, applicability and checks.
-5. [Research](../research/README.md): original summaries linked to primary sources.
-6. [Experiments](../experiments/README.md): positive, negative, incomplete and unrun evidence.
-7. [Architecture](agenthon-architecture.md): how the original agent evolved and what the toolkit reuses.
-8. [Lessons](negative-results.md): failures and the regressions they motivated.
-
-Developers can start with [development](development.md) and the [architecture decision](architecture.md).
-For evidence standards, read [methodology](methodology.md); for the published v0.2.0
-checks and release status, read [the release report](releases/v0.2.0.md).
+For implementation, read the [development guide](development.md) and [financial workbench architecture](financial-workbench.md). For reproducibility, see the [methodology](methodology.md) and [v0.3.1 qualification](releases/v0.3.1-pypi.md).
 
 The dated v0.1 audit documents and reports are historical receipts. Some retain
 local paths into the owner's original archive, which is not bundled or required

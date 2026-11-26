@@ -5,6 +5,16 @@ maintained calculation engine. The [reuse map](reuse-map.md) and canonical
 [experiment ledger](../experiments/experiments.json) preserve their relationship
 without making the old competition environment a runtime dependency.
 
+## Three decisions from the archive
+
+The Team 166 competition agent generated programs, ran them within an externally restricted environment and could make a bounded repair. Its results distinguish three different questions a reviewer can ask about a financial system. [Attribution and source boundaries](attribution.md) · [Canonical experiment register](../experiments/experiments.json)
+
+1. **Did the repair fix the accounting?** In the second TypeError trial, two NVIDIA requests produced a repair that wrote all five required files. Only 22 of 35 independent checks passed. Thirteen failed on trade accounting, and the one assigned task failed. The served model revision and exact Git source for this trial are unknown. Its record retains the container digest. Quant Lab carries forward the separation between a successful run and a correct balance by independently reconstructing cash and holdings. [TypeError trial 2](https://hnt119.github.io/projects/quant-finance-agents/#record-typeerror-trial2-20260928) · [Portfolio verifier](../src/agenthon_financial/verify.py)
+2. **What did one candidate accomplish across every assigned task?** R29 (`24827ce`) ran the complete 86-task public roster on NVIDIA with 1,066 of 1,167 checks passing. Only 22 tasks passed in full. Counting isolated checks as task successes would hide the other 64 outcomes. The archive keeps this local run and the separately reported official aggregate as distinct records. The workbench likewise reports both the scope of each check and the status of the whole calculation. [R29 complete local roster](https://hnt119.github.io/projects/quant-finance-agents/#record-r29-nvidia-full86-20261013) · [Official-associated record](https://hnt119.github.io/projects/quant-finance-agents/#record-official-r29-983167)
+3. **How far could a targeted success generalize?** R84 (`527b2ad`) used compact task guidance with Cloudflare’s Nemotron deployment. All ten preselected tasks passed, with 476 checks passed and one skipped. Outside the ten, the record retained one historical provider failure and 75 unrun tasks. Without a paired Cloudflare R29 control, this establishes coverage of the selected workflows only. Quant Lab keeps the evaluated period, comparator and deployment alongside each finding. [R84 selected-ten evaluation](https://hnt119.github.io/projects/quant-finance-agents/#record-r84-cloudflare-targeted10-20261028) · [Negative results and coverage limits](negative-results.md)
+
+These records trace the move from Team 166’s generated programs to deterministic research software. In the BTC study, the signal, delayed fill and cash movement are all inspectable. A separate implementation replays them. The optional skill invokes that software, and the portfolio selects published observations. [Financial workbench](financial-workbench.md) · [BTC verification receipt](../reports/btc-financial-v1/verification.json)
+
 ## Evolution and evidence
 
 | Stage | Mechanism and evidence | What carries forward |
@@ -55,8 +65,8 @@ token and cost limits before dispatch; live transport remains unimplemented.
 
 **Spectral research.** FITS and FAN motivate a possible compact time-series
 summary, not a trading strategy or demonstrated Agenthon gain. The NOT_RUN protocol
-compares ordinary statistics, global FFT and rolling FFT under fixed chronology,
-inputs and budgets. The current release does not implement those forecasting models.
+proposes comparing ordinary statistics, global FFT and rolling FFT under fixed chronology,
+inputs and budgets. The completed BTC experiment instead used a trailing 64-return entropy gate for momentum. Its base-case return was lower than plain momentum. [Mechanism and implementation status](../research/README.md) · [Financial findings](../reports/btc-financial-v1/README.md#costs-delay-and-the-negative-fft-result)
 
 ## Source trail
 

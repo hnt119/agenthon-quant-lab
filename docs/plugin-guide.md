@@ -1,14 +1,14 @@
-# Codex skill setup
+# Optional Codex skill
 
-The v0.3.1 wheel runs the CLI directly. Install the optional Codex skill from a maintained source checkout using the steps below. The link uses that checkout’s environment.
+For the CLI alone, use the [v0.3.1 PyPI instructions](user-guide.md). The skill is a separate source-checkout integration. Its helper calls the same deterministic engine through the checkout’s own Python environment.
 
-The reusable integration is the maintained `quant-research` Codex skill. It is a
-thin command-and-reference interface to this source checkout, not a separate
-finance engine or a hosted plugin service.
+With Git and Python 3.12 installed, run the following from the parent directory for your new checkout.
 
 ```sh
-python3 scripts/setup.py --install-skill
-.venv/bin/python -m agenthon_quant doctor
+git clone --branch v0.3.1 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
+cd agenthon-quant-lab
+python3.12 scripts/setup.py --install-skill
+.venv/bin/quant-lab doctor
 ```
 
 The optional installation links `skills/quant-research` into
@@ -21,20 +21,11 @@ For an isolated test or another skills directory, pass
 Start a new Codex chat when needed for skill discovery and invoke `$quant-research`
 explicitly if it has not been selected automatically. Discovery depends on the
 host app; successful file installation alone is not proof of automatic selection.
-The skill resolves its real path, uses the checkout's `.venv`, and keeps all
-calculations in `src/agenthon_quant`. Keep the checkout at its linked location,
+The skill resolves its real path, uses the checkout's `.venv`, and delegates
+financial calculations to the toolkit’s Python modules. Keep the checkout at its linked location,
 or deliberately update the link yourself when moving it.
 
 ## Reproduce the BTC study
-
-Install the [v0.3.0 source release](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) with Git and Python 3.12. For a new installation, run
-
-```sh
-git clone --branch v0.3.0 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
-cd agenthon-quant-lab
-python3.12 scripts/setup.py --install-skill
-.venv/bin/quant-lab btc-study
-```
 
 If your skill already points to this release checkout, you can ask Codex directly:
 
@@ -47,7 +38,7 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" --v
 python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" btc-study
 ```
 
-Expect version 0.3.0 and a new folder under your current directory’s `runs/`. Open the printed `report.md` or `dashboard.html`. The dashboard opens in a browser directly from disk. The final `reproduction.json` lists each original result that was checked. The admitted data come with the checkout. An incomplete checkout should be restored at the same reviewed Git revision. No market-data account or JSON specification is needed.
+Expect version 0.3.1 and a new folder under your current directory’s `runs/`. Open the printed `report.md` or `dashboard.html`. The dashboard opens in a browser directly from disk. The final `reproduction.json` lists each original result that was checked. The admitted data come with the checkout. An incomplete checkout should be restored at the same reviewed Git revision. No market-data account or JSON specification is needed.
 
 This reproduces one fixed Bitstamp study. Use `--out <fresh-folder>` for an explicit destination. The separate options, SMA and local daily-data workflows retain their own specifications. [Read the saved example](../examples/btc-study/README.md) · [Frozen data, license and protocol](../experiments/btc-financial-v1/README.md)
 

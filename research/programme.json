@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "studies": [
+    {
+      "id": "btc-momentum",
+      "title": "BTC time-series momentum",
+      "question": "Did switching between BTC and cash after a 20-session rise earn enough to cover trading costs?",
+      "execution_state": "completed",
+      "finding": "Momentum finished behind the annually allocated BTC/cash account after base costs. The predictive-return and net-Sharpe intervals both include zero.",
+      "evidence_type": "retrospective",
+      "experiment_id": "btc-financial-research-v1",
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
+      ],
+      "comparators": [
+        "Training-calibrated passive BTC/cash",
+        "Buy and hold BTC",
+        "Cash"
+      ],
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/experiments/btc-financial-v1/protocol.json",
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/src/agenthon_financial/study.py",
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/run.json",
+      "dependencies": [],
+      "next_action": "Inspect the base-case intervals and the three recorded cost assumptions."
+    },
+    {
+      "id": "btc-fft-gate",
+      "title": "FFT spectral entropy gate",
+      "question": "Did filtering the same momentum decisions by the entropy of the previous 64 returns improve after-cost performance?",
+      "execution_state": "completed",
+      "finding": "The gate reduced average exposure and net return relative to plain momentum in this sample.",
+      "evidence_type": "retrospective",
+      "experiment_id": "btc-financial-research-v1",
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
+      ],
+      "comparators": [
+        "Plain 20-session momentum"
+      ],
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/experiments/btc-financial-v1/protocol.json",
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/src/agenthon_quant/spectral.py",
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/run.json",
+      "dependencies": [],
+      "next_action": "Compare the filtered and plain rules within the same retrospective run."
+    },
+    {
+      "id": "cost-break-even",
+      "title": "Transaction-cost break-even",
+      "question": "At what fee and slippage levels does the historical momentum comparison change sign?",
+      "execution_state": "proposed",
+      "finding": null,
+      "evidence_type": "none",
+      "experiment_id": null,
+      "dataset": null,
+      "evaluation_period": null,
+      "comparators": [
+        "Training-calibrated passive BTC/cash",
+        "Buy and hold BTC"
+      ],
+      "protocol_url": null,
+      "implementation_url": null,
+      "result_url": null,
+      "source_receipt_url": null,
+      "dependencies": [
+        "btc-momentum"
+      ],
+      "next_action": "Freeze a common multiplier for one-way fees and slippage, a bounded range, and separate Sharpe and wealth crossing criteria."
+    },
+    {
+      "id": "turnover-aware",
+      "title": "Turnover-aware momentum",
+      "question": "Can a slower decision schedule or separate entry and exit thresholds reduce turnover enough to improve net outcomes?",
+      "execution_state": "proposed",
+      "finding": null,
+      "evidence_type": "none",
+      "experiment_id": null,
+      "dataset": null,
+      "evaluation_period": null,
+      "comparators": [
+        "Plain 20-session momentum",
+        "Training-calibrated passive BTC/cash"
+      ],
+      "protocol_url": null,
+      "implementation_url": null,
+      "result_url": null,
+      "source_receipt_url": null,
+      "dependencies": [
+        "btc-momentum"
+      ],
+      "next_action": "Predeclare a small set of schedules and thresholds, including equality and initial position rules."
+    },
+    {
+      "id": "dynamic-allocation",
+      "title": "Dynamic portfolio allocation",
+      "question": "Can a bounded BTC weight based on momentum strength or past volatility improve the risk and return tradeoff?",
+      "execution_state": "proposed",
+      "finding": null,
+      "evidence_type": "none",
+      "experiment_id": null,
+      "dataset": null,
+      "evaluation_period": null,
+      "comparators": [
+        "Plain 20-session momentum",
+        "Training-calibrated passive BTC/cash",
+        "Buy and hold BTC"
+      ],
+      "protocol_url": null,
+      "implementation_url": null,
+      "result_url": null,
+      "source_receipt_url": null,
+      "dependencies": [
+        "btc-momentum"
+      ],
+      "next_action": "Specify lagged inputs, position bounds, rebalance timing and costs before comparing allocations."
+    },
+    {
+      "id": "cross-asset",
+      "title": "Cross-asset validation",
+      "question": "Does the result persist in another market with independently qualified prices, accounting and execution assumptions?",
+      "execution_state": "proposed",
+      "finding": null,
+      "evidence_type": "none",
+      "experiment_id": null,
+      "dataset": null,
+      "evaluation_period": null,
+      "comparators": [
+        "Asset-specific passive allocation",
+        "Buy and hold",
+        "Cash"
+      ],
+      "protocol_url": null,
+      "implementation_url": null,
+      "result_url": null,
+      "source_receipt_url": null,
+      "dependencies": [
+        "btc-momentum"
+      ],
+      "next_action": "Freeze the asset roster, then qualify data rights, calendars and market-specific accounting before collecting results."
+    }
+  ]
+}
