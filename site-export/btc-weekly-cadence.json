@@ -1,0 +1,1273 @@
+{
+  "attribution": "Zielak (mczielinski), Bitcoin Historical Data, Kaggle v706, normalized by ff137. Adapted to UTC daily sessions, simulated spot portfolios and a weekly decision schedule.",
+  "comparisons": {
+    "contrasts": {
+      "base": {
+        "2020": {
+          "vs_daily": 0.3650929393964497,
+          "vs_passive": 0.7514708538181445
+        },
+        "2021": {
+          "vs_daily": -0.10002775708979206,
+          "vs_passive": -0.30229797182806595
+        },
+        "2022": {
+          "vs_daily": 0.5709308140249885,
+          "vs_passive": -0.4734613317345939
+        },
+        "2023": {
+          "vs_daily": -0.8719693614540531,
+          "vs_passive": -1.049311749858669
+        },
+        "2024": {
+          "vs_daily": 0.6708299692324485,
+          "vs_passive": -0.3881477980359149
+        },
+        "pooled": {
+          "vs_daily": 0.08084181582833294,
+          "vs_passive": -0.2605306828506557
+        }
+      },
+      "double_cost": {
+        "2020": {
+          "vs_daily": 0.5944800432102664,
+          "vs_passive": 0.6355064111082216
+        },
+        "2021": {
+          "vs_daily": 0.10152889223105957,
+          "vs_passive": -0.493256020572572
+        },
+        "2022": {
+          "vs_daily": 1.0921938390074537,
+          "vs_passive": -0.7626140797847993
+        },
+        "2023": {
+          "vs_daily": -0.6397556633662883,
+          "vs_passive": -1.272652238614143
+        },
+        "2024": {
+          "vs_daily": 1.023920768348356,
+          "vs_passive": -0.6252141203687189
+        },
+        "pooled": {
+          "vs_daily": 0.36703493041936686,
+          "vs_passive": -0.4604128817271591
+        }
+      },
+      "gross": {
+        "2020": {
+          "vs_daily": 0.13451825075659318,
+          "vs_passive": 0.863008089201561
+        },
+        "2021": {
+          "vs_daily": -0.3084760691872045,
+          "vs_passive": -0.11135284445005234
+        },
+        "2022": {
+          "vs_daily": 0.0037413604699787495,
+          "vs_passive": -0.1757345418666323
+        },
+        "2023": {
+          "vs_daily": -1.1002432065502892,
+          "vs_passive": -0.8268742491511389
+        },
+        "2024": {
+          "vs_daily": 0.3032431650134182,
+          "vs_passive": -0.15369267449974933
+        },
+        "pooled": {
+          "vs_daily": -0.21352072937386812,
+          "vs_passive": -0.061892647195924466
+        }
+      }
+    },
+    "first_fill": "2020-01-06",
+    "first_opportunity": "2020-01-06",
+    "interval95": {
+      "vs_daily": [
+        -0.29349255455860473,
+        0.5052643867984851
+      ],
+      "vs_passive": [
+        -0.8278304481263896,
+        0.2589602127996715
+      ]
+    },
+    "position_days": {
+      "both_cash": 615,
+      "both_long": 920,
+      "daily_only": 134,
+      "weekly_only": 158
+    },
+    "scheduled_opportunities": 261
+  },
+  "dataset_url": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data",
+  "distribution": "Development study",
+  "evaluation": [
+    "2020-01-01",
+    "2024-12-31"
+  ],
+  "evidence": "Exploratory retrospective on previously examined Bitstamp BTC/USD spot history. No prospective outcomes.",
+  "initial_usd": 10000,
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "portfolios": {
+    "base": {
+      "buy_and_hold": {
+        "2020": {
+          "ending_equity": 40270.58896802559,
+          "fees": 49.75124378109454,
+          "max_drawdown": 0.5328395104611716,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.2469009179402644,
+          "slippage_cost": 9.940308447770505,
+          "total_return": 3.0270588968025596,
+          "trade_events": 1,
+          "transaction_cost": 59.69155222886504,
+          "turnover": 0.9940308447771137
+        },
+        "2021": {
+          "ending_equity": 64191.12816276919,
+          "fees": 0.0,
+          "max_drawdown": 0.5313958361651034,
+          "mean_close_exposure": 1.0,
+          "sharpe": 0.978141339313099,
+          "slippage_cost": 0.0,
+          "total_return": 0.5939952657195118,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 22957.166056234222,
+          "fees": 0.0,
+          "max_drawdown": 0.6700114824115659,
+          "mean_close_exposure": 1.0,
+          "sharpe": -1.2830894754905828,
+          "slippage_cost": 0.0,
+          "total_return": -0.6423623215030303,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 58695.78431778471,
+          "fees": 0.0,
+          "max_drawdown": 0.20069270121699345,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.3501652189791074,
+          "slippage_cost": 0.0,
+          "total_return": 1.5567521781219744,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 129704.93244779816,
+          "fees": 0.0,
+          "max_drawdown": 0.26211348313070126,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.7444289088064515,
+          "slippage_cost": 0.0,
+          "total_return": 1.2097827630271194,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 129704.93244779816,
+          "fees": 49.75124378109454,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.1184533715266445,
+          "slippage_cost": 9.940308447770505,
+          "total_return": 11.970493244779815,
+          "trade_events": 1,
+          "transaction_cost": 59.69155222886504,
+          "turnover": 0.9940308447771137
+        }
+      },
+      "cash": {
+        "2020": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2021": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        }
+      },
+      "momentum20": {
+        "2020": {
+          "ending_equity": 36265.445522627095,
+          "fees": 2136.0143562305457,
+          "max_drawdown": 0.23611779823262535,
+          "mean_close_exposure": 0.6967213114754098,
+          "sharpe": 2.751032881746925,
+          "slippage_cost": 427.19543445587595,
+          "total_return": 2.6265445522627093,
+          "trade_events": 29,
+          "transaction_cost": 2563.209790686422,
+          "turnover": 28.910462671656703
+        },
+        "2021": {
+          "ending_equity": 43869.35244074008,
+          "fees": 8797.255022927158,
+          "max_drawdown": 0.41760510170252785,
+          "mean_close_exposure": 0.5561643835616439,
+          "sharpe": 0.6147630773395987,
+          "slippage_cost": 1759.4615613019084,
+          "total_return": 0.2096736110237134,
+          "trade_events": 40,
+          "transaction_cost": 10556.716584229065,
+          "turnover": 39.880616895542275
+        },
+        "2022": {
+          "ending_equity": 17332.16796606207,
+          "fees": 6596.0339700257,
+          "max_drawdown": 0.6177540414558808,
+          "mean_close_exposure": 0.38904109589041097,
+          "sharpe": -2.4864797996902412,
+          "slippage_cost": 1319.2320414390379,
+          "total_return": -0.6049139774863366,
+          "trade_events": 51,
+          "transaction_cost": 7915.266011464737,
+          "turnover": 50.85077111942784
+        },
+        "2023": {
+          "ending_equity": 33648.01608715148,
+          "fees": 2990.460792205828,
+          "max_drawdown": 0.2009834613116397,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 2.0683465460079735,
+          "slippage_cost": 598.1120628621011,
+          "total_return": 0.9413622204122012,
+          "trade_events": 26,
+          "transaction_cost": 3588.572855067929,
+          "turnover": 25.922400982102477
+        },
+        "2024": {
+          "ending_equity": 39414.43241786828,
+          "fees": 7497.832867295506,
+          "max_drawdown": 0.42812046870730835,
+          "mean_close_exposure": 0.6092896174863388,
+          "sharpe": 0.5836948309396207,
+          "slippage_cost": 1499.5813372895602,
+          "total_return": 0.17137463069980852,
+          "trade_events": 42,
+          "transaction_cost": 8997.414204585066,
+          "turnover": 41.87464774031939
+        },
+        "pooled": {
+          "ending_equity": 39414.43241786828,
+          "fees": 28017.597008684737,
+          "max_drawdown": 0.7181938489014073,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 0.8249773906614245,
+          "slippage_cost": 5603.582437348484,
+          "total_return": 2.941443241786828,
+          "trade_events": 188,
+          "transaction_cost": 33621.179446033224,
+          "turnover": 187.43889940904867
+        }
+      },
+      "passive_mix": {
+        "2020": {
+          "ending_equity": 26883.61367190504,
+          "fees": 27.749072889993272,
+          "max_drawdown": 0.3435911929329897,
+          "mean_close_exposure": 0.6433724299806465,
+          "sharpe": 2.3646549673252304,
+          "slippage_cost": 5.544270307690612,
+          "total_return": 1.6883613671905042,
+          "trade_events": 1,
+          "transaction_cost": 33.29334319768388,
+          "turnover": 0.5544270307690964
+        },
+        "2021": {
+          "ending_equity": 36299.236129512385,
+          "fees": 32.773446699160274,
+          "max_drawdown": 0.40446393663042846,
+          "mean_close_exposure": 0.6974400407261685,
+          "sharpe": 0.8170332920778726,
+          "slippage_cost": 6.561250590422644,
+          "total_return": 0.35023648875921864,
+          "trade_events": 1,
+          "transaction_cost": 39.33469728958292,
+          "turnover": 0.2438570486657776
+        },
+        "2022": {
+          "ending_equity": 22665.874557743773,
+          "fees": 20.80624195962397,
+          "max_drawdown": 0.396845216533668,
+          "mean_close_exposure": 0.4470907953086973,
+          "sharpe": -1.4420876539306589,
+          "slippage_cost": 4.165413805730387,
+          "total_return": -0.3755826024306962,
+          "trade_events": 1,
+          "transaction_cost": 24.97165576535436,
+          "turnover": 0.11459451059746173
+        },
+        "2023": {
+          "ending_equity": 42085.32408427277,
+          "fees": 24.578224325917905,
+          "max_drawdown": 0.14069199759328022,
+          "mean_close_exposure": 0.6767128946989003,
+          "sharpe": 2.2456889344125894,
+          "slippage_cost": 4.91073413105188,
+          "total_return": 0.8567703609695643,
+          "trade_events": 1,
+          "transaction_cost": 29.488958456969783,
+          "turnover": 0.21667076056774362
+        },
+        "2024": {
+          "ending_equity": 70715.26881301239,
+          "fees": 41.3463296958455,
+          "max_drawdown": 0.18098540010155162,
+          "mean_close_exposure": 0.6611185289674112,
+          "sharpe": 1.6426725982079842,
+          "slippage_cost": 8.277543482651911,
+          "total_return": 0.6802833375218937,
+          "trade_events": 1,
+          "transaction_cost": 49.623873178497405,
+          "turnover": 0.19625829849030246
+        },
+        "pooled": {
+          "ending_equity": 70715.26881301239,
+          "fees": 147.2533155705409,
+          "max_drawdown": 0.5351695465498305,
+          "mean_close_exposure": 0.6251766024591209,
+          "sharpe": 1.1663498893404132,
+          "slippage_cost": 29.459212317547433,
+          "total_return": 6.071526881301239,
+          "trade_events": 5,
+          "transaction_cost": 176.71252788808835,
+          "turnover": 1.3258076490903818
+        }
+      },
+      "weekly20": {
+        "2020": {
+          "ending_equity": 43848.25555612735,
+          "fees": 802.7877217134235,
+          "max_drawdown": 0.20860166046852002,
+          "mean_close_exposure": 0.6994535519125683,
+          "sharpe": 3.116125821143375,
+          "slippage_cost": 160.54850767890377,
+          "total_return": 3.3848255556127347,
+          "trade_events": 11,
+          "transaction_cost": 963.3362293923273,
+          "turnover": 10.964185068662681
+        },
+        "2021": {
+          "ending_equity": 49855.00683597669,
+          "fees": 4931.831320809155,
+          "max_drawdown": 0.4588929139065955,
+          "mean_close_exposure": 0.6356164383561644,
+          "sharpe": 0.5147353202498066,
+          "slippage_cost": 986.3721823653003,
+          "total_return": 0.1369895154018268,
+          "trade_events": 20,
+          "transaction_cost": 5918.203503174455,
+          "turnover": 19.940308447771137
+        },
+        "2022": {
+          "ending_equity": 21820.97422183069,
+          "fees": 3195.0631050050465,
+          "max_drawdown": 0.5836960500365906,
+          "mean_close_exposure": 0.40821917808219177,
+          "sharpe": -1.9155489856652528,
+          "slippage_cost": 639.0382760765713,
+          "total_return": -0.5623112781105046,
+          "trade_events": 19,
+          "transaction_cost": 3834.1013810816175,
+          "turnover": 18.946277602994023
+        },
+        "2023": {
+          "ending_equity": 31176.375532000184,
+          "fees": 1515.1528827920636,
+          "max_drawdown": 0.35702696601733863,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 1.1963771845539204,
+          "slippage_cost": 303.0105737476299,
+          "total_return": 0.42873435507796565,
+          "trade_events": 13,
+          "transaction_cost": 1818.1634565396935,
+          "turnover": 12.958215913439796
+        },
+        "2024": {
+          "ending_equity": 48685.926959306664,
+          "fees": 3468.2360734198005,
+          "max_drawdown": 0.34613754459808654,
+          "mean_close_exposure": 0.5737704918032787,
+          "sharpe": 1.2545248001720692,
+          "slippage_cost": 693.7000625470263,
+          "total_return": 0.5616288336447017,
+          "trade_events": 17,
+          "transaction_cost": 4161.936135966826,
+          "turnover": 16.95224675821691
+        },
+        "pooled": {
+          "ending_equity": 48685.926959306664,
+          "fees": 13913.071103739489,
+          "max_drawdown": 0.7333850193617358,
+          "mean_close_exposure": 0.5900383141762452,
+          "sharpe": 0.9058192064897574,
+          "slippage_cost": 2782.6696024154317,
+          "total_return": 3.8685926959306665,
+          "trade_events": 80,
+          "transaction_cost": 16695.74070615492,
+          "turnover": 79.76123379108455
+        }
+      }
+    },
+    "double_cost": {
+      "buy_and_hold": {
+        "2020": {
+          "ending_equity": 40031.23836957628,
+          "fees": 99.00990099009901,
+          "max_drawdown": 0.5328395104611716,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.2388607032396037,
+          "slippage_cost": 19.762455287444915,
+          "total_return": 3.003123836957628,
+          "trade_events": 1,
+          "transaction_cost": 118.77235627754393,
+          "turnover": 0.9881227643722458
+        },
+        "2021": {
+          "ending_equity": 63809.60444199385,
+          "fees": 0.0,
+          "max_drawdown": 0.5313958361651036,
+          "mean_close_exposure": 1.0,
+          "sharpe": 0.9781413393130997,
+          "slippage_cost": 0.0,
+          "total_return": 0.5939952657195118,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 22820.718798444603,
+          "fees": 0.0,
+          "max_drawdown": 0.6700114824115659,
+          "mean_close_exposure": 1.0,
+          "sharpe": -1.2830894754905835,
+          "slippage_cost": 0.0,
+          "total_return": -0.6423623215030303,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 58346.922494232334,
+          "fees": 0.0,
+          "max_drawdown": 0.20069270121699334,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.3501652189791056,
+          "slippage_cost": 0.0,
+          "total_return": 1.5567521781219749,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 128934.02360343389,
+          "fees": 0.0,
+          "max_drawdown": 0.26211348313070104,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.7444289088064524,
+          "slippage_cost": 0.0,
+          "total_return": 1.209782763027119,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 128934.02360343389,
+          "fees": 99.00990099009901,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.1166145228337085,
+          "slippage_cost": 19.762455287444915,
+          "total_return": 11.893402360343389,
+          "trade_events": 1,
+          "transaction_cost": 118.77235627754393,
+          "turnover": 0.9881227643722458
+        }
+      },
+      "cash": {
+        "2020": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2021": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        }
+      },
+      "momentum20": {
+        "2020": {
+          "ending_equity": 30474.67009022335,
+          "fees": 3895.871183621505,
+          "max_drawdown": 0.2891865184148862,
+          "mean_close_exposure": 0.6967213114754098,
+          "sharpe": 2.3983359397698423,
+          "slippage_cost": 779.1529368207873,
+          "total_return": 2.047467009022335,
+          "trade_events": 29,
+          "transaction_cost": 4675.024120442293,
+          "turnover": 28.821841465583685
+        },
+        "2021": {
+          "ending_equity": 28998.226391774777,
+          "fees": 13164.945903759412,
+          "max_drawdown": 0.4926997830345572,
+          "mean_close_exposure": 0.5561643835616439,
+          "sharpe": 0.21960513752322494,
+          "slippage_cost": 2633.052372744984,
+          "total_return": -0.04844822582418162,
+          "trade_events": 40,
+          "transaction_cost": 15797.998276504395,
+          "turnover": 39.76245528744491
+        },
+        "2022": {
+          "ending_equity": 8436.174205059055,
+          "fees": 7687.233183044225,
+          "max_drawdown": 0.7136824268399117,
+          "mean_close_exposure": 0.38904109589041097,
+          "sharpe": -3.2995103558836156,
+          "slippage_cost": 1537.5172803075172,
+          "total_return": -0.7090796488349391,
+          "trade_events": 51,
+          "transaction_cost": 9224.750463351744,
+          "turnover": 50.70306910930614
+        },
+        "2023": {
+          "ending_equity": 14011.958873388394,
+          "fees": 2681.6794624778527,
+          "max_drawdown": 0.24353056425904196,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 1.6083623179118813,
+          "slippage_cost": 536.3710678363675,
+          "total_return": 0.6609375924202252,
+          "trade_events": 26,
+          "transaction_cost": 3218.05053031422,
+          "turnover": 25.845595936839192
+        },
+        "2024": {
+          "ending_equity": 12756.957111707994,
+          "fees": 5517.63037846909,
+          "max_drawdown": 0.515805566012578,
+          "mean_close_exposure": 0.6092896174863388,
+          "sharpe": -0.009526938362908344,
+          "slippage_cost": 1103.5475403984394,
+          "total_return": -0.08956647482486602,
+          "trade_events": 42,
+          "transaction_cost": 6621.177918867529,
+          "turnover": 41.75057805181716
+        },
+        "pooled": {
+          "ending_equity": 12756.957111707994,
+          "fees": 32947.36011137209,
+          "max_drawdown": 0.8317932056074966,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 0.3350086334553365,
+          "slippage_cost": 6589.6411981080955,
+          "total_return": 0.2756957111707994,
+          "trade_events": 188,
+          "transaction_cost": 39537.00130948018,
+          "turnover": 186.8835398509911
+        }
+      },
+      "passive_mix": {
+        "2020": {
+          "ending_equity": 26794.25807431603,
+          "fees": 55.368939791198564,
+          "max_drawdown": 0.3435911929329897,
+          "mean_close_exposure": 0.6433724299806465,
+          "sharpe": 2.357309571871887,
+          "slippage_cost": 11.05168458906159,
+          "total_return": 1.679425807431603,
+          "trade_events": 1,
+          "transaction_cost": 66.42062438026015,
+          "turnover": 0.5525842294530795
+        },
+        "2021": {
+          "ending_equity": 36125.327432271675,
+          "fees": 65.49677832219666,
+          "max_drawdown": 0.40446393663042846,
+          "mean_close_exposure": 0.6974400407261685,
+          "sharpe": 0.8143900503268565,
+          "slippage_cost": 13.12560687819606,
+          "total_return": 0.34824884242270016,
+          "trade_events": 1,
+          "transaction_cost": 78.62238520039273,
+          "turnover": 0.24472818833883359
+        },
+        "2022": {
+          "ending_equity": 22541.692223526858,
+          "fees": 41.517467938001836,
+          "max_drawdown": 0.3968452165336679,
+          "mean_close_exposure": 0.4470907953086972,
+          "sharpe": -1.4447024370913626,
+          "slippage_cost": 8.320133855310713,
+          "total_return": -0.37601417548980365,
+          "trade_events": 1,
+          "transaction_cost": 49.83760179331255,
+          "turnover": 0.11499836706579833
+        },
+        "2023": {
+          "ending_equity": 41800.48660826539,
+          "fees": 48.774609718258915,
+          "max_drawdown": 0.1406919975932801,
+          "mean_close_exposure": 0.6767128946989002,
+          "sharpe": 2.241258893159736,
+          "slippage_cost": 9.735451041568433,
+          "total_return": 0.8543632924167976,
+          "trade_events": 1,
+          "transaction_cost": 58.51006075982735,
+          "turnover": 0.2159563270411097
+        },
+        "2024": {
+          "ending_equity": 70153.50180374642,
+          "fees": 82.32956250916197,
+          "max_drawdown": 0.18098540010155173,
+          "mean_close_exposure": 0.6611185289674112,
+          "sharpe": 1.6396079503541665,
+          "slippage_cost": 16.498910322477666,
+          "total_return": 0.6782939026809001,
+          "trade_events": 1,
+          "transaction_cost": 98.82847283163964,
+          "turnover": 0.19692514012727544
+        },
+        "pooled": {
+          "ending_equity": 70153.50180374642,
+          "fees": 293.48735827881796,
+          "max_drawdown": 0.5354908193099148,
+          "mean_close_exposure": 0.6251766024591208,
+          "sharpe": 1.1624564456018625,
+          "slippage_cost": 58.73178668661446,
+          "total_return": 6.015350180374642,
+          "trade_events": 5,
+          "transaction_cost": 352.2191449654324,
+          "turnover": 1.3251922520260966
+        }
+      },
+      "weekly20": {
+        "2020": {
+          "ending_equity": 41049.17359753972,
+          "fees": 1548.6652349277551,
+          "max_drawdown": 0.2180421469247088,
+          "mean_close_exposure": 0.6994535519125683,
+          "sharpe": 2.9928159829801086,
+          "slippage_cost": 309.7004804484115,
+          "total_return": 3.104917359753972,
+          "trade_events": 11,
+          "transaction_cost": 1858.3657153761667,
+          "turnover": 10.928736586233473
+        },
+        "2021": {
+          "ending_equity": 41394.53292438588,
+          "fees": 8712.522360657782,
+          "max_drawdown": 0.4908774685415839,
+          "mean_close_exposure": 0.6356164383561644,
+          "sharpe": 0.3211340297542845,
+          "slippage_cost": 1742.5462924061803,
+          "total_return": 0.008413307664417058,
+          "trade_events": 20,
+          "transaction_cost": 10455.068653063961,
+          "turnover": 19.881227643722454
+        },
+        "2022": {
+          "ending_equity": 16165.137651621731,
+          "fees": 5049.904872936447,
+          "max_drawdown": 0.6263160636808474,
+          "mean_close_exposure": 0.40821917808219177,
+          "sharpe": -2.207316516876162,
+          "slippage_cost": 1010.0698750368845,
+          "total_return": -0.6094861685925992,
+          "trade_events": 19,
+          "transaction_cost": 6059.9747479733305,
+          "turnover": 18.89310487935021
+        },
+        "2023": {
+          "ending_equity": 21363.440914869923,
+          "fees": 2162.927308939827,
+          "max_drawdown": 0.401695837665635,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 0.968606654545593,
+          "slippage_cost": 432.53118307132587,
+          "total_return": 0.32157494574298817,
+          "trade_events": 13,
+          "transaction_cost": 2595.458492011153,
+          "turnover": 12.91685935060572
+        },
+        "2024": {
+          "ending_equity": 30125.334414193796,
+          "fees": 4518.960697194959,
+          "max_drawdown": 0.39882089593779635,
+          "mean_close_exposure": 0.5737704918032787,
+          "sharpe": 1.0143938299854476,
+          "slippage_cost": 903.934332356767,
+          "total_return": 0.41013493726215233,
+          "trade_events": 17,
+          "transaction_cost": 5422.895029551726,
+          "turnover": 16.904982114977965
+        },
+        "pooled": {
+          "ending_equity": 30125.334414193796,
+          "fees": 21992.980474656768,
+          "max_drawdown": 0.8024896680511076,
+          "mean_close_exposure": 0.5900383141762452,
+          "sharpe": 0.7020435638747033,
+          "slippage_cost": 4398.782163319569,
+          "total_return": 2.0125334414193796,
+          "trade_events": 80,
+          "transaction_cost": 26391.76263797634,
+          "turnover": 79.52491057488983
+        }
+      }
+    },
+    "gross": {
+      "buy_and_hold": {
+        "2020": {
+          "ending_equity": 40512.41385477858,
+          "fees": 0.0,
+          "max_drawdown": 0.5328395104611715,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.2548864078649666,
+          "slippage_cost": 0.0,
+          "total_return": 3.0512413854778577,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 1.0
+        },
+        "2021": {
+          "ending_equity": 64576.595887386604,
+          "fees": 0.0,
+          "max_drawdown": 0.5313958361651034,
+          "mean_close_exposure": 1.0,
+          "sharpe": 0.9781413393130972,
+          "slippage_cost": 0.0,
+          "total_return": 0.5939952657195118,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 23095.023838401903,
+          "fees": 0.0,
+          "max_drawdown": 0.6700114824115659,
+          "mean_close_exposure": 1.0,
+          "sharpe": -1.28308947549058,
+          "slippage_cost": 0.0,
+          "total_return": -0.6423623215030303,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 59048.252502612995,
+          "fees": 0.0,
+          "max_drawdown": 0.20069270121699334,
+          "mean_close_exposure": 1.0,
+          "sharpe": 2.3501652189791087,
+          "slippage_cost": 0.0,
+          "total_return": 1.5567521781219749,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 130483.81056714716,
+          "fees": 0.0,
+          "max_drawdown": 0.26211348313070115,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.7444289088064515,
+          "slippage_cost": 0.0,
+          "total_return": 1.2097827630271194,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 130483.81056714716,
+          "fees": 0.0,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.120292561932482,
+          "slippage_cost": 0.0,
+          "total_return": 12.048381056714716,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 1.0
+        }
+      },
+      "cash": {
+        "2020": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2021": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2022": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2023": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "2024": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        },
+        "pooled": {
+          "ending_equity": 10000.0,
+          "fees": 0.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "slippage_cost": 0.0,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0,
+          "turnover": 0.0
+        }
+      },
+      "momentum20": {
+        "2020": {
+          "ending_equity": 43157.38680185881,
+          "fees": 0.0,
+          "max_drawdown": 0.18001859896989236,
+          "mean_close_exposure": 0.6967213114754098,
+          "sharpe": 3.1004070336895704,
+          "slippage_cost": 0.0,
+          "total_return": 3.3157386801858815,
+          "trade_events": 29,
+          "transaction_cost": 0.0,
+          "turnover": 29.0
+        },
+        "2021": {
+          "ending_equity": 66367.39203747197,
+          "fees": 0.0,
+          "max_drawdown": 0.33227733062840137,
+          "mean_close_exposure": 0.5561643835616439,
+          "sharpe": 1.0167794809108048,
+          "slippage_cost": 0.0,
+          "total_return": 0.5377991337189465,
+          "trade_events": 40,
+          "transaction_cost": 0.0,
+          "turnover": 40.0
+        },
+        "2022": {
+          "ending_equity": 35607.960948277985,
+          "fees": 0.0,
+          "max_drawdown": 0.4971606114249475,
+          "mean_close_exposure": 0.38904109589041097,
+          "sharpe": -1.6189555408274037,
+          "slippage_cost": 0.0,
+          "total_return": -0.4634720477162456,
+          "trade_events": 51,
+          "transaction_cost": 0.0,
+          "turnover": 51.0
+        },
+        "2023": {
+          "ending_equity": 80798.64771227381,
+          "fees": 0.0,
+          "max_drawdown": 0.17169462498973553,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 2.5234660774142808,
+          "slippage_cost": 0.0,
+          "total_return": 1.2691175108183574,
+          "trade_events": 26,
+          "transaction_cost": 0.0,
+          "turnover": 26.0
+        },
+        "2024": {
+          "ending_equity": 121770.722201895,
+          "fees": 0.0,
+          "max_drawdown": 0.3302668152693935,
+          "mean_close_exposure": 0.6092896174863388,
+          "sharpe": 1.1887652516241174,
+          "slippage_cost": 0.0,
+          "total_return": 0.5070886165759092,
+          "trade_events": 42,
+          "transaction_cost": 0.0,
+          "turnover": 42.0
+        },
+        "pooled": {
+          "ending_equity": 121770.722201895,
+          "fees": 0.0,
+          "max_drawdown": 0.5751788143224519,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 1.3218501642272413,
+          "slippage_cost": 0.0,
+          "total_return": 11.1770722201895,
+          "trade_events": 188,
+          "transaction_cost": 0.0,
+          "turnover": 188.0
+        }
+      },
+      "passive_mix": {
+        "2020": {
+          "ending_equity": 26973.417195495433,
+          "fees": 0.0,
+          "max_drawdown": 0.3435911929329897,
+          "mean_close_exposure": 0.6433724299806465,
+          "sharpe": 2.3719171952446025,
+          "slippage_cost": 0.0,
+          "total_return": 1.6973417195495433,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 0.5562790697674419
+        },
+        "2021": {
+          "ending_equity": 36473.81403176028,
+          "fees": 0.0,
+          "max_drawdown": 0.40446393663042834,
+          "mean_close_exposure": 0.6974400407261685,
+          "sharpe": 0.8196562561736527,
+          "slippage_cost": 0.0,
+          "total_return": 0.35221332052252596,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 0.24299064877142246
+        },
+        "2022": {
+          "ending_equity": 22790.541004139774,
+          "fees": 0.0,
+          "max_drawdown": 0.396845216533668,
+          "mean_close_exposure": 0.4470907953086972,
+          "sharpe": -1.4394796384907926,
+          "slippage_cost": 0.0,
+          "total_return": -0.3751533364650468,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 0.11419281305586187
+        },
+        "2023": {
+          "ending_equity": 42371.93150249361,
+          "fees": 0.0,
+          "max_drawdown": 0.14069199759328,
+          "mean_close_exposure": 0.6767128946989002,
+          "sharpe": 2.2500971200151305,
+          "slippage_cost": 0.0,
+          "total_return": 0.8591893669745261,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 0.21738873720745655
+        },
+        "2024": {
+          "ending_equity": 71280.71712865078,
+          "fees": 0.0,
+          "max_drawdown": 0.18098540010155173,
+          "mean_close_exposure": 0.6611185289674112,
+          "sharpe": 1.645701091137285,
+          "slippage_cost": 0.0,
+          "total_return": 0.6822626347457368,
+          "trade_events": 1,
+          "transaction_cost": 0.0,
+          "turnover": 0.19559485489636996
+        },
+        "pooled": {
+          "ending_equity": 71280.71712865078,
+          "fees": 0.0,
+          "max_drawdown": 0.5348499912423705,
+          "mean_close_exposure": 0.6251766024591208,
+          "sharpe": 1.1702220820492977,
+          "slippage_cost": 0.0,
+          "total_return": 6.128071712865078,
+          "trade_events": 5,
+          "transaction_cost": 0.0,
+          "turnover": 1.3264461236985527
+        }
+      },
+      "weekly20": {
+        "2020": {
+          "ending_equity": 46839.29080445923,
+          "fees": 0.0,
+          "max_drawdown": 0.19904760382456188,
+          "mean_close_exposure": 0.6994535519125683,
+          "sharpe": 3.2349252844461636,
+          "slippage_cost": 0.0,
+          "total_return": 3.6839290804459237,
+          "trade_events": 11,
+          "transaction_cost": 0.0,
+          "turnover": 11.0
+        },
+        "2021": {
+          "ending_equity": 60045.777596680644,
+          "fees": 0.0,
+          "max_drawdown": 0.425432479069457,
+          "mean_close_exposure": 0.6356164383561644,
+          "sharpe": 0.7083034117236003,
+          "slippage_cost": 0.0,
+          "total_return": 0.28195317575056267,
+          "trade_events": 20,
+          "transaction_cost": 0.0,
+          "turnover": 20.0
+        },
+        "2022": {
+          "ending_equity": 29455.29610020459,
+          "fees": 0.0,
+          "max_drawdown": 0.5362171725228795,
+          "mean_close_exposure": 0.40821917808219177,
+          "sharpe": -1.615214180357425,
+          "slippage_cost": 0.0,
+          "total_return": -0.5094526662965075,
+          "trade_events": 19,
+          "transaction_cost": 0.0,
+          "turnover": 19.0
+        },
+        "2023": {
+          "ending_equity": 45497.176059052385,
+          "fees": 0.0,
+          "max_drawdown": 0.3090252446852365,
+          "mean_close_exposure": 0.6328767123287671,
+          "sharpe": 1.4232228708639916,
+          "slippage_cost": 0.0,
+          "total_return": 0.5446178474755299,
+          "trade_events": 13,
+          "transaction_cost": 0.0,
+          "turnover": 13.0
+        },
+        "2024": {
+          "ending_equity": 78680.34467541709,
+          "fees": 0.0,
+          "max_drawdown": 0.2929982389933298,
+          "mean_close_exposure": 0.5737704918032787,
+          "sharpe": 1.4920084166375356,
+          "slippage_cost": 0.0,
+          "total_return": 0.7293456757249088,
+          "trade_events": 17,
+          "transaction_cost": 0.0,
+          "turnover": 17.0
+        },
+        "pooled": {
+          "ending_equity": 78680.34467541709,
+          "fees": 0.0,
+          "max_drawdown": 0.6401066643672735,
+          "mean_close_exposure": 0.5900383141762452,
+          "sharpe": 1.1083294348533732,
+          "slippage_cost": 0.0,
+          "total_return": 6.868034467541709,
+          "trade_events": 80,
+          "transaction_cost": 0.0,
+          "turnover": 80.0
+        }
+      }
+    }
+  },
+  "provenance": {
+    "protocol_commit": "997f4f7d7f0ea2932a3f9caa3d8233c3983ccfc4",
+    "protocol_sha256": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+    "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+    "source_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317"
+  },
+  "publisher_terms_url": "https://github.com/ff137/bitstamp-btcusd-minute-data/blob/d7156d68d85714e188a1e152818281e97c89fbe5/DATA_LICENSE",
+  "question": "Does a single Sunday-close weekly decision schedule improve historical net performance relative to the original daily rule and passive BTC/cash?",
+  "reproduction_command": "quant-lab btc-weekly-cadence --out btc-weekly-review",
+  "scenario_units": [
+    "minimum_delay_minutes",
+    "fee_bps_on_filled_notional",
+    "adverse_slippage_bps"
+  ],
+  "scenarios": {
+    "base": [
+      5,
+      50,
+      10
+    ],
+    "double_cost": [
+      5,
+      100,
+      20
+    ],
+    "gross": [
+      5,
+      0,
+      0
+    ]
+  },
+  "schedule": "Start in cash. Decide only at completion of each Sunday UTC session. At Monday 00:00 UTC the Sunday close and the close 20 sessions earlier are known. A positive ratio return targets all BTC; equality or negative targets cash. First eligible execution 2020-01-06, at the first trade-bearing minute open on Monday at or after 00:05 UTC. Before this Monday remain cash. Carry holdings until the next scheduled opportunity; no same-day reversals, emergency exits or weekday selection. Require the full admitted contiguous daily history and a valid momentum observation at each decision.",
+  "schema_version": 1,
+  "study_id": "btc-weekly-cadence-v1",
+  "uncertainty": {
+    "block_sessions": 20,
+    "draws": 4000,
+    "method": "Circular contiguous block bootstrap within each annual fold, truncate final block to original length; paired draw indices for both strategies or both state/label columns. Percentile 2.5 and 97.5%. No refit or selection; conditional on observed folds.",
+    "scope": "Use the parent paired within-year circular block bootstrap for each base comparison on aligned daily financial returns. Same random draws across contrasts; each percentile interval is marginal. Hold fitted allocations and observed strategy paths fixed. Do not infer a new holdout or a prospective result.",
+    "seed": 20261121
+  }
+}

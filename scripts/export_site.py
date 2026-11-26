@@ -127,17 +127,27 @@ def programme_projection(root: Path = ROOT):
             "scope": "Editorial study descriptions. Each completed comparison links to its protocol, report and run receipt."}}
 
 
-def cost_study_export(root: Path = ROOT):
-    """Copy only the reviewed exhibit, bound to its qualified run receipt."""
-    folder = root / "reports/btc-cost-break-even-v1"
+EXHIBITS = {
+    "btc-cost-break-even-v1": "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f",
+    "btc-weekly-cadence-v1": "53fea182631ee02b81e2ace76e74618c07f954ec8161bc386176595eeeb9c468",
+}
+
+
+def study_export(study_id: str, root: Path = ROOT):
+    """Copy a public aggregate exhibit only if its qualified run and payload match."""
+    expected = EXHIBITS[study_id]
+    folder = root / "reports" / study_id
     receipt = json.loads((folder / "run.json").read_bytes())
     data = (folder / "public.json").read_bytes()
-    expected = "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f"
-    if (receipt["status"] != "passed" or receipt["study_id"] != folder.name
+    if (receipt["status"] != "passed" or receipt["study_id"] != study_id
             or receipt["artifacts_sha256"]["public.json"] != expected or sha(data) != expected):
-        raise ValueError("Cost exhibit differs from the qualified study")
+        raise ValueError(f"{study_id} exhibit differs from the qualified study")
     public_value(json.loads(data))
     return data
+
+
+def cost_study_export(root: Path = ROOT):
+    return study_export("btc-cost-break-even-v1", root)
 
 
 def numerical_reference():
@@ -199,7 +209,8 @@ def main():
     parser.add_argument("--site-root", type=Path, help="Copy the checked projection into an existing portfolio checkout")
     args = parser.parse_args()
     outputs = {"archive.json": encoded(projection()), "programme.json": encoded(programme_projection()),
-               "pricing-reference.json": encoded(numerical_reference()), "btc-cost-break-even.json": cost_study_export()}
+               "pricing-reference.json": encoded(numerical_reference()), "btc-cost-break-even.json": cost_study_export(),
+               "btc-weekly-cadence.json": study_export("btc-weekly-cadence-v1")}
     directory = ROOT / "site-export"
     if args.check:
         for name, data in outputs.items():

@@ -73,31 +73,36 @@
       "dependencies": [
         "btc-momentum"
       ],
-      "next_action": "Compare the two criteria and annual outcomes before specifying a slower trading schedule."
+      "next_action": "Inspect the completed weekly cadence comparison to see how reducing turnover changed both exposure and net outcomes."
     },
     {
       "id": "turnover-aware",
-      "title": "Turnover-aware momentum",
-      "question": "Can a slower decision schedule or separate entry and exit thresholds reduce turnover enough to improve net outcomes?",
-      "execution_state": "proposed",
-      "finding": null,
-      "evidence_type": "none",
-      "experiment_id": null,
-      "dataset": null,
-      "evaluation_period": null,
-      "comparators": [
-        "Plain 20-session momentum",
-        "Training-calibrated passive BTC/cash"
+      "title": "Weekly BTC momentum decisions",
+      "question": "Did acting only on the completed Sunday close improve momentum’s net performance after costs?",
+      "execution_state": "completed",
+      "finding": "Weekly cut fills from 188 to 80. At base costs its net Sharpe was 0.081 higher than daily momentum and 0.261 lower than passive BTC/cash. Both paired 95% intervals include zero. The accounts held different positions on 292 daily closes.",
+      "evidence_type": "retrospective",
+      "experiment_id": "btc-weekly-cadence-v1",
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
       ],
-      "protocol_url": null,
-      "implementation_url": null,
-      "result_url": null,
-      "source_receipt_url": null,
+      "comparators": [
+        "Original daily 20-session momentum",
+        "Training-calibrated passive BTC/cash",
+        "Buy and hold BTC",
+        "Cash"
+      ],
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/997f4f7d7f0ea2932a3f9caa3d8233c3983ccfc4/experiments/btc-weekly-cadence-v1/protocol.json",
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/92be1e16799594f7a7c07ef4d51196c9cac863ef/src/agenthon_financial/weekly_books.py",
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/cc751a9aaf65fb0d6fbc210bc317b18ae1abd91f/reports/btc-weekly-cadence-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/cc751a9aaf65fb0d6fbc210bc317b18ae1abd91f/reports/btc-weekly-cadence-v1/run.json",
       "dependencies": [
         "btc-momentum",
         "cost-break-even"
       ],
-      "next_action": "Freeze one weekly decision schedule alongside the daily baseline. Compare net Sharpe against passive BTC/cash and record turnover, costs and exposure under identical execution rules."
+      "next_action": "Use the position-day counts and gross and net comparisons to examine how the slower schedule changed timing and exposure."
     },
     {
       "id": "dynamic-allocation",
@@ -121,7 +126,7 @@
       "dependencies": [
         "btc-momentum"
       ],
-      "next_action": "Specify lagged inputs, position bounds, rebalance timing and costs before comparing allocations."
+      "next_action": "Propose one capped BTC allocation at a predeclared cadence with only lagged inputs. Freeze an equal-risk or training-calibrated passive comparator, execution and costs before a new evaluation."
     },
     {
       "id": "cross-asset",

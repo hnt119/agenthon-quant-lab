@@ -19,18 +19,24 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(any(e["status"] == "incomplete" for e in a["experiments"]))
 
 
-    def test_programme_traces_three_comparisons_to_two_frozen_runs(self):
+    def test_programme_traces_four_comparisons_to_three_frozen_runs(self):
         view = export.programme_projection()
         studies = view["studies"]
         self.assertEqual(len(studies), 6)
         completed = [s for s in studies if s["execution_state"] == "completed"]
-        self.assertEqual({s["id"] for s in completed}, {"btc-momentum", "btc-fft-gate", "cost-break-even"})
-        parent = [s for s in completed if s["id"] != "cost-break-even"]
+        self.assertEqual({s["id"] for s in completed}, {"btc-momentum", "btc-fft-gate", "cost-break-even", "turnover-aware"})
+        parent = [s for s in completed if s["id"] in {"btc-momentum", "btc-fft-gate"}]
         self.assertEqual(len({s["source_receipt_url"] for s in parent}), 1)
         cost = next(s for s in completed if s["id"] == "cost-break-even")
         self.assertEqual(cost["experiment_id"], "btc-cost-break-even-v1")
         self.assertNotEqual(cost["source_receipt_url"], parent[0]["source_receipt_url"])
         self.assertEqual(cost["evaluation_period"], parent[0]["evaluation_period"])
+        weekly = next(s for s in completed if s["id"] == "turnover-aware")
+        self.assertEqual(weekly["experiment_id"], "btc-weekly-cadence-v1")
+        self.assertEqual(len({s["source_receipt_url"] for s in completed}), 3)
+        self.assertEqual(weekly["evaluation_period"], parent[0]["evaluation_period"])
+        self.assertEqual(export.study_export(weekly["experiment_id"]),
+                         (ROOT / "site-export/btc-weekly-cadence.json").read_bytes())
         protocol = json.loads((ROOT / "experiments/btc-financial-v1/protocol.json").read_bytes())
         years = protocol["evaluation_years"]
         for study in parent:
