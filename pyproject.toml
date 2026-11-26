@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agenthon-quant-lab"
-version = "0.5.0.dev1"
+version = "0.5.0"
 description = "Reproduce independently checked Bitcoin studies of momentum, trading costs, decision timing and weekly portfolio allocation"
 readme = "PYPI.md"
 requires-python = ">=3.12"
@@ -19,7 +19,7 @@ classifiers = [
 
 [project.urls]
 Source = "https://github.com/hnt119/agenthon-quant-lab"
-Documentation = "https://github.com/hnt119/agenthon-quant-lab/blob/v0.4.0/docs/user-guide.md"
+Documentation = "https://github.com/hnt119/agenthon-quant-lab/blob/v0.5.0/docs/user-guide.md"
 Study = "https://github.com/hnt119/agenthon-quant-lab/tree/v0.3.0/reports/btc-financial-v1"
 Issues = "https://github.com/hnt119/agenthon-quant-lab/issues"
 

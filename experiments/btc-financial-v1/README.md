@@ -7,7 +7,7 @@ The admitted snapshot covers Bitstamp BTC/USD spot from January 1, 2017 through 
 From a fresh Python 3.12+ environment and a writable directory, run:
 
 ```sh
-python -m pip install agenthon-quant-lab==0.4.0
+python -m pip install agenthon-quant-lab==0.5.0
 quant-lab doctor
 quant-lab btc-study --out btc-study
 ```

@@ -7,14 +7,14 @@ Does one scheduled decision per week improve momentum after costs? The Sunday-cl
 In an activated Python 3.12+ environment, run from any writable directory. Installation needs PyPI access. All study inputs and reference data are bundled.
 
 ```sh
-python -m pip install agenthon-quant-lab==0.4.0
+python -m pip install agenthon-quant-lab==0.5.0
 quant-lab doctor
 quant-lab btc-weekly-cadence --out btc-weekly-review
 ```
 
 Choose a new output directory on each run. Read `README.md` and `weekly-cadence.svg` first. `comparisons.json` gives both contrasts by period and cost, the base-cost marginal intervals and the exposure counts. `metrics.json` contains all five accounts, three costs, five annual folds and the pooled history. `ledger.jsonl.gz` contains dated trades and cash, BTC and closing equity on every day. The verifier reconstructs scheduled signals from dated raw closes and balances from quote-side cash flows. `verification.json` reports its coverage and `run.json` identifies the inputs, source revision and outputs.
 
-The original report and public exhibit keep the development build’s provenance. Each new run records the executing package version. [Original development qualification](qualification.md) · [v0.4.0 package and qualification](../../docs/releases/v0.4.0.md)
+The original report and public exhibit keep the development build’s provenance. Each new run records the executing package version. [Original development qualification](qualification.md) · [v0.5.0 package and qualification](../../docs/releases/v0.5.0.md)
 
 ## Inspect the evidence
 

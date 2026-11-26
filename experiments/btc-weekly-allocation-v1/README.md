@@ -2,17 +2,17 @@
 
 Does resetting BTC to 50% of post-cost wealth on positive-signal Mondays reduce the worst decline beyond putting half the starting capital in weekly momentum? On the previously examined 2020–2024 Bitstamp history the target had a 45.02% drawdown versus 64.45% for the half-funded account. The target ended with $4,008 less per $10,000 invested. [Report and drawdown chart](../../reports/btc-weekly-allocation-v1/README.md) · [Pre-evaluation freeze](protocol.json)
 
-## Run the development build
+## Run the released study
 
-Use a fresh Python 3.12+ virtual environment. Install the exact reviewed revision using Git, then run from any writable directory. The wheel bundles the frozen dataset and required references. Public PyPI v0.4.0 provides the three earlier BTC workflows.
+Use a fresh Python 3.12+ virtual environment. Install the release from PyPI, then run from any writable directory. The wheel bundles the frozen dataset and required references.
 
 ```sh
-python -m pip install 'agenthon-quant-lab @ git+https://github.com/hnt119/agenthon-quant-lab.git@57d7b49477066fd58006d7781823a00228c1d046'
+python -m pip install agenthon-quant-lab==0.5.0
 quant-lab doctor
 quant-lab btc-weekly-allocation --out runs/allocation
 ```
 
-Open `runs/allocation/README.md` for the result and `drawdown.svg` for the figure. `metrics.json` covers every account, cost setting, year and pooled period. The compressed daily ledger records decisions, trades, fees, shares and balances. The `target_for_open` field refers to total-account weight for the Monday target and to the active sleeve's binary instruction for the half-funded control. The verification and run receipts identify the checks, source and hashes. Each reproduction needs a new output directory. [Development package qualification](qualification.md). [Accounting evidence](../../reports/btc-weekly-allocation-v1/verification.json) · [Run receipt](../../reports/btc-weekly-allocation-v1/run.json)
+Open `runs/allocation/README.md` for the result and `drawdown.svg` for the figure. `metrics.json` covers every account, cost setting, year and pooled period. The compressed daily ledger records decisions, trades, fees, shares and balances. The `target_for_open` field refers to total-account weight for the Monday target and to the active sleeve's binary instruction for the half-funded control. The verification and run receipts identify the checks, source and hashes. Each reproduction needs a new output directory. [Stable package qualification](../../docs/releases/v0.5.0.md) · [Original development qualification](qualification.md) · [Accounting evidence](../../reports/btc-weekly-allocation-v1/verification.json) · [Run receipt](../../reports/btc-weekly-allocation-v1/run.json)
 
 ## Check the public exhibit
 
