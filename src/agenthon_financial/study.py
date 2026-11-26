@@ -3,13 +3,13 @@ import csv
 from datetime import date, timedelta
 import io
 import math
-from pathlib import Path
+from agenthon_quant.resources import resource_root
 
 from agenthon_btc.pilot import features
 from agenthon_quant.records import digest, strict_json
 from agenthon_quant.trading import opening_fill, simulate_ledger
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = resource_root()
 DATA = ROOT / "experiments/btc-financial-v1"
 PROTOCOL = "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5"
 FREEZE = "e56c000e8bfa6e9ebe2854998e10af3dbe10522b"

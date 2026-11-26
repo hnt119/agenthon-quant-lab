@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from . import __version__
+from .resources import checkout_root, resource_root
 
 MAX_SPEC_BYTES = 1_048_576
 MAX_DATA_BYTES = 25 * 1024 * 1024
@@ -56,16 +57,16 @@ def bounded_read(path: Path, limit: int) -> bytes:
 
 def code_identity() -> dict:
     package = Path(__file__).resolve().parent
-    root = package.parent.parent
-    paths = sorted(package.rglob("*.py"))
-    if (root / "pyproject.toml").exists():
-        paths.append(root / "pyproject.toml")
-    files = {str(p.relative_to(root)): digest(p.read_bytes()) for p in paths}
+    checkout = checkout_root()
+    root = checkout or package.parent
+    files = {"src/agenthon_quant/" + p.relative_to(package).as_posix(): digest(p.read_bytes())
+             for p in sorted(package.rglob("*.py"))}
+    files["pyproject.toml"] = digest((resource_root() / "pyproject.toml").read_bytes())
     fingerprint = digest(json.dumps(files, sort_keys=True, separators=(",", ":")).encode())
     commit = None
     dirty = None
     # An installed wheel must not acquire an unrelated ancestor repository identity.
-    if (root / ".git").exists():
+    if checkout is not None and (root / ".git").exists():
         try:
             commit = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], stderr=subprocess.DEVNULL, text=True).strip()
             status = subprocess.check_output(["git", "-C", str(root), "status", "--porcelain", "--", "src", "pyproject.toml"], text=True)
@@ -85,12 +86,7 @@ def code_identity() -> dict:
 
 
 def _command(path: Path) -> str:
-    root = Path(__file__).resolve().parents[2]
-    try:
-        shown = path.relative_to(root)
-    except ValueError:
-        shown = path
-    return f"python -m agenthon_quant reproduce {shlex.quote(str(shown))} --out runs/reproduced-NEW"
+    return f"python -m agenthon_quant reproduce {shlex.quote(str(path.resolve()))} --out runs/reproduced-NEW"
 
 
 def _summary(value: Any) -> Any:
@@ -171,7 +167,7 @@ def render_report(record: dict) -> str:
               f"Source fingerprint (SHA-256, distinct from Git): `{record['code']['source_fingerprint_sha256']}`.", "",
               f"Elapsed seconds: {record['elapsed_seconds']:.6f}. Model calls: 0. Model cost: $0. Randomness: none in the analysis engine.", "",
               "Input snapshots, content hashes, package versions, full results and check details are in [run.json](run.json).", "",
-              "From the repository root, using the documented environment:", "", "```sh", record["reproduce_command"], "```", ""]
+              "Using the same toolkit environment:", "", "```sh", record["reproduce_command"], "```", ""]
     return "\n".join(lines)
 
 

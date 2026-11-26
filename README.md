@@ -6,6 +6,8 @@ Reproduce a financial study on your own computer, inspect its assumptions and se
 
 ## Try it
 
+The local v0.3.1 distribution candidate supports a checkout-free installation. For review, install its built wheel into a fresh environment with `python -m pip install /path/to/agenthon_quant_lab-0.3.1-py3-none-any.whl`, then run `quant-lab btc-study`. [Distribution guide](docs/releases/v0.3.1-pypi.md)
+
 Install [v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) from source with Git and Python 3.12. From the parent directory for your new checkout, run
 
 ```sh

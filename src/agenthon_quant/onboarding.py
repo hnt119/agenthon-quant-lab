@@ -10,6 +10,7 @@ import subprocess
 import sys
 import zipfile
 
+from .resources import checkout_root, resource_root
 from .records import bounded_read, code_identity, digest, strict_json, verify_saved
 
 MAX_BUNDLE_BYTES = 128 * 1024 * 1024
@@ -17,7 +18,7 @@ MAX_RECORD_BYTES = 64 * 1024 * 1024
 
 
 def repository_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    return resource_root()
 
 
 def skill_directory() -> Path:
@@ -93,12 +94,9 @@ def doctor(root: Path | None = None, *, skills_dir: Path | None = None) -> dict:
             version = None
         versions[package] = version
         compatible = version is not None
-        if package == "scipy" and version:
-            try:
-                major, minor = (int(part) for part in version.split(".")[:2])
-                compatible = (1, 11) <= (major, minor) < (2, 0)
-            except ValueError:
-                compatible = False
+        expected = {"numpy": "2.5.4", "scipy": "1.18.1"}.get(package)
+        if expected:
+            compatible = version == expected
         required = package in {"scipy", "numpy"}
         detail = version or ("Optional; CSV works without PyArrow" if not required else "Not installed")
         if compatible:
@@ -108,25 +106,28 @@ def doctor(root: Path | None = None, *, skills_dir: Path | None = None) -> dict:
             except (ImportError, OSError, RuntimeError) as exc:
                 compatible = False
                 detail += f"; import failed: {type(exc).__name__}: {exc}"
-        elif package == "scipy" and version:
-            detail += "; requires >=1.11,<2"
+        elif expected and version:
+            detail += f"; requires {expected}"
         checks.append({"name": package, "status": "passed" if compatible else "failed" if required else "unavailable",
                        "required": required, "details": detail})
-    source_ok = (root / "pyproject.toml").is_file() and (root / "src/agenthon_quant").is_dir()
-    checks.append({"name": "source_checkout", "status": "passed" if source_ok else "failed", "required": True,
-                   "details": str(root) if source_ok else "Use a source checkout for bundled examples, archive and reproduction"})
-    for name in ("examples/options.json", "examples/trading.json", "examples/historical.json", "examples/data/bitstamp/btcusd-2025-q2.csv", "examples/data/synthetic_prices.csv"):
+    development = checkout_root() is not None
+    mode = "development checkout" if development else "installed distribution"
+    checks.append({"name": "installation", "status": "passed", "required": True, "details": f"{mode} at {root}"})
+    for name in ("examples/options.json", "examples/trading.json", "examples/historical.json",
+                 "examples/data/bitstamp/btcusd-2025-q2.csv", "examples/data/synthetic_prices.csv",
+                 "research/papers.json", "experiments/experiments.json", "experiments/btc-financial-v1/sessions.csv",
+                 "reports/btc-financial-v1/run.json", "packaging/btc-compatibility.json"):
         path = root / name
         checks.append({"name": name, "status": "passed" if path.is_file() else "failed", "required": True,
                        "details": f"sha256:{digest(path.read_bytes())}" if path.is_file() else "Bundled file missing"})
     destination = (skills_dir if skills_dir is not None else skill_directory()) / "quant-research"
     expected = (root / "skills/quant-research").resolve()
-    linked = destination.is_symlink() and destination.resolve() == expected
+    linked = development and destination.is_symlink() and destination.resolve() == expected
     checks.append({"name": "codex_skill", "status": "passed" if linked else "unavailable", "required": False,
-                   "details": "Linked to this checkout" if linked else "Optional. Install with scripts/setup.py --install-skill; existing destinations are preserved"})
+                   "details": "Linked to this checkout" if linked else "Optional. Install from a source checkout with scripts/setup.py --install-skill"})
     return {"status": "ready" if all(c["status"] == "passed" for c in checks if c["required"]) else "needs_setup",
-            "checks": checks, "versions": versions, "code": code_identity(),
-            "next_step": "Use btc-study for the frozen BTC comparison or example options, trading or historical. Run python3 scripts/setup.py if required dependencies are missing. No model or broker connection is checked."}
+            "installation": mode, "checks": checks, "versions": versions, "code": code_identity(),
+            "next_step": "Use btc-study for the frozen BTC comparison or example options, trading or historical. Use the documented installer for this environment if required dependencies are missing. No model or broker connection is checked."}
 
 
 def example_path(kind: str, root: Path | None = None) -> Path:
@@ -134,7 +135,7 @@ def example_path(kind: str, root: Path | None = None) -> Path:
         raise ValueError("Supported examples are options, trading and historical")
     path = (root or repository_root()) / "examples" / f"{kind}.json"
     if not path.is_file():
-        raise ValueError("Bundled example missing; use a complete source checkout")
+        raise ValueError("Bundled example missing; reinstall the distribution or restore the checkout")
     return path
 
 

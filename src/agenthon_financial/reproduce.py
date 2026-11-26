@@ -7,13 +7,14 @@ from uuid import uuid4
 
 from agenthon_quant import __version__
 from agenthon_quant.records import digest, strict_json, write_json
+from .compatibility import COMPATIBILITY, ORIGINAL_RECEIPT, qualify
 from .reader import paragraphs, write_report
 from .run import execute, read_verified, sources
 from .study import DATA, ROOT, frozen, require
 from .view import render
 
 SAVED = ROOT/"reports/btc-financial-v1"
-RECEIPT = "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317"
+RECEIPT = ORIGINAL_RECEIPT
 PRESENTATION = {"tables.csv":"43d4be47d20284a3ce4fd3d1845b3fe8e3544b1e9a81a4aae1821d6ea3f9730d",
                 "equity.svg":"f6322050c5d13023af4f0d5a0bb21625404390d42af6f1ea5e86282149250e1b"}
 
@@ -23,7 +24,7 @@ def admitted_reference():
     reference = (SAVED/"run.json").read_bytes()
     require(digest(reference)==RECEIPT, "The original study receipt differs from this toolkit version")
     reference = strict_json(reference)
-    require(reference["code_files_sha256"]==sources(), "Study implementation differs from the qualified version")
+    qualify(reference["code_files_sha256"], sources())
     require(digest((DATA/"sessions.csv").read_bytes())==spec["snapshot_sha256"], "Bundled BTC data hash mismatch")
     return reference
 
@@ -61,11 +62,12 @@ def reproduce(out=None):
         for name,checksum in expected.items():
             require(digest((SAVED/name).read_bytes())==checksum, f"Archived artifact differs: {name}")
     except FileNotFoundError as exc:
-        raise ValueError(f"Missing bundled study file {Path(exc.filename).name}. Restore a complete checkout of "
-                         "the reviewed toolkit. The admitted daily data come with it and need no provider key.") from exc
+        raise ValueError(f"Missing bundled study file {Path(exc.filename).name}. Reinstall the distribution. Restore a complete checkout of "
+                         "the reviewed toolkit for source installations. The admitted daily data come with it and need no provider key.") from exc
     require(not target.exists(),f"Output folder already exists and was preserved: {target}. Omit --out for a fresh folder.")
     execute(target)
-    receipt = dict(status="checking",toolkit_version=__version__,original_receipt_sha256=RECEIPT,artifacts={})
+    receipt = dict(status="checking",toolkit_version=__version__,original_receipt_sha256=RECEIPT,
+                   implementation_compatibility_sha256=COMPATIBILITY,artifacts={})
     try:
         verified = read_verified(target)
         render(verified,target)

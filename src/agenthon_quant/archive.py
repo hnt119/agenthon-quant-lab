@@ -12,7 +12,7 @@ def search_archive(root: Path, category: str, query: str = "", status: str | Non
         raise ValueError("Archive category must be papers or experiments")
     path = root / ARCHIVES[category]
     if not path.is_file():
-        raise ValueError(f"Curated {category} archive is unavailable in this checkout: {ARCHIVES[category]}")
+        raise ValueError(f"Curated {category} archive resource is missing: {ARCHIVES[category]}")
     document = strict_json(bounded_read(path, 8 * 1024 * 1024))
     records = document.get(category) if isinstance(document, dict) else None
     if not isinstance(records, list) or not all(isinstance(row, dict) for row in records):
