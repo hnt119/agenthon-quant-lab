@@ -124,7 +124,20 @@ def programme_projection(root: Path = ROOT):
     public_value(catalogue)
     return {**catalogue, "provenance": {"generator": "scripts/export_site.py",
             "canonical_files_sha256": {path: sha(raw)},
-            "scope": "Editorial study descriptions. Completed entries identify their shared frozen experiment."}}
+            "scope": "Editorial study descriptions. Each completed comparison links to its protocol, report and run receipt."}}
+
+
+def cost_study_export(root: Path = ROOT):
+    """Copy only the reviewed exhibit, bound to its qualified run receipt."""
+    folder = root / "reports/btc-cost-break-even-v1"
+    receipt = json.loads((folder / "run.json").read_bytes())
+    data = (folder / "public.json").read_bytes()
+    expected = "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f"
+    if (receipt["status"] != "passed" or receipt["study_id"] != folder.name
+            or receipt["artifacts_sha256"]["public.json"] != expected or sha(data) != expected):
+        raise ValueError("Cost exhibit differs from the qualified study")
+    public_value(json.loads(data))
+    return data
 
 
 def numerical_reference():
@@ -186,7 +199,7 @@ def main():
     parser.add_argument("--site-root", type=Path, help="Copy the checked projection into an existing portfolio checkout")
     args = parser.parse_args()
     outputs = {"archive.json": encoded(projection()), "programme.json": encoded(programme_projection()),
-               "pricing-reference.json": encoded(numerical_reference())}
+               "pricing-reference.json": encoded(numerical_reference()), "btc-cost-break-even.json": cost_study_export()}
     directory = ROOT / "site-export"
     if args.check:
         for name, data in outputs.items():

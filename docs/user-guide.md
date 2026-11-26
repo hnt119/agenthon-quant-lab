@@ -8,6 +8,8 @@ quant-lab doctor
 quant-lab btc-study
 ```
 
+To reproduce the later **cost break-even study**, use its [pinned development wheel instructions](../experiments/btc-cost-break-even-v1/README.md). That study produces a cost grid, crossing brackets and a figure.
+
 The first install needs access to PyPI. The study runs offline with the bundled snapshot and references, independently checks the results and prints three paths. Start with `report.md`, explore the daily records in `dashboard.html`, and inspect the eight comparisons in `reproduction.json`. Use `quant-lab btc-study --out <new-directory>` to choose the destination. [Release and qualified platforms](releases/v0.3.1-pypi.md) · [Study report](../reports/btc-financial-v1/README.md) · [Protocol](../experiments/btc-financial-v1/protocol.json)
 
 `quant-lab doctor` identifies an installed distribution or a development checkout, verifies dependency imports and checks bundled resources. `doctor --json` gives structured diagnostics. CSV works with the base package. For Parquet input, install `python -m pip install 'agenthon-quant-lab[parquet]==0.3.1'` in the same environment. Source development and the optional Codex skill have their own setup. [Developer guide](development.md) · [Skill guide](plugin-guide.md)

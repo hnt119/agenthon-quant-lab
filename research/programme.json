@@ -53,24 +53,27 @@
       "id": "cost-break-even",
       "title": "Transaction-cost break-even",
       "question": "At what fee and slippage levels does the historical momentum comparison change sign?",
-      "execution_state": "proposed",
-      "finding": null,
-      "evidence_type": "none",
-      "experiment_id": null,
-      "dataset": null,
-      "evaluation_period": null,
+      "execution_state": "completed",
+      "finding": "In the 2020–2024 replay, momentum’s net Sharpe fell below passive BTC/cash near 0.3071× base costs. Terminal wealth crossed near 0.4781×. Each multiplier scales both the 50 bp fee and 10 bp adverse slippage per fill.",
+      "evidence_type": "retrospective",
+      "experiment_id": "btc-cost-break-even-v1",
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
+      ],
       "comparators": [
         "Training-calibrated passive BTC/cash",
         "Buy and hold BTC"
       ],
-      "protocol_url": null,
-      "implementation_url": null,
-      "result_url": null,
-      "source_receipt_url": null,
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/78f7486cbee975600b9d7f581533595f507a64f6/experiments/btc-cost-break-even-v1/protocol.json",
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/2dad3ac14e524c329e5d38e667a29b0af68d3119/src/agenthon_financial/cost_run.py",
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/364f042d0e056d73736f08dfb61cf3d9ff9b2bfd/reports/btc-cost-break-even-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/364f042d0e056d73736f08dfb61cf3d9ff9b2bfd/reports/btc-cost-break-even-v1/run.json",
       "dependencies": [
         "btc-momentum"
       ],
-      "next_action": "Freeze a common multiplier for one-way fees and slippage, a bounded range, and separate Sharpe and wealth crossing criteria."
+      "next_action": "Compare the two criteria and annual outcomes before specifying a slower trading schedule."
     },
     {
       "id": "turnover-aware",
@@ -91,9 +94,10 @@
       "result_url": null,
       "source_receipt_url": null,
       "dependencies": [
-        "btc-momentum"
+        "btc-momentum",
+        "cost-break-even"
       ],
-      "next_action": "Predeclare a small set of schedules and thresholds, including equality and initial position rules."
+      "next_action": "Freeze one weekly decision schedule alongside the daily baseline. Compare net Sharpe against passive BTC/cash and record turnover, costs and exposure under identical execution rules."
     },
     {
       "id": "dynamic-allocation",
