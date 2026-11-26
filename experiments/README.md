@@ -21,3 +21,5 @@ The two TypeError trials are useful self-debugging negatives: the first combines
 Every `sources` entry gives a repository-relative historical path, receipt-storage commit and SHA-256. `code_commit` separately identifies the tested solver source when known. Image manifests, OCI configurations and source fingerprints remain separately labelled. Historical source availability is not assumed; the archive contains summaries rather than private raw evidence.
 
 Null means unknown or not executed, not zero. Monetary billing remains unknown where only calls, tokens or local provider units were recorded. The source-reproduction fields permit historical inspection, not renewed live inference. The new archive consumed no billed model, data or cloud-compute budget.
+
+The [weekly cadence study](btc-weekly-cadence-v1/README.md) compared a single Sunday-close schedule with the original daily and passive accounts. Its protocol, journal and marginal paired intervals have a separate run identity. The inputs are the original retrospective sample.
