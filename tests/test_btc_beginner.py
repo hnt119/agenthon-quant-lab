@@ -5,7 +5,7 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from agenthon_financial import reproduce
-from agenthon_financial.reader import projection
+from agenthon_financial.reader import overview_html, write_report
 from agenthon_financial.study import ROOT
 
 
@@ -38,3 +38,22 @@ class BeginnerStudyTests(TestCase):
         self.assertEqual(len(summary["month_ends"]),60)
         for arm in ("momentum20","passive_mix"):
             self.assertEqual(summary["month_ends"][-1][arm]["equity"],metrics["portfolios"]["base"][arm]["pooled"]["ending_equity"])
+
+    def test_readers_report_the_frozen_fft_and_cost_comparisons(self):
+        spec = json.loads((ROOT / "experiments/btc-financial-v1/protocol.json").read_text())
+        result = json.loads((ROOT / "reports/btc-financial-v1/metrics.json").read_text())
+        with TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            write_report(folder, (None, spec, None, None, None, result, None))
+            report = (folder / "report.md").read_text()
+        dashboard = overview_html(spec, result)
+        for arm in ("momentum20", "momentum20_fft"):
+            metrics = result["portfolios"]["base"][arm]["pooled"]
+            for text in (report, dashboard):
+                self.assertIn("secondary FFT rule", text)
+                self.assertIn(f"{metrics['total_return']:+,.2%}", text)
+                self.assertIn(f"{metrics['mean_close_exposure']:.2%}", text)
+        for scenario in spec["scenarios"]:
+            self.assertIn(f"{result['sharpe_delta'][scenario]['pooled']:+.3f}", report)
+        hold = result["portfolios"]["base"]["buy_and_hold"]["pooled"]
+        self.assertIn(f"{hold['total_return']:+,.2%}", report)
