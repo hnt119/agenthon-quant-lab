@@ -4,14 +4,15 @@ Does resetting BTC to 50% of post-cost wealth on positive-signal Mondays reduce 
 
 ## Run the development build
 
-Use a fresh Python 3.12+ virtual environment. From the development checkout, install with `python -m pip install .`. Then run from any writable directory. The wheel bundles the frozen dataset and required references. Public PyPI v0.4.0 provides the three earlier BTC workflows.
+Use a fresh Python 3.12+ virtual environment. Install the exact reviewed revision using Git, then run from any writable directory. The wheel bundles the frozen dataset and required references. Public PyPI v0.4.0 provides the three earlier BTC workflows.
 
 ```sh
+python -m pip install 'agenthon-quant-lab @ git+https://github.com/hnt119/agenthon-quant-lab.git@57d7b49477066fd58006d7781823a00228c1d046'
 quant-lab doctor
 quant-lab btc-weekly-allocation --out runs/allocation
 ```
 
-Open `runs/allocation/README.md` for the result and `drawdown.svg` for the figure. `metrics.json` covers every account, cost setting, year and pooled period. The compressed daily ledger records decisions, trades, fees, shares and balances. The `target_for_open` field refers to total-account weight for the Monday target and to the active sleeve's binary instruction for the half-funded control. The verification and run receipts identify the checks, source and hashes. Each reproduction needs a new output directory. [Accounting evidence](../../reports/btc-weekly-allocation-v1/verification.json) · [Run receipt](../../reports/btc-weekly-allocation-v1/run.json)
+Open `runs/allocation/README.md` for the result and `drawdown.svg` for the figure. `metrics.json` covers every account, cost setting, year and pooled period. The compressed daily ledger records decisions, trades, fees, shares and balances. The `target_for_open` field refers to total-account weight for the Monday target and to the active sleeve's binary instruction for the half-funded control. The verification and run receipts identify the checks, source and hashes. Each reproduction needs a new output directory. [Development package qualification](qualification.md). [Accounting evidence](../../reports/btc-weekly-allocation-v1/verification.json) · [Run receipt](../../reports/btc-weekly-allocation-v1/run.json)
 
 ## Check the public exhibit
 
