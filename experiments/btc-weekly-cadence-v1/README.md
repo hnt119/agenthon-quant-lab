@@ -2,20 +2,19 @@
 
 Does one scheduled decision per week improve momentum after costs? The Sunday-close rule made 80 fills over 261 opportunities, compared with 188 daily fills. At base costs it finished above daily momentum and below passive BTC/cash. Both paired Sharpe intervals include zero. The holdings differed at 292 of 1,827 closing marks. [Report and figure](../../reports/btc-weekly-cadence-v1/README.md) · [Frozen protocol](protocol.json)
 
-## Run the development build
+## Run the published study
 
-Use an activated Python 3.12 environment with Git for the initial source install. These commands build the pinned package, install it, and run from your current writable directory. The inputs are bundled. After installation, reproduction works offline and requires neither a checkout nor credentials.
+In an activated Python 3.12+ environment, run from any writable directory. Installation needs PyPI access. All study inputs and reference data are bundled.
 
 ```sh
-python -m pip wheel --no-deps -w wheelhouse 'git+https://github.com/hnt119/agenthon-quant-lab.git@2021ae82b73258d6f1bdbc19b4a49d091514b02c'
-python -m pip install wheelhouse/agenthon_quant_lab-0.4.0.dev2-py3-none-any.whl
+python -m pip install agenthon-quant-lab==0.4.0
 quant-lab doctor
 quant-lab btc-weekly-cadence --out btc-weekly-review
 ```
 
 Choose a new output directory on each run. Read `README.md` and `weekly-cadence.svg` first. `comparisons.json` gives both contrasts by period and cost, the base-cost marginal intervals and the exposure counts. `metrics.json` contains all five accounts, three costs, five annual folds and the pooled history. `ledger.jsonl.gz` contains dated trades and cash, BTC and closing equity on every day. The verifier reconstructs scheduled signals from dated raw closes and balances from quote-side cash flows. `verification.json` reports its coverage and `run.json` identifies the inputs, source revision and outputs.
 
-The public PyPI version **0.3.1** reproduces the original study with `quant-lab btc-study`. The weekly and cost-crossing commands are development capabilities. [Published release](https://pypi.org/project/agenthon-quant-lab/0.3.1/) · [Cost-crossing study](../btc-cost-break-even-v1/README.md)
+The original report and public exhibit keep the development build’s provenance. Each new run records the executing package version. [Original development qualification](qualification.md) · [v0.4.0 package and qualification](../../docs/releases/v0.4.0.md)
 
 ## Inspect the evidence
 

@@ -1,7 +1,7 @@
 {
   "provenance": {
     "canonical_files_sha256": {
-      "research/programme.json": "818e5bbd18d428d25f99837a714674b16a92f2d68f39e799fb8b60ed5720b28d"
+      "research/programme.json": "70ab40e2c817ad2fd68dba8f5a43315512074964af7b054ff0e53e078c48be93"
     },
     "generator": "scripts/export_site.py",
     "scope": "Editorial study descriptions. Each completed comparison links to its protocol, report and run receipt."
@@ -113,13 +113,14 @@
     },
     {
       "comparators": [
-        "Plain 20-session momentum",
-        "Training-calibrated passive BTC/cash",
-        "Buy and hold BTC"
+        "Original daily momentum",
+        "Full-size weekly momentum",
+        "Annually training-calibrated passive BTC/cash",
+        "Half-funded weekly momentum plus a separate cash reserve"
       ],
       "dataset": null,
       "dependencies": [
-        "btc-momentum"
+        "turnover-aware"
       ],
       "evaluation_period": null,
       "evidence_type": "none",
@@ -128,9 +129,9 @@
       "finding": null,
       "id": "dynamic-allocation",
       "implementation_url": null,
-      "next_action": "Propose one capped BTC allocation at a predeclared cadence with only lagged inputs. Freeze an equal-risk or training-calibrated passive comparator, execution and costs before a new evaluation.",
+      "next_action": "Freeze one weekly target-weight rule and the half-funded sizing control before a separately authorized comparison. Allow the BTC weight to drift between Mondays.",
       "protocol_url": null,
-      "question": "Can a bounded BTC weight based on momentum strength or past volatility improve the risk and return tradeoff?",
+      "question": "Would a 50% BTC target on positive-signal Mondays reduce drawdown beyond investing half the starting capital in the existing weekly rule?",
       "result_url": null,
       "source_receipt_url": null,
       "title": "Dynamic portfolio allocation"

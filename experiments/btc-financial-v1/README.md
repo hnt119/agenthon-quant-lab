@@ -2,6 +2,18 @@
 
 The admitted snapshot covers Bitstamp BTC/USD spot from January 1, 2017 through December 31, 2024. The first three years supplied the initial fit. Five subsequent years supplied retrospective evaluation. The repository contains everything needed to reproduce the financial results offline after Python setup. [Main report](../../reports/btc-financial-v1/README.md) · [Frozen protocol](protocol.json) · [Source and usage terms](source.json)
 
+## Reproduce from the published package
+
+From a fresh Python 3.12+ environment and a writable directory, run:
+
+```sh
+python -m pip install agenthon-quant-lab==0.4.0
+quant-lab doctor
+quant-lab btc-study --out btc-study
+```
+
+Start with `btc-study/report.md`, open `btc-study/dashboard.html` and check `btc-study/reproduction.json`. The release also includes the [cost](../btc-cost-break-even-v1/README.md) and [weekly decision](../btc-weekly-cadence-v1/README.md) follow-ups.
+
 ## Run from the repository root
 
 The verified environment uses Python 3.12. A fresh checkout can install the numerical dependencies with `python3.12 scripts/setup.py`. Run the following from the checkout.

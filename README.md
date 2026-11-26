@@ -2,23 +2,29 @@
 
 Agenthon Quant Lab is a local Python toolkit for reproducible financial research. It grew out of Agenthon 2026 Track 1, where a program could finish and still get the trade accounting wrong. The toolkit records each assumption and checks portfolio results against an independent replay.
 
-## Reproduce the Bitcoin study
+## Reproduce the three BTC studies
 
-Activate a Python 3.12+ virtual environment and run these commands from a writable directory. The published package includes the data and reference outputs. The study runs offline after installation.
+In an activated Python 3.12+ virtual environment, run from any writable directory. The package contains the admitted data and reference records, so the three commands run offline after installation. Choose fresh output folders on each run.
 
 ```sh
-python -m pip install agenthon-quant-lab==0.3.1
+python -m pip install agenthon-quant-lab==0.4.0
 quant-lab doctor
-quant-lab btc-study
+quant-lab btc-study --out runs/momentum
+quant-lab btc-cost-break-even --out runs/costs
+quant-lab btc-weekly-cadence --out runs/weekly
 ```
 
-Open the printed `report.md` for the finding and `dashboard.html` for the daily decisions. The accompanying `reproduction.json` records which outputs matched and how they were compared. Each run writes a fresh folder. [PyPI package](https://pypi.org/project/agenthon-quant-lab/0.3.1/) · [Installation and run guide](docs/user-guide.md) · [Tested platforms](docs/releases/v0.3.1-pypi.md)
+Open `runs/momentum/report.md` for the original result and `dashboard.html` in the same folder for the daily decisions. Open `README.md` in each follow-up folder for its findings and figure. [Installation and output guide](docs/user-guide.md) · [v0.4.0 qualification](docs/releases/v0.4.0.md) · [PyPI package](https://pypi.org/project/agenthon-quant-lab/0.4.0/)
 
-## Did buying Bitcoin after a rise pay for the extra trading?
+## What survived the cost of trading?
 
-In five retrospective Bitstamp BTC/USD evaluation years (2020–2024), the momentum rule held BTC when its completed close exceeded the close 20 sessions earlier. It turned $10,000 into **$39,414** with 188 fills. The passive account used earlier signals to set its BTC share once each year, made five fills and ended at **$70,715**. Both accounts paid the same illustrative 0.50% fee and 0.10% adverse slippage on each fill. Removing those frictions reversed their ranking. Buy-and-hold still finished above momentum under zero friction. [Financial report and cost scenarios](reports/btc-financial-v1/README.md#costs-delay-and-the-negative-fft-result)
+All three analyses use the same previously examined 2020–2024 Bitstamp BTC/USD history. Each portfolio started with $10,000. The base case charges a 50 basis point fee and 10 basis points of adverse slippage per fill. Execution uses delayed minute-candle prices. Prospective observations total zero.
 
-The estimated predictive return spread and the base-case momentum-minus-passive Sharpe difference both had 95% intervals containing zero. Adding the fixed FFT entropy filter reduced base net return from +294.14% to +41.83%. Evidence of a repeatable momentum advantage is **inconclusive**. The historical fills use delayed minute-candle prices. Prospective performance is unmeasured. [Frozen protocol](experiments/btc-financial-v1/protocol.json) · [Saved example](examples/btc-study/README.md) · [Independent verification](reports/btc-financial-v1/verification.json)
+1. **Did daily momentum beat a simple allocation?** Buying BTC after a positive 20-session return produced $39,414 after costs. Passive BTC/cash, with its allocation set annually using earlier signals, finished at $70,715. The predictive-return and net-Sharpe intervals include zero. The fixed FFT filter reduced base net return from +294.14% to +41.83%. [Report](reports/btc-financial-v1/README.md) · [Protocol](experiments/btc-financial-v1/protocol.json)
+2. **Where did costs reverse the comparison?** As fee and slippage increased together, daily momentum lost its net-Sharpe advantage over passive near 0.3071× base costs (15.35 bp fee plus 3.07 bp slippage). Terminal wealth crossed near 0.4781× (23.90 bp plus 4.78 bp). Those estimates describe this sample and cost ratio. [Report and figure](reports/btc-cost-break-even-v1/README.md) · [Protocol](experiments/btc-cost-break-even-v1/protocol.json)
+3. **What changed when momentum could trade only on Mondays?** Using the completed Sunday close cut fills from 188 to 80. Weekly momentum finished at $48,686 after base costs, ahead of daily momentum and behind passive BTC/cash. Its maximum drawdown was slightly deeper (73.34% weekly, 71.82% daily). Both paired Sharpe intervals include zero. The two schedules held different positions on 292 closes. [Report and figure](reports/btc-weekly-cadence-v1/README.md) · [Protocol](experiments/btc-weekly-cadence-v1/protocol.json)
+
+The [portfolio walkthrough](https://hnt119.github.io/projects/quant-finance-agents/) follows these comparisons from the financial question to the saved evidence. The [verification architecture](docs/financial-workbench.md) explains how each cash balance and BTC position can be checked independently.
 
 ## What works today
 
@@ -31,7 +37,9 @@ The estimated predictive return spread and the base-case momentum-minus-passive 
 
 ## Research programme
 
-The [six-study catalogue](research/programme.json) records the question, status, evidence and next action for each study. Plain momentum and its FFT gate share the completed BTC experiment. The separate [descriptive cost study](reports/btc-cost-break-even-v1/README.md) replays the same history along one fee/slippage ratio. Momentum's net Sharpe fell below passive near 0.3071× base costs, before their terminal wealth crossed near 0.4781×. Buy-and-hold ended with more wealth at all 41 sampled settings. These are historical comparisons on a declared grid. A [weekly decision schedule](reports/btc-weekly-cadence-v1/README.md) cut fills from 188 to 80. At base costs it gained 0.081 Sharpe over daily momentum but trailed passive BTC/cash by 0.261. Both paired intervals include zero. [Reproduce the weekly study](experiments/btc-weekly-cadence-v1/README.md). Dynamic allocation and cross-asset validation remain proposed. [Reproduce the development study](experiments/btc-cost-break-even-v1/README.md)
+The next [proposed risk-management study](research/proposals/weekly-risk.md) would test a Monday target weight against a half-funded weekly account. No exposure-cap experiment has been run.
+
+The [six-study catalogue](research/programme.json) links four completed comparisons to three retrospective experiments. Daily momentum and the FFT gate share the original run. The cost study and weekly cadence have separate protocols and receipts. Dynamic allocation and cross-asset validation remain proposed.
 
 ## Agenthon origins
 

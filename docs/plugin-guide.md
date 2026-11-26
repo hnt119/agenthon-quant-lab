@@ -1,11 +1,11 @@
 # Optional Codex skill
 
-For the CLI alone, use the [v0.3.1 PyPI instructions](user-guide.md). The skill is a separate source-checkout integration. Its helper calls the same deterministic engine through the checkout’s own Python environment.
+For the CLI alone, use the [v0.4.0 PyPI instructions](user-guide.md). The skill is a separate source-checkout integration. Its helper calls the same deterministic engine through the checkout’s own Python environment.
 
 With Git and Python 3.12 installed, run the following from the parent directory for your new checkout.
 
 ```sh
-git clone --branch v0.3.1 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
+git clone --branch v0.4.0 --single-branch https://github.com/hnt119/agenthon-quant-lab.git
 cd agenthon-quant-lab
 python3.12 scripts/setup.py --install-skill
 .venv/bin/quant-lab doctor
@@ -38,9 +38,9 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" --v
 python3 "${CODEX_HOME:-$HOME/.codex}/skills/quant-research/scripts/quant.py" btc-study
 ```
 
-Expect version 0.3.1 and a new folder under your current directory’s `runs/`. Open the printed `report.md` or `dashboard.html`. The dashboard opens in a browser directly from disk. The final `reproduction.json` lists each original result that was checked. The admitted data come with the checkout. An incomplete checkout should be restored at the same reviewed Git revision. No market-data account or JSON specification is needed.
+Expect version 0.4.0 and a new folder under your current directory’s `runs/`. Open the printed `report.md` or `dashboard.html`. The dashboard opens in a browser directly from disk. The final `reproduction.json` lists each original result that was checked. The admitted data come with the checkout. An incomplete checkout should be restored at the same reviewed Git revision. No market-data account or JSON specification is needed.
 
-This reproduces one fixed Bitstamp study. Use `--out <fresh-folder>` for an explicit destination. The separate options, SMA and local daily-data workflows retain their own specifications. [Read the saved example](../examples/btc-study/README.md) · [Frozen data, license and protocol](../experiments/btc-financial-v1/README.md)
+The helper also accepts `btc-cost-break-even` and `btc-weekly-cadence` to reproduce the two follow-ups on the same history. Each prints the paths to a Markdown report, SVG figure and run receipt. [Read the three reports](user-guide.md#reproduce-the-three-btc-studies) Use `--out <fresh-folder>` for an explicit destination. The separate options, SMA and local daily-data workflows retain their own specifications. [Read the saved example](../examples/btc-study/README.md) · [Frozen data, license and protocol](../experiments/btc-financial-v1/README.md)
 
 Useful requests include:
 

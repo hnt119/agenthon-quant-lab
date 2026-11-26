@@ -1,20 +1,28 @@
 # Using Agenthon Quant Lab
 
-In an activated Python 3.12+ virtual environment, run the published toolkit from any writable directory.
+## Reproduce the three BTC studies
+
+Activate a Python 3.12+ virtual environment and use a writable directory. Installation from PyPI requires internet access. After installation each study runs offline. Choose new output paths each time.
 
 ```sh
-python -m pip install agenthon-quant-lab==0.3.1
+python -m pip install agenthon-quant-lab==0.4.0
 quant-lab doctor
-quant-lab btc-study
+quant-lab btc-study --out runs/momentum
+quant-lab btc-cost-break-even --out runs/costs
+quant-lab btc-weekly-cadence --out runs/weekly
 ```
 
-To reproduce the later **cost break-even study**, use its [pinned development wheel instructions](../experiments/btc-cost-break-even-v1/README.md). That study produces a cost grid, crossing brackets and a figure.
+| Study | Open first | Inspect the evidence |
+|---|---|---|
+| Daily momentum, FFT and passive BTC/cash | `runs/momentum/report.md` and the offline `dashboard.html` beside it | `reproduction.json` grades eight reference outputs. [Report](../reports/btc-financial-v1/README.md) · [Protocol](../experiments/btc-financial-v1/protocol.json) · [Code](../src/agenthon_financial/study.py) |
+| Cost break-even | `runs/costs/README.md` and `crossings.svg` | `grid.json` and `crossings.json` give the sampled costs and numerical brackets. [Report](../reports/btc-cost-break-even-v1/README.md) · [Protocol](../experiments/btc-cost-break-even-v1/protocol.json) · [Code](../src/agenthon_financial/cost_run.py) |
+| Weekly cadence | `runs/weekly/README.md` and `weekly-cadence.svg` | `comparisons.json` gives both marginal paired intervals, and `ledger.jsonl.gz` records the daily portfolios. [Report](../reports/btc-weekly-cadence-v1/README.md) · [Protocol](../experiments/btc-weekly-cadence-v1/protocol.json) · [Code](../src/agenthon_financial/weekly_run.py) |
 
-The [weekly cadence development build](../experiments/btc-weekly-cadence-v1/README.md) also provides `quant-lab btc-weekly-cadence`. It runs the fixed Sunday-close comparison.
+Each follow-up folder contains `verification.json` and `run.json` for its checks and output hashes. The reproduced follow-up reports preserve the original development-build instructions as part of the historical record. Use the commands above for v0.4.0. All three studies reuse the same historical sample. A verified replay establishes numerical and accounting consistency. The cost path, minute-candle fill proxies and zero prospective observations limit the financial inference. [Release qualification](releases/v0.4.0.md)
 
-The first install needs access to PyPI. The study runs offline with the bundled snapshot and references, independently checks the results and prints three paths. Start with `report.md`, explore the daily records in `dashboard.html`, and inspect the eight comparisons in `reproduction.json`. Use `quant-lab btc-study --out <new-directory>` to choose the destination. [Release and qualified platforms](releases/v0.3.1-pypi.md) · [Study report](../reports/btc-financial-v1/README.md) · [Protocol](../experiments/btc-financial-v1/protocol.json)
+`quant-lab doctor` identifies an installed distribution or development checkout and checks numerical dependencies and bundled resources. Use `quant-lab doctor --json` for structured diagnostics. CSV works with the base package. For Parquet input run `python -m pip install 'agenthon-quant-lab[parquet]==0.4.0'`. The optional Codex skill uses its own source checkout. [Developer guide](development.md) · [Skill guide](plugin-guide.md)
 
-`quant-lab doctor` identifies an installed distribution or a development checkout, verifies dependency imports and checks bundled resources. `doctor --json` gives structured diagnostics. CSV works with the base package. For Parquet input, install `python -m pip install 'agenthon-quant-lab[parquet]==0.3.1'` in the same environment. Source development and the optional Codex skill have their own setup. [Developer guide](development.md) · [Skill guide](plugin-guide.md)
+## Try the bundled examples
 
 ```sh
 quant-lab example options --out runs/first-options

@@ -75,6 +75,9 @@ def check(out, exact):
     assert result["software_version"] == dist.version
     for name, expected_hash in result["artifacts_sha256"].items():
         assert hashlib.sha256((replay / name).read_bytes()).hexdigest() == expected_hash
+    if exact:
+        archived_hashes = json.loads((reference / "run.json").read_bytes())["artifacts_sha256"]
+        assert result["artifacts_sha256"] == archived_hashes
     grades = {}
     for name in ("grid.json", "refinements.json", "crossings.json", "public.json"):
         actual = (replay / name).read_bytes()
@@ -101,6 +104,9 @@ def check(out, exact):
     assert set(receipt["artifacts_sha256"]) == set(ARTIFACTS)
     for name, expected_hash in receipt["artifacts_sha256"].items():
         assert hashlib.sha256((weekly / name).read_bytes()).hexdigest() == expected_hash
+    if exact:
+        archived_hashes = json.loads((archived / "run.json").read_bytes())["artifacts_sha256"]
+        assert receipt["artifacts_sha256"] == archived_hashes
     grades = {}
     for name in ("ledger.jsonl.gz", "metrics.json", "comparisons.json", "public.json"):
         if (weekly / name).read_bytes() == (archived / name).read_bytes():
