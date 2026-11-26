@@ -49,10 +49,10 @@ def main(argv=None) -> int:
     bundle.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        if args.command in ("btc-cost-break-even", "btc-weekly-cadence"):
+        if args.command in ("btc-cost-break-even", "btc-weekly-cadence", "btc-weekly-allocation"):
             print(f"Quant Lab {__version__} · frozen study reproduction")
             print("The saved report retains its original build instructions. "
-                  "Current installation and commands: https://github.com/hnt119/agenthon-quant-lab/blob/v0.4.0/docs/user-guide.md")
+                  "Current installation and commands: https://github.com/hnt119/agenthon-quant-lab/blob/v0.5.0/docs/user-guide.md")
         if args.command == "btc-weekly-allocation":
             from agenthon_financial.allocation_run import run as replay_allocation
             return replay_allocation(args.out)

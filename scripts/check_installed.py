@@ -47,8 +47,8 @@ def check(out, exact):
         results = json.loads(run("archive", category, query, "--json"))
         assert expected in {r["id"] for r in results["records"]}
 
-    run("btc-study", "--out", "btc")
-    folder = out / "btc"
+    run("btc-study", "--out", "runs/momentum")
+    folder = out / "runs/momentum"
     receipt = json.loads((folder / "reproduction.json").read_bytes())
     record = json.loads((folder / "run.json").read_bytes())
     assert receipt["status"] == "passed" and receipt["toolkit_version"] == dist.version
@@ -67,8 +67,8 @@ def check(out, exact):
     # Only the checking process reads committed expectations. The installed CLI
     # receives a fresh working directory and the same restricted environment above.
     from agenthon_financial.reproduce import compare
-    run("btc-cost-break-even", "--out", "cost-study", timeout=600)
-    replay = out / "cost-study"
+    run("btc-cost-break-even", "--out", "runs/costs", timeout=600)
+    replay = out / "runs/costs"
     reference = Path(__file__).resolve().parents[1] / "reports/btc-cost-break-even-v1"
     result = json.loads((replay / "run.json").read_bytes())
     assert result["status"] == "passed" and result["checkout_commit"] is None
@@ -95,8 +95,8 @@ def check(out, exact):
 
     from agenthon_financial.reproduce import decoded
     from agenthon_financial.weekly_run import ARTIFACTS
-    run("btc-weekly-cadence", "--out", "weekly")
-    weekly = out / "weekly"
+    run("btc-weekly-cadence", "--out", "runs/weekly")
+    weekly = out / "runs/weekly"
     archived = reference.parent / "btc-weekly-cadence-v1"
     receipt = json.loads((weekly / "run.json").read_bytes())
     assert receipt["status"] == "passed" and receipt["checkout_commit"] is None

@@ -1,15 +1,16 @@
 # Using Agenthon Quant Lab
 
-## Reproduce the three BTC studies
+## Reproduce the four BTC studies
 
 Activate a Python 3.12+ virtual environment and use a writable directory. Installation from PyPI requires internet access. After installation each study runs offline. Choose new output paths each time.
 
 ```sh
-python -m pip install agenthon-quant-lab==0.4.0
+python -m pip install agenthon-quant-lab==0.5.0
 quant-lab doctor
 quant-lab btc-study --out runs/momentum
 quant-lab btc-cost-break-even --out runs/costs
 quant-lab btc-weekly-cadence --out runs/weekly
+quant-lab btc-weekly-allocation --out runs/allocation
 ```
 
 | Study | Open first | Inspect the evidence |
@@ -17,10 +18,11 @@ quant-lab btc-weekly-cadence --out runs/weekly
 | Daily momentum, FFT and passive BTC/cash | `runs/momentum/report.md` and the offline `dashboard.html` beside it | `reproduction.json` grades eight reference outputs. [Report](../reports/btc-financial-v1/README.md) · [Protocol](../experiments/btc-financial-v1/protocol.json) · [Code](../src/agenthon_financial/study.py) |
 | Cost break-even | `runs/costs/README.md` and `crossings.svg` | `grid.json` and `crossings.json` give the sampled costs and numerical brackets. [Report](../reports/btc-cost-break-even-v1/README.md) · [Protocol](../experiments/btc-cost-break-even-v1/protocol.json) · [Code](../src/agenthon_financial/cost_run.py) |
 | Weekly cadence | `runs/weekly/README.md` and `weekly-cadence.svg` | `comparisons.json` gives both marginal paired intervals, and `ledger.jsonl.gz` records the daily portfolios. [Report](../reports/btc-weekly-cadence-v1/README.md) · [Protocol](../experiments/btc-weekly-cadence-v1/protocol.json) · [Code](../src/agenthon_financial/weekly_run.py) |
+| Weekly allocation | `runs/allocation/README.md` and `drawdown.svg` | `metrics.json` and the daily ledger compare the Monday target with the half-funded account. [Report](../reports/btc-weekly-allocation-v1/README.md) · [Protocol](../experiments/btc-weekly-allocation-v1/protocol.json) · [Code](../src/agenthon_financial/allocation_run.py) |
 
-Each follow-up folder contains `verification.json` and `run.json` for its checks and output hashes. The reproduced follow-up reports preserve the original development-build instructions as part of the historical record. Use the commands above for v0.4.0. All three studies reuse the same historical sample. A verified replay establishes numerical and accounting consistency. The cost path, minute-candle fill proxies and zero prospective observations limit the financial inference. [Release qualification](releases/v0.4.0.md)
+Each follow-up folder contains `verification.json` and `run.json` for its checks and output hashes. The reproduced follow-up reports preserve the original development-build instructions as part of the historical record. Use the commands above for v0.5.0. All four studies reuse the same historical sample. A verified replay establishes numerical and accounting consistency. The cost path, minute-candle fill proxies and zero prospective observations limit the financial inference. [Release qualification](releases/v0.5.0.md)
 
-`quant-lab doctor` identifies an installed distribution or development checkout and checks numerical dependencies and bundled resources. Use `quant-lab doctor --json` for structured diagnostics. CSV works with the base package. For Parquet input run `python -m pip install 'agenthon-quant-lab[parquet]==0.4.0'`. The optional Codex skill uses its own source checkout. [Developer guide](development.md) · [Skill guide](plugin-guide.md)
+`quant-lab doctor` identifies an installed distribution or development checkout and checks numerical dependencies and bundled resources. Use `quant-lab doctor --json` for structured diagnostics. CSV works with the base package. For Parquet input run `python -m pip install 'agenthon-quant-lab[parquet]==0.5.0'`. The optional Codex skill uses its own source checkout. [Developer guide](development.md) · [Skill guide](plugin-guide.md)
 
 ## Try the bundled examples
 
@@ -107,7 +109,3 @@ external snapshot paths, changed inputs/results, an existing output ZIP and outp
 inside the saved run. Unrelated neighboring files are excluded. The original run
 is unchanged. Content is capped at 128 MiB. Public website exports are a separate,
 curated artifact with their own provenance and publication review.
-
-## Development study
-
-The [weekly allocation comparison](../experiments/btc-weekly-allocation-v1/README.md) installs from a pinned development revision. Its command is `quant-lab btc-weekly-allocation --out runs/allocation`. The public v0.4.0 installation above continues to provide the three released studies.

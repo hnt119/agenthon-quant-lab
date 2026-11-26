@@ -14,7 +14,7 @@ free dependencies; skill installation is optional and preserves existing links.
 
 For the frozen BTC momentum study, run `python3 <skill>/scripts/quant.py --version`
 and then `python3 <skill>/scripts/quant.py btc-study` from the user's working directory.
-The installed v0.4.0 CLI supports all three BTC studies independently. For a skill invocation use the helper at the
+The installed v0.5.0 CLI supports all four BTC studies independently. For a skill invocation use the helper at the
 resolved installed skill path. If the command is unavailable, identify the linked
 checkout and direct the user to the [setup guide](../../docs/plugin-guide.md).
 The admitted Bitstamp data are bundled. Each run creates a fresh folder and checks
@@ -25,7 +25,7 @@ recorded. Explain the dollar outcome versus passive BTC/cash, the assumed fee an
 slippage, and the uncertain predictive result. This command takes no asset, date,
 or strategy overrides. A different question needs a separately named experiment.
 
-On the v0.4.0 skill checkout, use `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>` for the cost study. Read the printed report and verification receipt. Give both fee and adverse slippage for each crossing, distinguish net Sharpe from terminal wealth, and identify the comparator and historical period. [Cost findings](../../reports/btc-cost-break-even-v1/README.md)
+On the v0.5.0 skill checkout, use `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>` for the cost study. Read the printed report and verification receipt. Give both fee and adverse slippage for each crossing, distinguish net Sharpe from terminal wealth, and identify the comparator and historical period. [Cost findings](../../reports/btc-cost-break-even-v1/README.md)
 
 Use `python3 <skill>/scripts/quant.py btc-weekly-cadence --out <new-directory>` for the weekly study. Explain turnover and the changed position days alongside the paired base-cost Sharpe comparisons with passive BTC/cash and daily momentum. Both intervals include zero. The same retrospective data and minute-candle fill proxies apply to all three runs. [Weekly findings](../../reports/btc-weekly-cadence-v1/README.md) · [Installation and outputs](../../docs/user-guide.md)
 
@@ -65,4 +65,4 @@ discrete dividends, multiple assets, forecasting and live orders are unsupported
 Model assistance remains mock-only with zero paid budget; do not read credentials,
 call model endpoints, execute generated code or run competition evaluators.
 
-On the pinned allocation development build, use `quant-lab btc-weekly-allocation --out <fresh-directory>` for the Monday 50% target and half-funded sizing control. Explain the paired drawdown difference, terminal wealth and conditional interval from the checked report. Public v0.4.0 includes the original three BTC studies.
+On the v0.5.0 skill checkout, use `python3 <skill>/scripts/quant.py btc-weekly-allocation --out <fresh-directory>` for the Monday 50% target and half-funded sizing control. Explain the paired drawdown difference, terminal wealth and conditional interval from the checked report.
