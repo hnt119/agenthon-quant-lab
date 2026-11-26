@@ -1,0 +1,91 @@
+{
+  "id": "btc-weekly-allocation-v1",
+  "schema_version": 1,
+  "frozen_utc": "2026-11-26T14:13:41.020150+00:00",
+  "proposal_commit": "96c3df8849cdd0e0c44a2b6c051a29befd380034",
+  "proposal_sha256": "7512ec2c1480cb8640fd26db9c026f77e7ca454f37331c026cdc465bd38893df",
+  "parent_release": "4a1f64fa71e7197e6fe69e42624bad59a9179862",
+  "weekly_protocol_sha256": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+  "weekly_metrics_sha256": "601239e99a8ff36607c9d0995b65740dd0f3d6f866eed586e40d19dffc644b5a",
+  "weekly_ledger_sha256": "50376abadd4b94bb4207a530ea96a36a7ea6bb923095e6208241fc5854fb43ab",
+  "source_protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+  "source_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+  "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "evaluation": [
+    "2020-01-01",
+    "2024-12-31"
+  ],
+  "evaluation_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "initial_cash": 10000,
+  "scenarios": {
+    "gross": [
+      5,
+      0,
+      0
+    ],
+    "base": [
+      5,
+      50,
+      10
+    ],
+    "double_cost": [
+      5,
+      100,
+      20
+    ]
+  },
+  "scenario_units": [
+    "minimum_delay_minutes",
+    "fee_bps_on_filled_notional",
+    "adverse_slippage_bps"
+  ],
+  "momentum": "Last positive-volume close[t]/close[t-20]-1. Strictly positive is long, else flat; 21 completed closes required. Cutoff is the following 00:00 UTC session boundary.",
+  "passive": "At the first delayed fill of each evaluation year target the fraction of valid close signals strictly positive in the expanding training dates through preceding Dec 31. Exact BTC share of post-cost equity at reallocation; drift without trading to next annual fold.",
+  "question": "Does a Monday 50% BTC allocation target during positive-momentum weeks reduce maximum drawdown beyond initially allocating half to the full-size weekly strategy?",
+  "evidence": "Exploratory, retrospective and descriptive. All five 2020–2024 evaluation years were previously examined. No prospective observations.",
+  "arms": [
+    "target50",
+    "half_funded",
+    "weekly20",
+    "momentum20",
+    "passive_mix"
+  ],
+  "positive_target": 0.5,
+  "inactive_cash": 5000,
+  "rule": "On each completed Sunday UTC session use the 20-session daily momentum signal. First trade-bearing Monday minute open at or after 00:05 UTC. Positive targets 50% BTC by post-cost equity at the unadjusted quote; nonpositive targets zero. Start in cash, first eligible Monday 2020-01-06. Explicitly rebalance drift on consecutive positive decisions. Same quote and unchanged target with no drift requires no adjustment. Hold cash and units between Mondays; weights may drift.",
+  "control": "Start a separate 5,000 USD weekly 0/100% sleeve and retain 5,000 USD inactive cash with no transfers. Independently verify total wealth(t) = 5000 + 0.5 * full_weekly(t), and total return(t) = 0.5 * full_weekly(t-1) / control(t-1) times full_weekly_return(t). Compute Sharpe from the control's own returns. Compare first post-fill quote weights before the daily close.",
+  "accounting": "Continuous fractional spot units, zero interest, no leverage, shorting, tax or final liquidation. Fee on filled notional, adverse slippage per fill, price_5 as quote and close as mark. Separate USD fees and slippage; turnover = absolute unadjusted-quote notional / pretrade total equity. Retain timing, cash, shares, execution, cost and close equity ledger.",
+  "metrics": "For each arm in each cost scenario, both pooled and per calendar year: ending wealth, total return, Sharpe (mean close-to-close total return times sqrt(365) / sample daily SD; zero rate, undefined if SD zero), maximum drawdown, mean closing BTC exposure, fills, summed one-way turnover, USD fees and slippage. Count and cost actual trades on consecutive strictly positive Mondays; first decision after cash is excluded. Report quote-valued first-fill weights, worst peak/trough dates and exposures.",
+  "drawdown": "Positive loss fraction 1 - total close wealth/running peak, including inactive cash. Pooled peak includes initial 10000 and never resets. Annual peak starts at prior year-end closing wealth (initial wealth in 2020); accounts carry continuously. For tied maxima report earliest trough and latest equal peak up to trough; initial wealth is the opening boundary.",
+  "primary": "100 * (base-cost pooled maximum drawdown of half_funded minus that of target50), in percentage points. Positive favors the target.",
+  "uncertainty": {
+    "draws": 4000,
+    "block_sessions": 20,
+    "seed": 20261121,
+    "method": "NumPy PCG64. In chronological year order draw one uniform integer start matrix of shape (4000, ceil(days/20)) per year. Same indices for full-size weekly and target daily net returns. Circular contiguous 20-session blocks within year, truncate to observed length. Compound from 10000 and carry wealth and peaks through year boundaries. Rebuild control as 5000 + 0.5 * resampled full-size wealth at each close; never resample control returns directly. Draw-by-draw difference of total-wealth pooled maximum drawdowns in percentage points; linear 2.5th and 97.5th percentiles.",
+    "scope": "Conditional on observed return paths. No market-price resimulation, refitting or execution on the bootstrap paths."
+  },
+  "interpretation": "An interval wholly above zero supports a conditional descriptive drawdown benefit; one wholly below zero favors the sizing control. An interval containing zero leaves incremental benefit inconclusive. Report point direction, all declared arms/costs/years and wealth/cost trade-offs regardless of sign. No alternative weights or schedules.",
+  "outputs": [
+    "dated portfolio ledger",
+    "period metrics",
+    "primary difference and paired interval",
+    "first-fill, exposure and unchanged-positive diagnostics",
+    "independent verification",
+    "report",
+    "figure",
+    "aggregate public exhibit",
+    "provenance receipt"
+  ]
+}
