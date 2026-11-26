@@ -28,6 +28,10 @@ The separate 72-case, 24-family controlled comparison is **paused pending indepe
 
 The [cost study](../experiments/btc-cost-break-even-v1/README.md) holds signals, FFT decisions and annual passive weights fixed. Its [verifier](../src/agenthon_financial/cost_verify.py) reconstructs trades and cash flows. A separate [saved-result check](../scripts/check_cost_study.py) derives each plotted difference from the two underlying books and replays the numerical brackets. This extends the financial verification method above. The experiment adds no learned strategy, fitted threshold or model evaluation.
 
+## Weekly allocation verification
+
+The [allocation books](../src/agenthon_financial/allocation_books.py) reuse the original Sunday signal, Monday fill and post-cost allocation solver. The [independent replay](../src/agenthon_financial/allocation_verify.py) reconstructs all five accounts from dated quotes and checks the inactive reserve at each close. Two independent implementations of the paired bootstrap preserve that reserve through every sampled path. The [exhibit audit](../scripts/check_allocation_exhibit.py) traces the public chart and comparators back to observed books. This extends Agenthon’s separation of execution and independent financial checks. No paper forecasting model or LLM repair was used in this allocation study. [Report](../reports/btc-weekly-allocation-v1/README.md)
+
 ## A possible MES replication
 
 First qualify licensed, timestamped trades and executable quote proxies by individual contract. Document exchange sessions, holiday schedules, overnight breaks, time zones, daylight-saving transitions and the point at which each settlement was observable. Prespecify a contract selection and roll rule, identify roll trades by contract, and keep any adjusted signal series separate from actual fill and settlement prices.

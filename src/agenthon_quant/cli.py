@@ -19,6 +19,8 @@ def main(argv=None) -> int:
     costs.add_argument("--out", type=Path, help="New output directory (defaults to a unique folder under ./runs)")
     weekly = sub.add_parser("btc-weekly-cadence", help="Replay Sunday-close BTC momentum against daily and passive accounts")
     weekly.add_argument("--out", type=Path, help="New output directory (defaults to a unique folder under ./runs)")
+    allocation = sub.add_parser("btc-weekly-allocation", help="Compare a Monday 50% BTC target with a half-funded weekly account")
+    allocation.add_argument("--out", type=Path, help="Fresh output directory for the frozen allocation study")
     run = sub.add_parser("run", help="Calculate and save a new inspectable run")
     run.add_argument("spec", type=Path)
     run.add_argument("--out", type=Path, required=True)
@@ -51,6 +53,9 @@ def main(argv=None) -> int:
             print(f"Quant Lab {__version__} · frozen study reproduction")
             print("The saved report retains its original build instructions. "
                   "Current installation and commands: https://github.com/hnt119/agenthon-quant-lab/blob/v0.4.0/docs/user-guide.md")
+        if args.command == "btc-weekly-allocation":
+            from agenthon_financial.allocation_run import run as replay_allocation
+            return replay_allocation(args.out)
         if args.command == "btc-weekly-cadence":
             from agenthon_financial.weekly_run import run as run_weekly
             return run_weekly(args.out)

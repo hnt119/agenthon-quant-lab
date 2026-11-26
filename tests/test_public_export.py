@@ -19,12 +19,12 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(any(e["status"] == "incomplete" for e in a["experiments"]))
 
 
-    def test_programme_traces_four_comparisons_to_three_frozen_runs(self):
+    def test_programme_traces_five_comparisons_to_four_frozen_runs(self):
         view = export.programme_projection()
         studies = view["studies"]
         self.assertEqual(len(studies), 6)
         completed = [s for s in studies if s["execution_state"] == "completed"]
-        self.assertEqual({s["id"] for s in completed}, {"btc-momentum", "btc-fft-gate", "cost-break-even", "turnover-aware"})
+        self.assertEqual({s["id"] for s in completed}, {"btc-momentum", "btc-fft-gate", "cost-break-even", "turnover-aware", "dynamic-allocation"})
         parent = [s for s in completed if s["id"] in {"btc-momentum", "btc-fft-gate"}]
         self.assertEqual(len({s["source_receipt_url"] for s in parent}), 1)
         cost = next(s for s in completed if s["id"] == "cost-break-even")
@@ -33,7 +33,11 @@ class PublicExportTests(unittest.TestCase):
         self.assertEqual(cost["evaluation_period"], parent[0]["evaluation_period"])
         weekly = next(s for s in completed if s["id"] == "turnover-aware")
         self.assertEqual(weekly["experiment_id"], "btc-weekly-cadence-v1")
-        self.assertEqual(len({s["source_receipt_url"] for s in completed}), 3)
+        self.assertEqual(len({s["source_receipt_url"] for s in completed}), 4)
+        allocation = next(s for s in completed if s["id"] == "dynamic-allocation")
+        self.assertEqual(allocation["experiment_id"], "btc-weekly-allocation-v1")
+        self.assertEqual(export.study_export(allocation["experiment_id"]),
+                         (ROOT / "site-export/btc-weekly-allocation.json").read_bytes())
         self.assertEqual(weekly["evaluation_period"], parent[0]["evaluation_period"])
         self.assertEqual(export.study_export(weekly["experiment_id"]),
                          (ROOT / "site-export/btc-weekly-cadence.json").read_bytes())

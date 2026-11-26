@@ -107,3 +107,7 @@ external snapshot paths, changed inputs/results, an existing output ZIP and outp
 inside the saved run. Unrelated neighboring files are excluded. The original run
 is unchanged. Content is capped at 128 MiB. Public website exports are a separate,
 curated artifact with their own provenance and publication review.
+
+## Development study
+
+The [weekly allocation comparison](../experiments/btc-weekly-allocation-v1/README.md) installs from a pinned development revision. Its command is `quant-lab btc-weekly-allocation --out runs/allocation`. The public v0.4.0 installation above continues to provide the three released studies.

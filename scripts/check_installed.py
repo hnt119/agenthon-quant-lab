@@ -117,6 +117,29 @@ def check(out, exact):
     print(f"Installed weekly cadence study on {sys.version.split()[0]}: {grades}")
 
 
+    from agenthon_financial.allocation_run import ARTIFACTS as allocation_artifacts
+    run("btc-weekly-allocation", "--out", "runs/allocation")
+    fresh = out / "runs/allocation"
+    archived = reference.parent / "btc-weekly-allocation-v1"
+    receipt = json.loads((fresh / "run.json").read_bytes())
+    assert receipt["status"] == "passed" and receipt["checkout_commit"] is None
+    assert receipt["software_version"] == dist.version and receipt["paid_usd"] == 0
+    assert set(receipt["artifacts_sha256"]) == set(allocation_artifacts)
+    grades = {}
+    for name, checksum in receipt["artifacts_sha256"].items():
+        actual, expected = fresh / name, archived / name
+        assert hashlib.sha256(actual.read_bytes()).hexdigest() == checksum
+        if actual.read_bytes() == expected.read_bytes():
+            grades[name] = "byte-identical"
+        else:
+            assert not exact and name.endswith((".json", ".gz")), name
+            assert compare(decoded(actual), decoded(expected)), name
+            grades[name] = "numerically equivalent"
+    audit = Path(__file__).with_name("check_allocation_exhibit.py")
+    subprocess.run([sys.executable, audit, fresh], cwd=out, env=env, check=True, timeout=120)
+    print(f"Installed weekly allocation: {grades}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("out", type=Path)

@@ -10,8 +10,9 @@ Copy checked bytes from this directory into the portfolio’s `public/agenthon-q
 | `btc-study.json` | The independent financial replay admits the [frozen BTC run](../reports/btc-financial-v1/run.json). The BTC exporter selects zero-, base- and double-cost summaries and actual UTC month-end paths for each portfolio. Daily maximum drawdowns include closes between chart points. |
 | `btc-cost-break-even.json` | A hash-checked copy of the [public cost exhibit](../reports/btc-cost-break-even-v1/public.json) supplies the 41-point curve and four comparison records. The [four-panel figure](../reports/btc-cost-break-even-v1/crossings.svg) uses those same records. |
 | `btc-weekly-cadence.json` | The [weekly report and figure](../reports/btc-weekly-cadence-v1/README.md) use the same five portfolios’ pooled and annual results, base-cost paired intervals and observed position-day counts. |
+| `btc-weekly-allocation.json` | The [weekly allocation report](../reports/btc-weekly-allocation-v1/README.md) and drawdown figure share the checked account summaries, month-end samples and dated worst declines. |
 
-The programme lists four completed comparisons across three retrospective runs. Historical exhibit metadata identifies the build that produced each saved record. Public installation instructions follow the [current release guide](../docs/user-guide.md).
+The programme lists five completed comparisons across four retrospective runs. Historical exhibit metadata identifies the build that produced each saved record. Public installation instructions follow the [current release guide](../docs/user-guide.md).
 
 Run the following from the toolkit checkout with its development environment active.
 
