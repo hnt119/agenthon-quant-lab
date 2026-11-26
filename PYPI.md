@@ -33,3 +33,7 @@ Software is MIT-licensed. The 2017–2024 BTC observations and derived outputs u
 ## Cost-crossing development study
 
 This development build also provides `quant-lab btc-cost-break-even --out btc-cost-review`. It reruns the fixed Bitcoin portfolios across the declared fee and slippage grid, checks the accounting and writes a report, figure and machine-readable crossing brackets. The published v0.3.1 release supports the original `quant-lab btc-study` workflow. [Study protocol](https://github.com/hnt119/agenthon-quant-lab/blob/78f7486cbee975600b9d7f581533595f507a64f6/experiments/btc-cost-break-even-v1/protocol.json) · [Cost study report](https://github.com/hnt119/agenthon-quant-lab/blob/364f042d0e056d73736f08dfb61cf3d9ff9b2bfd/reports/btc-cost-break-even-v1/README.md)
+
+## Weekly-decision development study
+
+`quant-lab btc-weekly-cadence --out weekly-review` reproduces the development study of Sunday-close BTC momentum, with Monday execution, immutable baselines, three cost scenarios and paired uncertainty. The report, figure and accounting receipt are generated locally from bundled inputs. [Weekly protocol](https://github.com/hnt119/agenthon-quant-lab/blob/997f4f7d7f0ea2932a3f9caa3d8233c3983ccfc4/experiments/btc-weekly-cadence-v1/protocol.json)

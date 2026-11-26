@@ -17,6 +17,8 @@ def main(argv=None) -> int:
     btc.add_argument("--out", type=Path, help="New run folder. Defaults to a unique folder under ./runs")
     costs = sub.add_parser("btc-cost-break-even", help="Replay the frozen retrospective BTC cost grid and crossings")
     costs.add_argument("--out", type=Path, help="New output directory (defaults to a unique folder under ./runs)")
+    weekly = sub.add_parser("btc-weekly-cadence", help="Replay Sunday-close BTC momentum against daily and passive accounts")
+    weekly.add_argument("--out", type=Path, help="New output directory (defaults to a unique folder under ./runs)")
     run = sub.add_parser("run", help="Calculate and save a new inspectable run")
     run.add_argument("spec", type=Path)
     run.add_argument("--out", type=Path, required=True)
@@ -45,6 +47,9 @@ def main(argv=None) -> int:
     bundle.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "btc-weekly-cadence":
+            from agenthon_financial.weekly_run import run as run_weekly
+            return run_weekly(args.out)
         if args.command == "btc-cost-break-even":
             from agenthon_financial.cost_run import run as run_cost_study
             return run_cost_study(args.out)
