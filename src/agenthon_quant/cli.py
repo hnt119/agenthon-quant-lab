@@ -15,6 +15,8 @@ def main(argv=None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     btc = sub.add_parser("btc-study", help="Reproduce the frozen Bitstamp BTC research and open its results from the printed paths")
     btc.add_argument("--out", type=Path, help="New run folder. Defaults to a unique folder under ./runs")
+    costs = sub.add_parser("btc-cost-break-even", help="Replay the frozen retrospective BTC cost grid and crossings")
+    costs.add_argument("--out", type=Path, help="New output directory (defaults to a unique folder under ./runs)")
     run = sub.add_parser("run", help="Calculate and save a new inspectable run")
     run.add_argument("spec", type=Path)
     run.add_argument("--out", type=Path, required=True)
@@ -43,6 +45,9 @@ def main(argv=None) -> int:
     bundle.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "btc-cost-break-even":
+            from agenthon_financial.cost_run import run as run_cost_study
+            return run_cost_study(args.out)
         if args.command == "btc-study":
             from agenthon_financial.reproduce import reproduce as reproduce_btc
             return reproduce_btc(args.out)

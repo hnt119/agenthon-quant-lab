@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agenthon-quant-lab"
-version = "0.3.1"
+version = "0.4.0.dev1"
 description = "Reproduce a cost-aware Bitcoin momentum study with independent portfolio verification"
 readme = "PYPI.md"
 requires-python = ">=3.12"
@@ -19,7 +19,7 @@ classifiers = [
 
 [project.urls]
 Source = "https://github.com/hnt119/agenthon-quant-lab"
-Documentation = "https://github.com/hnt119/agenthon-quant-lab/blob/v0.3.0/docs/user-guide.md"
+Documentation = "https://github.com/hnt119/agenthon-quant-lab/blob/main/docs/user-guide.md"
 Study = "https://github.com/hnt119/agenthon-quant-lab/tree/v0.3.0/reports/btc-financial-v1"
 Issues = "https://github.com/hnt119/agenthon-quant-lab/issues"
 
@@ -39,6 +39,7 @@ include-package-data = false
 [tool.setuptools.package-data]
 "agenthon_quant._bundled" = [
     "pyproject.toml", "packaging/btc-compatibility.json",
+    "experiments/btc-cost-break-even-v1/protocol.json",
     "examples/options.json", "examples/trading.json", "examples/historical.json",
     "examples/data/synthetic_prices.csv", "examples/data/README.md",
     "examples/data/bitstamp/btcusd-2025-q2.csv", "examples/data/bitstamp/README.md",
