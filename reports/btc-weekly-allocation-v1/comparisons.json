@@ -1,0 +1,173 @@
+{
+  "diagnostics": {
+    "base": {
+      "first_fill": {
+        "date": "2020-01-06",
+        "difference_pp": 0.14967559901394867,
+        "half_funded_weight": 0.4985032440098604,
+        "target50_weight": 0.4999999999999999
+      },
+      "unchanged_positive": {
+        "buys": 37,
+        "decisions": 114,
+        "fees_usd": 171.78969835709958,
+        "fills": 114,
+        "sells": 77,
+        "slippage_usd": 34.382853592800515,
+        "turnover": 1.7035075304652474
+      },
+      "worst_declines": {
+        "half_funded": {
+          "drawdown": 0.644512889239834,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 0.8788192725844778,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 0.6591135831721384
+        },
+        "momentum20": {
+          "drawdown": 0.7181938489014073,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 1.0,
+          "trough_date": "2022-12-19",
+          "trough_exposure": 1.0
+        },
+        "passive_mix": {
+          "drawdown": 0.5351695465498305,
+          "peak_date": "2021-11-08",
+          "peak_exposure": 0.7720386162977693,
+          "trough_date": "2022-11-21",
+          "trough_exposure": 0.32404770952562584
+        },
+        "target50": {
+          "drawdown": 0.45020648811709896,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 0.5411709125897431,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 0.4998569548549522
+        },
+        "weekly20": {
+          "drawdown": 0.7333850193617358,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 1.0,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 1.0
+        }
+      }
+    },
+    "double_cost": {
+      "first_fill": {
+        "date": "2020-01-06",
+        "difference_pp": 0.2987047842466839,
+        "half_funded_weight": 0.49701295215753327,
+        "target50_weight": 0.5000000000000001
+      },
+      "unchanged_positive": {
+        "buys": 37,
+        "decisions": 114,
+        "fees_usd": 309.5358282233503,
+        "fills": 114,
+        "sells": 77,
+        "slippage_usd": 61.99722780239216,
+        "turnover": 1.7072282745346197
+      },
+      "worst_declines": {
+        "half_funded": {
+          "drawdown": 0.6983811670968658,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 0.8702681104828736,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 0.5698813357626437
+        },
+        "momentum20": {
+          "drawdown": 0.8317932056074966,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 1.0,
+          "trough_date": "2022-12-19",
+          "trough_exposure": 1.0
+        },
+        "passive_mix": {
+          "drawdown": 0.5354908193099148,
+          "peak_date": "2021-11-08",
+          "peak_exposure": 0.7720386162977693,
+          "trough_date": "2022-11-21",
+          "trough_exposure": 0.3240477095256258
+        },
+        "target50": {
+          "drawdown": 0.5268066369793807,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 0.5411709125897431,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 0.49985695485495224
+        },
+        "weekly20": {
+          "drawdown": 0.8024896680511076,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 1.0,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 1.0
+        }
+      }
+    },
+    "gross": {
+      "first_fill": {
+        "date": "2020-01-06",
+        "difference_pp": 0.0,
+        "half_funded_weight": 0.5,
+        "target50_weight": 0.5
+      },
+      "unchanged_positive": {
+        "buys": 37,
+        "decisions": 114,
+        "fees_usd": 0.0,
+        "fills": 114,
+        "sells": 77,
+        "slippage_usd": 0.0,
+        "turnover": 1.6998089728834602
+      },
+      "worst_declines": {
+        "half_funded": {
+          "drawdown": 0.5676992939181527,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 0.8868823362108043,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 0.7383356950433034
+        },
+        "momentum20": {
+          "drawdown": 0.5751788143224519,
+          "peak_date": "2021-11-08",
+          "peak_exposure": 1.0,
+          "trough_date": "2022-11-09",
+          "trough_exposure": 0.0
+        },
+        "passive_mix": {
+          "drawdown": 0.5348499912423705,
+          "peak_date": "2021-11-08",
+          "peak_exposure": 0.7720386162977692,
+          "trough_date": "2022-11-21",
+          "trough_exposure": 0.32404770952562584
+        },
+        "target50": {
+          "drawdown": 0.3716535772890973,
+          "peak_date": "2021-11-08",
+          "peak_exposure": 0.5159250300044324,
+          "trough_date": "2022-12-19",
+          "trough_exposure": 0.49554055682776915
+        },
+        "weekly20": {
+          "drawdown": 0.6401066643672735,
+          "peak_date": "2021-02-21",
+          "peak_exposure": 1.0,
+          "trough_date": "2023-09-26",
+          "trough_exposure": 1.0
+        }
+      }
+    }
+  },
+  "primary": {
+    "difference_pp": 19.4306401122735,
+    "interval95_pp": [
+      0.655547310658555,
+      23.81753365315996
+    ]
+  }
+}

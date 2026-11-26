@@ -1,0 +1,189 @@
+{
+  "accounts": {
+    "base": {
+      "accounts": {
+        "half_funded": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.4985032440098604,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "momentum20": {
+          "fills": 188,
+          "first_fill": {
+            "date": "2020-01-04",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "passive_mix": {
+          "fills": 5,
+          "first_fill": {
+            "date": "2020-01-01",
+            "post_weight": 0.5562790697674419,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "target50": {
+          "fills": 194,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.5,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "weekly20": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        }
+      },
+      "first_fill_target_minus_control_pp": 0.14967559901395977,
+      "status": "passed",
+      "verified_control_identities": 1827
+    },
+    "double_cost": {
+      "accounts": {
+        "half_funded": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.49701295215753327,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "momentum20": {
+          "fills": 188,
+          "first_fill": {
+            "date": "2020-01-04",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "passive_mix": {
+          "fills": 5,
+          "first_fill": {
+            "date": "2020-01-01",
+            "post_weight": 0.5562790697674419,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "target50": {
+          "fills": 194,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.5,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "weekly20": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        }
+      },
+      "first_fill_target_minus_control_pp": 0.2987047842466728,
+      "status": "passed",
+      "verified_control_identities": 1827
+    },
+    "gross": {
+      "accounts": {
+        "half_funded": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.5,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "momentum20": {
+          "fills": 188,
+          "first_fill": {
+            "date": "2020-01-04",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "passive_mix": {
+          "fills": 5,
+          "first_fill": {
+            "date": "2020-01-01",
+            "post_weight": 0.5562790697674419,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "target50": {
+          "fills": 194,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 0.5,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        },
+        "weekly20": {
+          "fills": 80,
+          "first_fill": {
+            "date": "2020-01-06",
+            "post_weight": 1.0,
+            "pre_weight": 0.0
+          },
+          "period_summaries": 6,
+          "sessions": 1827
+        }
+      },
+      "first_fill_target_minus_control_pp": 0.0,
+      "status": "passed",
+      "verified_control_identities": 1827
+    }
+  },
+  "frozen_comparators": "Three arms, three cost scenarios, pooled and all annual summaries matched.",
+  "primary": {
+    "block_sessions": 20,
+    "difference_pp": 19.4306401122735,
+    "draws": 4000,
+    "fixed_reserve_preserved": true,
+    "interval95_pp": [
+      0.6555473106584601,
+      23.81753365316
+    ],
+    "seed": 20261121,
+    "status": "passed"
+  },
+  "status": "passed"
+}
