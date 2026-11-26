@@ -1,0 +1,102 @@
+{
+  "baseline_comparison": "Full daily records and period metrics meet original reproduction tolerances.",
+  "original_baselines": {
+    "base": {
+      "buy_and_hold": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "cash": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "momentum20": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "passive_mix": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      }
+    },
+    "double_cost": {
+      "buy_and_hold": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "cash": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "momentum20": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "passive_mix": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      }
+    },
+    "gross": {
+      "buy_and_hold": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "cash": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "momentum20": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      },
+      "passive_mix": {
+        "matched_daily_rows": 1827,
+        "matched_periods": 6
+      }
+    }
+  },
+  "parent": {
+    "fit_members": 1031,
+    "portfolio_sessions": 36540,
+    "portfolios": 20,
+    "predictive_labels": {
+      "30": 1822,
+      "5": 1822
+    },
+    "scope": "Direct DFT, fit membership, prior-close targets, independent annual weights, delayed quotes, cash and units, net/gross fills, compounding, risk, exposures and paired label membership. Conditional bootstrap reproducibility is checked by offline regeneration.",
+    "sessions": 2922,
+    "status": "passed",
+    "verified_period_summaries": 120
+  },
+  "status": "passed",
+  "weekly": {
+    "base": {
+      "fills": 80,
+      "first_scheduled_session": "2020-01-06",
+      "period_summaries": 6,
+      "portfolio_sessions": 1827,
+      "scenario": "base",
+      "scheduled_decisions": 261,
+      "status": "passed"
+    },
+    "double_cost": {
+      "fills": 80,
+      "first_scheduled_session": "2020-01-06",
+      "period_summaries": 6,
+      "portfolio_sessions": 1827,
+      "scenario": "double_cost",
+      "scheduled_decisions": 261,
+      "status": "passed"
+    },
+    "gross": {
+      "fills": 80,
+      "first_scheduled_session": "2020-01-06",
+      "period_summaries": 6,
+      "portfolio_sessions": 1827,
+      "scenario": "gross",
+      "scheduled_decisions": 261,
+      "status": "passed"
+    }
+  }
+}
