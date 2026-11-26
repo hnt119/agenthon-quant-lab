@@ -31,7 +31,7 @@ The estimated predictive return spread and the base-case momentum-minus-passive 
 
 ## Research programme
 
-The [six-study catalogue](research/programme.json) records the question, status, evidence and next action for each study. Plain momentum and its FFT gate share the completed BTC experiment. The four proposed studies cover cost break-even, turnover, allocation and cross-asset replication. The three observed cost scenarios show how rankings change across assumptions. A crossing between them requires a separate calculation.
+The [six-study catalogue](research/programme.json) records the question, status, evidence and next action for each study. Plain momentum and its FFT gate share the completed BTC experiment. The separate [descriptive cost study](reports/btc-cost-break-even-v1/README.md) replays the same history along one fee/slippage ratio. Momentum's net Sharpe fell below passive near 0.3071× base costs, before their terminal wealth crossed near 0.4781×. Buy-and-hold ended with more wealth at all 41 sampled settings. These are historical comparisons on a declared grid. Turnover-aware momentum, dynamic allocation and cross-asset validation remain proposed. [Reproduce the development study](experiments/btc-cost-break-even-v1/README.md)
 
 ## Agenthon origins
 
