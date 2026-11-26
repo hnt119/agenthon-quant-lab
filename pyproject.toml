@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agenthon-quant-lab"
-version = "0.4.0"
+version = "0.5.0.dev1"
 description = "Reproduce three studies of Bitcoin momentum, trading costs and weekly decisions with independently checked portfolio accounting"
 readme = "PYPI.md"
 requires-python = ">=3.12"
@@ -40,6 +40,7 @@ include-package-data = false
 "agenthon_quant._bundled" = [
     "pyproject.toml", "packaging/btc-compatibility.json",
     "experiments/btc-cost-break-even-v1/protocol.json", "experiments/btc-weekly-cadence-v1/protocol.json",
+    "experiments/btc-weekly-allocation-v1/protocol.json", "reports/btc-weekly-cadence-v1/metrics.json",
     "examples/options.json", "examples/trading.json", "examples/historical.json",
     "examples/data/synthetic_prices.csv", "examples/data/README.md",
     "examples/data/bitstamp/btcusd-2025-q2.csv", "examples/data/bitstamp/README.md",
