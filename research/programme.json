@@ -106,28 +106,31 @@
     },
     {
       "id": "dynamic-allocation",
-      "title": "Dynamic portfolio allocation",
+      "title": "Weekly BTC allocation and drawdown",
       "question": "Would a 50% BTC target on positive-signal Mondays reduce drawdown beyond investing half the starting capital in the existing weekly rule?",
-      "execution_state": "proposed",
-      "finding": null,
-      "evidence_type": "none",
-      "experiment_id": null,
-      "dataset": null,
-      "evaluation_period": null,
+      "execution_state": "completed",
+      "finding": "Rebalancing to 50% BTC on positive Mondays reduced base-cost maximum drawdown by 19.43 percentage points versus a half-funded weekly account (paired 95% interval +0.66 to +23.82). It also finished $4,008 lower per $10,000 invested.",
+      "evidence_type": "retrospective",
+      "experiment_id": "btc-weekly-allocation-v1",
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
+      ],
       "comparators": [
         "Original daily momentum",
         "Full-size weekly momentum",
         "Annually training-calibrated passive BTC/cash",
         "Half-funded weekly momentum plus a separate cash reserve"
       ],
-      "protocol_url": null,
-      "implementation_url": null,
-      "result_url": null,
-      "source_receipt_url": null,
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/cf2fa6ffc2a38f0b85cefa2545a53a65579507e7/experiments/btc-weekly-allocation-v1/protocol.json",
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/5a74b09ab6570847e894166776c4363618075524/src/agenthon_financial/allocation_books.py",
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/bfaeada64e257c62943474065c3ae23b70bda23f/reports/btc-weekly-allocation-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/bfaeada64e257c62943474065c3ae23b70bda23f/reports/btc-weekly-allocation-v1/run.json",
       "dependencies": [
         "turnover-aware"
       ],
-      "next_action": "Freeze one weekly target-weight rule and the half-funded sizing control before a separately authorized comparison. Allow the BTC weight to drift between Mondays."
+      "next_action": "Prespecify prospective paper observation of both accounts, retaining all scheduled decisions and omissions. Cross-asset validation still requires a qualified market."
     },
     {
       "id": "cross-asset",

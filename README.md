@@ -37,9 +37,9 @@ The [portfolio walkthrough](https://hnt119.github.io/projects/quant-finance-agen
 
 ## Research programme
 
-The next [proposed risk-management study](research/proposals/weekly-risk.md) would test a Monday target weight against a half-funded weekly account. No exposure-cap experiment has been run.
+In the [development allocation study](reports/btc-weekly-allocation-v1/README.md), a 50% BTC target on positive Mondays reduced the worst base-cost decline from 64.45% to 45.02% versus putting half the initial capital into weekly momentum. The paired difference was +19.43 percentage points (95% interval +0.66 to +23.82). The target also finished $4,008 lower. Both accounts use the same prior history. [Reproduce the development study](experiments/btc-weekly-allocation-v1/README.md)
 
-The [six-study catalogue](research/programme.json) links four completed comparisons to three retrospective experiments. Daily momentum and the FFT gate share the original run. The cost study and weekly cadence have separate protocols and receipts. Dynamic allocation and cross-asset validation remain proposed.
+The [six-study catalogue](research/programme.json) links five completed comparisons to four retrospective experiments. Daily momentum and the FFT gate share the original run. The cost, weekly cadence and weekly allocation studies each have their own protocol and receipt. Cross-asset validation remains proposed.
 
 ## Agenthon origins
 

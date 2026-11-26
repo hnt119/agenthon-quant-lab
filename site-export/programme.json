@@ -1,7 +1,7 @@
 {
   "provenance": {
     "canonical_files_sha256": {
-      "research/programme.json": "70ab40e2c817ad2fd68dba8f5a43315512074964af7b054ff0e53e078c48be93"
+      "research/programme.json": "ab076141309a065e32c8f053bef6882a062ed4aa258fc4732fbaef51e468f61f"
     },
     "generator": "scripts/export_site.py",
     "scope": "Editorial study descriptions. Each completed comparison links to its protocol, report and run receipt."
@@ -118,23 +118,26 @@
         "Annually training-calibrated passive BTC/cash",
         "Half-funded weekly momentum plus a separate cash reserve"
       ],
-      "dataset": null,
+      "dataset": "Bitstamp BTC/USD spot, Kaggle v706 normalized by ff137",
       "dependencies": [
         "turnover-aware"
       ],
-      "evaluation_period": null,
-      "evidence_type": "none",
-      "execution_state": "proposed",
-      "experiment_id": null,
-      "finding": null,
+      "evaluation_period": [
+        "2020-01-01",
+        "2024-12-31"
+      ],
+      "evidence_type": "retrospective",
+      "execution_state": "completed",
+      "experiment_id": "btc-weekly-allocation-v1",
+      "finding": "Rebalancing to 50% BTC on positive Mondays reduced base-cost maximum drawdown by 19.43 percentage points versus a half-funded weekly account (paired 95% interval +0.66 to +23.82). It also finished $4,008 lower per $10,000 invested.",
       "id": "dynamic-allocation",
-      "implementation_url": null,
-      "next_action": "Freeze one weekly target-weight rule and the half-funded sizing control before a separately authorized comparison. Allow the BTC weight to drift between Mondays.",
-      "protocol_url": null,
+      "implementation_url": "https://github.com/hnt119/agenthon-quant-lab/blob/5a74b09ab6570847e894166776c4363618075524/src/agenthon_financial/allocation_books.py",
+      "next_action": "Prespecify prospective paper observation of both accounts, retaining all scheduled decisions and omissions. Cross-asset validation still requires a qualified market.",
+      "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/cf2fa6ffc2a38f0b85cefa2545a53a65579507e7/experiments/btc-weekly-allocation-v1/protocol.json",
       "question": "Would a 50% BTC target on positive-signal Mondays reduce drawdown beyond investing half the starting capital in the existing weekly rule?",
-      "result_url": null,
-      "source_receipt_url": null,
-      "title": "Dynamic portfolio allocation"
+      "result_url": "https://github.com/hnt119/agenthon-quant-lab/blob/bfaeada64e257c62943474065c3ae23b70bda23f/reports/btc-weekly-allocation-v1/README.md",
+      "source_receipt_url": "https://github.com/hnt119/agenthon-quant-lab/blob/bfaeada64e257c62943474065c3ae23b70bda23f/reports/btc-weekly-allocation-v1/run.json",
+      "title": "Weekly BTC allocation and drawdown"
     },
     {
       "comparators": [

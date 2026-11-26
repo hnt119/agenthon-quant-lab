@@ -64,3 +64,5 @@ only. Preserve losses and never tune on the final holdout. American options,
 discrete dividends, multiple assets, forecasting and live orders are unsupported.
 Model assistance remains mock-only with zero paid budget; do not read credentials,
 call model endpoints, execute generated code or run competition evaluators.
+
+On the pinned allocation development build, use `quant-lab btc-weekly-allocation --out <fresh-directory>` for the Monday 50% target and half-funded sizing control. Explain the paired drawdown difference, terminal wealth and conditional interval from the checked report. Public v0.4.0 includes the original three BTC studies.

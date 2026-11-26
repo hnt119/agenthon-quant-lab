@@ -128,6 +128,7 @@ def programme_projection(root: Path = ROOT):
 
 
 EXHIBITS = {
+    "btc-weekly-allocation-v1": "13ebf97d67dde30420ae32566f96d423c8083fb18e7e9a3bb12ec8aca4c4334a",
     "btc-cost-break-even-v1": "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f",
     "btc-weekly-cadence-v1": "53fea182631ee02b81e2ace76e74618c07f954ec8161bc386176595eeeb9c468",
 }
@@ -210,7 +211,8 @@ def main():
     args = parser.parse_args()
     outputs = {"archive.json": encoded(projection()), "programme.json": encoded(programme_projection()),
                "pricing-reference.json": encoded(numerical_reference()), "btc-cost-break-even.json": cost_study_export(),
-               "btc-weekly-cadence.json": study_export("btc-weekly-cadence-v1")}
+               "btc-weekly-cadence.json": study_export("btc-weekly-cadence-v1"),
+               "btc-weekly-allocation.json": study_export("btc-weekly-allocation-v1")}
     directory = ROOT / "site-export"
     if args.check:
         for name, data in outputs.items():
