@@ -14,7 +14,7 @@ free dependencies; skill installation is optional and preserves existing links.
 
 For the frozen BTC momentum study, run `python3 <skill>/scripts/quant.py --version`
 and then `python3 <skill>/scripts/quant.py btc-study` from the user's working directory.
-This workflow is included in v0.3.0. Use the helper at the
+The published v0.3.1 CLI also runs the study independently. For a skill invocation use the helper at the
 resolved installed skill path. If the command is unavailable, identify the linked
 checkout and direct the user to the [setup guide](../../docs/plugin-guide.md).
 The admitted Bitstamp data are bundled. Each run creates a fresh folder and checks

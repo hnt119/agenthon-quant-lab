@@ -11,6 +11,16 @@
     "2019-12-31"
   ],
   "end": "2024-12-31",
+  "evidence": {
+    "metrics_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/metrics.json",
+    "protocol_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/experiments/btc-financial-v1/protocol.json",
+    "publisher_terms_url": "https://raw.githubusercontent.com/ff137/bitstamp-btcusd-minute-data/d7156d68d85714e188a1e152818281e97c89fbe5/DATA_LICENSE",
+    "report_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/README.md",
+    "reproduction_command": "quant-lab btc-study",
+    "source_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/experiments/btc-financial-v1/source.json",
+    "verification_url": "https://github.com/hnt119/agenthon-quant-lab/blob/8fd6f46875f58a6c493078f560b2b1ad7cf3d8f8/reports/btc-financial-v1/verification.json"
+  },
+  "inference_scope": "Five retrospective annual folds. The 95% intervals apply to the base Sharpe difference and predictive difference at the five-minute execution proxy.",
   "initial_usd": 10000,
   "inputs_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
   "interval95": {
@@ -22,6 +32,59 @@
       -0.9804425392457271,
       0.26498464046310766
     ]
+  },
+  "later_fill": {
+    "adverse_slippage_bps": 10,
+    "fee_bps_on_filled_notional": 50,
+    "minimum_delay_minutes": 30,
+    "portfolios": {
+      "buy_and_hold": {
+        "ending_equity": 129671.95511268206,
+        "max_drawdown": 0.7666336091416391,
+        "mean_close_exposure": 1.0,
+        "sharpe": 1.1183750863699244,
+        "total_return": 11.967195511268207,
+        "trade_events": 1,
+        "transaction_cost": 59.69155222886434
+      },
+      "cash": {
+        "ending_equity": 10000.0,
+        "max_drawdown": 0.0,
+        "mean_close_exposure": 0.0,
+        "sharpe": null,
+        "total_return": 0.0,
+        "trade_events": 0,
+        "transaction_cost": 0.0
+      },
+      "momentum20": {
+        "ending_equity": 41119.70989203454,
+        "max_drawdown": 0.6917358686703172,
+        "mean_close_exposure": 0.5769020251778872,
+        "sharpe": 0.8435798490045555,
+        "total_return": 3.1119709892034537,
+        "trade_events": 188,
+        "transaction_cost": 35220.551022113315
+      },
+      "momentum20_fft": {
+        "ending_equity": 14321.177968825694,
+        "max_drawdown": 0.6986279863069573,
+        "mean_close_exposure": 0.3426382047071702,
+        "sharpe": 0.3782744209113328,
+        "total_return": 0.43211779688256935,
+        "trade_events": 150,
+        "transaction_cost": 16629.124571388493
+      },
+      "passive_mix": {
+        "ending_equity": 70676.28684514492,
+        "max_drawdown": 0.5351590637766452,
+        "mean_close_exposure": 0.6252578965449195,
+        "sharpe": 1.1657950123412737,
+        "total_return": 6.067628684514491,
+        "trade_events": 5,
+        "transaction_cost": 176.7226906764859
+      }
+    },
+    "sharpe_delta": -0.3222151633367182
   },
   "ledger_sha256": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
   "license": "CC BY-SA 4.0",
@@ -689,6 +752,7 @@
       }
     }
   ],
+  "original_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
   "portfolios": {
     "buy_and_hold": {
       "ending_equity": 129704.93244779816,
@@ -751,8 +815,4318 @@
     "fee_bps_on_filled_notional",
     "adverse_slippage_bps"
   ],
+  "scenarios": {
+    "base": {
+      "adverse_slippage_bps": 10,
+      "fee_bps_on_filled_notional": 50,
+      "minimum_delay_minutes": 5,
+      "month_ends": [
+        {
+          "buy_and_hold": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12956.25613490104
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-01-31",
+          "momentum20": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12644.443768517931
+          },
+          "momentum20_fft": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12644.443768517931
+          },
+          "passive_mix": {
+            "drawdown": 0.011319356583668339,
+            "equity": 11648.87067607406
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17717994141280824,
+            "equity": 11844.914282695476
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-02-29",
+          "momentum20": {
+            "drawdown": 0.10442163973218932,
+            "equity": 12582.033798739107
+          },
+          "momentum20_fft": {
+            "drawdown": 0.07532571798256293,
+            "equity": 12990.804138779251
+          },
+          "passive_mix": {
+            "drawdown": 0.11425103851839857,
+            "equity": 11029.01268421676
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.380440446003682,
+            "equity": 8918.875680682951
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-03-31",
+          "momentum20": {
+            "drawdown": 0.10442163973218932,
+            "equity": 12582.033798739107
+          },
+          "momentum20_fft": {
+            "drawdown": 0.07532571798256293,
+            "equity": 12990.804138779251
+          },
+          "passive_mix": {
+            "drawdown": 0.2453196208539965,
+            "equity": 9396.99602944855
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.167571719136553,
+            "equity": 11983.229541400691
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-04-30",
+          "momentum20": {
+            "drawdown": 0.018543124709908154,
+            "equity": 14559.860585820279
+          },
+          "momentum20_fft": {
+            "drawdown": 0.07532571798256293,
+            "equity": 12990.804138779251
+          },
+          "passive_mix": {
+            "drawdown": 0.1080553632934016,
+            "equity": 11106.158900148504
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.08856102446536296,
+            "equity": 13120.62877715024
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-05-31",
+          "momentum20": {
+            "drawdown": 0.15540547919711312,
+            "equity": 14253.764175245291
+          },
+          "momentum20_fft": {
+            "drawdown": 0.15540547919711312,
+            "equity": 12399.942530430153
+          },
+          "passive_mix": {
+            "drawdown": 0.057106853838758465,
+            "equity": 11740.550563535026
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11878379473641576,
+            "equity": 12685.556589118156
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-06-30",
+          "momentum20": {
+            "drawdown": 0.2046366493329842,
+            "equity": 13422.91638745594
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2852989884574366,
+            "equity": 10492.90665672738
+          },
+          "passive_mix": {
+            "drawdown": 0.07659541932104241,
+            "equity": 11497.886281386993
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 15774.356609237502
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-07-31",
+          "momentum20": {
+            "drawdown": 0.053175679803325826,
+            "equity": 15979.041117435818
+          },
+          "momentum20_fft": {
+            "drawdown": 0.14919854072963623,
+            "equity": 12491.069903851265
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 13220.68415309517
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.052314207237050825,
+            "equity": 16188.635671914923
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-08-31",
+          "momentum20": {
+            "drawdown": 0.10940225458065289,
+            "equity": 15410.847766261542
+          },
+          "momentum20_fft": {
+            "drawdown": 0.17945190379278664,
+            "equity": 12046.904148455778
+          },
+          "passive_mix": {
+            "drawdown": 0.03572975284065394,
+            "equity": 13451.75093722655
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12360652378605963,
+            "equity": 14970.800237816118
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-09-30",
+          "momentum20": {
+            "drawdown": 0.09939517607126513,
+            "equity": 15584.009627816207
+          },
+          "momentum20_fft": {
+            "drawdown": 0.20882215115202007,
+            "equity": 11615.703885621006
+          },
+          "passive_mix": {
+            "drawdown": 0.08442124573074761,
+            "equity": 12772.495472227181
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 19190.34624916605
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-10-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 18082.585549557847
+          },
+          "momentum20_fft": {
+            "drawdown": 0.04824519567079255,
+            "equity": 13973.21979489525
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 15125.974117842938
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 27363.29460124424
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-11-30",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 25783.751325813402
+          },
+          "momentum20_fft": {
+            "drawdown": 0.005619450407027604,
+            "equity": 17781.23852297736
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 19684.488082757096
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 40270.58896802559
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-12-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 36265.445522627095
+          },
+          "momentum20_fft": {
+            "drawdown": 0.00857137777476158,
+            "equity": 23315.394983577207
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 26883.61367190504
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.18505611542705203,
+            "equity": 46032.92376529281
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-01-31",
+          "momentum20": {
+            "drawdown": 0.23300644780249202,
+            "equity": 39015.538327137365
+          },
+          "momentum20_fft": {
+            "drawdown": 0.00857137777476158,
+            "equity": 23315.394983577207
+          },
+          "passive_mix": {
+            "drawdown": 0.12415485348568867,
+            "equity": 29126.9184389452
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.21310366791313917,
+            "equity": 62839.0749796376
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-02-28",
+          "momentum20": {
+            "drawdown": 0.21310366791313928,
+            "equity": 47344.66084067124
+          },
+          "momentum20_fft": {
+            "drawdown": 0.21310366791313917,
+            "equity": 27026.189663099503
+          },
+          "passive_mix": {
+            "drawdown": 0.15820973141450811,
+            "equity": 35765.18800714903
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.03895369245153979,
+            "equity": 81648.20004077158
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-03-31",
+          "momentum20": {
+            "drawdown": 0.08495108653409555,
+            "equity": 55055.130763890564
+          },
+          "momentum20_fft": {
+            "drawdown": 0.0,
+            "equity": 35457.398219118164
+          },
+          "passive_mix": {
+            "drawdown": 0.02937378928460499,
+            "equity": 43194.61315663192
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09107617965253567,
+            "equity": 80249.0602210653
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-04-30",
+          "momentum20": {
+            "drawdown": 0.1783595387147523,
+            "equity": 49435.08742677524
+          },
+          "momentum20_fft": {
+            "drawdown": 0.12365556735931782,
+            "equity": 31837.896969227404
+          },
+          "passive_mix": {
+            "drawdown": 0.06932126232182123,
+            "equity": 42641.966261553964
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.412542822658189,
+            "equity": 51866.708019356556
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-05-31",
+          "momentum20": {
+            "drawdown": 0.37602663594479335,
+            "equity": 37542.18451681066
+          },
+          "momentum20_fft": {
+            "drawdown": 0.33448313529922336,
+            "equity": 24178.458355442457
+          },
+          "passive_mix": {
+            "drawdown": 0.31400075560456064,
+            "equity": 31431.20762373865
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4487923129395537,
+            "equity": 48666.233498334426
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-06-30",
+          "momentum20": {
+            "drawdown": 0.36998030000519977,
+            "equity": 37905.97033295451
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3280342405718999,
+            "equity": 24412.748936002467
+          },
+          "passive_mix": {
+            "drawdown": 0.3415915091299456,
+            "equity": 30167.050688236435
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3472749246119847,
+            "equity": 57629.22338484663
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-07-31",
+          "momentum20": {
+            "drawdown": 0.32078987359251865,
+            "equity": 40865.57753933212
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2755687664902765,
+            "equity": 26318.837793347087
+          },
+          "passive_mix": {
+            "drawdown": 0.26432307809419475,
+            "equity": 33707.34627673309
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.25813772094100373,
+            "equity": 65499.16436911459
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-08-31",
+          "momentum20": {
+            "drawdown": 0.22803582804434297,
+            "equity": 46446.2476339969
+          },
+          "momentum20_fft": {
+            "drawdown": 0.1445763472563174,
+            "equity": 31077.837784656014
+          },
+          "passive_mix": {
+            "drawdown": 0.19647763813521135,
+            "equity": 36815.89796552396
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.31039426421800353,
+            "equity": 60885.42403741379
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-09-30",
+          "momentum20": {
+            "drawdown": 0.3403746455157569,
+            "equity": 39687.233777214715
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3498492201617611,
+            "equity": 23620.203166669584
+          },
+          "passive_mix": {
+            "drawdown": 0.23625191894449282,
+            "equity": 34993.51450312941
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.07017499993559662,
+            "equity": 85227.42335415902
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-10-31",
+          "momentum20": {
+            "drawdown": 0.1650525273446849,
+            "equity": 50235.721404122654
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2633257762467791,
+            "equity": 26763.629872179805
+          },
+          "passive_mix": {
+            "drawdown": 0.05388580329083015,
+            "equity": 44608.37225566856
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.15667609052827902,
+            "equity": 79136.27382307692
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-11-30",
+          "momentum20": {
+            "drawdown": 0.1888741482322861,
+            "equity": 48802.46200817717
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2843435943139542,
+            "equity": 26000.04525725357
+          },
+          "passive_mix": {
+            "drawdown": 0.12095999213839659,
+            "equity": 42202.4262391262
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3159405852662117,
+            "equity": 64191.12816276919
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-12-31",
+          "momentum20": {
+            "drawdown": 0.2708653539030249,
+            "equity": 43869.35244074008
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3566844418166054,
+            "equity": 23371.877194936056
+          },
+          "passive_mix": {
+            "drawdown": 0.2439183322812336,
+            "equity": 36299.236129512385
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.43024733936263126,
+            "equity": 53464.75068146679
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-01-31",
+          "momentum20": {
+            "drawdown": 0.29554274793924606,
+            "equity": 42384.60431899191
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3784573086031492,
+            "equity": 22580.861398343528
+          },
+          "passive_mix": {
+            "drawdown": 0.3180477216436214,
+            "equity": 32740.308141322137
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3608700543228881,
+            "equity": 59975.012947653464
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-02-28",
+          "momentum20": {
+            "drawdown": 0.3941066251279989,
+            "equity": 36454.37800281691
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3784573086031492,
+            "equity": 22580.861398343528
+          },
+          "passive_mix": {
+            "drawdown": 0.2732678834392759,
+            "equity": 34890.17367863273
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3262589736378573,
+            "equity": 63222.86579237949
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-03-31",
+          "momentum20": {
+            "drawdown": 0.4625691789034895,
+            "equity": 32335.23770870632
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4797618962252048,
+            "equity": 18900.43061897265
+          },
+          "passive_mix": {
+            "drawdown": 0.2509280269247788,
+            "equity": 35962.702958658585
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.44286031468790243,
+            "equity": 52281.16765025683
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-04-30",
+          "momentum20": {
+            "drawdown": 0.5342364750455099,
+            "equity": 28023.279842269905
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4797618962252048,
+            "equity": 18900.43061897265
+          },
+          "passive_mix": {
+            "drawdown": 0.32618881557685164,
+            "equity": 32349.456856795572
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5298515371749138,
+            "equity": 44118.03943152916
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-05-31",
+          "momentum20": {
+            "drawdown": 0.5373195327408757,
+            "equity": 27837.783589476076
+          },
+          "momentum20_fft": {
+            "drawdown": 0.48320554091469003,
+            "equity": 18775.32181387408
+          },
+          "passive_mix": {
+            "drawdown": 0.3823376381480298,
+            "equity": 29653.770060083807
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7050742314125431,
+            "equity": 27675.399829513593
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-06-30",
+          "momentum20": {
+            "drawdown": 0.5911739292782952,
+            "equity": 24597.562438512963
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5433586178163228,
+            "equity": 16589.939681639506
+          },
+          "passive_mix": {
+            "drawdown": 0.49543580699674816,
+            "equity": 24223.963582641038
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6547827824568155,
+            "equity": 32394.67534254019
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-07-31",
+          "momentum20": {
+            "drawdown": 0.5716988469782631,
+            "equity": 25769.306579058026
+          },
+          "momentum20_fft": {
+            "drawdown": 0.533143324889064,
+            "equity": 16961.064814195568
+          },
+          "passive_mix": {
+            "drawdown": 0.46297499585359836,
+            "equity": 25782.396618315415
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7030891517044362,
+            "equity": 27861.67678618116
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-08-31",
+          "momentum20": {
+            "drawdown": 0.5941915407275935,
+            "equity": 24416.003845861927
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5576608031727799,
+            "equity": 16070.336330658467
+          },
+          "passive_mix": {
+            "drawdown": 0.49415452958583717,
+            "equity": 24285.477296399495
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7124735416450806,
+            "equity": 26981.059453191538
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-09-30",
+          "momentum20": {
+            "drawdown": 0.6459995356448758,
+            "equity": 21298.9071608526
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5683342741096533,
+            "equity": 15682.565432213616
+          },
+          "passive_mix": {
+            "drawdown": 0.5002117205374261,
+            "equity": 23994.673519478587
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6965911277549994,
+            "equity": 28471.441784891642
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-10-31",
+          "momentum20": {
+            "drawdown": 0.6796918385508732,
+            "equity": 19271.765097812033
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6094184360113307,
+            "equity": 14189.963591004704
+          },
+          "passive_mix": {
+            "drawdown": 0.4899603547786643,
+            "equity": 24486.838271270597
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7458517740049438,
+            "equity": 23848.89527986094
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-11-30",
+          "momentum20": {
+            "drawdown": 0.7028605585316887,
+            "equity": 17877.788350334828
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6507582267877821,
+            "equity": 12688.074664177082
+          },
+          "passive_mix": {
+            "drawdown": 0.5217558303100339,
+            "equity": 22960.347782953904
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7553545789606122,
+            "equity": 22957.166056234222
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-12-31",
+          "momentum20": {
+            "drawdown": 0.7119290927966385,
+            "equity": 17332.16796606207
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6507582267877821,
+            "equity": 12688.074664177082
+          },
+          "passive_mix": {
+            "drawdown": 0.5278894526931888,
+            "equity": 22665.874557743773
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6576769934427685,
+            "equity": 32123.086845506343
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-01-31",
+          "momentum20": {
+            "drawdown": 0.6063455941133918,
+            "equity": 23684.739113868593
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6529629508203296,
+            "equity": 12607.9762759414
+          },
+          "passive_mix": {
+            "drawdown": 0.42459228693457196,
+            "equity": 27625.138049338075
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6575437765508667,
+            "equity": 32135.587722473072
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-02-28",
+          "momentum20": {
+            "drawdown": 0.6547128853348219,
+            "equity": 20774.656927327396
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6936289870992531,
+            "equity": 11130.565083524902
+          },
+          "passive_mix": {
+            "drawdown": 0.42445059343060065,
+            "equity": 27631.940708598668
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.57850175402241,
+            "equity": 39552.774722732676
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-03-31",
+          "momentum20": {
+            "drawdown": 0.6226006510065933,
+            "equity": 22706.73207002652
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6936289870992531,
+            "equity": 11130.565083524902
+          },
+          "passive_mix": {
+            "drawdown": 0.3403791144076336,
+            "equity": 31668.185203217414
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5672671294720171,
+            "equity": 40607.01534692688
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-04-30",
+          "momentum20": {
+            "drawdown": 0.626828338764637,
+            "equity": 22452.3676323197
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6860081449106064,
+            "equity": 11407.432921538955
+          },
+          "passive_mix": {
+            "drawdown": 0.32842962890605454,
+            "equity": 32241.876134194124
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5971077132580411,
+            "equity": 37806.818906379434
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-05-31",
+          "momentum20": {
+            "drawdown": 0.6426079334703463,
+            "equity": 21502.96740120693
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6981942998291139,
+            "equity": 10964.705689761626
+          },
+          "passive_mix": {
+            "drawdown": 0.36016897379562407,
+            "equity": 30718.080459821205
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5490016134045796,
+            "equity": 42321.024477698484
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-06-30",
+          "momentum20": {
+            "drawdown": 0.6215197331338825,
+            "equity": 22771.766926580487
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6803860168146327,
+            "equity": 11611.68678383376
+          },
+          "passive_mix": {
+            "drawdown": 0.309001875139324,
+            "equity": 33174.59630392437
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.567326336979529,
+            "equity": 40601.459401608336
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-07-31",
+          "momentum20": {
+            "drawdown": 0.6256778662335427,
+            "equity": 22521.58733708909
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6831779641219844,
+            "equity": 11510.254370499284
+          },
+          "passive_mix": {
+            "drawdown": 0.3284926037967084,
+            "equity": 32238.852730078306
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.616157728800012,
+            "equity": 36019.19350013709
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-08-31",
+          "momentum20": {
+            "drawdown": 0.6312926815826525,
+            "equity": 22183.764529246528
+          },
+          "momentum20_fft": {
+            "drawdown": 0.68793028056153,
+            "equity": 11337.601067149715
+          },
+          "passive_mix": {
+            "drawdown": 0.38043114486351903,
+            "equity": 29745.30018555635
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6008525881081721,
+            "equity": 37455.405364981365
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-09-30",
+          "momentum20": {
+            "drawdown": 0.6410036805286838,
+            "equity": 21599.489405858076
+          },
+          "momentum20_fft": {
+            "drawdown": 0.68793028056153,
+            "equity": 11337.601067149715
+          },
+          "passive_mix": {
+            "drawdown": 0.3641521356294838,
+            "equity": 30526.850149495633
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.48695214553205346,
+            "equity": 48143.65517153523
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-10-31",
+          "momentum20": {
+            "drawdown": 0.5385607272418864,
+            "equity": 27763.1054771359
+          },
+          "momentum20_fft": {
+            "drawdown": 0.601376106058,
+            "equity": 14482.144225592772
+          },
+          "passive_mix": {
+            "drawdown": 0.24300418973402838,
+            "equity": 36343.123817302985
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4416880060391658,
+            "equity": 52391.17536756405
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-11-30",
+          "momentum20": {
+            "drawdown": 0.4978498044152423,
+            "equity": 30212.53211078991
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5832573870198798,
+            "equity": 15140.40356799744
+          },
+          "passive_mix": {
+            "drawdown": 0.19485988582911562,
+            "equity": 38654.51626384683
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.37450228688997766,
+            "equity": 58695.78431778471
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-12-31",
+          "momentum20": {
+            "drawdown": 0.440750023955525,
+            "equity": 33648.01608715148
+          },
+          "momentum20_fft": {
+            "drawdown": 0.572511454684924,
+            "equity": 15530.80701414895
+          },
+          "passive_mix": {
+            "drawdown": 0.12339912865959357,
+            "equity": 42085.32408427277
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3700617238265812,
+            "equity": 59112.4802166757
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-01-31",
+          "momentum20": {
+            "drawdown": 0.48918151642196805,
+            "equity": 30734.071147606173
+          },
+          "momentum20_fft": {
+            "drawdown": 0.572511454684924,
+            "equity": 15530.80701414895
+          },
+          "passive_mix": {
+            "drawdown": 0.12043787500505143,
+            "equity": 42227.49291369291
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09470240826536802,
+            "equity": 84951.79290690593
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-02-29",
+          "momentum20": {
+            "drawdown": 0.2948409909333306,
+            "equity": 42426.826459422424
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5765610259506115,
+            "equity": 15383.684686529436
+          },
+          "passive_mix": {
+            "drawdown": 0.014177915241674666,
+            "equity": 52655.01775589114
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02510906579505212,
+            "equity": 99013.89050814717
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-03-31",
+          "momentum20": {
+            "drawdown": 0.29704707958983356,
+            "equity": 42294.09421126263
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5932725387920073,
+            "equity": 14776.549632974034
+          },
+          "passive_mix": {
+            "drawdown": 0.017337430584704494,
+            "equity": 58329.81544994128
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17079908644575437,
+            "equity": 84217.01913852815
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-04-30",
+          "momentum20": {
+            "drawdown": 0.37748492583686355,
+            "equity": 37454.44457251032
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6374430564018454,
+            "equity": 13171.819419190522
+          },
+          "passive_mix": {
+            "drawdown": 0.11793418876491046,
+            "equity": 52358.49780526367
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.07718712818478957,
+            "equity": 93724.63056489089
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-05-31",
+          "momentum20": {
+            "drawdown": 0.4061520579017559,
+            "equity": 35729.64857392223
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6518715803688682,
+            "equity": 12647.626142700054
+          },
+          "passive_mix": {
+            "drawdown": 0.05329654587149946,
+            "equity": 56195.32022878926
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.14284542060420402,
+            "equity": 87056.10719630543
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-06-30",
+          "momentum20": {
+            "drawdown": 0.4100928314445923,
+            "equity": 35492.54671027435
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6518715803688682,
+            "equity": 12647.626142700054
+          },
+          "passive_mix": {
+            "drawdown": 0.09863260482420477,
+            "equity": 53504.219504852605
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11636875863295093,
+            "equity": 89745.18473048194
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-07-31",
+          "momentum20": {
+            "drawdown": 0.37756584304153173,
+            "equity": 37449.57608163678
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6182021030404223,
+            "equity": 13870.849923514925
+          },
+          "passive_mix": {
+            "drawdown": 0.08035086974142247,
+            "equity": 54589.40405006014
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.19356956277950255,
+            "equity": 81904.35689968316
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-08-31",
+          "momentum20": {
+            "drawdown": 0.4711985308680047,
+            "equity": 31816.041309669537
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6525916554956703,
+            "equity": 12621.46556377317
+          },
+          "passive_mix": {
+            "drawdown": 0.13365685865790256,
+            "equity": 51425.2166752169
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.13428426854118525,
+            "equity": 87925.61263865796
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-09-30",
+          "momentum20": {
+            "drawdown": 0.4928225340476553,
+            "equity": 30515.004496036065
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6667980440643897,
+            "equity": 12105.342543292767
+          },
+          "passive_mix": {
+            "drawdown": 0.09272125866623881,
+            "equity": 53855.11078858191
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.039523529492211606,
+            "equity": 97549.89891671017
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-10-31",
+          "momentum20": {
+            "drawdown": 0.49062508712569763,
+            "equity": 30647.21680278244
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6653543805311801,
+            "equity": 12157.791339812251
+          },
+          "passive_mix": {
+            "drawdown": 0.027290399994442383,
+            "equity": 57739.017665515275
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02597638693908899,
+            "equity": 133955.23061648622
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-11-30",
+          "momentum20": {
+            "drawdown": 0.3005278869372414,
+            "equity": 42084.6668234418
+          },
+          "momentum20_fft": {
+            "drawdown": 0.621211231822854,
+            "equity": 13761.527231918071
+          },
+          "passive_mix": {
+            "drawdown": 0.01951588987450925,
+            "equity": 72430.4881871524
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12059856667953706,
+            "equity": 129704.93244779816
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-12-31",
+          "momentum20": {
+            "drawdown": 0.34490876584202634,
+            "equity": 39414.43241786828
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6096146107393555,
+            "equity": 14182.836495143549
+          },
+          "passive_mix": {
+            "drawdown": 0.09215333378180679,
+            "equity": 70715.26881301239
+          }
+        }
+      ],
+      "portfolios": {
+        "buy_and_hold": {
+          "ending_equity": 129704.93244779816,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.1184533715266445,
+          "total_return": 11.970493244779815,
+          "trade_events": 1,
+          "transaction_cost": 59.69155222886504
+        },
+        "cash": {
+          "ending_equity": 10000.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0
+        },
+        "momentum20": {
+          "ending_equity": 39414.43241786828,
+          "max_drawdown": 0.7181938489014073,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 0.8249773906614245,
+          "total_return": 2.941443241786828,
+          "trade_events": 188,
+          "transaction_cost": 33621.179446033224
+        },
+        "momentum20_fft": {
+          "ending_equity": 14182.836495143549,
+          "max_drawdown": 0.7027686825883968,
+          "mean_close_exposure": 0.3426382047071702,
+          "sharpe": 0.3727626510466829,
+          "total_return": 0.4182836495143549,
+          "trade_events": 150,
+          "transaction_cost": 16222.324167932315
+        },
+        "passive_mix": {
+          "ending_equity": 70715.26881301239,
+          "max_drawdown": 0.5351695465498305,
+          "mean_close_exposure": 0.6251766024591209,
+          "sharpe": 1.1663498893404132,
+          "total_return": 6.071526881301239,
+          "trade_events": 5,
+          "transaction_cost": 176.71252788808835
+        }
+      },
+      "sharpe_delta": -0.34137249867898867
+    },
+    "double_cost": {
+      "adverse_slippage_bps": 20,
+      "fee_bps_on_filled_notional": 100,
+      "minimum_delay_minutes": 5,
+      "month_ends": [
+        {
+          "buy_and_hold": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12879.24986955902
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-01-31",
+          "momentum20": {
+            "drawdown": 0.018121052631578816,
+            "equity": 12569.290778193987
+          },
+          "momentum20_fft": {
+            "drawdown": 0.018121052631578816,
+            "equity": 12569.290778193987
+          },
+          "passive_mix": {
+            "drawdown": 0.01131935658366845,
+            "equity": 11610.15222798144
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17717994141280824,
+            "equity": 11774.513342585187
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-02-29",
+          "momentum20": {
+            "drawdown": 0.10981400343881331,
+            "equity": 12431.94437633948
+          },
+          "momentum20_fft": {
+            "drawdown": 0.08089327104102273,
+            "equity": 12835.838548884598
+          },
+          "passive_mix": {
+            "drawdown": 0.11425103851839868,
+            "equity": 10992.354516485204
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3804404460036821,
+            "equity": 8865.865821965426
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-03-31",
+          "momentum20": {
+            "drawdown": 0.10981400343881331,
+            "equity": 12431.94437633948
+          },
+          "momentum20_fft": {
+            "drawdown": 0.08089327104102273,
+            "equity": 12835.838548884598
+          },
+          "passive_mix": {
+            "drawdown": 0.2453196208539965,
+            "equity": 9365.762349110759
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.167571719136553,
+            "equity": 11912.006516468846
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-04-30",
+          "momentum20": {
+            "drawdown": 0.018543124709908265,
+            "equity": 14130.08199842676
+          },
+          "momentum20_fft": {
+            "drawdown": 0.08089327104102273,
+            "equity": 12835.838548884598
+          },
+          "passive_mix": {
+            "drawdown": 0.1080553632934016,
+            "equity": 11069.244314276502
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.08856102446536296,
+            "equity": 13042.645553405097
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-05-31",
+          "momentum20": {
+            "drawdown": 0.16548053588642997,
+            "equity": 13668.00867153172
+          },
+          "momentum20_fft": {
+            "drawdown": 0.16548053588642986,
+            "equity": 12033.920496559906
+          },
+          "passive_mix": {
+            "drawdown": 0.057106853838758576,
+            "equity": 11701.52739036969
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11878379473641565,
+            "equity": 12610.159242342848
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-06-30",
+          "momentum20": {
+            "drawdown": 0.24647860894907325,
+            "equity": 12341.39807393048
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3228975160202957,
+            "equity": 9763.939381437958
+          },
+          "passive_mix": {
+            "drawdown": 0.07659541932104241,
+            "equity": 11459.669674340688
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 15680.600799071137
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-07-31",
+          "momentum20": {
+            "drawdown": 0.11895382569286483,
+            "equity": 14430.037007274585
+          },
+          "momentum20_fft": {
+            "drawdown": 0.20830574923405432,
+            "equity": 11416.373231534828
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 13176.741320578203
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.052314207237050825,
+            "equity": 16092.417569934161
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-08-31",
+          "momentum20": {
+            "drawdown": 0.16547401595088373,
+            "equity": 13668.11545698061
+          },
+          "momentum20_fft": {
+            "drawdown": 0.25010806135552166,
+            "equity": 10813.576385835779
+          },
+          "passive_mix": {
+            "drawdown": 0.035729752840653606,
+            "equity": 13407.040086286503
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12360652378605963,
+            "equity": 14881.820411893246
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-09-30",
+          "momentum20": {
+            "drawdown": 0.17111974215312586,
+            "equity": 13575.648069450823
+          },
+          "momentum20_fft": {
+            "drawdown": 0.28557445776370394,
+            "equity": 10302.144582230225
+          },
+          "passive_mix": {
+            "drawdown": 0.0844212457307475,
+            "equity": 12730.04232662137
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 19076.287304986356
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-10-31",
+          "momentum20": {
+            "drawdown": 0.06103471058809984,
+            "equity": 15378.65354834023
+          },
+          "momentum20_fft": {
+            "drawdown": 0.1456831439536831,
+            "equity": 12319.40244252143
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 15075.698493705833
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 27200.6592610074
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-11-30",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 21928.245699683026
+          },
+          "momentum20_fft": {
+            "drawdown": 0.011606711627357158,
+            "equity": 15582.327467504998
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 19619.06089661557
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 40031.23836957628
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-12-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 30474.67009022335
+          },
+          "momentum20_fft": {
+            "drawdown": 0.014540865155627691,
+            "equity": 19947.547965637736
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 26794.25807431603
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.18505611542705203,
+            "equity": 45759.324393295974
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-01-31",
+          "momentum20": {
+            "drawdown": 0.24671886573114,
+            "equity": 32199.48880509945
+          },
+          "momentum20_fft": {
+            "drawdown": 0.014540865155627691,
+            "equity": 19947.547965637736
+          },
+          "passive_mix": {
+            "drawdown": 0.12415485348568844,
+            "equity": 28987.37212942286
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.21310366791313928,
+            "equity": 62465.58726595355
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-02-28",
+          "momentum20": {
+            "drawdown": 0.21310366791313928,
+            "equity": 38841.270481934764
+          },
+          "momentum20_fft": {
+            "drawdown": 0.21310366791313917,
+            "equity": 22710.715445778384
+          },
+          "passive_mix": {
+            "drawdown": 0.15820973141450823,
+            "equity": 35593.83792058796
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.03895369245153979,
+            "equity": 81162.91919331279
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-03-31",
+          "momentum20": {
+            "drawdown": 0.0958665843849491,
+            "equity": 44628.102985976686
+          },
+          "momentum20_fft": {
+            "drawdown": 0.0,
+            "equity": 29089.032857351318
+          },
+          "passive_mix": {
+            "drawdown": 0.02937378928460499,
+            "equity": 42987.66888719649
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09107617965253567,
+            "equity": 79772.09524287345
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-04-30",
+          "momentum20": {
+            "drawdown": 0.22158386753404058,
+            "equity": 38422.68710089052
+          },
+          "momentum20_fft": {
+            "drawdown": 0.14227228969146444,
+            "equity": 25044.282251852313
+          },
+          "passive_mix": {
+            "drawdown": 0.06932126232182134,
+            "equity": 42437.66970903505
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.41254282265818887,
+            "equity": 51558.4352097911
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-05-31",
+          "momentum20": {
+            "drawdown": 0.4228715509622222,
+            "equity": 28487.109772703094
+          },
+          "momentum20_fft": {
+            "drawdown": 0.36406885404737277,
+            "equity": 18568.176031356783
+          },
+          "passive_mix": {
+            "drawdown": 0.31400075560456064,
+            "equity": 31280.621524597504
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4487923129395537,
+            "equity": 48376.98289608103
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-06-30",
+          "momentum20": {
+            "drawdown": 0.4378849748629646,
+            "equity": 27746.045880535516
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3806119717567663,
+            "equity": 18085.14335763025
+          },
+          "passive_mix": {
+            "drawdown": 0.3415915091299456,
+            "equity": 30022.521132130423
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3472749246119846,
+            "equity": 57286.70072851587
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-07-31",
+          "momentum20": {
+            "drawdown": 0.4118844232177533,
+            "equity": 29029.43534106701
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3519622653860146,
+            "equity": 18921.669127007226
+          },
+          "passive_mix": {
+            "drawdown": 0.26432307809419475,
+            "equity": 33545.85525643964
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.2581377209410035,
+            "equity": 65109.86625872129
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-08-31",
+          "momentum20": {
+            "drawdown": 0.33157039832978275,
+            "equity": 32993.74250195255
+          },
+          "momentum20_fft": {
+            "drawdown": 0.23939084212213158,
+            "equity": 22208.575290618628
+          },
+          "passive_mix": {
+            "drawdown": 0.19647763813521146,
+            "equity": 36639.51395484981
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.31039426421800353,
+            "equity": 60523.54796225218
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-09-30",
+          "momentum20": {
+            "drawdown": 0.4457452047622362,
+            "equity": 27358.064258155682
+          },
+          "momentum20_fft": {
+            "drawdown": 0.44235345481646016,
+            "equity": 16282.390444542349
+          },
+          "passive_mix": {
+            "drawdown": 0.23625191894449293,
+            "equity": 34825.861484277986
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0701749999355965,
+            "equity": 84720.86918381133
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-10-31",
+          "momentum20": {
+            "drawdown": 0.30259939950384007,
+            "equity": 34423.75349024375
+          },
+          "momentum20_fft": {
+            "drawdown": 0.371896163374684,
+            "equity": 18339.631072729735
+          },
+          "passive_mix": {
+            "drawdown": 0.05388580329083015,
+            "equity": 44394.654703119166
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.1566760905282789,
+            "equity": 78665.92275585906
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-11-30",
+          "momentum20": {
+            "drawdown": 0.3346092127480861,
+            "equity": 32843.74636147912
+          },
+          "momentum20_fft": {
+            "drawdown": 0.40072534203335863,
+            "equity": 17497.864998555437
+          },
+          "passive_mix": {
+            "drawdown": 0.12095999213839659,
+            "equity": 42000.23551143547
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3159405852662117,
+            "equity": 63809.60444199385
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-12-31",
+          "momentum20": {
+            "drawdown": 0.41251669418679293,
+            "equity": 28998.226391774777
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4708915964912034,
+            "equity": 15449.122186497465
+          },
+          "passive_mix": {
+            "drawdown": 0.2439183322812335,
+            "equity": 36125.327432271675
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.43024733936263115,
+            "equity": 53146.979811969126
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-01-31",
+          "momentum20": {
+            "drawdown": 0.4425475646230608,
+            "equity": 27515.900049841515
+          },
+          "momentum20_fft": {
+            "drawdown": 0.49793846872618286,
+            "equity": 14659.396619581881
+          },
+          "passive_mix": {
+            "drawdown": 0.3185190605782525,
+            "equity": 32560.929760063897
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3608700543228881,
+            "equity": 59618.54795399707
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-02-28",
+          "momentum20": {
+            "drawdown": 0.5319138424273611,
+            "equity": 23104.772908156734
+          },
+          "momentum20_fft": {
+            "drawdown": 0.49793846872618286,
+            "equity": 14659.396619581881
+          },
+          "passive_mix": {
+            "drawdown": 0.2737701724592754,
+            "equity": 34699.016562784054
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3262589736378573,
+            "equity": 62847.0969955759
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-03-31",
+          "momentum20": {
+            "drawdown": 0.6018673083552029,
+            "equity": 19651.863826668996
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5946289098841933,
+            "equity": 11836.189825264522
+          },
+          "passive_mix": {
+            "drawdown": 0.25144575638614586,
+            "equity": 35765.66964380552
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.44286031468790243,
+            "equity": 51970.43147565919
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-04-30",
+          "momentum20": {
+            "drawdown": 0.6570364920086463,
+            "equity": 16928.708187007946
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5946289098841933,
+            "equity": 11836.189825264522
+          },
+          "passive_mix": {
+            "drawdown": 0.3266545277034745,
+            "equity": 32172.219880878674
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5298515371749137,
+            "equity": 43855.82128645234
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-05-31",
+          "momentum20": {
+            "drawdown": 0.6613316224373602,
+            "equity": 16716.700180445718
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5997056065691396,
+            "equity": 11687.958372372432
+          },
+          "passive_mix": {
+            "drawdown": 0.382764542388747,
+            "equity": 29491.302277293806
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7050742314125431,
+            "equity": 27510.909473616943
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-06-30",
+          "momentum20": {
+            "drawdown": 0.7096073277931949,
+            "equity": 14333.807221141416
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6567658326579675,
+            "equity": 10021.890702704779
+          },
+          "passive_mix": {
+            "drawdown": 0.49578454217475276,
+            "equity": 24091.244753106606
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6547827824568155,
+            "equity": 32202.13569689546
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-07-31",
+          "momentum20": {
+            "drawdown": 0.7011896965155642,
+            "equity": 14749.30222339231
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6511731839145041,
+            "equity": 10185.18713347578
+          },
+          "passive_mix": {
+            "drawdown": 0.46334616668381357,
+            "equity": 25641.13940868902
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7030891517044361,
+            "equity": 27696.079282308827
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-08-31",
+          "momentum20": {
+            "drawdown": 0.7219436620873934,
+            "equity": 13724.884701696195
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6754010624285605,
+            "equity": 9477.771690815833
+          },
+          "passive_mix": {
+            "drawdown": 0.4945041503330362,
+            "equity": 24152.42144406273
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7124735416450806,
+            "equity": 26820.69594989027
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-09-30",
+          "momentum20": {
+            "drawdown": 0.7688103551355255,
+            "equity": 11411.540710819172
+          },
+          "momentum20_fft": {
+            "drawdown": 0.6907457634495959,
+            "equity": 9029.730874572571
+          },
+          "passive_mix": {
+            "drawdown": 0.5005571547894399,
+            "equity": 23863.21092981188
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6965911277549993,
+            "equity": 28302.220107122303
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-10-31",
+          "momentum20": {
+            "drawdown": 0.8041675537913577,
+            "equity": 9666.30635087163
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7380418414520523,
+            "equity": 7648.7607687180425
+          },
+          "passive_mix": {
+            "drawdown": 0.4903128743766304,
+            "equity": 24352.679197621284
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7458517740049438,
+            "equity": 23707.147977329005
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-11-30",
+          "momentum20": {
+            "drawdown": 0.8204997086786359,
+            "equity": 8860.149784037365
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7671782548263377,
+            "equity": 6798.023930462267
+          },
+          "passive_mix": {
+            "drawdown": 0.5220863741099293,
+            "equity": 22834.552081806105
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7553545789606122,
+            "equity": 22820.718798444603
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-12-31",
+          "momentum20": {
+            "drawdown": 0.8290891503692109,
+            "equity": 8436.174205059055
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7671782548263377,
+            "equity": 6798.023930462267
+          },
+          "passive_mix": {
+            "drawdown": 0.5282157571714612,
+            "equity": 22541.692223526858
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6576769934427685,
+            "equity": 31932.16140196202
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-01-31",
+          "momentum20": {
+            "drawdown": 0.7678351897987852,
+            "equity": 11459.674955527735
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7700230862537684,
+            "equity": 6714.95938635201
+          },
+          "passive_mix": {
+            "drawdown": 0.42573541435142404,
+            "equity": 27438.168487678715
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6575437765508667,
+            "equity": 31944.5879792361
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-02-28",
+          "momentum20": {
+            "drawdown": 0.8011900710147943,
+            "equity": 9813.275156245396
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8006017007364604,
+            "equity": 5822.112574046457
+          },
+          "passive_mix": {
+            "drawdown": 0.4255940023412971,
+            "equity": 27444.925105894454
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.57850175402241,
+            "equity": 39317.690495190494
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-03-31",
+          "momentum20": {
+            "drawdown": 0.7852925787128835,
+            "equity": 10597.976740563914
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8006017007364604,
+            "equity": 5822.112574046457
+          },
+          "passive_mix": {
+            "drawdown": 0.3416895429992697,
+            "equity": 31453.85191389889
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5672671294720171,
+            "equity": 40365.665178637944
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-04-30",
+          "momentum20": {
+            "drawdown": 0.7927326060935947,
+            "equity": 10230.736350561303
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8004882023774578,
+            "equity": 5825.4265452564605
+          },
+          "passive_mix": {
+            "drawdown": 0.3297637968118916,
+            "equity": 32023.660050092778
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5971077132580411,
+            "equity": 37582.11186924393
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-05-31",
+          "momentum20": {
+            "drawdown": 0.80386484207942,
+            "equity": 9681.24822695109
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8093711267397043,
+            "equity": 5566.059309854987
+          },
+          "passive_mix": {
+            "drawdown": 0.36144008708034236,
+            "equity": 30510.177569767508
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5490016134045796,
+            "equity": 42069.4869959952
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-06-30",
+          "momentum20": {
+            "drawdown": 0.7947694571650614,
+            "equity": 10130.19720687455
+          },
+          "momentum20_fft": {
+            "drawdown": 0.800531085023191,
+            "equity": 5824.174440339546
+          },
+          "passive_mix": {
+            "drawdown": 0.31037463897892126,
+            "equity": 32950.06748100616
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.567326336979529,
+            "equity": 40360.14225540502
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-07-31",
+          "momentum20": {
+            "drawdown": 0.7982463375126285,
+            "equity": 9958.578094538581
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8034640505743172,
+            "equity": 5738.536520269386
+          },
+          "passive_mix": {
+            "drawdown": 0.32982664659417027,
+            "equity": 32020.65710866356
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6161577288000117,
+            "equity": 35805.111319050426
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-08-31",
+          "momentum20": {
+            "drawdown": 0.8036432260274418,
+            "equity": 9692.187214295453
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8087213658325707,
+            "equity": 5585.031292873492
+          },
+          "passive_mix": {
+            "drawdown": 0.3816620045285052,
+            "equity": 29543.981164917
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6008525881081721,
+            "equity": 37232.786974761446
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-09-30",
+          "momentum20": {
+            "drawdown": 0.8144582741156916,
+            "equity": 9158.355512530103
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8087213658325707,
+            "equity": 5585.031292873492
+          },
+          "passive_mix": {
+            "drawdown": 0.3654153358094685,
+            "equity": 30320.241524369543
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.48695214553205346,
+            "equity": 47857.510544100216
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-10-31",
+          "momentum20": {
+            "drawdown": 0.7615122094164498,
+            "equity": 11771.777809827408
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7571214269604748,
+            "equity": 7091.667277417171
+          },
+          "passive_mix": {
+            "drawdown": 0.2445080671508728,
+            "equity": 36097.150098825376
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4416880060391657,
+            "equity": 52079.7853556711
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-11-30",
+          "momentum20": {
+            "drawdown": 0.7404713951409096,
+            "equity": 12810.354208155566
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7476106920642329,
+            "equity": 7369.365579921987
+          },
+          "passive_mix": {
+            "drawdown": 0.19645940859882782,
+            "equity": 38392.898821461626
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.37450228688997755,
+            "equity": 58346.922494232334
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-12-31",
+          "momentum20": {
+            "drawdown": 0.716127744895742,
+            "equity": 14011.958873388394
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7441910498458468,
+            "equity": 7469.213683100097
+          },
+          "passive_mix": {
+            "drawdown": 0.12514061815810473,
+            "equity": 41800.48660826539
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3700617238265812,
+            "equity": 58761.14173670168
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-01-31",
+          "momentum20": {
+            "drawdown": 0.7498801211334327,
+            "equity": 12345.9386857235
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7441910498458468,
+            "equity": 7469.213683100097
+          },
+          "passive_mix": {
+            "drawdown": 0.12322456933478487,
+            "equity": 41892.0347757107
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09470240826536791,
+            "equity": 84446.87696222594
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-02-29",
+          "momentum20": {
+            "drawdown": 0.6608686648102894,
+            "equity": 16739.551808648182
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7496369159136355,
+            "equity": 7310.203072543489
+          },
+          "passive_mix": {
+            "drawdown": 0.014177915241674666,
+            "equity": 52236.72263598161
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02510906579505201,
+            "equity": 98425.3956647582
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-03-31",
+          "momentum20": {
+            "drawdown": 0.6699471234543385,
+            "equity": 16291.438310879781
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7623864675657273,
+            "equity": 6937.936482200149
+          },
+          "passive_mix": {
+            "drawdown": 0.017337430584704605,
+            "equity": 57866.439342823665
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17079908644575426,
+            "equity": 83716.47036467165
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-04-30",
+          "momentum20": {
+            "drawdown": 0.7163643974506442,
+            "equity": 14000.277682969301
+          },
+          "momentum20_fft": {
+            "drawdown": 0.7932143851423519,
+            "equity": 6037.810416845323
+          },
+          "passive_mix": {
+            "drawdown": 0.11793418876491069,
+            "equity": 51942.558260446305
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.07718712818478957,
+            "equity": 93167.57274701394
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-05-31",
+          "momentum20": {
+            "drawdown": 0.7374127756116344,
+            "equity": 12961.327930606205
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8084649728424027,
+            "equity": 5592.517559594262
+          },
+          "passive_mix": {
+            "drawdown": 0.053296545871499346,
+            "equity": 55748.90070002887
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.1428454206042039,
+            "equity": 86538.68413669615
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-06-30",
+          "momentum20": {
+            "drawdown": 0.7438187217498277,
+            "equity": 12645.129879477403
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8084649728424027,
+            "equity": 5592.517559594262
+          },
+          "passive_mix": {
+            "drawdown": 0.09863260482420466,
+            "equity": 53079.178267240575
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11636875863295082,
+            "equity": 89211.77898143166
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-07-31",
+          "momentum20": {
+            "drawdown": 0.7312996849610716,
+            "equity": 13263.070609733206
+          },
+          "momentum20_fft": {
+            "drawdown": 0.792446303871828,
+            "equity": 6060.237165917524
+          },
+          "passive_mix": {
+            "drawdown": 0.08035086974142247,
+            "equity": 54155.7420310144
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.19356956277950244,
+            "equity": 81417.55356896677
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-08-31",
+          "momentum20": {
+            "drawdown": 0.7758014552744118,
+            "equity": 11066.459407999222
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8133940890519176,
+            "equity": 5448.595221398069
+          },
+          "passive_mix": {
+            "drawdown": 0.13365685865790267,
+            "equity": 51016.691180547845
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.13428426854118503,
+            "equity": 87403.02162264886
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-09-30",
+          "momentum20": {
+            "drawdown": 0.7913167694446105,
+            "equity": 10300.6221690599
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8263078630370222,
+            "equity": 5071.5336006382
+          },
+          "passive_mix": {
+            "drawdown": 0.09272125866623893,
+            "equity": 53427.282046229426
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.039523529492211384,
+            "equity": 96970.10539288256
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-10-31",
+          "momentum20": {
+            "drawdown": 0.7929127483435856,
+            "equity": 10221.844513642245
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8276362351576427,
+            "equity": 5032.747251632003
+          },
+          "passive_mix": {
+            "drawdown": 0.027290399994442494,
+            "equity": 57280.3348970501
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02597638693908888,
+            "equity": 133159.05987662124
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-11-30",
+          "momentum20": {
+            "drawdown": 0.7156284028848192,
+            "equity": 14036.606437900242
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8072270334015132,
+            "equity": 5628.663418467333
+          },
+          "passive_mix": {
+            "drawdown": 0.019515889874509362,
+            "equity": 71855.09535599223
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12059856667953694,
+            "equity": 128934.02360343389
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-12-31",
+          "momentum20": {
+            "drawdown": 0.7415531820860155,
+            "equity": 12756.957111707994
+          },
+          "momentum20_fft": {
+            "drawdown": 0.8025215271405474,
+            "equity": 5766.056702514433
+          },
+          "passive_mix": {
+            "drawdown": 0.09215333378180679,
+            "equity": 70153.50180374642
+          }
+        }
+      ],
+      "portfolios": {
+        "buy_and_hold": {
+          "ending_equity": 128934.02360343389,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.1166145228337085,
+          "total_return": 11.893402360343389,
+          "trade_events": 1,
+          "transaction_cost": 118.77235627754393
+        },
+        "cash": {
+          "ending_equity": 10000.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0
+        },
+        "momentum20": {
+          "ending_equity": 12756.957111707994,
+          "max_drawdown": 0.8317932056074966,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 0.3350086334553365,
+          "total_return": 0.2756957111707994,
+          "trade_events": 188,
+          "transaction_cost": 39537.00130948018
+        },
+        "momentum20_fft": {
+          "ending_equity": 5766.056702514433,
+          "max_drawdown": 0.8366015757190634,
+          "mean_close_exposure": 0.3426382047071702,
+          "sharpe": -0.12679855458820297,
+          "total_return": -0.42339432974855673,
+          "trade_events": 150,
+          "transaction_cost": 22091.311590702917
+        },
+        "passive_mix": {
+          "ending_equity": 70153.50180374642,
+          "max_drawdown": 0.5354908193099148,
+          "mean_close_exposure": 0.6251766024591208,
+          "sharpe": 1.1624564456018625,
+          "total_return": 6.015350180374642,
+          "trade_events": 5,
+          "transaction_cost": 352.2191449654324
+        }
+      },
+      "sharpe_delta": -0.827447812146526
+    },
+    "gross": {
+      "adverse_slippage_bps": 0,
+      "fee_bps_on_filled_notional": 0,
+      "minimum_delay_minutes": 5,
+      "month_ends": [
+        {
+          "buy_and_hold": {
+            "drawdown": 0.018121052631578927,
+            "equity": 13034.058452991118
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-01-31",
+          "momentum20": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12720.37365334788
+          },
+          "momentum20_fft": {
+            "drawdown": 0.018121052631578927,
+            "equity": 12720.37365334788
+          },
+          "passive_mix": {
+            "drawdown": 0.011319356583668339,
+            "equity": 11687.783213849943
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17717994141280813,
+            "equity": 11916.042992963059
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-02-29",
+          "momentum20": {
+            "drawdown": 0.09902026622822757,
+            "equity": 12733.928814946135
+          },
+          "momentum20_fft": {
+            "drawdown": 0.06974886241272704,
+            "equity": 13147.63398336288
+          },
+          "passive_mix": {
+            "drawdown": 0.1142510385183988,
+            "equity": 11065.854613759915
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.380440446003682,
+            "equity": 8972.43352914545
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-03-31",
+          "momentum20": {
+            "drawdown": 0.09902026622822757,
+            "equity": 12733.928814946135
+          },
+          "momentum20_fft": {
+            "drawdown": 0.06974886241272704,
+            "equity": 13147.63398336288
+          },
+          "passive_mix": {
+            "drawdown": 0.2453196208539966,
+            "equity": 9428.386279468818
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.167571719136553,
+            "equity": 12055.1888347968
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-04-30",
+          "momentum20": {
+            "drawdown": 0.018543124709908154,
+            "equity": 15003.08246143664
+          },
+          "momentum20_fft": {
+            "drawdown": 0.06974886241272704,
+            "equity": 13147.63398336288
+          },
+          "passive_mix": {
+            "drawdown": 0.1080553632934016,
+            "equity": 11143.258533217197
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.08856102446536296,
+            "equity": 13199.418152957023
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-05-31",
+          "momentum20": {
+            "drawdown": 0.14520921836378298,
+            "equity": 14864.983081842385
+          },
+          "momentum20_fft": {
+            "drawdown": 0.14520921836378275,
+            "equity": 12777.413575120287
+          },
+          "passive_mix": {
+            "drawdown": 0.057106853838758576,
+            "equity": 11779.769353923999
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11878379473641565,
+            "equity": 12761.733356435807
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-06-30",
+          "momentum20": {
+            "drawdown": 0.16049499929361122,
+            "equity": 14599.16028660856
+          },
+          "momentum20_fft": {
+            "drawdown": 0.24563399520895368,
+            "equity": 11276.263896735003
+          },
+          "passive_mix": {
+            "drawdown": 0.07659541932104252,
+            "equity": 11536.294462463826
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 15869.08162067597
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-07-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 17694.70862640255
+          },
+          "momentum20_fft": {
+            "drawdown": 0.08568120423439685,
+            "equity": 13667.238397962692
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 13264.84726433882
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0523142072370506,
+            "equity": 16285.84842912477
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-08-31",
+          "momentum20": {
+            "drawdown": 0.09321444622512154,
+            "equity": 17375.696932425468
+          },
+          "momentum20_fft": {
+            "drawdown": 0.10216513703208352,
+            "equity": 13420.836551773657
+          },
+          "passive_mix": {
+            "drawdown": 0.03572975284065383,
+            "equity": 13496.68591685266
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12360652378605963,
+            "equity": 15060.6998932442
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-09-30",
+          "momentum20": {
+            "drawdown": 0.06638250862126827,
+            "equity": 17889.846737716754
+          },
+          "momentum20_fft": {
+            "drawdown": 0.12385071141310355,
+            "equity": 13096.680561286796
+          },
+          "passive_mix": {
+            "drawdown": 0.08442124573074739,
+            "equity": 12815.161428986077
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 19305.58427839229
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-10-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 21262.34110460549
+          },
+          "momentum20_fft": {
+            "drawdown": 0.0,
+            "equity": 15849.38198060208
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 15176.501766026595
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 27527.611185324706
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-11-30",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 30317.728299600032
+          },
+          "momentum20_fft": {
+            "drawdown": 0.0,
+            "equity": 20290.337953987164
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 19750.243245417838
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.0,
+            "equity": 40512.41385477858
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2020-12-31",
+          "momentum20": {
+            "drawdown": 0.0,
+            "equity": 43157.38680185881
+          },
+          "momentum20_fft": {
+            "drawdown": 0.002591916313058218,
+            "equity": 27251.674351450205
+          },
+          "passive_mix": {
+            "drawdown": 0.0,
+            "equity": 26973.417195495433
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.18505611542705191,
+            "equity": 46309.35147250339
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-01-31",
+          "momentum20": {
+            "drawdown": 0.21906531141767505,
+            "equity": 47274.04103172053
+          },
+          "momentum20_fft": {
+            "drawdown": 0.002591916313058218,
+            "equity": 27251.674351450205
+          },
+          "passive_mix": {
+            "drawdown": 0.12415485348568833,
+            "equity": 29267.001726149207
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.21310366791313928,
+            "equity": 63216.4236248903
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-02-28",
+          "momentum20": {
+            "drawdown": 0.21310366791313928,
+            "equity": 57710.69084932125
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2131036679131394,
+            "equity": 32162.288488722545
+          },
+          "passive_mix": {
+            "drawdown": 0.15820973141450811,
+            "equity": 35937.19745311952
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.03895369245153979,
+            "equity": 82138.49748201639
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-03-31",
+          "momentum20": {
+            "drawdown": 0.0739042739309489,
+            "equity": 67919.52378569375
+          },
+          "momentum20_fft": {
+            "drawdown": 0.0,
+            "equity": 43220.73303748248
+          },
+          "passive_mix": {
+            "drawdown": 0.0293737892846051,
+            "equity": 43402.353752780815
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09107617965253545,
+            "equity": 80730.95582769279
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-04-30",
+          "momentum20": {
+            "drawdown": 0.13275954259998735,
+            "equity": 63603.0997835576
+          },
+          "momentum20_fft": {
+            "drawdown": 0.11837019668846505,
+            "equity": 40473.96746737106
+          },
+          "passive_mix": {
+            "drawdown": 0.06932126232182112,
+            "equity": 42847.04895230555
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.41254282265818887,
+            "equity": 52178.167601012785
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-05-31",
+          "momentum20": {
+            "drawdown": 0.3253991195206275,
+            "equity": 49474.9832633958
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3142060699591056,
+            "equity": 31483.510550048286
+          },
+          "passive_mix": {
+            "drawdown": 0.31400075560456053,
+            "equity": 31582.373181947438
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4487923129395537,
+            "equity": 48958.47423049191
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-06-30",
+          "momentum20": {
+            "drawdown": 0.29389433961437295,
+            "equity": 51785.53236536451
+          },
+          "momentum20_fft": {
+            "drawdown": 0.28217855939370184,
+            "equity": 32953.83337241206
+          },
+          "passive_mix": {
+            "drawdown": 0.3415915091299455,
+            "equity": 30312.136397681334
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3472749246119846,
+            "equity": 57975.28687127262
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-07-31",
+          "momentum20": {
+            "drawdown": 0.2155902279663825,
+            "equity": 57528.32743922576
+          },
+          "momentum20_fft": {
+            "drawdown": 0.20257521759658392,
+            "equity": 36608.27319975089
+          },
+          "passive_mix": {
+            "drawdown": 0.26432307809419475,
+            "equity": 33869.45871850294
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.2581377209410036,
+            "equity": 65892.4868511511
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-08-31",
+          "momentum20": {
+            "drawdown": 0.10846994678260224,
+            "equity": 65384.48990816851
+          },
+          "momentum20_fft": {
+            "drawdown": 0.05270499435356468,
+            "equity": 43488.53350524575
+          },
+          "passive_mix": {
+            "drawdown": 0.19647763813521146,
+            "equity": 36992.96070627315
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.31039426421800353,
+            "equity": 61251.041008758446
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-09-30",
+          "momentum20": {
+            "drawdown": 0.21499801432382537,
+            "equity": 57571.76017241912
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2536323769290385,
+            "equity": 34264.3349639561
+          },
+          "passive_mix": {
+            "drawdown": 0.2362519189444927,
+            "equity": 35161.81265498145
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.07017499993559662,
+            "equity": 85739.21403140073
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-10-31",
+          "momentum20": {
+            "drawdown": 0.0701749999355965,
+            "equity": 73311.39114714906
+          },
+          "momentum20_fft": {
+            "drawdown": 0.14922578823474142,
+            "equity": 39057.44524484681
+          },
+          "passive_mix": {
+            "drawdown": 0.05388580329083015,
+            "equity": 44822.91219869387
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.1566760905282789,
+            "equity": 79611.48714738448
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-11-30",
+          "momentum20": {
+            "drawdown": 0.1087024674728756,
+            "equity": 72514.28193122048
+          },
+          "momentum20_fft": {
+            "drawdown": 0.15847619194773688,
+            "equity": 38632.77659420283
+          },
+          "passive_mix": {
+            "drawdown": 0.12095999213839659,
+            "equity": 42405.395001783116
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3159405852662117,
+            "equity": 64576.595887386604
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2021-12-31",
+          "momentum20": {
+            "drawdown": 0.18425596740562677,
+            "equity": 66367.39203747197
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2298104733238049,
+            "equity": 35357.95379116398
+          },
+          "passive_mix": {
+            "drawdown": 0.2439183322812336,
+            "equity": 36473.81403176028
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.43024733936263115,
+            "equity": 53785.80650930899
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-01-31",
+          "momentum20": {
+            "drawdown": 0.19753921900146454,
+            "equity": 65286.69180434909
+          },
+          "momentum20_fft": {
+            "drawdown": 0.24235193345166128,
+            "equity": 34782.19892523095
+          },
+          "passive_mix": {
+            "drawdown": 0.3175789023819623,
+            "equity": 32920.38581092586
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3608700543228881,
+            "equity": 60335.16290040411
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-02-28",
+          "momentum20": {
+            "drawdown": 0.29305029749261646,
+            "equity": 57516.091055993995
+          },
+          "momentum20_fft": {
+            "drawdown": 0.24235193345166128,
+            "equity": 34782.19892523095
+          },
+          "passive_mix": {
+            "drawdown": 0.272768279544512,
+            "equity": 35082.07600102375
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3262589736378574,
+            "equity": 63602.51910146271
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-03-31",
+          "momentum20": {
+            "drawdown": 0.3460421889204134,
+            "equity": 53204.7709694583
+          },
+          "momentum20_fft": {
+            "drawdown": 0.34259436237615803,
+            "equity": 30180.25739387522
+          },
+          "passive_mix": {
+            "drawdown": 0.2504130651298083,
+            "equity": 36160.50438781717
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.44286031468790243,
+            "equity": 52595.11606199661
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-04-30",
+          "momentum20": {
+            "drawdown": 0.4298303866496913,
+            "equity": 46387.92163361118
+          },
+          "momentum20_fft": {
+            "drawdown": 0.34259436237615803,
+            "equity": 30180.25739387522
+          },
+          "passive_mix": {
+            "drawdown": 0.32572559304353854,
+            "equity": 32527.384773007376
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5298515371749138,
+            "equity": 44382.968258315486
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-05-31",
+          "momentum20": {
+            "drawdown": 0.4302033414096711,
+            "equity": 46357.57873954293
+          },
+          "momentum20_fft": {
+            "drawdown": 0.34302437926244667,
+            "equity": 30160.51612673487
+          },
+          "passive_mix": {
+            "drawdown": 0.3819130160423071,
+            "equity": 29816.871206973894
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7050742314125431,
+            "equity": 27841.590605489815
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-06-30",
+          "momentum20": {
+            "drawdown": 0.48118576087293363,
+            "equity": 42209.74549241986
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4018071154695061,
+            "equity": 27461.91117491603
+          },
+          "passive_mix": {
+            "drawdown": 0.4950889360793381,
+            "equity": 24357.199803011907
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6547827824568155,
+            "equity": 32589.20536797214
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-07-31",
+          "momentum20": {
+            "drawdown": 0.4466062407108179,
+            "equity": 45023.069867920334
+          },
+          "momentum20_fft": {
+            "drawdown": 0.38475273922391307,
+            "equity": 28244.84553891748
+          },
+          "passive_mix": {
+            "drawdown": 0.4626058092199775,
+            "equity": 25924.204504783207
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7030891517044362,
+            "equity": 28028.986155282175
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-08-31",
+          "momentum20": {
+            "drawdown": 0.466137874969348,
+            "equity": 43434.01303615194
+          },
+          "momentum20_fft": {
+            "drawdown": 0.40646744827931736,
+            "equity": 27247.964053547254
+          },
+          "passive_mix": {
+            "drawdown": 0.4938067778332883,
+            "equity": 24419.051853421763
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7124735416450807,
+            "equity": 27143.080715207947
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-09-30",
+          "momentum20": {
+            "drawdown": 0.5113947515486466,
+            "equity": 39751.99913189171
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4067198402232971,
+            "equity": 27236.377213706663
+          },
+          "passive_mix": {
+            "drawdown": 0.49986813289999177,
+            "equity": 24126.648602658584
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6965911277549993,
+            "equity": 28642.41279280991
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-10-31",
+          "momentum20": {
+            "drawdown": 0.5277409477727435,
+            "equity": 38422.103515400544
+          },
+          "momentum20_fft": {
+            "drawdown": 0.426567915818701,
+            "equity": 26325.189362614437
+          },
+          "passive_mix": {
+            "drawdown": 0.48960971967195877,
+            "equity": 24621.520350401315
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7458517740049437,
+            "equity": 23992.1078960165
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-11-30",
+          "momentum20": {
+            "drawdown": 0.5566117708295238,
+            "equity": 36073.22794206663
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4841684944765845,
+            "equity": 23680.85504230889
+          },
+          "passive_mix": {
+            "drawdown": 0.5214270535236769,
+            "equity": 23086.63388582741
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.7553545789606122,
+            "equity": 23095.023838401903
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2022-12-31",
+          "momentum20": {
+            "drawdown": 0.5623305246044488,
+            "equity": 35607.960948277985
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4841684944765845,
+            "equity": 23680.85504230889
+          },
+          "passive_mix": {
+            "drawdown": 0.5275648925659856,
+            "equity": 22790.541004139774
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6576769934427686,
+            "equity": 32315.9859820136
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-01-31",
+          "momentum20": {
+            "drawdown": 0.398324795965469,
+            "equity": 48951.15691914789
+          },
+          "momentum20_fft": {
+            "drawdown": 0.48434686716057784,
+            "equity": 23672.66628759359
+          },
+          "passive_mix": {
+            "drawdown": 0.42344655522744745,
+            "equity": 27813.269415000388
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6575437765508667,
+            "equity": 32328.561926746515
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-02-28",
+          "momentum20": {
+            "drawdown": 0.45943178035712673,
+            "equity": 43979.60821354379
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5364970608586319,
+            "equity": 21278.548898158773
+          },
+          "passive_mix": {
+            "drawdown": 0.42330457958832834,
+            "equity": 27820.11840139877
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.57850175402241,
+            "equity": 39790.28913494268
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-03-31",
+          "momentum20": {
+            "drawdown": 0.4020252377141801,
+            "equity": 48650.09597547482
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5364970608586319,
+            "equity": 21278.548898158773
+          },
+          "passive_mix": {
+            "drawdown": 0.3390657003776434,
+            "equity": 31883.850331105205
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5672671294720171,
+            "equity": 40850.860474085166
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-04-30",
+          "momentum20": {
+            "drawdown": 0.3943614589868334,
+            "equity": 49273.60652163063
+          },
+          "momentum20_fft": {
+            "drawdown": 0.5134288631762801,
+            "equity": 22337.566502848884
+          },
+          "passive_mix": {
+            "drawdown": 0.32709242147859663,
+            "equity": 32461.448184035387
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5971077132580411,
+            "equity": 38033.84885391223
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-05-31",
+          "momentum20": {
+            "drawdown": 0.412968607287318,
+            "equity": 47759.7641193391
+          },
+          "momentum20_fft": {
+            "drawdown": 0.529504430949418,
+            "equity": 21599.56739639219
+          },
+          "passive_mix": {
+            "drawdown": 0.3588949646412821,
+            "equity": 30927.275230797903
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.5490016134045798,
+            "equity": 42575.16222968705
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-06-30",
+          "momentum20": {
+            "drawdown": 0.3708253293124908,
+            "equity": 51188.46152850579
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4957273181773112,
+            "equity": 23150.211168126047
+          },
+          "passive_mix": {
+            "drawdown": 0.30762598384826234,
+            "equity": 33400.520319102376
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.567326336979529,
+            "equity": 40845.27116531498
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-07-31",
+          "momentum20": {
+            "drawdown": 0.37398472819710105,
+            "equity": 50931.41880922188
+          },
+          "momentum20_fft": {
+            "drawdown": 0.49711754776387806,
+            "equity": 23086.38834039548
+          },
+          "passive_mix": {
+            "drawdown": 0.3271555217626495,
+            "equity": 32458.40419008055
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6161577288000119,
+            "equity": 36235.488757105406
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-08-31",
+          "momentum20": {
+            "drawdown": 0.37593080101963594,
+            "equity": 50773.0900041237
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4986808416918488,
+            "equity": 23014.6204539822
+          },
+          "passive_mix": {
+            "drawdown": 0.37919748103531803,
+            "equity": 29947.87017582933
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.6008525881081721,
+            "equity": 37680.325074198074
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-09-30",
+          "momentum20": {
+            "drawdown": 0.3738703552821505,
+            "equity": 50940.72397331956
+          },
+          "momentum20_fft": {
+            "drawdown": 0.4986808416918488,
+            "equity": 23014.6204539822
+          },
+          "passive_mix": {
+            "drawdown": 0.36288605760763104,
+            "equity": 30734.742613154507
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.48695214553205346,
+            "equity": 48432.75782084029
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-10-31",
+          "momentum20": {
+            "drawdown": 0.1951984122389162,
+            "equity": 65477.13541642177
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3557919643302996,
+            "equity": 29574.38028975186
+          },
+          "passive_mix": {
+            "drawdown": 0.24149688616077314,
+            "equity": 36590.625983770806
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.4416880060391658,
+            "equity": 52705.78437564626
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-11-30",
+          "momentum20": {
+            "drawdown": 0.12419401953895393,
+            "equity": 71253.91854741678
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3224487481509787,
+            "equity": 31105.104684311016
+          },
+          "passive_mix": {
+            "drawdown": 0.1932567190022948,
+            "equity": 38917.75936224314
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.37450228688997766,
+            "equity": 59048.252502612995
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2023-12-31",
+          "momentum20": {
+            "drawdown": 0.03216343605688532,
+            "equity": 80798.64771227381
+          },
+          "momentum20_fft": {
+            "drawdown": 0.29658715607888764,
+            "equity": 32292.36177594811
+          },
+          "passive_mix": {
+            "drawdown": 0.1216536716732125,
+            "equity": 42371.93150249361
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.3700617238265813,
+            "equity": 59467.450660376824
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-01-31",
+          "momentum20": {
+            "drawdown": 0.11808218759189815,
+            "equity": 76506.69341862683
+          },
+          "momentum20_fft": {
+            "drawdown": 0.29658715607888764,
+            "equity": 32292.36177594811
+          },
+          "passive_mix": {
+            "drawdown": 0.11764837454604815,
+            "equity": 42565.14933701526
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.09470240826536813,
+            "equity": 85461.92842331188
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-02-29",
+          "momentum20": {
+            "drawdown": 0.021611850524699272,
+            "equity": 107530.48315709569
+          },
+          "momentum20_fft": {
+            "drawdown": 0.29483912035183835,
+            "equity": 32372.61081118109
+          },
+          "passive_mix": {
+            "drawdown": 0.014177915241674888,
+            "equity": 53076.05399883757
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02510906579505201,
+            "equity": 99608.46892064858
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-03-31",
+          "momentum20": {
+            "drawdown": 0.14592742455549135,
+            "equity": 109797.8708248684
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3144921250210929,
+            "equity": 31470.37829972138
+          },
+          "passive_mix": {
+            "drawdown": 0.017337430584704605,
+            "equity": 58796.228099589556
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.17079908644575437,
+            "equity": 84722.74233845499
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-04-30",
+          "momentum20": {
+            "drawdown": 0.22061331676600404,
+            "equity": 100196.40113582941
+          },
+          "momentum20_fft": {
+            "drawdown": 0.37409514548275224,
+            "equity": 28734.115639292904
+          },
+          "passive_mix": {
+            "drawdown": 0.1179341887649108,
+            "equity": 52777.1630368366
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.07718712818478957,
+            "equity": 94287.44697143303
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-05-31",
+          "momentum20": {
+            "drawdown": 0.23387145423602806,
+            "equity": 98491.96136435635
+          },
+          "momentum20_fft": {
+            "drawdown": 0.37697384026588077,
+            "equity": 28601.960171586165
+          },
+          "passive_mix": {
+            "drawdown": 0.053296545871499346,
+            "equity": 56644.66518219885
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.14284542060420402,
+            "equity": 87578.87912001922
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-06-30",
+          "momentum20": {
+            "drawdown": 0.2251224767381752,
+            "equity": 99616.71250234831
+          },
+          "momentum20_fft": {
+            "drawdown": 0.37697384026588077,
+            "equity": 28601.960171586165
+          },
+          "passive_mix": {
+            "drawdown": 0.09863260482420477,
+            "equity": 53932.046073377205
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.11636875863295093,
+            "equity": 90284.10456478846
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-07-31",
+          "momentum20": {
+            "drawdown": 0.17748666776748767,
+            "equity": 105740.677315619
+          },
+          "momentum20_fft": {
+            "drawdown": 0.30846859815810257,
+            "equity": 31746.907098289405
+          },
+          "passive_mix": {
+            "drawdown": 0.08035086974142258,
+            "equity": 55025.9078927229
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.19356956277950244,
+            "equity": 82396.19256286575
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-08-31",
+          "momentum20": {
+            "drawdown": 0.2885159256687525,
+            "equity": 91466.97685113647
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3631602108037739,
+            "equity": 29236.117940930617
+          },
+          "passive_mix": {
+            "drawdown": 0.13365685865790256,
+            "equity": 51836.4192717485
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.13428426854118514,
+            "equity": 88453.60594255308
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-09-30",
+          "momentum20": {
+            "drawdown": 0.29683740603727027,
+            "equity": 90397.1838934377
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3706086555334307,
+            "equity": 28894.173840880598
+          },
+          "passive_mix": {
+            "drawdown": 0.09272125866623893,
+            "equity": 54285.743128599526
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.039523529492211606,
+            "equity": 98135.68605970498
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-10-31",
+          "momentum20": {
+            "drawdown": 0.2852651933695619,
+            "equity": 91884.8845270585
+          },
+          "momentum20_fft": {
+            "drawdown": 0.3602505242108648,
+            "equity": 29369.69618438303
+          },
+          "passive_mix": {
+            "drawdown": 0.027290399994442383,
+            "equity": 58200.706220668915
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.02597638693908888,
+            "equity": 134759.6317763382
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-11-30",
+          "momentum20": {
+            "drawdown": 0.02597638693908877,
+            "equity": 126176.0497312305
+          },
+          "momentum20_fft": {
+            "drawdown": 0.2671190090205189,
+            "equity": 33645.18902938735
+          },
+          "passive_mix": {
+            "drawdown": 0.01951588987450914,
+            "equity": 73009.65161583974
+          }
+        },
+        {
+          "buy_and_hold": {
+            "drawdown": 0.12059856667953694,
+            "equity": 130483.81056714716
+          },
+          "cash": {
+            "drawdown": 0.0,
+            "equity": 10000.0
+          },
+          "date": "2024-12-31",
+          "momentum20": {
+            "drawdown": 0.1234911431104816,
+            "equity": 121770.722201895
+          },
+          "momentum20_fft": {
+            "drawdown": 0.24012640960783027,
+            "equity": 34884.36854258592
+          },
+          "passive_mix": {
+            "drawdown": 0.09215333378180679,
+            "equity": 71280.71712865078
+          }
+        }
+      ],
+      "portfolios": {
+        "buy_and_hold": {
+          "ending_equity": 130483.81056714716,
+          "max_drawdown": 0.7666336091416391,
+          "mean_close_exposure": 1.0,
+          "sharpe": 1.120292561932482,
+          "total_return": 12.048381056714716,
+          "trade_events": 1,
+          "transaction_cost": 0.0
+        },
+        "cash": {
+          "ending_equity": 10000.0,
+          "max_drawdown": 0.0,
+          "mean_close_exposure": 0.0,
+          "sharpe": null,
+          "total_return": 0.0,
+          "trade_events": 0,
+          "transaction_cost": 0.0
+        },
+        "momentum20": {
+          "ending_equity": 121770.722201895,
+          "max_drawdown": 0.5751788143224519,
+          "mean_close_exposure": 0.5769020251778872,
+          "sharpe": 1.3218501642272413,
+          "total_return": 11.1770722201895,
+          "trade_events": 188,
+          "transaction_cost": 0.0
+        },
+        "momentum20_fft": {
+          "ending_equity": 34884.36854258592,
+          "max_drawdown": 0.5472557588525374,
+          "mean_close_exposure": 0.3426382047071702,
+          "sharpe": 0.8846055527605664,
+          "total_return": 2.4884368542585924,
+          "trade_events": 150,
+          "transaction_cost": 0.0
+        },
+        "passive_mix": {
+          "ending_equity": 71280.71712865078,
+          "max_drawdown": 0.5348499912423705,
+          "mean_close_exposure": 0.6251766024591208,
+          "sharpe": 1.1702220820492977,
+          "total_return": 6.128071712865078,
+          "trade_events": 5,
+          "transaction_cost": 0.0
+        }
+      },
+      "sharpe_delta": 0.15162808217794366
+    }
+  },
+  "schema_version": 2,
   "sharpe_delta": -0.34137249867898867,
+  "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c",
   "start": "2020-01-01",
   "study": "btc-financial-research-v1",
-  "verification": "passed"
+  "verification": "passed",
+  "verification_sha256": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35"
 }

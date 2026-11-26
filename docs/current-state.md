@@ -1,19 +1,13 @@
 # Current state
 
-[v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) is a local Python toolkit and Codex skill. Its `btc-study` command reproduces the frozen five-year Bitstamp comparison, checks the results and writes a report and dashboard. [Install the release](plugin-guide.md) · [Read the saved example](../examples/btc-study/README.md) · [Review the evidence](releases/v0.3.0-review.md)
+The published **v0.3.1** Python package reproduces the five-year BTC/USD study outside a source checkout. It includes the licensed inputs and reference outputs. The CLI generates a fresh Markdown report, offline dashboard and reproduction receipt. The optional Codex skill uses a separate checkout. [Install and run](user-guide.md) · [PyPI](https://pypi.org/project/agenthon-quant-lab/0.3.1/) · [Release qualification](releases/v0.3.1-pypi.md)
 
-The separate historical workflow supports local CSV/Parquet inspection, three chronological evaluation periods, gross/net SMA, buy-and-hold and cash portfolios, and equity/drawdown exports. It includes a 91-session BTC/USD dataset with pinned provenance and CC BY 4.0 attribution. [Historical guide](historical-workflow.md) · [Example report](../reports/historical-q2/report.md)
+The completed momentum and FFT comparisons share one retrospective 2020–2024 evaluation. Base-cost momentum trailed passive BTC/cash, and the FFT gate reduced net return further. The [study report](../reports/btc-financial-v1/README.md) gives the estimates and intervals. The [six-study catalogue](../research/programme.json) distinguishes these results from the proposed next studies. The separate controlled-model comparison remains paused pending independent human adjudication. [Workbench and evidence boundaries](financial-workbench.md)
 
-## Published v0.2.0
+The toolkit also supports European option pricing and spot-portfolio examples. The daily-price workflow includes a separate 91-session Q2 2025 BTC/USD dataset under CC BY 4.0. The five-year study data and derived outputs carry CC BY-SA 4.0. [Historical guide](historical-workflow.md) · [Data notices](../DATA-NOTICES.md)
 
-The standalone v0.2.0 toolkit preserves the v0.1.0 implementation and historical reports.
+The curated public archive contains **12 papers and 18 experiment records**. Each observation includes its scope and provenance. The portfolio displays a sanitized projection and a bounded option calculator checked against Python. [Paper index](../research/papers.json) · [Experiment register](../experiments/experiments.json) · [Project article](https://hnt119.github.io/projects/quant-finance-agents/)
 
-Implemented: deterministic option pricing/Greeks/scenarios and SMA-versus-buy-and-hold research, strict input conventions, numerical/accounting checks, saved-run reproduction, setup and dependency diagnostics, bundled examples, private result bundles and searchable research/experiment archives.
+## Earlier releases
 
-The public archive contains 12 paper summaries and 17 experimental records. A generated, sanitized projection supports the existing portfolio project page. The browser calculator is a deliberately smaller zero-dividend European-option illustration, checked against the Python engine; it does not execute the plugin.
-
-The v0.1.0 baseline had 52 tests. Its immutable evidence is [the original release manifest](../release-manifest.json). v0.2.0 passes 68 toolkit tests locally and in Linux CI and is [published on GitHub](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.2.0). Final source, qualification and publication status are tracked in [the v0.2.0 report](releases/v0.2.0.md). That report, Git and GitHub are authoritative for final commits and current publication.
-
-Limitations: synthetic data establishes no market edge; data provenance declarations are unverified; archived live-model evidence is historical and deployment-specific; unavailable checks stay explicit. No new model inference, official evaluation, Docker build, financial transaction or portfolio deployment is authorized for this milestone.
-
-Start with [the documentation journey](index.md). The next milestone is [here](next-milestone.md).
+The original v0.1.0 release recorded 52 passing tests. The v0.2.0 release recorded 68 and an archive of 17 experimental records at that milestone. v0.3.0 introduced the released source-based BTC workbench. Use each revision’s dated record when reproducing its results. [v0.1 manifest](../release-manifest.json) · [v0.2 release report](releases/v0.2.0.md) · [v0.3.0 qualification](releases/v0.3.0-review.md)

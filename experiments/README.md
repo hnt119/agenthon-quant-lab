@@ -3,10 +3,11 @@
 [Start with the five-year BTC research example](../examples/btc-study/README.md).
 
 
-[`experiments.json`](experiments.json) is the canonical curated evidence ledger. It contains seventeen historical observations or proposals, preserving failures and unknowns rather than constructing a combined score.
+[`experiments.json`](experiments.json) is the canonical curated evidence ledger. Its 18 records include the retrospective BTC study and 17 historical observations or proposals. Each retains its own denominator, provenance and uncertainty.
 
 - `official_reported`: user reports or archived platform observations, with chronology and artifact-association limits. No score was freshly checked on the platform for this archive. `status: unknown` means whole-task success is not inferred from the aggregate.
 - `local_live`: historical real-model execution, with deployment, candidate, denominator and usage kept distinct from official results.
+- `retrospective_market`: the frozen BTC study, with executable-interval return estimates, cost assumptions and the effect of its secondary FFT gate. [Financial report](../reports/btc-financial-v1/README.md)
 - `synthetic`: scripted infrastructure controls, not model or market performance.
 - `incomplete`: a started evaluation stopped; failed and not-run units remain in coverage.
 - `not_run`: a proposal with no observations, run ID, code identity or usage fabricated.

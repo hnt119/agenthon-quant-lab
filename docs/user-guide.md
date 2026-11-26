@@ -1,40 +1,31 @@
 # Using Agenthon Quant Lab
 
-Start with a **source checkout** and Python 3.12 or newer. From its root:
+In an activated Python 3.12+ virtual environment, run the published toolkit from any writable directory.
 
 ```sh
-python3 scripts/setup.py
-.venv/bin/python -m agenthon_quant doctor
-.venv/bin/python -m agenthon_quant example options --out runs/first-options
-.venv/bin/python -m agenthon_quant example trading --out runs/first-strategy
+python -m pip install agenthon-quant-lab==0.3.1
+quant-lab doctor
+quant-lab btc-study
 ```
 
-Setup creates or reuses only the checkout's `.venv`, installs the free dependencies
-in `requirements-verified.txt`, then installs this package in editable mode. The
-first installation needs a package-download connection. It does not contact a
-model, data vendor or broker. It stops on installation failure and never falls
-back to modifying system Python. Existing non-virtualenv files or symlinks named
-`.venv` are preserved. Re-running setup is supported.
+The first install needs access to PyPI. The study runs offline with the bundled snapshot and references, independently checks the results and prints three paths. Start with `report.md`, explore the daily records in `dashboard.html`, and inspect the eight comparisons in `reproduction.json`. Use `quant-lab btc-study --out <new-directory>` to choose the destination. [Release and qualified platforms](releases/v0.3.1-pypi.md) · [Study report](../reports/btc-financial-v1/README.md) · [Protocol](../experiments/btc-financial-v1/protocol.json)
 
-`doctor` checks the interpreter, installed dependency versions and actual module
-imports, source checkout, bundled data and optional Codex skill link. It performs
-no model calls. Missing PyArrow affects Parquet only; CSV remains usable. The
-example commands are functional numerical/accounting checks, beyond dependency
-imports. `doctor --json` gives the same diagnostics as structured data.
+`quant-lab doctor` identifies an installed distribution or a development checkout, verifies dependency imports and checks bundled resources. `doctor --json` gives structured diagnostics. CSV works with the base package. For Parquet input, install `python -m pip install 'agenthon-quant-lab[parquet]==0.3.1'` in the same environment. Source development and the optional Codex skill have their own setup. [Developer guide](development.md) · [Skill guide](plugin-guide.md)
 
-The `example` command resolves bundled specifications relative to the installed
-source checkout, so it works from any current directory when invoked with that
-checkout's interpreter. The `--out` path is relative to your current directory.
-Choose a fresh directory every time. On Windows the virtualenv interpreter is
-`.venv\Scripts\python.exe`; examples above show macOS/Linux paths.
+```sh
+quant-lab example options --out runs/first-options
+quant-lab example trading --out runs/first-strategy
+```
+
+The examples load their specifications and data from the installed package. Choose a fresh output path for each run.
 
 ## Run a historical portfolio comparison
 
-The [historical guide](historical-workflow.md) walks through inspecting a local price file, choosing eligible periods, evaluating the portfolios, reading the CSV/SVG paths and reproducing the saved result. Use `examples/historical.json` for the Bitstamp sample and `examples/trading.json` for the original two-period synthetic example. [Fixture attribution and transformation](../examples/data/bitstamp/README.md)
+The [historical guide](historical-workflow.md) walks through inspecting a local price file, choosing eligible periods, evaluating the portfolios, reading the CSV/SVG paths and reproducing the saved result. Use `quant-lab example historical --out runs/btc-q2` for the bundled Bitstamp sample. A separate `example trading` run uses two periods of synthetic prices. [Fixture attribution and transformation](../examples/data/bitstamp/README.md)
 
 ## Supply assumptions and read results
 
-Copy `examples/options.json` or `examples/trading.json` to a new specification.
+Copy the [option specification](../examples/options.json) or [trading specification](../examples/trading.json) to your own directory. For a trading run, supply a matching data file relative to the specification.
 Read [option conventions](options-conventions.md) or
 [trading conventions](trading-conventions.md) before changing it. Rates and
 volatility are decimals, maturity is a year fraction, and dividend treatment must
@@ -43,8 +34,8 @@ and positive open/close prices, declared adjustment treatment and chronological
 periods. Do not choose parameters after inspecting the final holdout.
 
 ```sh
-.venv/bin/python -m agenthon_quant run path/to/spec.json --out runs/my-analysis
-.venv/bin/python -m agenthon_quant explain runs/my-analysis
+quant-lab run path/to/spec.json --out runs/my-analysis
+quant-lab explain runs/my-analysis
 ```
 
 Open `report.md` for prices or portfolio/period tables, then inspect failed and
@@ -55,9 +46,9 @@ input-source accuracy, predictive accuracy or trading profitability. The origina
 ## Reproduce or change one assumption
 
 ```sh
-.venv/bin/python -m agenthon_quant verify-inputs runs/my-analysis
-.venv/bin/python -m agenthon_quant reproduce runs/my-analysis --out runs/repeated
-.venv/bin/python -m agenthon_quant reproduce runs/my-analysis --out runs/changed --set 'volatility=0.3'
+quant-lab verify-inputs runs/my-analysis
+quant-lab reproduce runs/my-analysis --out runs/repeated
+quant-lab reproduce runs/my-analysis --out runs/changed --set 'volatility=0.3'
 ```
 
 Exact reproduction requires the saved source fingerprint. An old run may correctly
@@ -65,16 +56,15 @@ refuse the newer toolkit source. Use a **separate checkout** at the run record's
 `code.git_commit` with its recorded dependency versions; preserve your current
 checkout and the original run. For frozen v0.1 records, the immutable `v0.1.0` tag
 contains the original engine. For v0.2 runs, use the published `v0.2.0` tag or the exact commit recorded in `run.json`. There is no fingerprint bypass. Changed assumptions
-are recorded as a derived experiment, not an exact reproduction. Wheel layout or
-arbitrary environment portability is not promised.
+are recorded as a derived experiment, not an exact reproduction. The frozen BTC workflow has a separately verified [distribution compatibility record](../packaging/btc-compatibility.json).
 
 ## Search research and historical experiments
 
 ```sh
-.venv/bin/python -m agenthon_quant archive papers "pricing"
-.venv/bin/python -m agenthon_quant archive papers --status deferred --json
-.venv/bin/python -m agenthon_quant archive experiments "momentum" --json
-.venv/bin/python -m agenthon_quant archive experiments --status failed
+quant-lab archive papers "pricing"
+quant-lab archive papers --status deferred --json
+quant-lab archive experiments "momentum" --json
+quant-lab archive experiments --status failed
 ```
 
 These commands search only the curated local `research/papers.json` and
@@ -89,7 +79,7 @@ a newly verified result or a Quant Lab performance claim.
 ## Package a run privately
 
 ```sh
-.venv/bin/python -m agenthon_quant bundle runs/my-analysis --out bundles/my-analysis.zip
+quant-lab bundle runs/my-analysis --out bundles/my-analysis.zip
 ```
 
 The ZIP includes the saved report/record/specification, validated results when

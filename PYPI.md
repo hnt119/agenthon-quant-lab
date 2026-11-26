@@ -12,7 +12,7 @@ quant-lab doctor
 quant-lab btc-study
 ```
 
-Run from any writable directory. The command creates a new folder under `./runs` and prints paths to a Markdown report, an offline HTML dashboard and a reproduction receipt. Use `--out PATH` to choose a new destination. No Git checkout, API key or Codex installation is required. Install `agenthon-quant-lab[parquet]==0.3.1` for Parquet input. The Codex skill is optional and installs separately from a maintained source checkout. [Skill guide](https://github.com/hnt119/agenthon-quant-lab/blob/v0.3.0/docs/plugin-guide.md)
+Run from any writable directory. The command creates a new folder under `./runs` and prints paths to a Markdown report, an offline HTML dashboard and a reproduction receipt. Use `--out PATH` to choose a new destination. No Git checkout, API key or Codex installation is required. Install `agenthon-quant-lab[parquet]==0.3.1` for Parquet input. The Codex skill is optional and installs separately from a maintained source checkout. [Skill guide](https://github.com/hnt119/agenthon-quant-lab/blob/main/docs/plugin-guide.md)
 
 ## What the study found
 
