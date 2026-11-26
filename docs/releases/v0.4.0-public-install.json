@@ -1,0 +1,95 @@
+{
+  "release": "v0.4.0",
+  "release_commit": "4a1f64fa71e7197e6fe69e42624bad59a9179862",
+  "public_index": "https://pypi.org/project/agenthon-quant-lab/0.4.0/",
+  "publication_run": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/45812598876",
+  "verified_utc": "2026-11-26T13:37:21+00:00",
+  "platform": {
+    "os": "macOS 26.6.2",
+    "arch": "arm64",
+    "python": "3.12.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "public_downloads_sha256": {
+    "agenthon_quant_lab-0.4.0-py3-none-any.whl": "228921a63c4330cb3ad420710564067473aa9364f4fa0a0ffb6d2e7f5a0993a8",
+    "agenthon_quant_lab-0.4.0.tar.gz": "504f21c9f283afee78cbe9fdcd4a13675bc7fc97f43983a3a31d1dbfe19df3b9"
+  },
+  "install": {
+    "requirement": "agenthon-quant-lab==0.4.0",
+    "index_url": "https://pypi.org/simple",
+    "pip_selected_url": "https://files.pythonhosted.org/packages/4f/d3/54ab10ecc59d406df01a247b0acdc9ef4115bc60c1942dc149030d76257f/agenthon_quant_lab-0.4.0-py3-none-any.whl",
+    "direct_url_install": false,
+    "checkout_on_cli_path": false,
+    "doctor": "ready"
+  },
+  "acceptance": {
+    "source": "scripts/check_installed.py",
+    "tagged_source_sha256": "6662abf47a47f42bfe48cbaedcc5025374f1f8024aa39d7c8a2ad1d40465dbb1",
+    "mode": "--exact",
+    "output_path_overrides": {
+      "btc": "runs/momentum",
+      "cost-study": "runs/costs",
+      "weekly": "runs/weekly"
+    },
+    "scope": "All tagged installed-workflow assertions; only the three output-directory strings were mapped to the published walkthrough paths. Fresh CLI working directory outside the checkout.",
+    "status": "passed"
+  },
+  "studies": {
+    "momentum": {
+      "command": "quant-lab btc-study --out runs/momentum",
+      "reference_directory": "reports/btc-financial-v1",
+      "completed_utc": "2026-11-26T13:36:24.617749+00:00",
+      "run_receipt_sha256": "b8ed47286973d8218ce956b7b686d4b0d2a2880721306afed7d1eef9f00300db",
+      "byte_identical_sha256": {
+        "equity.svg": "f6322050c5d13023af4f0d5a0bb21625404390d42af6f1ea5e86282149250e1b",
+        "features.jsonl": "6f4717bb3929c37b1818286fe53dc91a58627b85394dcd6c1109d96c2f732ee4",
+        "fit.json": "b131e06f68689dd61c1344ac14758b1ead26ed2422187f10056c59a999ba7c6a",
+        "ledger.jsonl.gz": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
+        "metrics.json": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+        "predictions.json": "fda450cb27e96e1e3e2bf0f3c2af9c87f8e8eb094cf932af876dcac310639065",
+        "tables.csv": "43d4be47d20284a3ce4fd3d1845b3fe8e3544b1e9a81a4aae1821d6ea3f9730d",
+        "verification.json": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35"
+      },
+      "prospective_observations": 0,
+      "report_sha256": "61f658b138ead9b2a740d71ab3a11e12a3cbccacc0b4a58af3759c1671620c1a",
+      "dashboard_sha256": "b53088c85e545939c97c1d914abc103c8e727b05752d42356fb1fe57c7dcae5c",
+      "reproduction_receipt_sha256": "2ee0e4f391eef9de32eff8615069d9c46176021f9c1101603a87302c05de32df"
+    },
+    "costs": {
+      "command": "quant-lab btc-cost-break-even --out runs/costs",
+      "reference_directory": "reports/btc-cost-break-even-v1",
+      "completed_utc": "2026-11-26T13:36:44.050903+00:00",
+      "run_receipt_sha256": "24574f6648d1802b7f502efafd37d35c8de2798a6b4c370b3b1f45d6bc322562",
+      "byte_identical_sha256": {
+        "README.md": "ec5e8266e95b5435da776c6ea33d68129c74cd26fe5efa5208dbeac8430a6551",
+        "crossings.json": "e0a0e520131168a40e47cf1275e1d2d8b7cf4f077783324492dac76b7a166225",
+        "crossings.svg": "ee65c1a1e5dacabdeebab355593802797406f38faaee9ad7eb69750a89e6f20e",
+        "grid.json": "6607f91be9926c207b4540c33b2ecde108985f22264faa7b43dc3652a6b4adf7",
+        "protocol.json": "02ace6a5531f2a0debd68a929a82e63137b6e04d5ee6e42b45e0ad9b78b3d3b3",
+        "public.json": "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f",
+        "refinements.json": "9076c0ded06112146e51c98b5d522f4a8f1aeb2e3ef14fffccdedf322ffa8b1e",
+        "verification.json": "1d8c62831d034a84ac0d56261157586a06d847e4c4adcbe1be30992bf239ebf7"
+      },
+      "prospective_observations": 0
+    },
+    "weekly": {
+      "command": "quant-lab btc-weekly-cadence --out runs/weekly",
+      "reference_directory": "reports/btc-weekly-cadence-v1",
+      "completed_utc": "2026-11-26T13:36:48.808743+00:00",
+      "run_receipt_sha256": "776010415f57bada5de078a488a7241eb8640f7350f16b9fd8d8171bb0102a15",
+      "byte_identical_sha256": {
+        "README.md": "f1abdc33ae7fb699155d971450ac10f9381e3712cf7f4de7a1481e485bf9d112",
+        "comparisons.json": "cc645d91fe458000c242c89c80a37c921615154b48077e8a5be2225211c606c5",
+        "ledger.jsonl.gz": "50376abadd4b94bb4207a530ea96a36a7ea6bb923095e6208241fc5854fb43ab",
+        "metrics.json": "601239e99a8ff36607c9d0995b65740dd0f3d6f866eed586e40d19dffc644b5a",
+        "protocol.json": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+        "public.json": "53fea182631ee02b81e2ace76e74618c07f954ec8161bc386176595eeeb9c468",
+        "verification.json": "4b4b88b97fbef2245e727b36e80e342a2099bb00b734796ecd876ca433a06eb4",
+        "weekly-cadence.svg": "d53eeb1ef049d420a849db5c83b208070c2a28d061b3b83e4a50669d6d6a1a13"
+      },
+      "prospective_observations": 0
+    }
+  },
+  "byte_identical_artifacts": 24
+}
