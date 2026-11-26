@@ -24,8 +24,8 @@ def check(out, exact):
     executable = scripts / ("quant-lab.exe" if os.name == "nt" else "quant-lab")
     env = {"HOME": str(out), "PATH": str(scripts), "PYTHONNOUSERSITE": "1", "PYTHONDONTWRITEBYTECODE": "1",
            **{k: os.environ[k] for k in ("SYSTEMROOT", "TEMP", "TMP") if k in os.environ}}
-    def run(*args):
-        return subprocess.run([executable, *args], cwd=out, env=env, check=True, timeout=180,
+    def run(*args, timeout=180):
+        return subprocess.run([executable, *args], cwd=out, env=env, check=True, timeout=timeout,
                               stdout=subprocess.PIPE, text=True).stdout
 
     assert run("--version").strip() == f"Quant Lab {dist.version}"
@@ -63,6 +63,31 @@ def check(out, exact):
         assert hashlib.sha256((folder / name).read_bytes()).hexdigest() == receipt[key]
     print(f"All CLI workflows passed on {sys.version.split()[0]}. "
           f"Byte-identical outputs: {sum(v['status'] == 'byte-identical' for v in receipt['artifacts'].values())}/8. {folder}")
+
+    # Only the checking process reads committed expectations. The installed CLI
+    # receives a fresh working directory and the same restricted environment above.
+    from agenthon_financial.reproduce import compare
+    run("btc-cost-break-even", "--out", "cost-study", timeout=600)
+    replay = out / "cost-study"
+    reference = Path(__file__).resolve().parents[1] / "reports/btc-cost-break-even-v1"
+    result = json.loads((replay / "run.json").read_bytes())
+    assert result["status"] == "passed" and result["checkout_commit"] is None
+    assert result["software_version"] == dist.version
+    for name, expected_hash in result["artifacts_sha256"].items():
+        assert hashlib.sha256((replay / name).read_bytes()).hexdigest() == expected_hash
+    grades = {}
+    for name in ("grid.json", "refinements.json", "crossings.json", "public.json"):
+        actual = (replay / name).read_bytes()
+        expected = (reference / name).read_bytes()
+        if actual == expected:
+            grades[name] = "byte-identical"
+        else:
+            assert not exact and compare(json.loads(actual), json.loads(expected)), name
+            grades[name] = "numerically equivalent"
+    stats = json.loads((replay / "verification.json").read_bytes())
+    assert stats["coarse_settings"] == 41 and stats["settings_checked"] == 41 + stats["refinement_settings"]
+    assert stats["independent_totals"]["portfolio_sessions"] == stats["settings_checked"] * 9135
+    print(f"Installed BTC cost study: {grades}; {stats['settings_checked']} simulated cost settings.")
 
 
 if __name__ == "__main__":

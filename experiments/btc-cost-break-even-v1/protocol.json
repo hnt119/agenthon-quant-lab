@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "btc-cost-break-even-v1",
+  "scope": "Descriptive retrospective sensitivity on already examined history. No new holdout, prospective observations, tuning or inferential confidence interval.",
+  "question": "Along a common one-way fee and adverse-slippage multiplier, where does 20-session momentum change rank against passive BTC/cash or buy-and-hold?",
+  "source_study": "btc-financial-research-v1",
+  "source_protocol_sha256": "6f22762575c834217b528961f2cd7804b4a0f99150d02adc5a6f0e25d726a6a5",
+  "source_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+  "input_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "evaluation": [
+    "2020-01-01",
+    "2024-12-31"
+  ],
+  "initial_usd": 10000,
+  "arms": [
+    "cash",
+    "buy_and_hold",
+    "momentum20",
+    "momentum20_fft",
+    "passive_mix"
+  ],
+  "books": "Reuse the admitted causal features, fixed training median entropy and expanding annual passive allocations. All accounts start in cash once, trade fractional spot BTC at the first trade-bearing minute open at or after 00:05 UTC after the completed-close decision, then carry cash and units across folds. USD cash earns zero. Mark at closing prices with no terminal liquidation.",
+  "cost_path": {
+    "fee_bps_per_lambda": 50,
+    "slippage_bps_per_lambda": 10,
+    "min_lambda": 0,
+    "max_lambda": 2,
+    "grid_denominator": 20,
+    "grid_count": 41,
+    "units": "One-way basis points per fill. Slippage is adverse to the quote; apply fees on filled notional to all traded accounts. Simulate all five books at every cost, including refinements."
+  },
+  "criteria": {
+    "passive_sharpe": "Primary: pooled net daily-return Sharpe(momentum) minus Sharpe(passive BTC/cash), sample SD, sqrt(365), zero cash rate.",
+    "passive_wealth": "Pooled closing USD wealth(momentum) minus wealth(passive BTC/cash).",
+    "hold_sharpe": "Pooled net Sharpe(momentum) minus Sharpe(buy-and-hold).",
+    "hold_wealth": "Pooled closing USD wealth(momentum) minus wealth(buy-and-hold)."
+  },
+  "annual": "Retain five calendar-fold and pooled metrics for all five accounts on the full coarse grid. Each annual return uses the preceding December close (initial cash for 2020); daily returns, Sharpe, turnover and charges use that fold's entries. Annual endpoints carry earlier compounding. Only pooled differences are refined.",
+  "search": {
+    "criteria_order": [
+      "passive_sharpe",
+      "passive_wealth",
+      "hold_sharpe",
+      "hold_wealth"
+    ],
+    "sharpe_zero_tolerance": 1e-10,
+    "wealth_zero_tolerance_usd": 0.000001,
+    "lambda_width_tolerance": 0.0001,
+    "max_midpoints_per_bracket": 12,
+    "max_additional_settings": 256,
+    "grid": "Use i/20 for integers 0 through 40. Inspect adjacent sampled differences before refinement, retaining all samples; never join a bracket across an undefined statistic.",
+    "equality": "Absolute difference at or below the corresponding zero tolerance is a sampled equality within tolerance. Distinguish isolated hits including endpoints and runs of adjacent such samples; neither certifies an exact mathematical root or a continuum of roots.",
+    "near_flat": "Flag adjacent defined coarse samples whose absolute difference in criterion values is at most its zero tolerance, including near-flat nonzero regions.",
+    "refine": "Bisect each adjacent, strictly opposite-sign bracket in increasing lambda order, in the declared criterion order. Cache full simulations by multiplier. Stop on sampled equality or width <= 0.0001; report midpoint of final bracket as a descriptive estimate with both checked endpoint signs. Record undefined and work-limited refinements explicitly. Make no global monotonicity assumption; same-sign samples cannot exclude intervening roots."
+  },
+  "verification": "Compare anchor ledgers and full pooled/annual metrics to the original gross, base and double_cost records at the existing reproduction tolerances. Verify execution chronology and portfolio accounting independently. Use independent synthetic sign-change, flat, equality, no-crossing, undefined and exhaustion fixtures. Retain provenance, output hashes and failures.",
+  "license": "Derived from Zielak (mczielinski), Bitcoin Historical Data, Kaggle v706, normalized by ff137. UTC Bitstamp extract and derived metrics/figures: CC BY-SA 4.0."
+}

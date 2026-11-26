@@ -19,16 +19,21 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(any(e["status"] == "incomplete" for e in a["experiments"]))
 
 
-    def test_programme_traces_both_completed_studies_to_one_frozen_run(self):
+    def test_programme_traces_three_comparisons_to_two_frozen_runs(self):
         view = export.programme_projection()
         studies = view["studies"]
         self.assertEqual(len(studies), 6)
         completed = [s for s in studies if s["execution_state"] == "completed"]
-        self.assertEqual(len(completed), 2)
-        self.assertEqual(len({s["source_receipt_url"] for s in completed}), 1)
+        self.assertEqual({s["id"] for s in completed}, {"btc-momentum", "btc-fft-gate", "cost-break-even"})
+        parent = [s for s in completed if s["id"] != "cost-break-even"]
+        self.assertEqual(len({s["source_receipt_url"] for s in parent}), 1)
+        cost = next(s for s in completed if s["id"] == "cost-break-even")
+        self.assertEqual(cost["experiment_id"], "btc-cost-break-even-v1")
+        self.assertNotEqual(cost["source_receipt_url"], parent[0]["source_receipt_url"])
+        self.assertEqual(cost["evaluation_period"], parent[0]["evaluation_period"])
         protocol = json.loads((ROOT / "experiments/btc-financial-v1/protocol.json").read_bytes())
         years = protocol["evaluation_years"]
-        for study in completed:
+        for study in parent:
             self.assertEqual(study["experiment_id"], protocol["id"])
             self.assertEqual(study["evaluation_period"], [f"{min(years)}-01-01", f"{max(years)}-12-31"])
         self.assertEqual(view["provenance"]["canonical_files_sha256"]["research/programme.json"],
@@ -45,6 +50,17 @@ class PublicExportTests(unittest.TestCase):
                 (root / "research/programme.json").write_text(json.dumps({"schema_version": 1, "studies": [mutated]}))
                 with self.subTest(field=field), self.assertRaises(ValueError):
                     export.programme_projection(root)
+
+    def test_cost_exhibit_requires_exact_reviewed_payload(self):
+        self.assertEqual(export.cost_study_export(), (ROOT / "site-export/btc-cost-break-even.json").read_bytes())
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = Path("reports/btc-cost-break-even-v1")
+            (root / folder).mkdir(parents=True)
+            (root / folder / "run.json").write_bytes((ROOT / folder / "run.json").read_bytes())
+            (root / folder / "public.json").write_text("{}")
+            with self.assertRaisesRegex(ValueError, "differs from the qualified study"):
+                export.cost_study_export(root)
 
     def test_private_payload_and_local_paths_rejected(self):
         for value in ({"api_key": "anything"}, {"path": "/Users/example/private.csv"}, {"x": "http://localhost:3000"}):

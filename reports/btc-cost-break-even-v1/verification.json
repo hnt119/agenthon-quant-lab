@@ -1,0 +1,54 @@
+{
+  "anchors": {
+    "base": {
+      "actual_ledger_jsonl_sha256": "0925ddab0c4d675806310144021f5bfdf96c21108f942c58b5ced655524ebf86",
+      "canonical_summary_json": "byte-identical",
+      "expected_ledger_jsonl_sha256": "0925ddab0c4d675806310144021f5bfdf96c21108f942c58b5ced655524ebf86",
+      "ledger_jsonl": "byte-identical",
+      "period_summaries": 30,
+      "portfolio_sessions": 9135
+    },
+    "double_cost": {
+      "actual_ledger_jsonl_sha256": "5c71f36d558c65f60d64caf6a6c076f1839fcc14b8a8748cd1aad4e0bc9fb49b",
+      "canonical_summary_json": "byte-identical",
+      "expected_ledger_jsonl_sha256": "5c71f36d558c65f60d64caf6a6c076f1839fcc14b8a8748cd1aad4e0bc9fb49b",
+      "ledger_jsonl": "byte-identical",
+      "period_summaries": 30,
+      "portfolio_sessions": 9135
+    },
+    "gross": {
+      "actual_ledger_jsonl_sha256": "7be3101831200b06b495c633366863aabaf3a6068e54fa1c5b92f4e9419c4537",
+      "canonical_summary_json": "byte-identical",
+      "expected_ledger_jsonl_sha256": "7be3101831200b06b495c633366863aabaf3a6068e54fa1c5b92f4e9419c4537",
+      "ledger_jsonl": "byte-identical",
+      "period_summaries": 30,
+      "portfolio_sessions": 9135
+    }
+  },
+  "coarse_settings": 41,
+  "decision_rows_matched": 621180,
+  "independent_totals": {
+    "fills": 23392,
+    "period_summaries": 2040,
+    "portfolio_sessions": 621180
+  },
+  "original_financial_checks": {
+    "fit_members": 1031,
+    "portfolio_sessions": 36540,
+    "portfolios": 20,
+    "predictive_labels": {
+      "30": 1822,
+      "5": 1822
+    },
+    "scope": "Direct DFT, fit membership, prior-close targets, independent annual weights, delayed quotes, cash and units, net/gross fills, compounding, risk, exposures and paired label membership. Conditional bootstrap reproducibility is checked by offline regeneration.",
+    "sessions": 2922,
+    "status": "passed",
+    "verified_period_summaries": 120
+  },
+  "original_ledger_sha256": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
+  "original_metrics_sha256": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+  "original_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+  "refinement_settings": 27,
+  "settings_checked": 68,
+  "status": "passed"
+}

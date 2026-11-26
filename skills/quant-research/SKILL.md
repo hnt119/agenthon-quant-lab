@@ -25,6 +25,8 @@ recorded. Explain the dollar outcome versus passive BTC/cash, the assumed fee an
 slippage, and the uncertain predictive result. This command takes no asset, date,
 or strategy overrides. A different question needs a separately named experiment.
 
+For the descriptive transaction-cost study, use a checkout with version `0.4.0.dev1` and run `python3 <skill>/scripts/quant.py btc-cost-break-even --out <new-directory>`. Read the printed report and verification receipt. Give the fee and slippage together for each crossing, distinguish net Sharpe from terminal wealth, and identify the period and comparator. [Development study guide](../../experiments/btc-cost-break-even-v1/README.md)
+
 For modeling, read [option conventions](../../docs/options-conventions.md);
 for strategy evaluation, read [trading conventions](../../docs/trading-conventions.md).
 Use `examples/options.json` or `examples/trading.json` as the schema starting point. For daily market data and train/validation/test portfolios, use `examples/historical.json` and [the historical guide](../../docs/historical-workflow.md). Run `inspect-data <absolute-spec>` first and report timing, mapped fields, provenance and material calendar gaps.

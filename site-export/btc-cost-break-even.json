@@ -1,0 +1,684 @@
+{
+  "attribution": "Zielak (mczielinski), Bitcoin Historical Data, Kaggle v706, normalized by ff137. Adapted to UTC sessions, simulated spot portfolios and a fee/slippage sensitivity analysis.",
+  "cost_path": {
+    "fee_bps_per_lambda": 50,
+    "grid_count": 41,
+    "grid_denominator": 20,
+    "max_lambda": 2,
+    "min_lambda": 0,
+    "slippage_bps_per_lambda": 10,
+    "units": "One-way basis points per fill. Slippage is adverse to the quote; apply fees on filled notional to all traded accounts. Simulate all five books at every cost, including refinements."
+  },
+  "criteria": {
+    "hold_sharpe": "Pooled net Sharpe(momentum) minus Sharpe(buy-and-hold).",
+    "hold_wealth": "Pooled closing USD wealth(momentum) minus wealth(buy-and-hold).",
+    "passive_sharpe": "Primary: pooled net daily-return Sharpe(momentum) minus Sharpe(passive BTC/cash), sample SD, sqrt(365), zero cash rate.",
+    "passive_wealth": "Pooled closing USD wealth(momentum) minus wealth(passive BTC/cash)."
+  },
+  "crossings": {
+    "hold_sharpe": {
+      "events": [
+        {
+          "boundary": false,
+          "estimate": 0.40659179687499997,
+          "hi": 0.406640625,
+          "kind": "bracketed",
+          "lo": 0.40654296874999996,
+          "source_bracket": [
+            0.4,
+            0.45
+          ],
+          "trials": [
+            [
+              0.42500000000000004,
+              -0.009141534209719193
+            ],
+            [
+              0.41250000000000003,
+              -0.0029466812440506196
+            ],
+            [
+              0.40625,
+              0.00015086395105390338
+            ],
+            [
+              0.40937500000000004,
+              -0.0013979183188070898
+            ],
+            [
+              0.4078125,
+              -0.000623529585416227
+            ],
+            [
+              0.40703125,
+              -0.0002363334155042196
+            ],
+            [
+              0.406640625,
+              -4.273488155348559e-05
+            ],
+            [
+              0.4064453125,
+              5.406449746248043e-05
+            ],
+            [
+              0.40654296874999996,
+              5.664798623294942e-06
+            ]
+          ],
+          "value_hi": -4.273488155348559e-05,
+          "value_lo": 5.664798623294942e-06
+        }
+      ],
+      "near_flat_intervals": [],
+      "status": "crossing_detected",
+      "undefined_samples": []
+    },
+    "hold_wealth": {
+      "events": [],
+      "near_flat_intervals": [],
+      "status": "no_crossing_detected",
+      "undefined_samples": []
+    },
+    "passive_sharpe": {
+      "events": [
+        {
+          "boundary": false,
+          "estimate": 0.30708007812500004,
+          "hi": 0.30712890625,
+          "kind": "bracketed",
+          "lo": 0.30703125000000003,
+          "source_bracket": [
+            0.3,
+            0.35
+          ],
+          "trials": [
+            [
+              0.32499999999999996,
+              -0.008846030371763236
+            ],
+            [
+              0.3125,
+              -0.002674505995213128
+            ],
+            [
+              0.30625,
+              0.0004113252395814282
+            ],
+            [
+              0.309375,
+              -0.0011315959100088868
+            ],
+            [
+              0.30781250000000004,
+              -0.00036013670163259626
+            ],
+            [
+              0.30703125000000003,
+              2.5593929456446673e-05
+            ],
+            [
+              0.30742187500000007,
+              -0.0001672714712368517
+            ],
+            [
+              0.3072265625,
+              -7.083879214642153e-05
+            ],
+            [
+              0.30712890625,
+              -2.262243665307473e-05
+            ]
+          ],
+          "value_hi": -2.262243665307473e-05,
+          "value_lo": 2.5593929456446673e-05
+        }
+      ],
+      "near_flat_intervals": [],
+      "status": "crossing_detected",
+      "undefined_samples": []
+    },
+    "passive_wealth": {
+      "events": [
+        {
+          "boundary": false,
+          "estimate": 0.47807617187499996,
+          "hi": 0.47812499999999997,
+          "kind": "bracketed",
+          "lo": 0.47802734375,
+          "source_bracket": [
+            0.45,
+            0.5
+          ],
+          "trials": [
+            [
+              0.475,
+              248.61301125337195
+            ],
+            [
+              0.4875,
+              -742.0423648216092
+            ],
+            [
+              0.48124999999999996,
+              -248.473063432466
+            ],
+            [
+              0.47812499999999997,
+              -0.3711737618286861
+            ],
+            [
+              0.4765625,
+              124.01043735310668
+            ],
+            [
+              0.47734374999999996,
+              61.792035784732434
+            ],
+            [
+              0.47773437499999993,
+              30.70353504961531
+            ],
+            [
+              0.4779296875,
+              15.16445703386853
+            ],
+            [
+              0.47802734375,
+              7.396210781633272
+            ]
+          ],
+          "value_hi": -0.3711737618286861,
+          "value_lo": 7.396210781633272
+        }
+      ],
+      "near_flat_intervals": [],
+      "status": "crossing_detected",
+      "undefined_samples": []
+    }
+  },
+  "curve": [
+    {
+      "differences": {
+        "hold_sharpe": 0.20155760229475939,
+        "hold_wealth": -8713.088365252159,
+        "passive_sharpe": 0.15162808217794366,
+        "passive_wealth": 50490.00507324422
+      },
+      "fee_bps": 0.0,
+      "lambda": 0.0,
+      "slippage_bps": 0.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.1767714569758012,
+        "hold_wealth": -15351.738583486003,
+        "passive_sharpe": 0.12694307598335164,
+        "passive_wealth": 43840.58018800053
+      },
+      "fee_bps": 2.5,
+      "lambda": 0.05,
+      "slippage_bps": 0.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.15198240212188807,
+        "hold_wealth": -21624.206556432793,
+        "passive_sharpe": 0.10225521394895742,
+        "passive_wealth": 37557.34847446393
+      },
+      "fee_bps": 5.0,
+      "lambda": 0.1,
+      "slippage_bps": 1.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.12719153888854917,
+        "hold_wealth": -27550.574985363302,
+        "passive_sharpe": 0.07756559724616308,
+        "passive_wealth": 31620.227220359244
+      },
+      "fee_bps": 7.5,
+      "lambda": 0.15,
+      "slippage_bps": 1.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.1023999664469406,
+        "hold_wealth": -33149.82516099773,
+        "passive_sharpe": 0.052875325061920275,
+        "passive_wealth": 26010.235123974708
+      },
+      "fee_bps": 10.0,
+      "lambda": 0.2,
+      "slippage_bps": 2.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.07760878174898767,
+        "hold_wealth": -38439.89737435691,
+        "passive_sharpe": 0.028185494363878627,
+        "passive_wealth": 20709.431883310535
+      },
+      "fee_bps": 12.5,
+      "lambda": 0.25,
+      "slippage_bps": 2.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.05281907929440033,
+        "hold_wealth": -43437.74801371081,
+        "passive_sharpe": 0.0034971996673913708,
+        "passive_wealth": 15700.861099130838
+      },
+      "fee_bps": 15.0,
+      "lambda": 0.3,
+      "slippage_bps": 3.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.02803195089922106,
+        "hold_wealth": -48159.40352953857,
+        "passive_sharpe": -0.021188467195919714,
+        "passive_wealth": 10968.496310002956
+      },
+      "fee_bps": 17.5,
+      "lambda": 0.35,
+      "slippage_bps": 3.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": 0.0032484854663266116,
+        "hold_wealth": -52620.01143925643,
+        "passive_sharpe": -0.04587041730768071,
+        "passive_wealth": 6497.189987570149
+      },
+      "fee_bps": 20.0,
+      "lambda": 0.4,
+      "slippage_bps": 4.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.02153023124213438,
+        "hold_wealth": -56833.888534156475,
+        "passive_sharpe": -0.07054756489031022,
+        "passive_wealth": 2272.6253296123323
+      },
+      "fee_bps": 22.5,
+      "lambda": 0.45,
+      "slippage_bps": 4.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.046303116830233915,
+        "hold_wealth": -60814.566442028154,
+        "passive_sharpe": -0.09521882753252475,
+        "passive_wealth": -1718.7293025751424
+      },
+      "fee_bps": 25.0,
+      "lambda": 0.5,
+      "slippage_bps": 5.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.0710690924916988,
+        "hold_wealth": -64574.834690565476,
+        "passive_sharpe": -0.11988312641276466,
+        "passive_wealth": -5489.663447588857
+      },
+      "fee_bps": 27.500000000000004,
+      "lambda": 0.55,
+      "slippage_bps": 5.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.09582708323084255,
+        "hold_wealth": -68126.78140860159,
+        "passive_sharpe": -0.1445393865201392,
+        "passive_wealth": -9052.265245151895
+      },
+      "fee_bps": 30.0,
+      "lambda": 0.6,
+      "slippage_bps": 6.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.12057601808146301,
+        "hold_wealth": -71481.83179485431,
+        "passive_sharpe": -0.16918653687329654,
+        "passive_wealth": -12417.959904859388
+      },
+      "fee_bps": 32.5,
+      "lambda": 0.65,
+      "slippage_bps": 6.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.14531483032293524,
+        "hold_wealth": -74650.78447655473,
+        "passive_sharpe": -0.19382351073655202,
+        "passive_wealth": -15597.54606480703
+      },
+      "fee_bps": 35.0,
+      "lambda": 0.7,
+      "slippage_bps": 7.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.17004245769403248,
+        "hold_wealth": -77643.84587380233,
+        "passive_sharpe": -0.21844924583368797,
+        "passive_wealth": -18601.23015594644
+      },
+      "fee_bps": 37.5,
+      "lambda": 0.75,
+      "slippage_bps": 7.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.19475784260392626,
+        "hold_wealth": -80470.66267899462,
+        "passive_sharpe": -0.24306268455894164,
+        "passive_wealth": -21438.65888151455
+      },
+      "fee_bps": 40.0,
+      "lambda": 0.8,
+      "slippage_bps": 8.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.2194599323405204,
+        "hold_wealth": -83140.35255475999,
+        "passive_sharpe": -0.2676627741853719,
+        "passive_wealth": -24118.949914966754
+      },
+      "fee_bps": 42.5,
+      "lambda": 0.85,
+      "slippage_bps": 8.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.24414767927590786,
+        "hold_wealth": -85661.53314810953,
+        "passive_sharpe": -0.29224846707029295,
+        "passive_wealth": -26650.720914128484
+      },
+      "fee_bps": 45.0,
+      "lambda": 0.9,
+      "slippage_bps": 9.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.26882004106904644,
+        "hold_wealth": -88042.34951319452,
+        "passive_sharpe": -0.3168187208579478,
+        "passive_wealth": -29042.116943952868
+      },
+      "fee_bps": 47.5,
+      "lambda": 0.95,
+      "slippage_bps": 9.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.29347598086522,
+        "hold_wealth": -90290.50002992988,
+        "passive_sharpe": -0.34137249867898867,
+        "passive_wealth": -31300.836395144106
+      },
+      "fee_bps": 50.0,
+      "lambda": 1.0,
+      "slippage_bps": 10.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.31811446749270733,
+        "hold_wealth": -92413.26090104555,
+        "passive_sharpe": -0.36590876934712824,
+        "passive_wealth": -33434.15548120914
+      },
+      "fee_bps": 52.5,
+      "lambda": 1.05,
+      "slippage_bps": 10.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.34273447565602866,
+        "hold_wealth": -94417.50930549318,
+        "passive_sharpe": -0.39042650755239006,
+        "passive_wealth": -35448.95139186382
+      },
+      "fee_bps": 55.00000000000001,
+      "lambda": 1.1,
+      "slippage_bps": 11.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.3673349861261468,
+        "hold_wealth": -96309.74528195633,
+        "passive_sharpe": -0.41492469405131294,
+        "passive_wealth": -37351.72417654366
+      },
+      "fee_bps": 57.49999999999999,
+      "lambda": 1.15,
+      "slippage_bps": 11.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.3919149859274085,
+        "hold_wealth": -98096.11241210465,
+        "passive_sharpe": -0.4394023158538882,
+        "passive_wealth": -39148.61742765781
+      },
+      "fee_bps": 60.0,
+      "lambda": 1.2,
+      "slippage_bps": 12.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.4164734685209073,
+        "hold_wealth": -99782.41736942073,
+        "passive_sharpe": -0.4638583664069298,
+        "passive_wealth": -40845.437829415845
+      },
+      "fee_bps": 62.5,
+      "lambda": 1.25,
+      "slippage_bps": 12.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.4410094339846824,
+        "hold_wealth": -101374.14839585434,
+        "passive_sharpe": -0.488291845774262,
+        "passive_wealth": -42447.67363448216
+      },
+      "fee_bps": 65.0,
+      "lambda": 1.3,
+      "slippage_bps": 13.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.4655218891902604,
+        "hold_wealth": -102876.4927650899,
+        "passive_sharpe": -0.5127017608132702,
+        "passive_wealth": -43960.512127243426
+      },
+      "fee_bps": 67.5,
+      "lambda": 1.35,
+      "slippage_bps": 13.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.4900098479757117,
+        "hold_wealth": -104294.35328802842,
+        "passive_sharpe": -0.5370871253479513,
+        "passive_wealth": -45388.85612929053
+      },
+      "fee_bps": 70.0,
+      "lambda": 1.4,
+      "slippage_bps": 14.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.5144723313151082,
+        "hold_wealth": -105632.3639130156,
+        "passive_sharpe": -0.5614469603383753,
+        "passive_wealth": -46737.33959964654
+      },
+      "fee_bps": 72.5,
+      "lambda": 1.45,
+      "slippage_bps": 14.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.5389083674843144,
+        "hold_wealth": -106894.90447047168,
+        "passive_sharpe": -0.5857802940464741,
+        "passive_wealth": -48010.34237939703
+      },
+      "fee_bps": 75.0,
+      "lambda": 1.5,
+      "slippage_bps": 15.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.5633169922230511,
+        "hold_wealth": -108086.11460885197,
+        "passive_sharpe": -0.610086162198109,
+        "passive_wealth": -49212.004127649954
+      },
+      "fee_bps": 77.5,
+      "lambda": 1.55,
+      "slippage_bps": 15.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.5876972488932983,
+        "hold_wealth": -109209.90696629981,
+        "passive_sharpe": -0.634363608141459,
+        "passive_wealth": -50346.237493189336
+      },
+      "fee_bps": 80.0,
+      "lambda": 1.6,
+      "slippage_bps": 16.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.6120481886337504,
+        "hold_wealth": -110269.97961990366,
+        "passive_sharpe": -0.6586116830015006,
+        "passive_wealth": -51416.740563731706
+      },
+      "fee_bps": 82.5,
+      "lambda": 1.65,
+      "slippage_bps": 16.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.6363688705105897,
+        "hold_wealth": -111269.8278521944,
+        "passive_sharpe": -0.6828294458307578,
+        "passive_wealth": -52427.008632424026
+      },
+      "fee_bps": 85.0,
+      "lambda": 1.7,
+      "slippage_bps": 17.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.6606583616642867,
+        "hold_wealth": -112212.75527232215,
+        "passive_sharpe": -0.7070159637561217,
+        "passive_wealth": -53380.34531901995
+      },
+      "fee_bps": 87.5,
+      "lambda": 1.75,
+      "slippage_bps": 17.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.6849157374525222,
+        "hold_wealth": -113101.88432731167,
+        "passive_sharpe": -0.7311703121217482,
+        "passive_wealth": -54279.873081135855
+      },
+      "fee_bps": 90.0,
+      "lambda": 1.8,
+      "slippage_bps": 18.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.7091400815891742,
+        "hold_wealth": -113940.1662368503,
+        "passive_sharpe": -0.7552915746280748,
+        "passive_wealth": -55128.54314903823
+      },
+      "fee_bps": 92.5,
+      "lambda": 1.85,
+      "slippage_bps": 18.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.733330486279323,
+        "hold_wealth": -114730.39038322498,
+        "passive_sharpe": -0.7793788434667984,
+        "passive_wealth": -55929.144915581026
+      },
+      "fee_bps": 95.0,
+      "lambda": 1.9,
+      "slippage_bps": 19.0
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.7574860523502172,
+        "hold_wealth": -115475.19318629139,
+        "passive_sharpe": -0.8034312194518591,
+        "passive_wealth": -56684.31481117473
+      },
+      "fee_bps": 97.5,
+      "lambda": 1.95,
+      "slippage_bps": 19.5
+    },
+    {
+      "differences": {
+        "hold_sharpe": -0.781605889378372,
+        "hold_wealth": -116177.0664917259,
+        "passive_sharpe": -0.827447812146526,
+        "passive_wealth": -57396.54469203843
+      },
+      "fee_bps": 100.0,
+      "lambda": 2.0,
+      "slippage_bps": 20.0
+    }
+  ],
+  "dataset_url": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data",
+  "evaluation": [
+    "2020-01-01",
+    "2024-12-31"
+  ],
+  "findings": [
+    "Momentum moved from ahead to behind passive BTC/cash on net Sharpe near 0.3071\u00d7 base costs (15.35 bp fee and 3.07 bp slippage per fill).",
+    "Momentum moved from ahead to behind passive BTC/cash on terminal wealth near 0.4781\u00d7 base costs (23.90 bp fee and 4.78 bp slippage per fill)."
+  ],
+  "initial_usd": 10000,
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "provenance": {
+    "original_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+    "protocol_commit": "78f7486cbee975600b9d7f581533595f507a64f6",
+    "protocol_sha256": "02ace6a5531f2a0debd68a929a82e63137b6e04d5ee6e42b45e0ad9b78b3d3b3",
+    "snapshot_sha256": "bae8d340002f8a3d5896fe632749d830e50a5108be49ae5f717610b991382315",
+    "source_manifest_sha256": "493e714e7d4895bff71da4add745dc9635ed6a03a09a6344613b4fa64436572c"
+  },
+  "publisher_terms_url": "https://github.com/ff137/bitstamp-btcusd-minute-data/blob/d7156d68d85714e188a1e152818281e97c89fbe5/DATA_LICENSE",
+  "question": "Along a common one-way fee and adverse-slippage multiplier, where does 20-session momentum change rank against passive BTC/cash or buy-and-hold?",
+  "reproduction_command": "quant-lab btc-cost-break-even --out btc-cost-review",
+  "schema_version": 1,
+  "scope": "Descriptive retrospective sensitivity on already examined history. No new holdout, prospective observations, tuning or inferential confidence interval.",
+  "search": {
+    "lambda_width_tolerance": 0.0001,
+    "sharpe_zero_tolerance": 1e-10,
+    "wealth_zero_tolerance_usd": 1e-06
+  },
+  "software_version": "0.4.0.dev1",
+  "study_id": "btc-cost-break-even-v1"
+}

@@ -24,6 +24,10 @@ The competition work established the value of a bounded action, a recorded obser
 
 The separate 72-case, 24-family controlled comparison is **paused pending independent human reviews**. Its cases, packets, acceptance conditions and historical billing records remain in their original workstream.
 
+## Applying the same checks to transaction costs
+
+The [cost study](../experiments/btc-cost-break-even-v1/README.md) holds signals, FFT decisions and annual passive weights fixed. Its [verifier](../src/agenthon_financial/cost_verify.py) reconstructs trades and cash flows. A separate [saved-result check](../scripts/check_cost_study.py) derives each plotted difference from the two underlying books and replays the numerical brackets. This extends the financial verification method above. The experiment adds no learned strategy, fitted threshold or model evaluation.
+
 ## A possible MES replication
 
 First qualify licensed, timestamped trades and executable quote proxies by individual contract. Document exchange sessions, holiday schedules, overnight breaks, time zones, daylight-saving transitions and the point at which each settlement was observable. Prespecify a contract selection and roll rule, identify roll trades by contract, and keep any adjusted signal series separate from actual fill and settlement prices.

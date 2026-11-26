@@ -3,6 +3,8 @@
 [Start with the five-year BTC research example](../examples/btc-study/README.md).
 
 
+The [cost break-even study](btc-cost-break-even-v1/README.md) replays those same five calendar years under one declared fee/slippage ratio. Its [separate run receipt](../reports/btc-cost-break-even-v1/run.json) and [programme entry](../research/programme.json) record the follow-up.
+
 [`experiments.json`](experiments.json) is the canonical curated evidence ledger. Its 18 records include the retrospective BTC study and 17 historical observations or proposals. Each retains its own denominator, provenance and uncertainty.
 
 - `official_reported`: user reports or archived platform observations, with chronology and artifact-association limits. No score was freshly checked on the platform for this archive. `status: unknown` means whole-task success is not inferred from the aggregate.
