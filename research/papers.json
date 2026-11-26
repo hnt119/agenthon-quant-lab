@@ -454,7 +454,7 @@
       ],
       "limitations": [
         "The trained FITS model differs from a deterministic FFT summary.",
-        "No local forecasting, trading or Agenthon ablation was run."
+        "The BTC comparison tested a trailing entropy gate. FITS forecasting and an Agenthon solver ablation remain untested."
       ],
       "decision": "Do not train or promote a spectral model without a chronological controlled comparison.",
       "primary_source_verified_date": "2026-11-14",

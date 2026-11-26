@@ -12,7 +12,7 @@ The price signal and the investment answer different questions. The next day’s
 
 ![After-cost equity from the five calendar years. The passive BTC/cash line ends above the momentum line.](../../reports/btc-financial-v1/equity.svg)
 
-The secondary rule required positive momentum and a concentrated pattern in the last 64 returns. It finished at $14,183. The complete report covers cash, buy and hold, annual periods and cost sensitivities.
+The secondary FFT rule kept a positive momentum signal only when spectral entropy over the last 64 completed returns was at or below its training median. Average BTC exposure fell from 57.69% to 34.26%. After costs, plain momentum returned +294.14% and the gated rule returned +41.83%. The gated account ended at $14,183.
 
 [Frozen specification](../../experiments/btc-financial-v1/protocol.json) · [Numerical checks](../../reports/btc-financial-v1/verification.json) · [Earlier six-month pilot](../../research/btc-pilot-audit/README.md)
 

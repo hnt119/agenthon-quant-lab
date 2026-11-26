@@ -4,7 +4,7 @@ The admitted snapshot covers Bitstamp BTC/USD spot from January 1, 2017 through 
 
 ## Run from the repository root
 
-Use Python 3.12 or later. A fresh checkout can install the numerical dependencies with `python3.12 scripts/setup.py`. On this review branch:
+The verified environment uses Python 3.12. A fresh checkout can install the numerical dependencies with `python3.12 scripts/setup.py`. Run the following from the checkout.
 
 ```sh
 .venv/bin/python scripts/btc_financial.py verify reports/btc-financial-v1

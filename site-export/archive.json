@@ -1929,7 +1929,7 @@
       ],
       "limitations": [
         "The trained FITS model differs from a deterministic FFT summary.",
-        "No local forecasting, trading or Agenthon ablation was run."
+        "The BTC comparison tested a trailing entropy gate. FITS forecasting and an Agenthon solver ablation remain untested."
       ],
       "mechanism": "Model time series with complex-frequency interpolation and a compact learned parameterization.",
       "project_relevance": "Inspires lightweight spectral diagnostics, not a claim that market noise should be discarded or that FFT predicts profitable trades.",
@@ -1983,7 +1983,7 @@
   "provenance": {
     "canonical_files_sha256": {
       "experiments/experiments.json": "a87f674057f2891a1526937352e496b822853445e0ab54ed8f4d234c89aa5f29",
-      "research/papers.json": "2801d938017eb71bbec5cd4756f6231650cfdd591d01ced635af8c13ebe50663"
+      "research/papers.json": "799321aa0f8ce7a9663044def52c2c34b4269e7d83c03d8bbfa66a6839962a11"
     },
     "generator": "scripts/export_site.py",
     "repository": "https://github.com/hnt119/agenthon-quant-lab",

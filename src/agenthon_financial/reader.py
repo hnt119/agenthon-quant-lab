@@ -27,12 +27,26 @@ def paragraphs(spec, result):
     ]
 
 
+def spectral_finding(spec, result):
+    portfolios = result["portfolios"]["base"]
+    plain = portfolios["momentum20"]["pooled"]
+    gated = portfolios["momentum20_fft"]["pooled"]
+    return (
+        f"The secondary FFT rule kept a positive momentum signal only when spectral entropy over the last "
+        f"{spec['entropy_returns']} completed returns was at or below its training median. "
+        f"Average BTC exposure fell from {plain['mean_close_exposure']:.2%} to {gated['mean_close_exposure']:.2%}. "
+        f"After costs, plain momentum returned {plain['total_return']:+,.2%} and the gated rule returned "
+        f"{gated['total_return']:+,.2%}. The gated account ended at ${gated['ending_equity']:,.0f}."
+    )
+
+
 def overview_html(spec, result):
     intro=paragraphs(spec,result)
     links=('<p><a href="#portfolio">Compare the accounts</a> · <a href="#evidence">Inspect the run</a>. '
            'Repeat locally with <code>quant-lab btc-study</code>.</p>')
     return "\n".join([*(f"<p>{escape(p)}</p>" for p in intro[:2]), links,
-                      *(f"<p>{escape(p)}</p>" for p in intro[2:])])
+                      *(f"<p>{escape(p)}</p>" for p in intro[2:]),
+                      f"<p>{escape(spectral_finding(spec, result))}</p>"])
 
 
 def projection(verified):
@@ -66,10 +80,22 @@ def projection(verified):
 
 def write_report(out, verified):
     _,spec,_,_,_,result,_ = verified
-    body = ["# Does BTC momentum pay for trading?", *paragraphs(spec,result)[:2],
+    intro = paragraphs(spec, result)
+    portfolios = result["portfolios"]["base"]
+    deltas = result["sharpe_delta"]
+    delay = spec["scenarios"]["later_fill"][0]
+    body = ["# Does BTC momentum pay for trading?", *intro[:2],
             "[Explore the charts and daily decisions](dashboard.html) · [All tables](tables.csv) · "
             "[Calculation receipt](verification.json) · [Reproduction comparison](reproduction.json)",
-            *paragraphs(spec,result)[2:],
+            *intro[2:],
+            "## How much did exposure and trading costs matter?",
+            f"Buying and holding BTC throughout returned {portfolios['buy_and_hold']['pooled']['total_return']:+,.2%} "
+            f"after entry costs. Cash returned {portfolios['cash']['pooled']['total_return']:.2%}.",
+            f"Momentum’s Sharpe advantage over passive BTC/cash was {deltas['gross']['pooled']:+.3f} before "
+            f"fees and slippage. The difference was {deltas['base']['pooled']:+.3f} at base costs, "
+            f"{deltas['double_cost']['pooled']:+.3f} at double costs and {deltas['later_fill']['pooled']:+.3f} "
+            f"at base costs with the {delay}-minute delay.",
+            spectral_finding(spec, result),
             "From the installed toolkit, run `quant-lab btc-study` to repeat this exact comparison in a new folder.",
             "Prices are trade-bearing candle proxies on one exchange. Spreads, actual execution and capacity are unknown.",
             "Derived from Zielak (mczielinski), *Bitcoin Historical Data*, Kaggle v706, normalized by ff137. "

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"src"))
 
 from agenthon_btc.view import standalone
-from agenthon_financial.reader import paragraphs, projection
+from agenthon_financial.reader import paragraphs, projection, spectral_finding
 from agenthon_financial.reproduce import SAVED, admitted_reference
 from agenthon_financial.run import read_verified
 from agenthon_financial.view import panel
@@ -26,9 +26,7 @@ def outputs():
               "[Download the offline dashboard](dashboard.html) · [Reproduce this study](../../docs/plugin-guide.md)",
               intro[2],intro[3],
               f"![After-cost equity from the five calendar years. The passive BTC/cash line ends above the momentum line.]({prefix}equity.svg)",
-              "The secondary rule required positive momentum and a concentrated pattern in the last 64 returns. "
-              f"It finished at ${result['portfolios']['base']['momentum20_fft']['pooled']['ending_equity']:,.0f}. "
-              "The complete report covers cash, buy and hold, annual periods and cost sensitivities.",
+              spectral_finding(spec, result),
               f"[Frozen specification](../../experiments/btc-financial-v1/protocol.json) · [Numerical checks]({prefix}verification.json) · "
               "[Earlier six-month pilot](../../research/btc-pilot-audit/README.md)",
               "Adapted from Zielak (mczielinski), *Bitcoin Historical Data*, Kaggle v706, normalized by ff137. "

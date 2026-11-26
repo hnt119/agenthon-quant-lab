@@ -2,9 +2,11 @@
 
 Reproduce a financial study on your own computer, inspect its assumptions and see how the numbers were checked. The toolkit grew out of Agenthon 2026 Track 1, where independently checking a financial calculation mattered as much as producing an answer.
 
-**Did buying BTC after a price rise pay for trading?** Across 2020–2024, a simulated $10,000 momentum account ended at **$39,414** after costs. A simpler BTC/cash account ended at **$70,715**. The momentum signal preceded somewhat higher daily returns, but the uncertainty interval includes zero. The frozen research conclusion was **inconclusive**. [Read the illustrated example](examples/btc-study/README.md) · [See the checked results](reports/btc-financial-v1/README.md)
+**Did buying BTC after a price rise pay for trading?** Across 2020–2024, a simulated $10,000 momentum account ended at **$39,414** after costs. A simpler BTC/cash account ended at **$70,715**. The momentum signal preceded somewhat higher daily returns, but the uncertainty interval includes zero. Adding the fixed FFT gate further reduced the after-cost return. The frozen research conclusion was **inconclusive**. [Read the illustrated example](examples/btc-study/README.md) · [See the checked results](reports/btc-financial-v1/README.md)
 
 ## Try it
+
+The local v0.3.1 distribution candidate supports a checkout-free installation. For review, install its built wheel into a fresh environment with `python -m pip install /path/to/agenthon_quant_lab-0.3.1-py3-none-any.whl`, then run `quant-lab btc-study`. [Distribution guide](docs/releases/v0.3.1-pypi.md)
 
 Install [v0.3.0](https://github.com/hnt119/agenthon-quant-lab/releases/tag/v0.3.0) from source with Git and Python 3.12. From the parent directory for your new checkout, run
 

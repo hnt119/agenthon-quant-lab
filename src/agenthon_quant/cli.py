@@ -116,5 +116,5 @@ def main(argv=None) -> int:
     except (OSError, ValueError, KeyError, TypeError) as error:
         guidance = ""
         if "Source fingerprint differs" in str(error):
-            guidance = " Use a separate checkout of the saved run's code.git_commit and recorded dependencies; keep the current checkout and original run intact. There is no bypass."
+            guidance = " Use the matching distribution or source checkout and the dependency versions recorded in run.json."
         parser.exit(2, f"quant-lab: {error}{guidance}\n")

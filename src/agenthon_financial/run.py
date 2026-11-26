@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import gzip
 import json
 import platform
-import subprocess
+from importlib.resources import files
 
 import numpy
 import scipy
@@ -11,8 +11,10 @@ import scipy
 from agenthon_btc.run import read_lines, write_lines
 from agenthon_quant.records import digest, strict_json, write_json
 
+from agenthon_quant.resources import checkout_commit
+from .compatibility import COMPATIBILITY, qualify
 from .analysis import analyze, labels
-from .study import DATA, FREEZE, PROTOCOL, ROOT, books, fit_weights, frozen, read_rows, require, signals
+from .study import DATA, FREEZE, PROTOCOL, books, fit_weights, frozen, read_rows, require, signals
 from .verify import verify
 
 ARTIFACTS=("features.jsonl","fit.json","ledger.jsonl.gz","predictions.json","metrics.json","verification.json")
@@ -29,7 +31,12 @@ def sources():
     paths=["src/agenthon_financial/"+p+".py" for p in ("study","analysis","verify","run")]
     paths += ["src/agenthon_btc/"+p+".py" for p in ("pilot","verify","run")]
     paths += ["src/agenthon_quant/"+p+".py" for p in ("trading","spectral","records")]
-    return {p:digest((ROOT/p).read_bytes()) for p in paths}
+    paths.append("src/agenthon_quant/resources.py")
+    inventory = {}
+    for path in paths:
+        _, package, module = path.split("/")
+        inventory[path] = digest(files(package).joinpath(module).read_bytes())
+    return inventory
 
 
 def hashes(out):
@@ -48,7 +55,7 @@ def execute(out):
     record=dict(workflow=spec["id"],status="started",started_utc=datetime.now(timezone.utc).isoformat(),
                 protocol_commit=FREEZE,protocol_sha256=PROTOCOL,input_sha256=spec["snapshot_sha256"],
                 source_manifest_sha256=spec["source_manifest_sha256"],code_files_sha256=sources(),
-                checkout_commit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip(),
+                checkout_commit=checkout_commit(), implementation_compatibility_sha256=COMPATIBILITY,
                 python=platform.python_version(),numpy=numpy.__version__,scipy=scipy.__version__,
                 model_calls=0,paid_usd=0,evidence="retrospective",prospective_observations=0)
     write_json(out/"run.json",record)
@@ -77,10 +84,14 @@ def execute(out):
 def read_verified(out):
     spec,rows=inputs()
     record=strict_json((out/"run.json").read_bytes())
+    current = sources()
+    qualify(record["code_files_sha256"], current)
+    if record["code_files_sha256"] == current:
+        require(record.get("implementation_compatibility_sha256") == COMPATIBILITY, "Compatibility identity differs")
     require(record["status"]=="passed" and record["protocol_sha256"]==PROTOCOL
             and record["protocol_commit"]==FREEZE and record["input_sha256"]==spec["snapshot_sha256"]
             and record["source_manifest_sha256"]==spec["source_manifest_sha256"]
-            and record["code_files_sha256"]==sources() and record["output_artifacts_sha256"]==hashes(out),
+            and record["output_artifacts_sha256"]==hashes(out),
             "Run identity or artifact hash differs")
     obs=read_lines(out/"features.jsonl")
     read=lambda p:strict_json((out/p).read_bytes())

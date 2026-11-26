@@ -1,0 +1,37 @@
+{
+  "changes": {
+    "src/agenthon_financial/run.py": "Read module bytes from installed packages, record optional Git provenance, and validate both source inventories.",
+    "src/agenthon_financial/study.py": "Resolve the frozen data directory in either installation layout.",
+    "src/agenthon_quant/records.py": "Normalize module paths, bind the packaged project configuration, and make reproduction commands independent of the checkout.",
+    "src/agenthon_quant/resources.py": "Locate packaged resources and report a Git revision only in a source checkout."
+  },
+  "financial_contract": "Original receipt, source snapshot, protocol, verifier, scenarios, eight expected artifacts and numeric comparison tolerances are retained.",
+  "original_receipt_sha256": "89ae5b7c13d4dfd581182a714953b59c76c7f1c6779d9bb4706c9950da3f0317",
+  "original_release": "v0.3.0",
+  "original_sources": {
+    "src/agenthon_btc/pilot.py": "1753abe67fbd36c2710981018ae9bfbb1f48ae7b3f8bd95b2c7cf0be010cf6fa",
+    "src/agenthon_btc/run.py": "7b072a4b7b75b2c78b99128d6fa092a22ea27dc48f9a988177e7ea8591198331",
+    "src/agenthon_btc/verify.py": "b59182bbc3c5ccc6fe5b58492a5d33af718c46501381ae20a598b8382b31c13d",
+    "src/agenthon_financial/analysis.py": "6d1eba7e359e930ebb8d4e61843d2365fc6b646db90f42ddb2a8d19a2b03ab90",
+    "src/agenthon_financial/run.py": "288d9f2c5c793b7f400e67e35668546957582a3e8fd1ac250e88b9ad4222ba06",
+    "src/agenthon_financial/study.py": "d652d6ce7624a0842bc122082b2f7555d1e9069f8dcb56f99c901f132b8185cd",
+    "src/agenthon_financial/verify.py": "8c6887e077ea5832291cfcb82e40ab7e3db9afe5d60fd2af66062b5a2837b2a2",
+    "src/agenthon_quant/records.py": "dd8c9a2767f2f77ffa3f236425b734b13e652160ec2d5f1f68523487466f65a7",
+    "src/agenthon_quant/spectral.py": "a782e2332e0447e7583da4b51ff504830187ff611ff6faf740dd4bc310a4aa4d",
+    "src/agenthon_quant/trading.py": "993490fa3632d913af07e85b16008dee55fa2656d78ad9bf2f6a6bdbcde9657b"
+  },
+  "packaged_sources": {
+    "src/agenthon_btc/pilot.py": "1753abe67fbd36c2710981018ae9bfbb1f48ae7b3f8bd95b2c7cf0be010cf6fa",
+    "src/agenthon_btc/run.py": "7b072a4b7b75b2c78b99128d6fa092a22ea27dc48f9a988177e7ea8591198331",
+    "src/agenthon_btc/verify.py": "b59182bbc3c5ccc6fe5b58492a5d33af718c46501381ae20a598b8382b31c13d",
+    "src/agenthon_financial/analysis.py": "6d1eba7e359e930ebb8d4e61843d2365fc6b646db90f42ddb2a8d19a2b03ab90",
+    "src/agenthon_financial/run.py": "567e7637a311dd58ac62e71582865498c59afa7904c206a25dc0348386a2bee1",
+    "src/agenthon_financial/study.py": "6e304a15b6029759a397ad25826dd915e67ea9fe4418d4a5567bcae40013f65e",
+    "src/agenthon_financial/verify.py": "8c6887e077ea5832291cfcb82e40ab7e3db9afe5d60fd2af66062b5a2837b2a2",
+    "src/agenthon_quant/records.py": "17dc6864700bc43f8ae505306df50c1b2edd190d46db6fabe72aceb90f755498",
+    "src/agenthon_quant/resources.py": "f5efb9ee6410f21466a338e331398b52886cc51faf182523a448a7f3fd13a718",
+    "src/agenthon_quant/spectral.py": "a782e2332e0447e7583da4b51ff504830187ff611ff6faf740dd4bc310a4aa4d",
+    "src/agenthon_quant/trading.py": "993490fa3632d913af07e85b16008dee55fa2656d78ad9bf2f6a6bdbcde9657b"
+  },
+  "release": "0.3.1"
+}

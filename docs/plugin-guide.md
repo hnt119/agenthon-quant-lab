@@ -1,5 +1,7 @@
 # Codex skill setup
 
+The v0.3.1 wheel runs the CLI directly. Install the optional Codex skill from a maintained source checkout using the steps below. The link uses that checkout’s environment.
+
 The reusable integration is the maintained `quant-research` Codex skill. It is a
 thin command-and-reference interface to this source checkout, not a separate
 finance engine or a hosted plugin service.
