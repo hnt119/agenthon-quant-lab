@@ -1,0 +1,123 @@
+{
+  "release": "v0.5.0",
+  "release_commit": "b102c36c067656f10fbfa9a4b1da511ca9af4fdb",
+  "public_index": "https://pypi.org/project/agenthon-quant-lab/0.5.0/",
+  "publication_run": "https://github.com/hnt119/agenthon-quant-lab/actions/runs/45845331152",
+  "verified_utc": "2026-11-27T03:23:03+00:00",
+  "platform": {
+    "os": "macOS 26.6.2",
+    "arch": "arm64",
+    "python": "3.12.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "public_downloads_sha256": {
+    "agenthon_quant_lab-0.5.0-py3-none-any.whl": "d926ab523fc5db37adb0af99f86cab1d67dc6489b0db8d9787f76145eac51b28",
+    "agenthon_quant_lab-0.5.0.tar.gz": "08948d5967191be9f678349978d2441aab79f4bf32253f69fb9e277b56e6e6f3"
+  },
+  "public_file_readback": {
+    "index_url": "https://pypi.org/pypi/agenthon-quant-lab/0.5.0/json",
+    "checked_utc": "2026-11-27T03:22:10.104330+00:00",
+    "downloads": {
+      "agenthon_quant_lab-0.5.0-py3-none-any.whl": {
+        "url": "https://files.pythonhosted.org/packages/a9/37/4ddcac04076db82995e61fb3ec86840e000d00959aa23a26ffbcc26e9fe6/agenthon_quant_lab-0.5.0-py3-none-any.whl",
+        "sha256": "d926ab523fc5db37adb0af99f86cab1d67dc6489b0db8d9787f76145eac51b28",
+        "bytes": 2627562
+      },
+      "agenthon_quant_lab-0.5.0.tar.gz": {
+        "url": "https://files.pythonhosted.org/packages/90/23/4e29d528aaee9eee775ffe7f54d94d5145b4fbd30e8530fbee95012279fe/agenthon_quant_lab-0.5.0.tar.gz",
+        "sha256": "08948d5967191be9f678349978d2441aab79f4bf32253f69fb9e277b56e6e6f3",
+        "bytes": 2598355
+      }
+    }
+  },
+  "install": {
+    "requirement": "agenthon-quant-lab==0.5.0",
+    "index_url": "https://pypi.org/simple",
+    "pip_selected_url": "https://files.pythonhosted.org/packages/a9/37/4ddcac04076db82995e61fb3ec86840e000d00959aa23a26ffbcc26e9fe6/agenthon_quant_lab-0.5.0-py3-none-any.whl",
+    "direct_url_install": false,
+    "checkout_on_cli_path": false,
+    "doctor": "ready"
+  },
+  "acceptance": {
+    "source": "scripts/check_installed.py",
+    "tagged_source_sha256": "8e9a9222e7e54f34f03595a63be1ca9ba07983cebebee22b6ddb92344258d31e",
+    "mode": "--exact",
+    "scope": "All tagged installed-workflow assertions at the four published walkthrough paths. Fresh CLI working directory outside the checkout.",
+    "status": "passed"
+  },
+  "studies": {
+    "momentum": {
+      "command": "quant-lab btc-study --out runs/momentum",
+      "reference_directory": "reports/btc-financial-v1",
+      "completed_utc": "2026-11-27T03:22:35.151607+00:00",
+      "run_receipt_sha256": "b0905c184bf90d3b7983fbc06c796a18d785d75bf94f9cee3d698a6272f0bf11",
+      "byte_identical_sha256": {
+        "equity.svg": "f6322050c5d13023af4f0d5a0bb21625404390d42af6f1ea5e86282149250e1b",
+        "features.jsonl": "6f4717bb3929c37b1818286fe53dc91a58627b85394dcd6c1109d96c2f732ee4",
+        "fit.json": "b131e06f68689dd61c1344ac14758b1ead26ed2422187f10056c59a999ba7c6a",
+        "ledger.jsonl.gz": "13c336ef13068ee4ac70b5400b8494bfcc54f13add6e90ae81cdef71a971cf82",
+        "metrics.json": "63d6a1ffdc870f84b1f6912ed21d1de7c2842434ceba783b136fd41c5b06ddf0",
+        "predictions.json": "fda450cb27e96e1e3e2bf0f3c2af9c87f8e8eb094cf932af876dcac310639065",
+        "tables.csv": "43d4be47d20284a3ce4fd3d1845b3fe8e3544b1e9a81a4aae1821d6ea3f9730d",
+        "verification.json": "9bb98581e509ae36118fe85b93658d2e98a9b6db79147d081c68597d87e2ed35"
+      },
+      "prospective_observations": 0,
+      "report_sha256": "61f658b138ead9b2a740d71ab3a11e12a3cbccacc0b4a58af3759c1671620c1a",
+      "dashboard_sha256": "35aaeb2b537a61bd67a941b42f305879662f6c96ad09d262d4ac16d3e32f5345",
+      "reproduction_receipt_sha256": "51de5c21ff5c11ac67fd2b0ccde08e0f67dcc3d92f2e4fe1b2afe3d3cd25644d"
+    },
+    "costs": {
+      "command": "quant-lab btc-cost-break-even --out runs/costs",
+      "reference_directory": "reports/btc-cost-break-even-v1",
+      "completed_utc": "2026-11-27T03:22:53.369329+00:00",
+      "run_receipt_sha256": "0c474c625593ae0ad25bc00092f93e6dbdd109410853347c21d26011e73cb635",
+      "byte_identical_sha256": {
+        "README.md": "ec5e8266e95b5435da776c6ea33d68129c74cd26fe5efa5208dbeac8430a6551",
+        "crossings.json": "e0a0e520131168a40e47cf1275e1d2d8b7cf4f077783324492dac76b7a166225",
+        "crossings.svg": "ee65c1a1e5dacabdeebab355593802797406f38faaee9ad7eb69750a89e6f20e",
+        "grid.json": "6607f91be9926c207b4540c33b2ecde108985f22264faa7b43dc3652a6b4adf7",
+        "protocol.json": "02ace6a5531f2a0debd68a929a82e63137b6e04d5ee6e42b45e0ad9b78b3d3b3",
+        "public.json": "c9c243f2fa417243f1dcac7c6b8dd4b698163b95b0c518a47112a75994312a3f",
+        "refinements.json": "9076c0ded06112146e51c98b5d522f4a8f1aeb2e3ef14fffccdedf322ffa8b1e",
+        "verification.json": "1d8c62831d034a84ac0d56261157586a06d847e4c4adcbe1be30992bf239ebf7"
+      },
+      "prospective_observations": 0
+    },
+    "weekly": {
+      "command": "quant-lab btc-weekly-cadence --out runs/weekly",
+      "reference_directory": "reports/btc-weekly-cadence-v1",
+      "completed_utc": "2026-11-27T03:22:57.645650+00:00",
+      "run_receipt_sha256": "15e0de72565c5e34d92fcb10ace5f68af37e1af857a86269ee460f6e8b61d454",
+      "byte_identical_sha256": {
+        "README.md": "f1abdc33ae7fb699155d971450ac10f9381e3712cf7f4de7a1481e485bf9d112",
+        "comparisons.json": "cc645d91fe458000c242c89c80a37c921615154b48077e8a5be2225211c606c5",
+        "ledger.jsonl.gz": "50376abadd4b94bb4207a530ea96a36a7ea6bb923095e6208241fc5854fb43ab",
+        "metrics.json": "601239e99a8ff36607c9d0995b65740dd0f3d6f866eed586e40d19dffc644b5a",
+        "protocol.json": "e73695d858486f71f5bc2c0aa8ade15b5e380ed197f5c5f7ef9509fea4afa425",
+        "public.json": "53fea182631ee02b81e2ace76e74618c07f954ec8161bc386176595eeeb9c468",
+        "verification.json": "4b4b88b97fbef2245e727b36e80e342a2099bb00b734796ecd876ca433a06eb4",
+        "weekly-cadence.svg": "d53eeb1ef049d420a849db5c83b208070c2a28d061b3b83e4a50669d6d6a1a13"
+      },
+      "prospective_observations": 0
+    },
+    "allocation": {
+      "command": "quant-lab btc-weekly-allocation --out runs/allocation",
+      "reference_directory": "reports/btc-weekly-allocation-v1",
+      "completed_utc": "2026-11-27T03:23:01.647390+00:00",
+      "run_receipt_sha256": "e20a1afcdfbb3a1220f1279c6e13dc8ad2646ce1e55a155b949bcabd9d235e73",
+      "byte_identical_sha256": {
+        "README.md": "454645eace9154b0b4640b209817670dc41edeb79a1a261dd61e3a4b5e335333",
+        "comparisons.json": "5c8dfee450a5ffb08688da7b85d1f07ea6d7245a2c4ffcd6b7aa1d6f18029e7f",
+        "drawdown.svg": "8d7688b57666081b5e02d23e87c88e9211f2e8d012b8de008bdd25771196455a",
+        "ledger.jsonl.gz": "852b8f1af875d842a47b93bd6e9ac34f87d781cefc44c269fbbfc8fb6325617f",
+        "metrics.json": "ce46c8016f3a03819f24453a75a915f228f41ab4a48ac8705d8077f30f47b340",
+        "protocol.json": "46cbfbee2ef6aaa5e3bc5c184340c919d07babe97d0110fed2948157c3bb0f70",
+        "public.json": "13ebf97d67dde30420ae32566f96d423c8083fb18e7e9a3bb12ec8aca4c4334a",
+        "verification.json": "f4238daed0e2e8a9f2b2f53cae77a55f3a0a8a9bbe15ef81f9ae8f7b3816edae"
+      },
+      "prospective_observations": 0
+    }
+  },
+  "byte_identical_artifacts": 32
+}
